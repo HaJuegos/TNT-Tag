@@ -44,24 +44,24 @@
   <tbody>
     <tr>
       <td align="center" valign="top">
-        <a href="https://discord.com/users/714622708649951272"><img width="150" height="150" src="https://cdn.discordapp.com/avatars/714622708649951272/75c48f805b9d08857477c7f5f3521b1a.png?v=1" alt="Creador del Add-on"><br />Ha Catto</a>
+        <a href="https://twitter.com/Ha_Juegos_Cat"><img width="150" height="150" src="https://twitter.com/Ha_Juegos_Cat" alt="Creador del Add-on"><br />Ha Juegos Cat!</a>
       </td>
       <td align="center" valign="top">
-        <a href="https://discord.com/users/592841318351241248"><img width="150" height="150" src="https://cdn.discordapp.com/avatars/592841318351241248/6368504061cb79d2ce883cd21425a665.png?v=1" alt="Idealista y Creador de uno de los Mapas"><br />LouisDoodles</a>
+        <a href="https://twitter.com/LouisDoodles_"><img width="150" height="150" src="https://twitter.com/LouisDoodles_/photo" alt="Idealista y Creador de uno de los Mapas"><br />LouisDoodles</a>
       </td>
       <td align="center" valign="top">
-        <a href="https://discord.com/users/948057828495605820"><img width="150" height="150" src="https://cdn.discordapp.com/avatars/948057828495605820/cea25ea22d707a2c218efc9b0f9e8a6f.png?v=1" alt="Creador de los Scripts del Add-on"><br />Convecs</a>
+        <a href="https://twitter.com/convex__"><img width="150" height="150" src="https://twitter.com/convex__/photo" alt="Creador de los Scripts del Add-on"><br />Convex</a>
       </td>
      <td align="center" valign="top">
-        <a href="https://discord.com/users/983220765006635018"><img width="150" height="150" src="https://cdn.discordapp.com/avatars/983220765006635018/2336ab65f86c839bbbc02834c882db14.png?v=1" alt="Creador de Modelos, texturas y Particulas del Add-on"><br />Astral</a>
+        <a href="https://twitter.com/astral302"><img width="150" height="150" src="https://twitter.com/astral302/photo" alt="Creador de Modelos, texturas y Particulas del Add-on"><br />Astral</a>
       </td>
      </tr>
     <tr>
       <td align="center" valign="top">
-        <a href="https://discord.com/users/746156912243900426"><img width="150" height="150" src="https://cdn.discordapp.com/avatars/746156912243900426/50b37a52a5817d00230e587779897d59.png?v=1" alt="Creador de uno de los Mapas"><br />HYPПӨDΛПᄃΣЯ</a>
+        <a href="https://twitter.com/HypnoDancerZR"><img width="150" height="150" src="https://twitter.com/HypnoDancerZR/photo" alt="Creador de uno de los Mapas"><br />HypnoDancer</a>
       </td>
       <td align="center" valign="top">
-        <a href="https://discord.com/users/1034638041513459853"><img width="150" height="150" src="https://cdn.discordapp.com/guilds/782053401281429504/users/1034638041513459853/avatars/a_423c9360ec4bfd1331f737692d33b9c0.png?v=1" alt="Creador de uno de los Mapas"><br />NoSoyNorman</a>
+        <a href="https://twitter.com/NotNormanlium"><img width="150" height="150" src="https://twitter.com/NotNormanlium/photo" alt="Creador de uno de los Mapas"><br />NormanliumZz</a>
       </td>
      </tr>
   </tbody>
