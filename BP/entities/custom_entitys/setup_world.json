@@ -1,0 +1,189 @@
+/* Creado/Editado por: HaJuegos Cat!. Si necesitas mas informacion, escribeme en Discord: https://discord.com/users/714622708649951272 */
+/* Created/Edited by: HaCatto! If you need more information, write me on Discord: https://discord.com/users/714622708649951272 */
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ha:setup",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false,
+			"animations": {
+				"start": "animation.start",
+				"short_start": "animation.start_alt",
+				"loop_start": "animation.loop_start"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"start": "query.skin_id == 1"
+					},
+					{
+						"short_start": "query.skin_id == 2"
+					},
+					{
+						"loop_start": "query.skin_id == 3"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"ha:no_start": {
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			},
+			"ha:start": {
+				"minecraft:skin_id": {
+					"value": 1
+				}
+			},
+			"ha:start_alt": {
+				"minecraft:skin_id": {
+					"value": 2
+				}
+			},
+			"ha:loop_star": {
+				"minecraft:skin_id": {
+					"value": 3
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"setup_mob"
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1,
+				"min": 1
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "any",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:persistent": {},
+			"minecraft:tick_world": {
+				"radius": 2,
+				"never_despawn": true
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "self",
+							"value": "setup_mob"
+						},
+						"event": "setup_map",
+						"target": "self"
+					}
+				]
+			}
+		},
+		"events": {
+			"ha:end_party": {
+				"remove": {
+					"component_groups": [
+						"ha:start",
+						"ha:start_alt",
+						"ha:loop_star"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:no_start"
+					]
+				}
+			},
+			"ha:instant_despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"setup_map": {
+				"run_command": {
+					"command": [
+						"tag @a add summon",
+						"tickingarea add circle ~~~ 4 setup"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"run_command": {
+					"command": [
+						"tag @s add setup"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:no_start"
+					]
+				}
+			},
+			"ha:start_party": {
+				"remove": {
+					"component_groups": [
+						"ha:no_start",
+						"ha:start_alt"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:start"
+					]
+				}
+			},
+			"ha:start_party_alt": {
+				"remove": {
+					"component_groups": [
+						"ha:no_start",
+						"ha:start"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:start_alt"
+					]
+				}
+			},
+			"ha:end_start": {
+				"run_command": {
+					"command": [
+						"function timer/set_timer"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ha:start",
+						"ha:start_alt",
+						"ha:no_start"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:loop_star"
+					]
+				}
+			}
+		}
+	}
+}

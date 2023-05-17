@@ -1,0 +1,482 @@
+/* Creado/Editado por: HaJuegos Cat!. Si necesitas mas informacion, escribeme en Discord: https://discord.com/users/714622708649951272 */
+/* Created/Edited by: HaCatto! If you need more information, write me on Discord: https://discord.com/users/714622708649951272 */
+{
+	"format_version": "1.18.20",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"animations": {
+				"intro": "controller.animation.intro_world",
+				"coin": "animation.coin_use",
+				"delay": "animation.delay_boost",
+				"music_sensor": "controller.animation.music_sensor"
+			},
+			"scripts": {
+				"animate": [
+					"intro",
+					"music_sensor",
+					{
+						"coin": "query.skin_id == 1"
+					},
+					{
+						"delay": "query.skin_id == 2"
+					}
+				]
+			}
+		},
+		"component_groups": {
+			"ha:no_music": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"ha:music": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"ha:on_delay": {
+				"minecraft:skin_id": {
+					"value": 2
+				},
+				"minecraft:timer": {
+					"time": [
+						7,
+						7
+					],
+					"time_down_event": {
+						"event": "ha:end_cooldown_boost",
+						"target": "self"
+					}
+				}
+			},
+			"ha:on_coin": {
+				"minecraft:skin_id": {
+					"value": 1
+				},
+				"minecraft:timer": {
+					"time": [
+						20,
+						20
+					],
+					"time_down_event": {
+						"event": "ha:desactivate_invensible",
+						"target": "self"
+					}
+				}
+			},
+			"ha:off_coin": {
+				"minecraft:skin_id": {
+					"value": 0
+				}
+			},
+			"ha:normal_sensor": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "any",
+							"on_damage": {
+								"filters": {
+									"other_with_families": "player"
+								}
+							},
+							"deals_damage": false
+						}
+					]
+				}
+			},
+			"ha:inocent_sensor": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "any",
+							"on_damage": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "has_tag",
+											"subject": "other",
+											"value": "tnt_player"
+										}
+									]
+								}
+							},
+							"deals_damage": true
+						},
+						{
+							"cause": "any",
+							"on_damage": {
+								"filters": {
+									"none_of": [
+										{
+											"all_of": [
+												{
+													"test": "is_family",
+													"subject": "other",
+													"value": "player"
+												},
+												{
+													"test": "has_tag",
+													"subject": "other",
+													"value": "tnt_player"
+												}
+											]
+										}
+									]
+								}
+							},
+							"deals_damage": false
+						}
+					]
+				}
+			},
+			"ha:tnt_sensor": {
+				"minecraft:damage_sensor": {
+					"triggers": [
+						{
+							"cause": "any",
+							"on_damage": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "has_tag",
+											"subject": "other",
+											"value": "tnt_player"
+										}
+									]
+								}
+							},
+							"deals_damage": false
+						},
+						{
+							"cause": "any",
+							"on_damage": {
+								"filters": {
+									"all_of": [
+										{
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										{
+											"test": "has_tag",
+											"subject": "other",
+											"value": "victim"
+										}
+									]
+								}
+							},
+							"deals_damage": false
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:experience_reward": {
+				"on_death": "Math.Min(query.player_level * 7, 100)"
+			},
+			"minecraft:type_family": {
+				"family": [
+					"player"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:exhaustion_values": {
+				"heal": 6,
+				"jump": 0.05,
+				"sprint_jump": 0.2,
+				"mine": 0.005,
+				"attack": 0.1,
+				"damage": 0.1,
+				"walk": 0,
+				"sprint": 0.1,
+				"swim": 0.01
+			},
+			"minecraft:player.saturation": {
+				"value": 5,
+				"max": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 20
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": -1,
+				"inhale_time": 3.75,
+				"generates_bubbles": false
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:physics": {
+				"push_towards_closest_space": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:block_climber": {},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_tag",
+									"subject": "self",
+									"operator": "!=",
+									"value": "victim"
+								},
+								{
+									"test": "has_tag",
+									"subject": "self",
+									"operator": "!=",
+									"value": "tnt_player"
+								},
+								{
+									"test": "has_tag",
+									"subject": "self",
+									"operator": "!=",
+									"value": "invensible"
+								}
+							]
+						},
+						"target": "self",
+						"event": "ha:player_normal"
+					},
+					{
+						"filters": {
+							"test": "has_tag",
+							"subject": "self",
+							"value": "tnt_player"
+						},
+						"target": "self",
+						"event": "ha:is_tnt"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_tag",
+									"subject": "self",
+									"value": "victim"
+								},
+								{
+									"test": "has_tag",
+									"subject": "self",
+									"operator": "!=",
+									"value": "invensible"
+								}
+							]
+						},
+						"target": "self",
+						"event": "ha:in_game_player"
+					}
+				]
+			}
+		},
+		"events": {
+			"ha:stop_music": {
+				"run_command": {
+					"command": [
+						"stopsound @s record.pandora_palace"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ha:music"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:no_music"
+					]
+				}
+			},
+			"ha:start_music": {
+				"remove": {
+					"component_groups": [
+						"ha:no_music"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:music"
+					]
+				}
+			},
+			"ha:cooldown_boost": {
+				"run_command": {
+					"command": [
+						"tag @s add cooldown"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:on_delay"
+					]
+				}
+			},
+			"ha:end_cooldown_boost": {
+				"run_command": {
+					"command": [
+						"tag @s remove cooldown"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ha:on_delay"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:off_coin"
+					]
+				}
+			},
+			"ha:activate_invensible": {
+				"run_command": {
+					"command": [
+						"replaceitem entity @s slot.armor.chest 0 netherite_chestplate 1 0 {\"item_lock\": {\"mode\":\"lock_in_slot\"},\"minecraft:keep_on_death\":{}}",
+						"tag @s add coinactivate"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ha:inocent_sensor",
+						"ha:off_coin"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:on_coin",
+						"ha:normal_sensor"
+					]
+				}
+			},
+			"ha:desactivate_invensible": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"tag @s remove invensible",
+								"tellraw @a {\"rawtext\": [{\"translate\":\"message.player_invensible_off\", \"with\": {\"rawtext\": [{\"selector\":\"@s\"}]}}]}",
+								"tellraw @s {\"rawtext\": [{\"translate\":\"message.player_end_coin\"}]}",
+								"playsound mob.zombie.unfect @a ~ ~ ~",
+								"replaceitem entity @s slot.armor.chest 0 air",
+								"tag @s remove coinactivate"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"ha:normal_sensor",
+								"ha:on_coin"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"ha:off_coin",
+								"ha:inocent_sensor"
+							]
+						}
+					},
+					{
+						"trigger": "ha:cooldown_boost"
+					}
+				]
+			},
+			"ha:become_tnt": {
+				"run_command": {
+					"command": [
+						"function tnt_game/recibe_tnt"
+					]
+				}
+			},
+			"ha:tnt_pass": {
+				"run_command": {
+					"command": [
+						"function tnt_game/pasa_tnt"
+					]
+				}
+			},
+			"ha:player_normal": {
+				"remove": {
+					"component_groups": [
+						"ha:inocent_sensor",
+						"ha:tnt_sensor"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:normal_sensor"
+					]
+				}
+			},
+			"ha:is_tnt": {
+				"remove": {
+					"component_groups": [
+						"ha:normal_sensor",
+						"ha:inocent_sensor"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:tnt_sensor"
+					]
+				}
+			},
+			"ha:in_game_player": {
+				"remove": {
+					"component_groups": [
+						"ha:normal_sensor",
+						"ha:tnt_sensor"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:inocent_sensor"
+					]
+				}
+			}
+		}
+	}
+}

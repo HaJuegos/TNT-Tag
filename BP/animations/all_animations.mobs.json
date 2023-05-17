@@ -1,0 +1,148 @@
+/* Creado/Editado por: HaJuegos Cat!. Si necesitas mas informacion, escribeme en Discord: https://discord.com/users/714622708649951272 */
+/* Created/Edited by: HaCatto! If you need more information, write me on Discord: https://discord.com/users/714622708649951272 */
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.start": {
+			"animation_length": 14.1,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/tellraw @a {\"rawtext\": [{\"translate\":\"message.start\"}]}",
+					"/playsound mob.evocation_illager.celebrate @a",
+					"/playsound random.levelup @a",
+					"/playsound random.click @a"
+				],
+				"4.9": [
+					"/title @a actionbar §a9...",
+					"/playsound random.click @a"
+				],
+				"5.9": [
+					"/title @a actionbar §a8...",
+					"/playsound random.click @a"
+				],
+				"6.9": [
+					"/title @a actionbar §a7...",
+					"/playsound random.click @a"
+				],
+				"7.9": [
+					"/title @a actionbar §26...",
+					"/playsound random.click @a"
+				],
+				"8.9": [
+					"/title @a actionbar §25...",
+					"/playsound random.click @a"
+				],
+				"9.9": [
+					"/title @a actionbar §24...",
+					"/playsound random.click @a"
+				],
+				"10.9": [
+					"/title @a actionbar §23...",
+					"/playsound random.click @a"
+				],
+				"11.9": [
+					"/title @a actionbar §42...",
+					"/playsound random.click @a"
+				],
+				"12.9": [
+					"/title @a actionbar §c1...",
+					"/playsound random.click @a"
+				],
+				"13.9": [
+					"/function system/asign_rol",
+					"/playsound raid.horn @a",
+					"/tellraw @a {\"rawtext\": [{\"translate\":\"message.start_end\"}]}",
+					"/playsound random.click @a",
+					"@s ha:end_start"
+				]
+			}
+		},
+		"animation.start_alt": {
+			"animation_length": 10.1,
+			"loop": false,
+			"timeline": {
+				"0.0": [
+					"/tellraw @a {\"rawtext\": [{\"translate\":\"message.start\"}]}",
+					"/playsound mob.evocation_illager.celebrate @a",
+					"/playsound random.levelup @a",
+					"/playsound random.click @a"
+				],
+				"4.9": [
+					"/title @a actionbar §25...",
+					"/playsound random.click @a"
+				],
+				"5.9": [
+					"/title @a actionbar §24...",
+					"/playsound random.click @a"
+				],
+				"6.9": [
+					"/title @a actionbar §23...",
+					"/playsound random.click @a"
+				],
+				"7.9": [
+					"/title @a actionbar §42...",
+					"/playsound random.click @a"
+				],
+				"8.9": [
+					"/title @a actionbar §c1...",
+					"/playsound random.click @a"
+				],
+				"9.9": [
+					"/function system/asign_rol",
+					"/playsound raid.horn @a",
+					"/tellraw @a {\"rawtext\": [{\"translate\":\"message.start_end\"}]}",
+					"/playsound random.click @a",
+					"@s ha:end_start"
+				]
+			}
+		},
+		"animation.loop_start": {
+			"animation_length": 0.4,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/function timer/remove",
+					"/playsound random.click @a"
+				]
+			}
+		},
+		"animation.loop_summon": {
+			"animation_length": 50,
+			"loop": true,
+			"timeline": {
+				"49.9": [
+					"/execute @s ~ ~ ~ event entity @e[type=ha:coin,r=2] despawn",
+					"/summon ha:coin ~ ~ ~"
+				]
+			}
+		},
+		"animation.loop_particle_smoke": {
+			"animation_length": 1,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/particle astral:blindness_smoke ~~~"
+				]
+			}
+		},
+		"animation.loop_particle_jump": {
+			"animation_length": 1,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/particle astral:jump_boost_particle ~~0.5~"
+				]
+			}
+		},
+		"animation.loop_particle_speed": {
+			"animation_length": 1,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/particle astral:speed_particle ~~0.5~"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+/* Creado/Editado por: HaJuegos Cat!. Si necesitas mas informacion, escribeme en Discord: https://discord.com/users/714622708649951272 */
+/* Created/Edited by: HaCatto! If you need more information, write me on Discord: https://discord.com/users/714622708649951272 */
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ha:coin_item",
+			"category": "items"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:use_duration": 0,
+			"minecraft:on_use": {
+				"on_use": {
+					"event": "lo_usa"
+				}
+			},
+			"minecraft:render_offsets": "apple",
+			"minecraft:icon": {
+				"texture": "icon_coin_item"
+			},
+			"minecraft:use_animation": "bow"
+		},
+		"events": {
+			"lo_usa": {
+				"run_command": {
+					"command": [
+						"execute @s[tag=tnt_asign] ~ ~ ~ tellraw @s {\"rawtext\": [{\"translate\":\"message.no_boost_in_tnt\"}]}",
+						"execute @s[tag=tnt_asign] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 1 ha:coin_item",
+						"execute @s[tag=tnt_asign] ~ ~ ~ playsound ui.no_usable",
+						"execute @s[tag=cooldown] ~ ~ ~ tellraw @s {\"rawtext\": [{\"translate\":\"message.cooldown_on\"}]}",
+						"execute @s[tag=cooldown] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 1 ha:coin_item",
+						"execute @s[tag=cooldown] ~ ~ ~ playsound ui.no_usable",
+						"execute @s[tag=coinactivate] ~ ~ ~ tellraw @s {\"rawtext\": [{\"translate\":\"message.cooldown_on\"}]}",
+						"execute @s[tag=coinactivate] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 1 ha:coin_item",
+						"execute @s[tag=coinactivate] ~ ~ ~ playsound ui.no_usable",
+						"execute @s[tag=!cooldown,tag=!coinactivate,tag=!tnt_asign] ~ ~ ~ tellraw @a {\"rawtext\": [{\"translate\":\"message.player_invensible_on\", \"with\": {\"rawtext\": [{\"selector\":\"@s\"}]}}]}",
+						"execute @s[tag=!cooldown,tag=!coinactivate,tag=!tnt_asign] ~ ~ ~ tellraw @s {\"rawtext\": [{\"translate\":\"message.player_use_coin\"}]}",
+						"execute @s[tag=!cooldown,tag=!coinactivate,tag=!tnt_asign] ~ ~ ~ playsound random.levelup @a ~ ~ ~",
+						"execute @s[tag=!cooldown,tag=!coinactivate,tag=!tnt_asign] ~ ~ ~ tag @s add invensible",
+						"execute @s[tag=!cooldown,tag=!coinactivate,tag=!tnt_asign] ~ ~ ~ event entity @s ha:activate_invensible",
+						"execute @s[tag=!cooldown,tag=!coinactivate,tag=!tnt_asign] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 1 air"
+					]
+				}
+			}
+		}
+	}
+}

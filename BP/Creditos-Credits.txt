@@ -1,0 +1,118 @@
+[ESP]
+
+¡Gracias por descargar este mapa! Este mapa ha tomado su tiempo y con el mayor esfuerzo, te lo hemos traido hasta aqui para ti. Agradeceria que le dieras la debida acreditacion a todas las personas a mencionar para que no tengas problemas luego y asi podamos continuar creando mas contenido similar ya que cada uno de nosotros le metimos esfuerzo y dedicacion, en la creacion de este mismo add-on y mapa. Si deseas crear modificaciones o contenido con este mismo, procura hacer minimamente mencion a las personas con algun link para que se les reconozca mejor. ¡Gracias!
+
+Creditos:
+
+- HaJuegos Cat!: (Creador y programador del add-on)
+Twitters: https://twitter.com/Ha_Juegos_Cat o https://twitter.com/the_stupid_cat_
+GitHub: https://github.com/HaJuegos
+Youtube: https://www.youtube.com/@HaJuegos o https://www.youtube.com/@the_stupid_cat_
+Twitch: https://www.twitch.tv/hajuegoscatto
+Discord: https://discord.gg/9jZHkhu86P o https://discord.gg/WH9KpNWXUz | https://discord.com/users/714622708649951272
+
+- Convex!: (Creador y programador de los scripts del add-on)
+Twitter: https://twitter.com/convex__
+Twitch: https://www.twitch.tv/convex03
+Discord: https://discord.com/invite/C3ZHdnUVmu | https://discord.com/users/736761089056047174 o https://discord.com/users/948057828495605820
+GitHub: https://github.com/conveex
+
+- LouisDoodles: (Creador del icono del add-on, idealista del add-on y Creador del Mapa - Mini Isla)
+Twitter: https://twitter.com/LouisDoodles_
+Twich: https://www.twitch.tv/LouisDoodles
+Discord: https://discord.com/users/592841318351241248
+
+- Astral302 (Creador de algunas texturas y particulas del add-on)
+Twitter: https://twitter.com/astral302
+Discord: https://discord.com/users/983220765006635018
+
+- NoSoyNorman👾 y HYPПӨDΛПᄃΣЯ (Creadores del Mapa - Castillo)
+Discord: https://discord.com/users/746156912243900426 y https://discord.com/users/1034638041513459853
+
+Pagina del Mapa Oficial:
+https://github.com/HaJuegos/TNT-Tag
+
+-----------------------------------------------------------------------------
+
+Musica y/o sonidos usados:
+
+"Blocked" - By The-Mayz (Sunday Night Suicide (FNF Suicide Mouse Mod DEMO) - lockedSound)
+
+"conffetti" - By ?? (Sacado de Youtube pero el video ya no esta disponible)
+
+"ganaste" - By Mojang (Minecraft Java)
+
+"get_coin" - By ?? (Sacado de Youtube pero el video ya no esta disponible)
+
+"pandora_palace" - By TobyFox (DELTARUNE CH2 - Pandora Palace Soundtrack)
+
+"tnt_explote" - By TobyFox (DELTARUNE - Explosion)
+
+"use_brujula" - By Dr. Daynaze (Friday Night Trepidation: Update 1.5 - Sonido de Ataque)
+
+"another_medium" - By TobyFox (UNDERTALE - Another Medium Soundtrack)
+
+"eleventh_hour" - By Team OneShot (OneShot - Eleventh Hour Soundtrack - SOLSTICE)
+
+"mysterious_place" By TobyFox (UNDERTALE - Mysterious Place Soundtrack)
+
+-----------------------------------------------------------------------------
+
+
+[ENG]
+
+Thank you for downloading this map! This map has taken time and our utmost effort to bring it here for you. I would appreciate if you give proper credit to all the people mentioned so that you don't have any problems later on, and so we can continue creating more similar content. Each one of us put effort and dedication into the creation of this add-on and map. If you wish to create modifications or content using this, please make sure to mention the people involved and provide a link to give them proper recognition. Thank you!
+
+Credits:
+
+- HaJuegos Cat!: (Creator and add-on programmer)
+Twitters: https://twitter.com/Ha_Juegos_Cat o https://twitter.com/the_stupid_cat_
+GitHub: https://github.com/HaJuegos
+Youtube: https://www.youtube.com/@HaJuegos o https://www.youtube.com/@the_stupid_cat_
+Twitch: https://www.twitch.tv/hajuegoscatto
+Discord: https://discord.gg/9jZHkhu86P o https://discord.gg/WH9KpNWXUz | https://discord.com/users/714622708649951272
+
+- Convex!: (Creator and add-on script programmer)
+Twitter: https://twitter.com/convex__
+Twitch: https://www.twitch.tv/convex03
+Discord: https://discord.com/invite/C3ZHdnUVmu | https://discord.com/users/736761089056047174 o https://discord.com/users/948057828495605820
+GitHub: https://github.com/conveex
+
+- LouisDoodles: (Creator of the add-on icon, add-on ideation and Map Creator - Mini Island)
+Twitter: https://twitter.com/LouisDoodles_
+Twich: https://www.twitch.tv/LouisDoodles
+Discord: https://discord.com/users/592841318351241248
+
+- Astral302 (Creator of some textures and particles in the add-on)
+Twitter: https://twitter.com/astral302
+Discord: https://discord.com/users/983220765006635018
+
+- NoSoyNorman👾 y HYPПӨDΛПᄃΣЯ (Map creators - Castle)
+Discord: https://discord.com/users/746156912243900426 y https://discord.com/users/1034638041513459853
+
+Official Map Page:
+https://github.com/HaJuegos/TNT-Tag
+
+-----------------------------------------------------------------------------
+
+Music and/or sounds used:
+
+"Blocked" - By The-Mayz (Sunday Night Suicide (FNF Suicide Mouse Mod DEMO) - lockedSound)
+
+"conffetti" - By ?? (Taken from YouTube, but the video is no longer available)
+
+"ganaste" - By Mojang (Minecraft Java)
+
+"get_coin" - By ?? (Taken from YouTube, but the video is no longer available)
+
+"pandora_palace" - By TobyFox (DELTARUNE CH2 - Pandora Palace Soundtrack)
+
+"tnt_explote" - By TobyFox (DELTARUNE - Explosion)
+
+"use_brujula" - By Dr. Daynaze (Friday Night Trepidation: Update 1.5 - Attack Sound)
+
+"another_medium" - By TobyFox (UNDERTALE - Another Medium Soundtrack)
+
+"eleventh_hour" - By Team OneShot (OneShot - Eleventh Hour Soundtrack - SOLSTICE)
+
+"mysterious_place" By TobyFox (UNDERTALE - Mysterious Place Soundtrack)
