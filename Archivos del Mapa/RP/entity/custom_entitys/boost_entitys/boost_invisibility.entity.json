@@ -1,0 +1,35 @@
+/* Creado/Editado por: HaJuegos Cat!. Si necesitas mas informacion, escribeme en Discord: https://discord.com/users/714622708649951272 */
+/* Created/Edited by: HaCatto! If you need more information, write me on Discord: https://discord.com/users/714622708649951272 */
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ha:invisibility_boost",
+			"materials": {
+				"default": "entity_alphablend"
+			},
+			"textures": {
+				"default": "textures/entity/boost/invisibility"
+			},
+			"geometry": {
+				"default": "geometry.invisibility"
+			},
+			"animations": {
+				"idle": "animation.coin.idle",
+				"float": "animation.coin.idle_2"
+			},
+			"scripts": {
+				"animate": [
+					"idle",
+					"float"
+				]
+			},
+			"render_controllers": [
+				"controller.render.boosts_custom"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg_coin"
+			}
+		}
+	}
+}

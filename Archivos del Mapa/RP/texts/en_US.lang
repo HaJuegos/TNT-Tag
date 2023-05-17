@@ -1,0 +1,64 @@
+## Creado/Editado por: HaJuegos Cat!. Si necesitas mas informacion, escribeme en Discord: https://discord.com/users/714622708649951272
+## Created/Edited by: HaCatto! If you need more information, write me on Discord: https://discord.com/users/714622708649951272
+
+## UI Texts
+ui.addon_version=v0.0.2
+ui.message_credits4=§fGeometrys & Textures Made By:
+ui.message_credits3=§fScripts Made By:
+ui.message_credits2=§fIdea & Icon By:
+ui.message_credits1=§fAdd-on Made By:
+ui.message_credits0=§fCredits uwu
+scoreboard.name_wins=§eCombo Wins:§r
+sign_message.intro=§e§lStart§r
+ui.message_death1=§cYou have been eliminated!
+ui.message_death2=The §4TNT§f has exploded.
+message.error_party=§7|| You need at least 1 more player to play. And your friends?...
+sign.message_village=It's by another path...
+
+## Messages Entitys
+player_damage.message=§7|| You have the TNT!
+player_damager.message=<§ewiwi§r> §a%1 now has the §cTNT!
+player_damage.message_alive=§7|| You no longer have the TNT
+
+timer_messager_activate=§eTime remaining for the §cTNT§e to explode:§r§7 %1%2:%3%4
+message.end_gameover=<§ewiwi§r> §4§lThe TNT has exploded! %1 has been eliminated. A random player will be chosen to carry the TNT.
+
+title.win_message=§a%1 is the winner!
+title.win_message_2=He was the last person to survive with the TNT.
+title.lose_message=You can do better next time.
+
+## Messages UI
+message.start=<§ewiwi§r> §aThe game has started. The time has begun to separate quickly. After that, someone will be randomly chosen to be the chosen one.
+message.start_end=<§ewiwi§r> §eWe're starting! Don't let yourself be hit by the person with TNT! The TNT will explode in a few seconds... The last person to survive this will be the winner.
+message.setup=§a|| To start the game, press the "start" button!
+message.intro_waiting_game=§7|| The game has already started... Wait for it to finish to join this party!
+
+## Message Items
+message.player_blindness_activate=<§ewiwi§r> §aA blindness boost has been activated. The §cTNT§a carrier will have the effect for a few seconds...
+message.use_player_supercompass=<§ewiwi§r> §4The %1§4 has been activated. Players now have slowness for a few seconds!
+message.use_player_supercompass_cooords=§7|| %1 is located at coordinates %2 %3 %4. Hurry up!
+message.cooldown_on=§7|| You have to wait a few seconds after grabbing a boost...
+message.no_boost_in_tnt=§7|| You cannot use this item while carrying the TNT! Get rid of it first.
+
+message.player_invensible_on=<§ewiwi§r> §d%1 is now temporarily immune to §cTNT.
+message.player_use_coin=§eYou are immune to receiving §cTNT§e for 15s.
+message.player_invensible_off=<§ewiwi§r> §b%1 can now receive the §cTNT.
+message.player_end_coin=§cThe effect has ended.
+
+## Name Items
+item.ha:tnt_helmet=§cTNT§r
+item.ha:coin_item=§eCoin§r
+item.spawn_egg.entity.ha:coin.name=Coin Spawn Egg
+item.spawn_egg.entity.ha:generador.name=Randomize Boost Generator Spawn Egg
+item.ha:detector=§bSuper Compass§r
+
+## Name Entitys
+entity.ha:setup.name=§eSetup Entity§r
+entity.ha:generador.name=§7Generator Boosts§r
+
+entity.ha:coin.name=§e§lCoin§r
+entity.ha:blindness_boost.name=§0§lBlindness boost§r
+entity.ha:bowandarrow_boost.name=§c§lBow & Arrow boost§r
+entity.ha:speed_boost.name=§b§lSpeed boost§r
+entity.ha:invisibility_boost.name=§7§lInvisibility boost§r
+entity.ha:jump_boost.name=§a§lJump Boost§r

@@ -1,0 +1,76 @@
+/* Creado/Editado por: axtral403. Si quieres mas informacion al respecto, escribeme en Discord: https://discord.com/users/983220765006635018 */
+/* Created/Edited by: axtral403. If you want more information about it, write me on Discord: https://discord.com/users/983220765006635018 */
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "astral:speed_particle",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/speed_particle"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 25,
+				"max_particles": 50
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_sphere": {
+				"offset": [
+					0,
+					0.5,
+					0
+				],
+				"radius": 1,
+				"surface_only": true,
+				"direction": [
+					"math.random(-1, 1)",
+					"math.random(1, 5)",
+					"math.random(-1, 1)"
+				]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.25
+			},
+			"minecraft:particle_initial_speed": "math.random(2, 5)",
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [
+					"math.random(-1, 1)",
+					"math.random(-1, 4)",
+					"math.random(-1, 1)"
+				],
+				"linear_drag_coefficient": 2.7
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [
+					"0.1 + variable.particle_random_1*0.12",
+					"0.1 + variable.particle_random_1*0.12"
+				],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 16,
+					"texture_height": 16,
+					"uv": [
+						0,
+						0
+					],
+					"uv_size": [
+						16,
+						16
+					]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [
+					0.85098,
+					0.96863,
+					1,
+					0.8902
+				]
+			}
+		}
+	}
+}

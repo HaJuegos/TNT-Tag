@@ -1,0 +1,156 @@
+/* Creado/Editado por: HaJuegos Cat!. Si necesitas mas informacion, escribeme en Discord: https://discord.com/users/714622708649951272 */
+/* Created/Edited by: HaCatto! If you need more information, write me on Discord: https://discord.com/users/714622708649951272 */
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "minecraft:npc",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"guide": "textures/entity/npc/guide",
+				"npc_1": "textures/entity/npc/npc_1",
+				"npc_2": "textures/entity/npc/npc_2",
+				"npc_3": "textures/entity/npc/npc_3",
+				"npc_4": "textures/entity/npc/npc_4",
+				"npc_5": "textures/entity/npc/npc_5",
+				"npc_6": "textures/entity/npc/npc_6",
+				"npc_7": "textures/entity/npc/npc_7",
+				"npc_8": "textures/entity/npc/npc_8",
+				"npc_9": "textures/entity/npc/npc_9",
+				"npc_10": "textures/entity/npc/npc_10",
+				"npc_scientist_1": "textures/entity/npc/npc_scientist_1",
+				"npc_scientist_2": "textures/entity/npc/npc_scientist_2",
+				"npc_scientist_3": "textures/entity/npc/npc_scientist_3",
+				"npc_scientist_4": "textures/entity/npc/npc_scientist_4",
+				"npc_scientist_5": "textures/entity/npc/npc_scientist_5",
+				"npc_scientist_6": "textures/entity/npc/npc_scientist_6",
+				"npc_scientist_7": "textures/entity/npc/npc_scientist_7",
+				"npc_scientist_8": "textures/entity/npc/npc_scientist_8",
+				"npc_scientist_9": "textures/entity/npc/npc_scientist_9",
+				"npc_scientist_10": "textures/entity/npc/npc_scientist_10",
+				"npc_apiary_1": "textures/entity/npc/npc_apiary_1",
+				"npc_apiary_2": "textures/entity/npc/npc_apiary_2",
+				"npc_apiary_3": "textures/entity/npc/npc_apiary_3",
+				"npc_apiary_4": "textures/entity/npc/npc_apiary_4",
+				"npc_apiary_5": "textures/entity/npc/npc_apiary_5",
+				"npc_teacher_1": "textures/entity/npc/npc_teacher_1",
+				"npc_teacher_2": "textures/entity/npc/npc_teacher_2",
+				"npc_teacher_3": "textures/entity/npc/npc_teacher_3",
+				"npc_teacher_4": "textures/entity/npc/npc_teacher_4",
+				"npc_teacher_5": "textures/entity/npc/npc_teacher_5",
+				"npc_construction_1": "textures/entity/npc/npc_construction_1",
+				"npc_construction_2": "textures/entity/npc/npc_construction_2",
+				"npc_construction_3": "textures/entity/npc/npc_construction_3",
+				"npc_construction_4": "textures/entity/npc/npc_construction_4",
+				"npc_construction_5": "textures/entity/npc/npc_construction_5",
+				"npc_Agriculture_1": "textures/entity/npc/npc_Agriculture_1",
+				"npc_Agriculture_2": "textures/entity/npc/npc_Agriculture_2",
+				"npc_Agriculture_3": "textures/entity/npc/npc_Agriculture_3",
+				"npc_Agriculture_4": "textures/entity/npc/npc_Agriculture_4",
+				"npc_Agriculture_5": "textures/entity/npc/npc_Agriculture_5",
+				"npc_Agriculture_6": "textures/entity/npc/npc_Agriculture_6",
+				"npc_Agriculture_7": "textures/entity/npc/npc_Agriculture_7",
+				"npc_Agriculture_8": "textures/entity/npc/npc_Agriculture_8",
+				"npc_Agriculture_9": "textures/entity/npc/npc_Agriculture_9",
+				"npc_Agriculture_10": "textures/entity/npc/npc_Agriculture_10",
+				"npc_BusinessMobs_1": "textures/entity/npc/npc_BusinessMobs_1",
+				"npc_BusinessMobs_2": "textures/entity/npc/npc_BusinessMobs_2",
+				"npc_BusinessMobs_3": "textures/entity/npc/npc_BusinessMobs_3",
+				"npc_BusinessMobs_4": "textures/entity/npc/npc_BusinessMobs_4",
+				"npc_BusinessMobs_5": "textures/entity/npc/npc_BusinessMobs_5",
+				"npc_EverydayBusiness_1": "textures/entity/npc/npc_EverydayBusiness_1",
+				"npc_EverydayBusiness_2": "textures/entity/npc/npc_EverydayBusiness_2",
+				"npc_EverydayBusiness_3": "textures/entity/npc/npc_EverydayBusiness_3",
+				"npc_EverydayBusiness_4": "textures/entity/npc/npc_EverydayBusiness_4",
+				"npc_EverydayBusiness_5": "textures/entity/npc/npc_EverydayBusiness_5",
+				"npc_Kiosk_1": "textures/entity/npc/npc_Kiosk_1",
+				"npc_Kiosk_2": "textures/entity/npc/npc_Kiosk_2",
+				"npc_Kiosk_3": "textures/entity/npc/npc_Kiosk_3",
+				"npc_Kiosk_4": "textures/entity/npc/npc_Kiosk_4",
+				"npc_Kiosk_5": "textures/entity/npc/npc_Kiosk_5"
+			},
+			"geometry": {
+				"default": "geometry.humanoid.custom"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				]
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.humanoid.move",
+				"riding.arms": "animation.humanoid.riding.arms",
+				"riding.legs": "animation.humanoid.riding.legs",
+				"holding": "animation.humanoid.holding",
+				"brandish_spear": "animation.humanoid.brandish_spear",
+				"charging": "animation.humanoid.charging",
+				"attack.rotations": "animation.humanoid.attack.rotations",
+				"sneaking": "animation.humanoid.sneaking",
+				"bob": "animation.humanoid.bob",
+				"damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+				"bow_and_arrow": "animation.humanoid.bow_and_arrow",
+				"swimming": "animation.zombie.swimming",
+				"use_item_progress": "animation.humanoid.use_item_progress",
+				"skeleton_attack": "animation.skeleton.attack"
+			},
+			"animation_controllers": [
+				{
+					"look_at_target": "controller.animation.humanoid.look_at_target"
+				},
+				{
+					"move": "controller.animation.humanoid.move"
+				},
+				{
+					"riding": "controller.animation.humanoid.riding"
+				},
+				{
+					"holding": "controller.animation.humanoid.holding"
+				},
+				{
+					"brandish_spear": "controller.animation.humanoid.brandish_spear"
+				},
+				{
+					"charging": "controller.animation.humanoid.charging"
+				},
+				{
+					"attack": "controller.animation.humanoid.attack"
+				},
+				{
+					"sneaking": "controller.animation.humanoid.sneaking"
+				},
+				{
+					"bob": "controller.animation.humanoid.bob"
+				},
+				{
+					"damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs"
+				},
+				{
+					"bow_and_arrow": "controller.animation.humanoid.bow_and_arrow"
+				},
+				{
+					"swimming": "controller.animation.zombie.swimming"
+				},
+				{
+					"use_item_progress": "controller.animation.humanoid.use_item_progress"
+				},
+				{
+					"skeleton_attack": "controller.animation.skeleton.attack"
+				}
+			],
+			"render_controllers": [
+				"controller.render.npc"
+			],
+			"spawn_egg": {
+				"texture": "spawn_egg",
+				"texture_index": 35
+			},
+			"enable_attachables": true
+		}
+	}
+}
