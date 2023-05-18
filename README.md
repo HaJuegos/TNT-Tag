@@ -19,18 +19,18 @@
 
 ## ACREDITACION IMPORTANTE
 
-- Este mapa fue hecho por [Ha Juegos Cat! O HaCatto](https://discord.com/users/714622708649951272) con la ayuda de [LouisDoodles](https://discord.com/users/592841318351241248), [HYPПӨDΛПᄃΣЯ](https://discord.com/users/746156912243900426) y [NoSoyNorman](https://discord.com/users/1034638041513459853) en el tema de los mapas y la ayuda de [Astral](https://discord.com/users/983220765006635018) en la parte de texturas, modelos y particulas. Asi que por favor recuerda cada uno de nosotros le metimos esfuerzo y dedicacion a este add-on, para que lo tengas ahora mismo en tus manos y lo puedas usar a gusto. Si deseas crear modificaciones o contenido con este mismo, procura hacer minimamente mencion a las personas que trabajamos en esto con algun link para que nos conozcan mejor. ¡Gracias!
+- Este mapa fue hecho por [Ha Juegos Cat!](https://discord.com/users/714622708649951272) con la ayuda de [Convex!](https://discord.com/users/948057828495605820) en el tema de los scripts, [LouisDoodles](https://discord.com/users/592841318351241248), [HYPПӨDΛПᄃΣЯ](https://discord.com/users/746156912243900426) y [NoSoyNorman](https://discord.com/users/1034638041513459853) en el tema de los mapas y la ayuda de [Astral](https://discord.com/users/983220765006635018) en la parte de texturas, modelos y particulas. Asi que por favor recuerda cada uno de nosotros le metimos esfuerzo y dedicacion a este add-on, para que lo tengas ahora mismo en tus manos y lo puedas usar a gusto. Si deseas crear modificaciones o contenido con este mismo, procura hacer minimamente mencion a las personas que trabajamos en esto con algun link para que nos conozcan mejor. ¡Gracias!
 - Si tienes mas dudas al respecto o quieres buscar algo mas, entra al server de Discord de Add-ons de HaJuegosCat para mas informacion: https://discord.gg/WH9KpNWXUz
 
 ## DESCARGAS RAPIDAS
 
 ### Advertencia: Los links acontinuacion estan acortados y puede haber publicidad algo pasada, si algo, solo ve al grano y no entres a cualquier cosa malisiosa que encuentres, solo ve a los botones de descarga y saltate los anuncios.
 
-- [**CLICK AQUI PARA DESCARGAR TODO**]()
+- [**CLICK AQUI PARA DESCARGAR TODO**](https://link-center.net/561815/tnt-tag-download-all)
 
-- [**CLICK AQUI PARA DESCARGAR EL MAPA**]()
+- [**CLICK AQUI PARA DESCARGAR EL MAPA**](https://link-hub.net/561815/tnt-tag-download-map)
 
-- [**CLICK AQUI PARA DESCARGAR EL TEMPLATE DEL MAPA**]()
+- [**CLICK AQUI PARA DESCARGAR EL TEMPLATE DEL MAPA**](https://link-center.net/561815/tnt-tag-download-wt)
 
 ## GUIA DE USO
 
