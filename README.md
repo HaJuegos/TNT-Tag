@@ -44,24 +44,24 @@
   <tbody>
     <tr>
       <td align="center" valign="top">
-        <a href="https://twitter.com/Ha_Juegos_Cat"><img width="150" height="150" src="https://twitter.com/Ha_Juegos_Cat" alt="Creador del Add-on"><br />Ha Juegos Cat!</a>
+        <a href="https://twitter.com/Ha_Juegos_Cat"><img width="150" height="150" src="https://pbs.twimg.com/profile_images/1656260280186290176/TN9xuXV3_400x400.jpg" alt="Creador del Add-on"><br />Ha Juegos Cat!</a>
       </td>
       <td align="center" valign="top">
-        <a href="https://twitter.com/LouisDoodles_"><img width="150" height="150" src="https://twitter.com/LouisDoodles_/photo" alt="Idealista y Creador de uno de los Mapas"><br />LouisDoodles</a>
+        <a href="https://twitter.com/LouisDoodles_"><img width="150" height="150" src="https://pbs.twimg.com/profile_images/1650000035533258754/GFXf2qNd_400x400.jpg" alt="Idealista y Creador de uno de los Mapas"><br />LouisDoodles</a>
       </td>
       <td align="center" valign="top">
-        <a href="https://twitter.com/convex__"><img width="150" height="150" src="https://twitter.com/convex__/photo" alt="Creador de los Scripts del Add-on"><br />Convex</a>
+        <a href="https://twitter.com/convex__"><img width="150" height="150" src="https://pbs.twimg.com/profile_images/1531078315653619712/pDfojfOU_400x400.jpg" alt="Creador de los Scripts del Add-on"><br />Convex</a>
       </td>
      <td align="center" valign="top">
-        <a href="https://twitter.com/astral302"><img width="150" height="150" src="https://twitter.com/astral302/photo" alt="Creador de Modelos, texturas y Particulas del Add-on"><br />Astral</a>
+        <a href="https://twitter.com/astral302"><img width="150" height="150" src="https://pbs.twimg.com/profile_images/1485882072870887426/OAND34aM_400x400.jpg" alt="Creador de Modelos, texturas y Particulas del Add-on"><br />Astral</a>
       </td>
      </tr>
     <tr>
       <td align="center" valign="top">
-        <a href="https://twitter.com/HypnoDancerZR"><img width="150" height="150" src="https://twitter.com/HypnoDancerZR/photo" alt="Creador de uno de los Mapas"><br />HypnoDancer</a>
+        <a href="https://twitter.com/HypnoDancerZR"><img width="150" height="150" src="https://pbs.twimg.com/profile_images/1557914884779671554/yqIBHmKe_400x400.jpg" alt="Creador de uno de los Mapas"><br />HypnoDancer</a>
       </td>
       <td align="center" valign="top">
-        <a href="https://twitter.com/NotNormanlium"><img width="150" height="150" src="https://twitter.com/NotNormanlium/photo" alt="Creador de uno de los Mapas"><br />NormanliumZz</a>
+        <a href="https://twitter.com/NotNormanlium"><img width="150" height="150" src="https://pbs.twimg.com/profile_images/1642129484399927297/gtB10YFv_400x400.jpg" alt="Creador de uno de los Mapas"><br />NormanliumZz</a>
       </td>
      </tr>
   </tbody>
