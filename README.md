@@ -24,7 +24,7 @@
 
 - [**CLICK HERE TO DOWNLOAD THE MAP**](https://ko-fi.com/s/55e9a860ad)
 
-## MINIGUIA DE USO
+## MINI-USER GUIDE
 
 - **This world was created in MC version 1.20.70/1/2/3. Any version lower or higher in the future may not work properly.**
 - **This map uses scripts, so it is not supported by Aternos.**
@@ -35,6 +35,6 @@
 
 - **In this tutorial, you will learn how to solve this problem (ESP Only) :** https://raw.githubusercontent.com/HaJuegos/TNT-Tag/main/.github/exmple.png
 
-## COMO PONER ADD-ONS EN SERVIDORES
+## HOW TO SET ADD-ONS ON SERVERS
 
 - **In this tutorial I will show you how to put an add-on, manually, on a dedicated server (ESP Only) :** https://github.com/HaJuegos/The-Games-Store/tree/main/Betas/como%20instalar%20un%20add-on%20en%20servers
