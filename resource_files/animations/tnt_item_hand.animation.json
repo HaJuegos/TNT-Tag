@@ -1,0 +1,68 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.tnt_item_hand.1st_person": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": [12.7, 0, 0],
+					"position": [0, 12.6, 13.4],
+					"scale": 0.75
+				}
+			}
+		},
+		"animation.tnt_item_hand.3st_person": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": [-7.5, 0, 0],
+					"position": [0, 4, -7.3],
+					"scale": 0.6
+				}
+			}
+		},
+		"animation.tnt_item_hand.3st_person_shift": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": [-7.5, 0, 0],
+					"position": [0, 2, -5.3],
+					"scale": 0.6
+				}
+			}
+		},
+		"animation.player.tnt_item_3st_person": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-37.5, 0, -1]
+				},
+				"leftArm": {
+					"rotation": [-37.5, 0, -1]
+				}
+			}
+		},
+		"animation.tnt_hand.projectile": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": ["variable.shake_power - query.target_x_rotation", "-query.target_y_rotation", 0]
+				}
+			}
+		},
+		"animation.tnt_item_hand.bob": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": [
+						"!c.is_first_person ? 0 + (math.sin(q.life_time * 90.0 * 3.5) * 0.1 - math.sin(q.life_time * 90.0) * -2.0) : 0",
+						0,
+						"c.is_first_person ? 0 + (math.sin(q.life_time * 90.0 * 3.5) * 0.1 - math.sin(q.life_time * 90.0) * -2.0) : 0"
+					]
+				}
+			}
+		}
+	}
+}

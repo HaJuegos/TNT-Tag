@@ -1,0 +1,78 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"hud_title_text/subtitle_frame/subtitle": {
+		"modifications": [
+			{
+				"array_name": "bindings",
+				"operation": "insert_back",
+				"value": {
+					"binding_type": "view",
+					"source_property_name": "(not (#text = 'music1' or #text = 'music2' or #text = 'music3' or #text = 'music4' or #text = 'music5' or #text = 'music6' or #text = 'music7'))",
+					"target_property_name": "#visible"
+				}
+			}
+		]
+	},
+	
+	"root_panel": {
+		"modifications": [
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"play1@custom_animations.playing_music1_factory": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"play2@custom_animations.playing_music2_factory": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"play3@custom_animations.playing_music3_factory": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"play4@custom_animations.playing_music4_factory": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"play5@custom_animations.playing_music5_factory": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"play6@custom_animations.playing_music6_factory": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"play7@custom_animations.playing_music7_factory": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"credits@custom_animations.credits": {}
+				}
+			}
+		]
+	}
+}

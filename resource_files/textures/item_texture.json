@@ -1,0 +1,43 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"tnt_icon": {
+			"textures": "textures/items/tnt_icon"
+		},
+		"coin_item": {
+			"textures": "textures/items/coin_item"
+		},
+		"spawn_generator": {
+			"textures": "textures/items/spawn_generator"
+		},
+		"wing_item": {
+			"textures": "textures/items/wing_item"
+		},
+		"roll_players": {
+			"textures": "textures/items/roll_players"
+		},
+		"tnt_bomb": {
+			"textures": "textures/items/tnt_bomb"
+		},
+		"add_clock": {
+			"textures": "textures/items/add_clock"
+		},
+		"slowness": {
+			"textures": "textures/items/slowness"
+		},
+		"rolling_players": {
+			"textures": "textures/items/rolling_players"
+		},
+		"net_gun": {
+			"textures": "textures/items/net_gun"
+		},
+		"calculator": {
+			"textures": "textures/items/calculator"
+		}
+	}
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

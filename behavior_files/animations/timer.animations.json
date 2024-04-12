@@ -1,0 +1,90 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.timers.votation_timer": {
+			"animation_length": 22.1,
+			"timeline": {
+				"0.0": [
+					"/function timers/remove_votations"
+				],
+				"1.0": [
+					"/function timers/remove_votations"
+				],
+				"2.0": [
+					"/function timers/remove_votations"
+				],
+				"3.0": [
+					"/function timers/remove_votations"
+				],
+				"4.0": [
+					"/function timers/remove_votations"
+				],
+				"5.0": [
+					"/function timers/remove_votations"
+				],
+				"6.0": [
+					"/function timers/remove_votations"
+				],
+				"7.0": [
+					"/function timers/remove_votations"
+				],
+				"8.0": [
+					"/function timers/remove_votations"
+				],
+				"9.0": [
+					"/function timers/remove_votations"
+				],
+				"10.0": [
+					"/function timers/remove_votations"
+				],
+				"11.0": [
+					"/function timers/remove_votations"
+				],
+				"12.0": [
+					"/function timers/remove_votations"
+				],
+				"13.0": [
+					"/function timers/remove_votations"
+				],
+				"14.0": [
+					"/function timers/remove_votations"
+				],
+				"15.0": [
+					"/function timers/remove_votations"
+				],
+				"16.0": [
+					"/function timers/remove_votations"
+				],
+				"17.0": [
+					"/function timers/remove_votations"
+				],
+				"18.0": [
+					"/function timers/remove_votations"
+				],
+				"19.0": [
+					"/function timers/remove_votations"
+				],
+				"20.0": [
+					"/function timers/remove_votations"
+				],
+				"21.0": [
+					"/function timers/remove_votations"
+				],
+				"22.0": [
+					"/function timers/ending_votations"
+				]
+			}
+		},
+		"animation.timers.in_game_timer": {
+			"animation_length": 1.1,
+			"loop": true,
+			"timeline": {
+				"1.0": [
+					"/function timers/remove_ingame"
+				]
+			}
+		}
+	}
+}

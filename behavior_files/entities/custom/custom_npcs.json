@@ -1,0 +1,420 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ha:custom_npc",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"ha:eat_timer": {
+				"minecraft:timer": {
+					"time": [
+						30,
+						30
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "ha:eat_time",
+						"target": "self"
+					}
+				}
+			},
+			"ha:eat_1": {
+				"minecraft:equipment": {
+					"table": "loot_tables/npcs/eat_1.json"
+				},
+				"minecraft:behavior.eat_carried_item": {
+					"priority": 0,
+					"delay_before_eating": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						5,
+						5
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "ha:remove_eat",
+						"target": "self"
+					}
+				}
+			},
+			"ha:eat_2": {
+				"minecraft:equipment": {
+					"table": "loot_tables/npcs/eat_2.json"
+				},
+				"minecraft:behavior.eat_carried_item": {
+					"priority": 0,
+					"delay_before_eating": 0
+				},
+				"minecraft:timer": {
+					"time": [
+						5,
+						5
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "ha:remove_eat",
+						"target": "self"
+					}
+				}
+			},
+			"ha:nothing_skin": {
+				"minecraft:type_family": {
+					"family": [
+						"fake_player",
+						"npc",
+						"mob"
+					]
+				},
+				"minecraft:movement": {
+					"value": 0
+				},
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:physics": {
+					"has_gravity": false
+				},
+				"minecraft:collision_box": {
+					"width": 0.1,
+					"height": 0.1
+				}
+			},
+			"ha:royer": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true,
+					"can_pass_doors": true,
+					"can_open_doors": true,
+					"avoid_water": true
+				},
+				"minecraft:on_target_acquired": {
+					"event": "ha:melee_attack",
+					"target": "self"
+				},
+				"minecraft:on_target_escape": {
+					"event": "ha:return_home",
+					"target": "self"
+				}
+			},
+			"ha:tenier": {
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:movement.basic": {},
+				"minecraft:navigation.walk": {
+					"can_path_over_water": true,
+					"can_pass_doors": true,
+					"can_open_doors": true,
+					"avoid_water": true
+				},
+				"minecraft:on_target_acquired": {
+					"event": "ha:melee_attack",
+					"target": "self"
+				},
+				"minecraft:on_target_escape": {
+					"event": "ha:return_home",
+					"target": "self"
+				}
+			},
+			"ha:melee": {
+				"minecraft:behavior.melee_attack": {
+					"priority": 0,
+					"can_spread_on_fire": true,
+					"cooldown_time": 0.75,
+					"melee_fov": 360,
+					"reach_multiplier": 2.5,
+					"require_complete_path": true,
+					"speed_multiplier": 1.4,
+					"track_target": true
+				}
+			},
+			"ha:go_home": {
+				"minecraft:behavior.go_home": {
+					"priority": 0,
+					"goal_radius": 1,
+					"interval": 1,
+					"speed_multiplier": 1.35,
+					"on_home": {
+						"event": "ha:tp_home",
+						"target": "self"
+					},
+					"on_failed": {
+						"event": "ha:tp_home",
+						"target": "self"
+					}
+				}
+			},
+			"ha:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"fake_player",
+					"npc",
+					"mob"
+				]
+			},
+			"minecraft:health": {
+				"value": 100,
+				"min": 100,
+				"max": 100
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							}
+						},
+						"cause": "all",
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"operator": "!=",
+								"value": "player"
+							}
+						},
+						"cause": "all",
+						"deals_damage": true
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": false,
+				"always_show": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:movement": {
+				"value": 0.23
+			},
+			"minecraft:annotation.open_door": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:fire_immune": true,
+			"minecraft:behavior.look_at_player": {
+				"priority": 1,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 4
+			},
+			"minecraft:persistent": {},
+			"minecraft:home": {},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 2
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 3,
+				"must_see": false,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "inanimate"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"operator": "!=",
+									"value": "fake_player"
+								}
+							]
+						},
+						"max_dist": 300
+					}
+				]
+			},
+			"minecraft:follow_range": 100
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"ha:nothing_skin"
+					]
+				}
+			},
+			"ha:royer_skin": {
+				"add": {
+					"component_groups": [
+						"ha:royer",
+						"ha:eat_timer"
+					]
+				}
+			},
+			"ha:tenier_skin": {
+				"add": {
+					"component_groups": [
+						"ha:tenier",
+						"ha:eat_timer"
+					]
+				}
+			},
+			"ha:eat_time": {
+				"randomize": [
+					{
+						"weight": 1,
+						"remove": {
+							"component_groups": [
+								"ha:eat_timer"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"ha:eat_1"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"remove": {
+							"component_groups": [
+								"ha:eat_timer"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"ha:eat_2"
+							]
+						}
+					}
+				]
+			},
+			"ha:remove_eat": {
+				"queue_command": {
+					"command": [
+						"replaceitem entity @s slot.weapon.mainhand 0 air"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"ha:eat_1",
+						"ha:eat_2"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:eat_timer"
+					]
+				}
+			},
+			"ha:melee_attack": {
+				"queue_command": {
+					"command": [
+						"replaceitem entity @s slot.weapon.mainhand 0 diamond_sword"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:melee"
+					]
+				}
+			},
+			"ha:return_home": {
+				"remove": {
+					"component_groups": [
+						"ha:melee"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:go_home"
+					]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": [
+						"ha:despawn"
+					]
+				}
+			},
+			"ha:tp_home": {
+				"sequence": [
+					{
+						"remove": {
+							"component_groups": [
+								"ha:go_home"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 0
+						},
+						"queue_command": {
+							"command": [
+								"tp 2024 55.5 -1976"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 1
+						},
+						"queue_command": {
+							"command": [
+								"tp 2023 53 -1974"
+							]
+						}
+					},
+					{
+						"filters": {
+							"test": "is_variant",
+							"value": 2
+						},
+						"queue_command": {
+							"command": [
+								"tp 2026 53 -1977"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

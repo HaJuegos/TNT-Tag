@@ -1,0 +1,59 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.boost.wings": {
+			"animation_length": 2,
+			"loop": true,
+			"bones": {
+				"l": {
+					"rotation": [0, 0, "0 + (math.cos(q.life_time * 135) * -30)"]
+				},
+				"r": {
+					"rotation": [0, 0, "0 + (math.cos(q.life_time * 135) * 30)"]
+				}
+			},
+			"particle_effects": {
+				"1.1": {
+					"effect": "wing",
+					"locator": "particle_r"
+				}
+			}
+		},
+		"animation.boost.idle": {
+			"loop": true,
+			"bones": {
+				"base": {
+					"rotation": [0, "0 + (q.life_time * -105)", 0]
+				}
+			}
+		},
+		"animation.boost.idle_position": {
+			"loop": true,
+			"bones": {
+				"base": {
+					"position": [0, "0 + (math.sin(q.life_time * 90.0 * 3.5) * 0.1 - math.sin(q.life_time * 90.0) * -2.0)", 0]
+				}
+			}
+		},
+		"animation.boost.scale": {
+			"loop": true,
+			"bones": {
+				"base": {
+					"position": [0, 7.5, 0],
+					"scale": 1.5
+				}
+			}
+		},
+		"animation.boost.scale_gun": {
+			"loop": true,
+			"bones": {
+				"base": {
+					"position": [0, 14, 0],
+					"scale": 1.75
+				}
+			}
+		}
+	}
+}

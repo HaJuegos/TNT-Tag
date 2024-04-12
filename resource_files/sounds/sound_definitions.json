@@ -1,0 +1,245 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"ui.used_compass": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/compass_used",
+				"volume": 1.5
+			}
+		]
+	},
+	"ui.error_noplayers": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/waaooo"
+			}
+		]
+	},
+	"ui.error_blocked": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/blocked"
+			}
+		]
+	},
+	"ui.kaboom": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/tnt_explote",
+				"volume": 0.9
+			}
+		]
+	},
+	"player.gived_tnt": {
+		"category": "player",
+		"__use_legacy_max_distance": "true",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/conffetti"
+			}
+		]
+	},
+	"ui.winning_game": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/ganaste",
+				"volume": 0.9
+			}
+		]
+	},
+	"ui.used_coin": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/get_coin"
+			}
+		]
+	},
+	"record.pandora_palace": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/pandora_palace"
+			}
+		]
+	},
+	"record.asobu": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/asobu"
+			}
+		]
+	},
+	"player.bow_hit": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/ding",
+				"volume": 2.3
+			}
+		]
+	},
+	"record.core": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/core"
+			}
+		]
+	},
+	"record.eleventh_hour": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/eleventh_hour"
+			}
+		]
+	},
+	"record.panic": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/panic"
+			}
+		]
+	},
+	"record.cyber_world": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/cyber_world"
+			}
+		]
+	},
+	"record.smart_race": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/smart_race"
+			}
+		]
+	},
+	"ui.used_boost": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/use_boost"
+			}
+		]
+	},
+	"ui.used_clock": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/clock_activated"
+			}
+		]
+	},
+	"ui.rolling_players": {
+		"category" : "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/rolling"
+			}
+		]
+	},
+	"ui.netgun.shoot": {
+		"category" : "player",
+		"max_distance": 50,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/netgun/netshoot",
+				"volume": 1.5
+			}
+		]
+	},
+	"ui.netgun.hit": {
+		"category" : "player",
+		"max_distance": 50,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/netgun/nethit",
+				"volume": 4.0
+			}
+		]
+	},
+	"player.hitnet": {
+		"category" : "player",
+		"max_distance": 50,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/netgun/netoff",
+				"volume": 5.0
+			}
+		]
+	}
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

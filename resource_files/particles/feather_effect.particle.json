@@ -1,0 +1,57 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "astral:wing_particle",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/items/feather"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 13
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "math.random(1.5, 1.7)"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(-100, 100)",
+				"rotation_rate": "math.random(215, 420)"
+			},
+			"minecraft:particle_initial_speed": 1.5,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": ["math.random(-3, 5)", "math.random(-2, 2)", "math.random(-2, 5)"],
+				"linear_drag_coefficient": 1.2,
+				"rotation_acceleration": "math.random(-0.5, 2)",
+				"rotation_drag_coefficient": "math.random(-0.5, 2)"
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["0.07 + variable.particle_random_1 * 0.12", "0.07 + variable.particle_random_1 * 0.12"],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 12,
+					"texture_height": 24,
+					"flipbook": {
+						"base_UV": [0, 0],
+						"size_UV": [12, 12],
+						"step_UV": [0, 12],
+						"frames_per_second": 1,
+						"max_frame": 2,
+						"loop": true
+					}
+				}
+			},
+			"minecraft:particle_motion_collision": {
+				"collision_radius": 0.2
+			},
+			"minecraft:particle_appearance_lighting": {}
+		}
+	}
+}

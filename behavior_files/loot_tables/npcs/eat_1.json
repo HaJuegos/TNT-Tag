@@ -1,0 +1,51 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:cooked_porkchop",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:golden_carrot",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:appleenchanted",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:golden_apple",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:beetroot_soup",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:beetroot",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:cookie",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "minecraft:apple",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

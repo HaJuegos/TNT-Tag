@@ -1,0 +1,151 @@
+## Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz
+## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz
+
+## Manifest
+pack.name=§e[RP]§r §4T§7N§4T§r §cTag§r §7|§r De §cHaJuegosCat!§r y §bImLouis§r
+pack.description=Texturas requeridas para el mundo.
+
+
+## UI Messages
+multiplayer.player.joined=§s>> %s entro al TNT Tag.
+multiplayer.player.left=§s>> %s salio del TNT Tag.
+
+ui.votation_timer=§bLa votacion terminara en %1 segundos...
+ui.ingametimer=§l§4La TNT va a explotar en %1 segundos...
+ui.tnt_exploding=§c¡KABOOM!
+ui.tnt_exploding_sub=§0La TNT te ha explotado.
+scoreboard.nameAllPlayers=§e§lLista de Jugadores:
+score.namePlayerTnt=§cJugadores con TNT
+score.namePlayerLive=§aJugadores sin TNT
+ui.wininng=§a¡GANADOR!
+ui.wininng_sub=%1 ha sobrevivido.
+scoreboard.nameWinningTotal=§eTop de ganadores
+ui.drawparty=§7¿Empate?
+ui.drawparty_sub=Nadie ha ganado esta partida al parecer...
+ui.title_music1= §e§lEstas Escuchando
+ui.subtitle_music1=Majotori OST: Asobu. De: Majorariatto 
+ui.subtitle_music2=Deltarune Chapter 2 OST: Pandora Palace. De: TobyFox 
+ui.subtitle_music3=Undertale OST: Core. De: TobyFox
+ui.subtitle_music4=OneShot OST: Panic. De: Nightmargin
+ui.subtitle_music5=OneShot OST: Eleventh Hour. De: Nightmargin
+ui.subtitle_music6=DELTARUNE CH2 OST: A CYBER'S WORLD. De: TobyFox
+ui.subtitle_music7=DELTARUNE CH2 OST: Smart Race. De: TobyFox
+scoreboard.voteTotal=§dTotal de Votos:
+score.map1=Mapa #1
+score.map2=Mapa #2
+score.map3=Mapa #3
+score.map4=Mapa #4
+score.map5=Mapa #5
+score.map6=Mapa #6
+score.map7=Mapa #7
+score.random=Mapa Aleatorio
+
+
+sign_message_village=Fin del camino.
+sign_text.click_start=§b§lDame click para comenzar a jugar :3§r
+ui.sign.yei=§e¡Ganaste! Felicidades
+
+ui.votation_time=¡Hora de votar!
+ui.votation_choose=§bElije el mapa que quieras jugar
+ui.button_vote1=§6§lCastillo | De PatoMcFly
+ui.button_vote2=§2§lVilla | De ImLouis
+ui.button_vote3=§3§lGranja
+ui.button_vote4=§e§lZona de Guerra
+ui.button_vote5=§g§lDesierto Plano
+ui.button_vote6=§q§lEscondidas
+ui.button_vote7=§5§lCuevas | De TenierWiz
+ui.button_random=§i§lMapa Aleatorio
+
+ui.credits=§lCreditos :3
+ui.credits.dev=§lDesarrollador del Add-on:
+ui.credits.name_dev=§c Ha Juegos
+ui.credits.art=§lArte, Modelos y Particulas:
+ui.credits.art_name=§e Astral302
+ui.credits.idea=§lIdea original de:
+ui.credits.idea_name=§b ImLouis
+
+
+## Chat Messages
+chat.error_noplayers=§c>> No hay suficientes jugadores. Invita a tus amigos.
+chat.gameStarted=§b>> La partida iniciará con %1 de jugadores. La votación empieza.
+chat.voted1=§7>> Has votado por el Mapa #1.
+chat.voted2=§7>> Has votado por el Mapa #2.
+chat.voted3=§7>> Has votado por el Mapa #3.
+chat.voted4=§7>> Has votado por el Mapa #4.
+chat.voted5=§7>> Has votado por el Mapa #5.
+chat.voted6=§7>> Has votado por el Mapa #6.
+chat.voted7=§7>> Has votado por el Mapa #7.
+chat.random=§7>> Has votado por un Mapa Aleatorio.
+chat.error_voted=§c>> Ya has votado anteriormente.
+chat.mapWinnning=§e§l>> El mapa ganador fue el #%1 (%2 votos totales). La partida iniciará pronto...
+chat.map_equals=§e§l>> ¡Hubo un empate! Se elegirá un mapa aleatorio. El mapa elegido es: Mapa #%1.
+chat.gived_tnt=§e>> %1 ahora tiene la TNT.
+chat.error_no_players_ingame=§l§4>> No hay jugadores suficientes para iniciar.
+chat.dead_player=§4§l>> ¡Has muerto! Puedes usar los comandos: "!tphunter" para teletransportarte a la persona que tiene la TNT o usar "!tpplayer" para ir con el jugador vivo.
+chat.alert_dead_player=§c§l>> %1 fue eliminado. La TNT sera entregada a jugadores aleatorios.
+chat.compass_activated=§e§l>> ¡Todos los jugadores ahora brillan a travez de bloques durante 1 minuto!
+chat.compass_deactivated=§e§l>> El efecto de brillo ha terminado.
+chat.no_coin_activate=§7>> No puedes activar esto con una TNT.
+chat.coin_cooldown=§7>> Aun no puedes usar este item.
+chat.activate_coin=§e>> Activaste la moneda, eres inmune a la TNT durante 10 segundos.
+chat.removed_coin=§7>> El efecto de la moneda ha terminado.
+chat.debuff_blidness=§8>> El efecto de ceguera fue activado, los jugadores con la TNT tendran este efecto.
+chat.cooldown_debuff=§7>> Aun no puedes activar este efecto.
+chat.debuff_blindness=§7>> El jugador con TNT ha sido cegado temporalmente.
+chat.debuff_blindness_tnt=§7>> Un jugador con la TNT ha activado la ceguera a los Jugadores.
+chat.return_game=§7>> Tu anterior partida ha terminado, fuiste movido a la actual.
+chat.return_ingame=§7>> Hay una partida en progreso, fuiste teletrasportado a dicha partida actual.
+chat.endgame_return=§7>> Tu anterior partida ha terminado, fuiste llevado al lobby.
+chat.ingame_return=§7>> Hay una partida en progreso, fuiste teletransportado a la partida como modo espectador.
+chat.error_nohittnt=§7>> Has fallado el tiro...
+chat.notnt_item=§7>> Necesitas tener la TNT para activar este item.
+chat.timerreset=§7>> El tiempo de explosion de la TNT fue reiniciado.
+chat.debuff_slowness=§7>> Los jugadores con la TNT fueron detenidos por un breve momento.
+chat.debuff_slowness_tnt=§7>> Los jugadores fueron detenidos por un breve momento.
+chat.rolling_players=§7>> Todos los Jugadores intercambiaron de lugar.
+chat.banned=§4>> Has baneado a %1.
+chat.unbanned=§4>> Has desbaneado a %1.
+chat.muted=§7>> Se ha silenciado a %1.
+chat.unmuted=§7>> Se le ha removido el silencio a %1.
+chat.muted_player=§4>> ¡Estas silenciado! No puedes usar el chat.
+chat.emmm_looped=§h>> Al parecer %1 y %2 no se deciden por quien tener la TNT que entraron en un limbo sin fin, que desafortunado.
+chat.yep_voting=§7>> Ya has votado antes.
+chat.start_voting=§e>> ¡La votación ha iniciado! Usa el ítem de calculadora de tu inventario con tu botón de interacción para abrir el panel de votación.
+chat.random_map_win=§n§l>> ¡Un mapa aleatorio sera elejido! El Mapa #%1. La partida iniciará pronto...
+chat.winning_player=§e§l>> ¡%1 ha ganado esta ronda!
+
+
+## Items Names
+item.ha:super_compass=§aActivar Glowing§r
+item.ha:super_compass.name=§aActivar Glowing§r
+
+item.ha:tnt_helmet=§cTNT§r
+item.ha:tnt_helmet.name=§cTNT§r
+
+item.ha:coin_item=§eMoneda§r
+item.ha:coin_item.name=§eMoneda§r
+
+item.ha:wing_item=Ala
+item.ha:wing_item.name=Ala
+
+item.ha:tnt_item_hand=Lanzar la §cTNT§r
+item.ha:tnt_item_hand.name=Lanzar la §cTNT§r
+
+item.ha:rolling_players=Intercambiar Lugares
+item.ha:rolling_players.name=Intercambiar Lugares
+
+item.ha:net_gun=Arma de Red
+item.ha:net_gun.name=Arma de Red
+
+item.ha:calculator=Votar por un Mapa
+item.ha:calculator.name=Votar por un Mapa
+
+
+## Entities
+entity.ha:coin.name=Contador de Votaciones
+entity.ha:sensor.name=Setup Entity
+entity.ha:generator_entity.name=Generador de Buffs
+
+
+## Spawn Eggs
+item.spawn_egg.entity.ha:generator_entity.name=Generador de Boosts

@@ -1,0 +1,55 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.net_gun.1st_person": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": [0, 90, -5],
+					"position": [1.5, 18.6, 8]
+				}
+			}
+		},
+		"animation.net_gun.3st_person": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": [0, -90, 0],
+					"position": [-3.3, 13.8, -9.4],
+					"scale": 1.45
+				}
+			}
+		},
+		"animation.net_gun.3st_person_sneaking": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"rotation": [0, -90, 0],
+					"position": [-3.3, 9.8, -8.3],
+					"scale": 1.45
+				}
+			}
+		},
+		"animation.player.net_gun": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-48.65802, 13.31791, 11.45696]
+				},
+				"rightArm": {
+					"rotation": [-49.01916, -11.43563, -9.77243]
+				}
+			}
+		},
+		"animation.net_entity.proyectile": {
+			"loop": true,
+			"bones": {
+				"center": {
+					"scale": 0.8
+				}
+			}
+		}
+	}
+}

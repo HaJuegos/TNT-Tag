@@ -1,0 +1,31 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ha:tnt_helmet",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:stacked_by_data": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:armor": {
+				"protection": 0
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.head",
+				"dispensable": true
+			},
+			"minecraft:should_despawn": false,
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.helmet"
+			},
+			"minecraft:icon": {
+				"texture": "tnt_icon"
+			},
+			"minecraft:render_offsets": "helmets"
+		}
+	}
+}
