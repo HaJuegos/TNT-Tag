@@ -5,7 +5,7 @@
  <p align="center"> A mini-game where you must NOT have the TNT before it explodes, can you win?</p></p>
 
 <p align="center">
-  <a href="https://mcpedl.com/tnt-tag-v2-mansion-and-mini-island/"><img src="https://raw.githubusercontent.com/HaJuegos/TNT-Tag/main/.github/mcpedl_logo.png?style=plastic&color=red&logo=mcpedl_logo&label=MCPEDL%20Map" alt="Mcpedl Map Link"/></a>
+  <a href="https://mcpedl.com/tnt-tag-v2-mansion-and-mini-island"><img src="https://img.shields.io/badge/MCPEDL%20Map-0cb500?url=https://mcpedl.com/tnt-tag-v2-mansion-and-mini-island?style=plastic" alt="Mcpedl Map Link"/></a>
   <a href="https://discord.gg/WH9KpNWXUz"><img src="https://img.shields.io/discord/782053401281429504?style=plastic&color=red&logo=discord&label=The%20Games%20Store%20Server" alt="Discord"/></a>
   <a href="https://ko-fi.com/hajuegos0710"><img src="https://img.shields.io/npm/v/express?url=https://ko-fi.com/hajuegos0710&style=plastic&logo=kofi&label=Donations%20or%20Commissions%20in%20Ko-fi&color=inactive" alt="Ko-Fi"/></a>
   <a href="https://github.com/HaJuegos/TNT-Tag"><img src="https://img.shields.io/github/stars/HaJuegos/TNT-Tag?label=GitHub%20Stars&style=plastic&logo=github&color=blueviolet" alt="GitHub Stars"/></a>
