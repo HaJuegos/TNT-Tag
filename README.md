@@ -18,11 +18,11 @@
 ## DOWNLOAD LINKS
 ### Nota: These links are linked to Ko-Fi, you may require an account on that site. These files are not and will not be paid, everything is optional and free for anyone who wants to enjoy it.
 
-- [**CLICK HERE TO DOWNLOAD ALL**]()
+- [**CLICK HERE TO DOWNLOAD ALL**](https://ko-fi.com/s/cd528ef836)
 
-- [**CLICK HERE TO DOWNLOAD THE TEMPLATE**]()
+- [**CLICK HERE TO DOWNLOAD THE TEMPLATE**](https://ko-fi.com/s/da00a476a1)
 
-- [**CLICK HERE TO DOWNLOAD THE MAP**]()
+- [**CLICK HERE TO DOWNLOAD THE MAP**](https://ko-fi.com/s/55e9a860ad)
 
 ## MINIGUIA DE USO
 
