@@ -18,11 +18,11 @@
 ## DOWNLOAD LINKS
 ### Nota: These links are linked to Ko-Fi, you may require an account on that site. These files are not and will not be paid, everything is optional and free for anyone who wants to enjoy it.
 
-- [**CLICK HERE TO DOWNLOAD ALL**](https://ko-fi.com/s/cd528ef836)
+- [**CLICK HERE TO DOWNLOAD ALL**](https://www.mediafire.com/file/k5keh2nl3tkn5s5/allfiles.mcaddon/file)
 
-- [**CLICK HERE TO DOWNLOAD THE TEMPLATE**](https://ko-fi.com/s/da00a476a1)
+- [**CLICK HERE TO DOWNLOAD THE TEMPLATE**](https://www.mediafire.com/file/ig5y8aw5xcpn2zp/template.mctemplate/file)
 
-- [**CLICK HERE TO DOWNLOAD THE MAP**](https://ko-fi.com/s/55e9a860ad)
+- [**CLICK HERE TO DOWNLOAD THE MAP**](https://www.mediafire.com/file/agnm6q90tfy9n7y/world.mcworld/file)
 
 ## MINI-USER GUIDE
 
