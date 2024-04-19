@@ -24,3 +24,5 @@ tag @a remove map4
 tag @a remove map5
 tag @a remove map6
 tag @a remove map7
+
+scoreboard players reset * totalVotes

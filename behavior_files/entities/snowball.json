@@ -46,6 +46,17 @@
 				},
 				"minecraft:variant": {
 					"value": 2
+				},
+				"minecraft:timer": {
+					"time": [
+						5,
+						5
+					],
+					"looping": true,
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
 				}
 			},
 			"ha:tnt": {

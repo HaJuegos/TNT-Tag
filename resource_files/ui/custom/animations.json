@@ -75,14 +75,14 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "center",
-					"anchor_to": "center",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ 362, -225.5 ]
+					"offset": [ -49, 9.8 ]
 				}
 			},
 			{
@@ -92,7 +92,7 @@
 					"anchor_to": "top_right",
 					"text": "ui.subtitle_music1",
 					"font_scale_factor": 0.6,
-					"offset": [ -19, 21.5	],
+					"offset": [ -19, 21.5 ],
 					"font_size": "normal",
 					"localize": true,
 					"text_alignment": "left",
@@ -141,14 +141,14 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "center",
-					"anchor_to": "center",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ 320, -226 ]
+					"offset": [ -49, 9.8 ]
 				}
 			},
 			{
@@ -207,14 +207,14 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "center",
-					"anchor_to": "center",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ 385, -226 ]
+					"offset": [ -49, 9.8 ]
 				}
 			},
 			{
@@ -273,14 +273,14 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "center",
-					"anchor_to": "center",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ 382, -226 ]
+					"offset": [ -49, 9.8 ]
 				}
 			},
 			{
@@ -339,14 +339,14 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "center",
-					"anchor_to": "center",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ 355, -226 ]
+					"offset": [ -49, 9.8 ]
 				}
 			},
 			{
@@ -405,14 +405,14 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "center",
-					"anchor_to": "center",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ 334, -226 ]
+					"offset": [ -49, 9.8 ]
 				}
 			},
 			{
@@ -471,14 +471,14 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "center",
-					"anchor_to": "center",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ 350, -226 ]
+					"offset": [ -49, 9.8 ]
 				}
 			},
 			{

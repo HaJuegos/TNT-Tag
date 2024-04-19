@@ -104,21 +104,21 @@ mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 			} break;
 			case 'ha:game_ending': {
 				returnNametags();
-				stopMusic(false);
+				stopCustomMusic(false);
 				gameEnd();
 			} break;
 			case 'ha:game_ending_draw': {
 				returnNametags();
-				stopMusic(false);
+				stopCustomMusic(false);
 				gameEndDraw();
 			} break;
 		};
 	} catch {};
 });
 
-export function stopMusic(singlePlayer) {
+export function stopCustomMusic(singlePlayer) {
 	if (singlePlayer) {
-		player.stopMusic();
+		singlePlayer.stopMusic();
 	} else {
 		for (const player of mc.world.getAllPlayers()) {
 			player.stopMusic();

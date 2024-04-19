@@ -537,6 +537,8 @@ function checkLastConnection(player) {
 		} else if (player.hasTag("tntPlayer") || player.hasTag("player")) {
 			player.runCommand(`function system/player_return_lobby`)
 			loops.startMusicLobby(player);
+		} else {
+			loops.startMusicLobby(player);
 		};
 	};
 };

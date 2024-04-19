@@ -5,10 +5,6 @@ import * as mc from "@minecraft/server";
 import * as variables from './variables.js';
 import * as ui from "@minecraft/server-ui";
 
-export let votationTime = false;
-let voteActivated = false;
-let votes = [ 0, 0, 0, 0, 0, 0, 0, 0 ];
-let map = 0;
 const votationUi = new ui.ActionFormData()
     .title({translate: "ui.votation_time"})
     .body({translate: "ui.votation_choose"})
@@ -20,6 +16,18 @@ const votationUi = new ui.ActionFormData()
     .button({translate: "ui.button_vote5"}, "textures/ui/custom_icon/map5")
     .button({translate: "ui.button_vote6"}, "textures/ui/custom_icon/map6")
     .button({translate: "ui.button_vote7"}, "textures/ui/custom_icon/map7");
+
+export let votationTime = false;
+let voteActivated = false;
+
+let randomVote = 0;
+let vote1 = 0;
+let vote2 = 0;
+let vote3 = 0;
+let vote4 = 0;
+let vote5 = 0;
+let vote6 = 0;
+let vote7 = 0;
 
 mc.system.runInterval(checkAllVotations => {
 	try {
@@ -87,47 +95,47 @@ mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 
 function showUiVotations(votationUi, player) {
 	votationUi.show(player).then(response => {
-		if (response.canceled) return;
+		if (response.canceled || player.hasTag("voted")) return;
 		let messageChat;
 		switch (response.selection) {
 			case 0: {
 				messageChat = {translate: "chat.random"};
-				votes[0] += 1;
+				randomVote += 1;
 				addScoreVote(player, 0);
 			} break;
 			case 1: {
 				messageChat = {translate: "chat.voted1"};
-				votes[1] += 1;
+				vote1 += 1;
 				addScoreVote(player, 1);
 			} break;
 			case 2: {
 				messageChat = {translate: "chat.voted2"};
-				votes[2] += 1;
+				vote2 += 1;
 				addScoreVote(player, 2);
 			} break;
 			case 3: {
 				messageChat = {translate: "chat.voted3"};
-				votes[3] += 1;
+				vote3 += 1;
 				addScoreVote(player, 3);
 			} break;
 			case 4: {
 				messageChat = {translate: "chat.voted4"};
-				votes[4] += 1;
+				vote4 += 1;
 				addScoreVote(player, 4);
 			} break;
 			case 5: {
 				messageChat = {translate: "chat.voted5"};
-				votes[5] += 1;
+				vote5 += 1;
 				addScoreVote(player, 5);
 			} break;
 			case 6: {
 				messageChat = {translate: "chat.voted6"};
-				votes[6] += 1;
+				vote6 += 1;
 				addScoreVote(player, 6);
 			} break;
 			case 7: {
 				messageChat = {translate: "chat.voted7"};
-				votes[7] += 1;
+				vote7 += 1;
 				addScoreVote(player, 7);
 			} break;
 		};
@@ -191,31 +199,21 @@ function selectPlayersTnt(over) {
 function gameStarted() {
 	let over = mc.world.getDimension('overworld');
 	let message;
-	let winningOptions = [];
-	let maxVotes = 0;
-	for (let i = 0; i < votes.length; i++) {
-		const nowVote = votes[i];
-		if (nowVote > maxVotes) {
-			maxVotes = nowVote;
-			winningOptions = [i + 1];
-		} else if (nowVote == maxVotes) {
-			winningOptions.push(i + 1);
-		};
-	};
-	let map = [];
-    if (winningOptions.length == 1) {
-        map = winningOptions;
-		if (map == 1) {
-			let randomMap = Math.floor(Math.random() * 7) + 1;
-			map = [];
-			map.push(randomMap);
-			message = {translate: "chat.random_map_win", with: {rawtext: [{text: `${map}`}]}};
-		} else {
-			message = {translate: "chat.mapWinnning", with: {rawtext: [{text: `${map}`}, {text: `${maxVotes}`}]}};	
-		};
+	let map = 0;
+    let votes = [randomVote, vote1, vote2, vote3, vote4, vote5, vote6, vote7];
+    let maxVote = Math.max(...votes);
+    let maxIndices = votes.reduce((acc, vote, index) => {
+        if (vote == maxVote) acc.push(index);
+        return acc;
+    }, []);
+    if (randomVote >= maxVote) {
+        map = Math.floor(Math.random() * 7) + 1;
+        message = {translate: "chat.random_map_win", with: {rawtext:[{text: `${map}`}]}};
+    } else if (maxIndices.length == 1) {
+        map = maxIndices[0];
+        message = {translate: "chat.mapWinnning", with: {rawtext:[{text: `${map}`}, {text: `${maxVote}`}]}};
     } else {
-		let randomMap = Math.floor(Math.random() * 7) + 1;
-        map.push(randomMap);
+        map = maxIndices[Math.floor(Math.random() * maxIndices.length)];
         message = {translate: "chat.map_equals", with: {rawtext: [{text: `${map}`}]}};
     };
 	voteActivated = false;
@@ -256,7 +254,7 @@ function gameStarted() {
 						player.triggerEvent("ha:receive_tnt");
 					};
 					let totalSpawnZones;
-					switch (map[0]) {
+					switch (map) {
 						case 1: {
 							totalSpawnZones = variables.spawnZonesMap1;
 						} break;
@@ -293,14 +291,14 @@ function gameStarted() {
 					entity.runCommand(`scoreboard objectives setdisplay sidebar totalAllPlayers descending`);
 					entity.runCommand(`scriptevent ha:game_started`);
 				};
-				votes[0] = 0;
-				votes[1] = 0;
-				votes[2] = 0;
-				votes[3] = 0;
-				votes[4] = 0;
-				votes[5] = 0;
-				votes[6] = 0;
-				map = 0;
+				randomVote = 0;
+				vote1 = 0;
+				vote2 = 0;
+				vote3 = 0;
+				vote4 = 0;
+				vote5 = 0;
+				vote6 = 0;
+				vote7 = 0;
 				votationTime = false;
 			}, 100);
 		};
