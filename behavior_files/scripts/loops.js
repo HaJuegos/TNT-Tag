@@ -7,6 +7,22 @@ export let gameStart = false;
 
 export let dataPlayers = {};
 
+mc.system.runInterval(checkDamage => {
+	try {
+		for (let player of mc.world.getAllPlayers()) {
+			if (player.hasTag("player") && !player.hasTag("coinCooldown")) {
+				player.triggerEvent("ha:player_damage");
+			} else if (player.hasTag("player") && player.hasTag("coinCooldown")) {
+				player.triggerEvent("ha:coin_damage");
+			} else if (player.hasTag("tntPlayer")) {
+				player.triggerEvent("ha:tnt_damage");
+			} else {
+				player.triggerEvent("ha:return_normal_damage");
+			};
+		};
+	} catch {};
+}, 20);
+
 mc.system.runInterval(loobyTp => {
 	try {
 		if (gameStart) return;
@@ -165,14 +181,18 @@ export function startMusicLobby(singlePlayer) {
 };
 
 export function hideNametags() {
-	for (const player of mc.world.getAllPlayers()) {
-		player.nametag = "";
+	for (let player of mc.world.getAllPlayers()) {
+		if (player) {
+			player.nameTag = "§r";
+		};
 	};
 };
 
 export function returnNametags() {
-	for (const player of mc.world.getAllPlayers()) {
-		player.nametag = `${player.name}`;
+	for (let player of mc.world.getAllPlayers()) {
+		if (player) {
+			player.nameTag = `${player.name}`;
+		};
 	};
 };
 
@@ -185,9 +205,7 @@ function gameEnd() {
 			gameStart = false;
 			dime.runCommand(`function system/return_lobby`);
 			startMusicLobby(false);
-			for (const player of mc.world.getAllPlayers()) {
-				player.nametag = `${player.name}`;
-			};
+			returnNametags();
 		}, 120);
 	};
 };

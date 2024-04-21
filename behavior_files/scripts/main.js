@@ -304,6 +304,17 @@ mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 				let recoveryItem = new mc.ItemStack("minecraft:elytra");
 				newItem.lockMode = mc.ItemLockMode.slot;
 				let message;
+				if (entity.hasTag("cooldownBuff")) {
+					let inv = entity.getComponent("minecraft:inventory").container;
+					let item1 = new mc.ItemStack("ha:coin_item");
+					item1.lockMode = mc.ItemLockMode.inventory;
+					item1.setLore(["§bEste item te protege de la TNT.", "", "§bThis item protects you from TNT."]);
+					message = { translate: "chat.cooldown_debuff" };
+					entity.playSound("ui.error_blocked");
+					entity.sendMessage(message);
+					inv.addItem(item1);
+					return;
+				};
 				if (entity.hasTag("tntPlayer")) {
 					message = {translate: "chat.no_coin_activate"};
 					entity.sendMessage(message);
@@ -335,10 +346,11 @@ mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 						entity.removeTag("cooldownBuff");
 						entity.runCommand(`clear @s netherite_chestplate`);
 						entity.triggerEvent("ha:return_normal_damage");
+						setCooldownItem(entity);
 						if (inGlow) {
 							entity.nameTag = `${entity.name}`;	
 						} else {
-							entity.nameTag = "";
+							entity.nameTag = "§r";
 						};
 					}, 160);
 				};
@@ -687,6 +699,14 @@ function checkVariant(player, sensor) {
 
 function setCooldownBoost(player, sensor) {
 	sensor.triggerEvent("ha:interact_despawn");
+	player.addTag("cooldownBuff");
+	player.playSound("ui.used_boost");
+	mc.system.runTimeout(() => {
+		player.removeTag("cooldownBuff");
+	}, 240);	
+};
+
+function setCooldownItem(player) {
 	player.addTag("cooldownBuff");
 	player.playSound("ui.used_boost");
 	mc.system.runTimeout(() => {

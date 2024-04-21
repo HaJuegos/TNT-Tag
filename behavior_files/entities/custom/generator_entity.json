@@ -10,6 +10,9 @@
 			"is_experimental": false
 		},
 		"component_groups": {
+			"remove_entity": {
+				"minecraft:instant_despawn": {}
+			},
 			"ha:timer": {
 				"minecraft:timer": {
 					"randomInterval": true,
@@ -143,6 +146,13 @@
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
+			"ha:remove_entity": {
+				"add": {
+					"component_groups": [
+						"remove_entity"
+					]
+				}
+			},
 			"minecraft:entity_spawned": {
 				"add": {
 					"component_groups": [

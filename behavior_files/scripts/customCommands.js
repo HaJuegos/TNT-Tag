@@ -159,41 +159,21 @@ function addScoreVote(player, num) {
     });
 };
 
-function reselectPlayersTnt(over, totalPlayers) {
-    let allPlayers = over.getEntities({ type: 'minecraft:player', excludeTags: ['spect'] });
-    let totalTntPlayers = totalPlayers;
-    const selectedPlayers = [];
-    while (selectedPlayers.length < totalTntPlayers) {
-        const randomIndex = Math.floor(Math.random() * allPlayers.length);
-        const selectedPlayer = allPlayers[randomIndex];
-        if (!selectedPlayers.includes(selectedPlayer)) {
-            selectedPlayers.push(selectedPlayer);
-        };
+function getTntPlayer(over) {
+    let players = mc.world.getAllPlayers();
+    let totalPlayersNeeded;
+    if (players.length >= 2 && players.length <= 3) {
+        totalPlayersNeeded = 1;
+    } else if (players.length >= 4 && players.length <= 5) {
+        totalPlayersNeeded = 2;
+    } else if ((players.length == 6 || players.length >= 8) && players.length <= 9) {
+        totalPlayersNeeded = 3;
+    } else if (players.length == 7 || players.length >= 10) {
+        totalPlayersNeeded = 4;
     };
-    return { totalTntPlayers, selectedPlayers };
-};
-
-function selectPlayersTnt(over) {
-    let allPlayers = over.getEntities({ type: 'minecraft:player', excludeTags: ['spect'] });
-    let totalTntPlayers = 0;
-	if (allPlayers.length >= 2 && allPlayers.length <= 3) {
-		totalTntPlayers = 1;
-	} else if (allPlayers.length >= 4 && allPlayers.length <= 5) {
-		totalTntPlayers = 2;
-	} else if ((allPlayers.length == 6 || allPlayers.length >= 8) && allPlayers.length <= 9) {
-		totalTntPlayers = 3;
-	} else if (allPlayers.length == 7 || allPlayers.length >= 10) {
-		totalTntPlayers = 4;
-	};
-    const selectedPlayers = [];
-    while (selectedPlayers.length < totalTntPlayers) {
-        const randomIndex = Math.floor(Math.random() * allPlayers.length);
-        const selectedPlayer = allPlayers[randomIndex];
-        if (!selectedPlayers.includes(selectedPlayer)) {
-            selectedPlayers.push(selectedPlayer);
-        };
-    };
-    return { totalTntPlayers, selectedPlayers, allPlayers};
+    players = players.sort(() => Math.random() - 0.5);
+    let selectedPlayers = players.slice(0, totalPlayersNeeded);
+    return selectedPlayers;
 };
 
 function gameStarted() {
@@ -223,85 +203,62 @@ function gameStarted() {
 		over.runCommand(`execute as @a at @s run playsound portal.travel`);
 		over.runCommand(`clear @a`);
 		over.runCommand(`scoreboard objectives setdisplay sidebar winStack descending`);
-		const tntSelection = selectPlayersTnt(over);
-        if (tntSelection.totalTntPlayers == 0) {
-            over.runCommand(`function system/end_game`);
-            mc.system.clearRun(timeOut);
-        } else {
-			mc.system.runTimeout(() => {
-				let players = tntSelection.selectedPlayers;
-				let undefinedCount = players.filter(player => player == undefined).length || 0;
-				let otherPlayers = tntSelection.allPlayers;
-                for (let i = 0; i < players.length; i++) {
-                    const player = players[i];
-                    if (!player) {
-                        const reselectedPlayers = reselectPlayersTnt(over, undefinedCount).selectedPlayers;
-                        for (let j = 0; j < reselectedPlayers.length; j++) {
-                            const reselectedPlayer = reselectedPlayers[j];
-                            reselectedPlayer.addTag("tntPlayer");
-							reselectedPlayer.triggerEvent("ha:give_tnt");
-							break;
-                        };
-                    } else {
-                        player.addTag("tntPlayer");
-                        player.triggerEvent("ha:give_tnt");
-                    };
-                };
-				for (let i = 0; i < otherPlayers.length; i++) {
-					let player = otherPlayers[i];
-					if (!player.hasTag("tntPlayer")) {
-						player.addTag("player");
-						player.triggerEvent("ha:receive_tnt");
-					};
+		mc.system.runTimeout(() => {
+			for (let players of mc.world.getAllPlayers()) {
+				if (players) {
 					let totalSpawnZones;
 					switch (map) {
-						case 1: {
-							totalSpawnZones = variables.spawnZonesMap1;
-						} break;
-						case 2: {
-							totalSpawnZones = variables.spawnZonesMap2;
-						} break;
-						case 3: {
-							totalSpawnZones = variables.spawnZonesMap3;
-						} break;
-						case 4: {
-							totalSpawnZones = variables.spawnZonesMap4;
-						} break;
-						case 5: {
-							totalSpawnZones = variables.spawnZonesMap5;
-						} break;
-						case 6: {
-							totalSpawnZones = variables.spawnZonesMap6;
-						} break;
-						case 7: {
-							totalSpawnZones = variables.spawnZonesMap7;
-						} break;
+						case 1: { totalSpawnZones = variables.spawnZonesMap1; } break;
+						case 2: { totalSpawnZones = variables.spawnZonesMap2; } break;
+						case 3: { totalSpawnZones = variables.spawnZonesMap3; } break;
+						case 4: { totalSpawnZones = variables.spawnZonesMap4; } break;
+						case 5: { totalSpawnZones = variables.spawnZonesMap5; } break;
+						case 6: { totalSpawnZones = variables.spawnZonesMap6; } break;
+						case 7: { totalSpawnZones = variables.spawnZonesMap7; } break;
 					};
 					let randomIndex = Math.floor(Math.random() * totalSpawnZones.length);
 					let randomSpawnZone = totalSpawnZones[randomIndex];
-					player.tryTeleport(randomSpawnZone, { dimension: over });
-					player.addTag(`map${map}`);
+					players.tryTeleport(randomSpawnZone, { dimension: over });
+					players.addTag(`map${map}`);
 					if (map == 7) {
-						player.addEffect("night_vision", 199980, { amplifier: 100, showParticles: false });
+						players.addEffect("night_vision", 199980, { amplifier: 100, showParticles: false });
 					};
 				};
-				for (const entity of mc.world.getDimension('overworld').getEntities({type: 'ha:sensor'})) {
-					entity.addTag("ingame");
-					entity.runCommand(`scoreboard players set @s totalInGame 55`);
-					entity.runCommand(`scoreboard objectives setdisplay sidebar totalAllPlayers descending`);
-					entity.runCommand(`scriptevent ha:game_started`);
+			};
+			
+			let tntPlayers = getTntPlayer(over);
+			for (let tntPlayer of tntPlayers) {
+				if (tntPlayer) {
+					tntPlayer.addTag("tntPlayer");
+					tntPlayer.triggerEvent("ha:give_tnt");
 				};
-				randomVote = 0;
-				vote1 = 0;
-				vote2 = 0;
-				vote3 = 0;
-				vote4 = 0;
-				vote5 = 0;
-				vote6 = 0;
-				vote7 = 0;
-				votationTime = false;
-			}, 100);
-		};
+			};
+			
+			let normalPlayers = over.getEntities({ type: 'minecraft:player', excludeTags: [ 'admin', 'spect', 'tntPlayer' ] });
+			for (let player of normalPlayers) {
+				if (player) {
+					player.addTag("player");
+					player.triggerEvent("ha:receive_tnt");
+				};
+			};
+			
+			for (const entity of over.getEntities({type: 'ha:sensor'})) {
+				entity.addTag("ingame");
+				entity.runCommand(`scoreboard players set @s totalInGame 55`);
+				entity.runCommand(`scoreboard objectives setdisplay sidebar totalAllPlayers descending`);
+				entity.runCommand(`scriptevent ha:game_started`);
+			};
+			
+			randomVote = 0;
+			vote1 = 0;
+			vote2 = 0;
+			vote3 = 0;
+			vote4 = 0;
+			vote5 = 0;
+			vote6 = 0;
+			vote7 = 0;
+			votationTime = false;
+		}, 100);
     }, 100);
 };
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */

@@ -82,7 +82,8 @@
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ -49, 9.8 ]
+					"offset": [ -49, 9.8 ],
+					"text_alignment": "left"
 				}
 			},
 			{
@@ -148,7 +149,8 @@
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ -49, 9.8 ]
+					"offset": [ -92, 9.8 ],
+					"text_alignment": "left"
 				}
 			},
 			{
@@ -214,7 +216,8 @@
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ -49, 9.8 ]
+					"offset": [ -27, 9.8 ],
+					"text_alignment": "left"
 				}
 			},
 			{
@@ -280,7 +283,8 @@
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ -49, 9.8 ]
+					"offset": [ -31, 9.8 ],
+					"text_alignment": "left"
 				}
 			},
 			{
@@ -346,7 +350,8 @@
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ -49, 9.8 ]
+					"offset": [ -57, 9.8 ],
+					"text_alignment": "left"
 				}
 			},
 			{
@@ -412,7 +417,8 @@
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ -49, 9.8 ]
+					"offset": [ -78, 9.8 ],
+					"text_alignment": "left"
 				}
 			},
 			{
@@ -478,7 +484,8 @@
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [ -49, 9.8 ]
+					"offset": [ -59, 9.8 ],
+					"text_alignment": "left"
 				}
 			},
 			{
