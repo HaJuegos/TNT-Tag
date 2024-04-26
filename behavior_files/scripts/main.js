@@ -436,7 +436,7 @@ mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 					player.tryTeleport(randomCoords, { dimension: dime, facingLocation: viewDirection });
 				};
 				mc.world.sendMessage({ translate: "chat.rolling_players" });
-				dime.runCommand(`execute as @a at @s run playsound ui.rolling_players`);
+				dime.runCommand(`playsound ui.rolling_players @a`);
 				let itemCooldown = new mc.ItemStack("ha:rolling_players");
 				let cooldown = itemCooldown.getComponent("minecraft:cooldown");
 				for (const players of mc.world.getAllPlayers()) {

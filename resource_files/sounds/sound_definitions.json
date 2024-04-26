@@ -48,7 +48,7 @@
 		]
 	},
 	"player.gived_tnt": {
-		"category": "player",
+		"category": "neutral",
 		"__use_legacy_max_distance": "true",
 		"max_distance": null,
 		"min_distance": null,
@@ -83,24 +83,26 @@
 		]
 	},
 	"record.pandora_palace": {
-		"category" : "ui",
+		"category" : "music",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/music/pandora_palace"
+				"name": "sounds/music/pandora_palace",
+				"stream" : true
 			}
 		]
 	},
 	"record.asobu": {
-		"category" : "ui",
+		"category" : "music",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/music/asobu"
+				"name": "sounds/music/asobu",
+				"stream" : true
 			}
 		]
 	},
@@ -117,57 +119,62 @@
 		]
 	},
 	"record.core": {
-		"category" : "ui",
+		"category" : "music",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/music/core"
+				"name": "sounds/music/core",
+				"stream" : true
 			}
 		]
 	},
 	"record.eleventh_hour": {
-		"category" : "ui",
+		"category" : "music",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/music/eleventh_hour"
+				"name": "sounds/music/eleventh_hour",
+				"stream" : true
 			}
 		]
 	},
 	"record.panic": {
-		"category" : "ui",
+		"category" : "music",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/music/panic"
+				"name": "sounds/music/panic",
+				"stream" : true
 			}
 		]
 	},
 	"record.cyber_world": {
-		"category" : "ui",
+		"category" : "music",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/music/cyber_world"
+				"name": "sounds/music/cyber_world",
+				"stream" : true
 			}
 		]
 	},
 	"record.smart_race": {
-		"category" : "ui",
+		"category" : "music",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/music/smart_race"
+				"name": "sounds/music/smart_race",
+				"stream" : true
 			}
 		]
 	},
@@ -194,49 +201,69 @@
 		]
 	},
 	"ui.rolling_players": {
-		"category" : "ui",
+		"category" : "neutral",
 		"max_distance": null,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
-				"name": "sounds/ui/rolling"
+				"name": "sounds/ui/rolling",
+				"stream" : true
 			}
 		]
 	},
 	"ui.netgun.shoot": {
-		"category" : "player",
+		"category" : "ambient",
+		"__use_legacy_max_distance" : "true",
 		"max_distance": 50,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
 				"name": "sounds/ui/netgun/netshoot",
-				"volume": 1.5
+				"volume": 1.5,
+				"stream" : true
 			}
 		]
 	},
 	"ui.netgun.hit": {
-		"category" : "player",
+		"category" : "ambient",
+		"__use_legacy_max_distance" : "true",
 		"max_distance": 50,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
 				"name": "sounds/ui/netgun/nethit",
-				"volume": 4.0
+				"volume": 4.0,
+				"stream" : true
 			}
 		]
 	},
 	"player.hitnet": {
-		"category" : "player",
+		"category" : "ambient",
+		"__use_legacy_max_distance" : "true",
 		"max_distance": 50,
 		"min_distance": null,
 		"sounds": [
 			{
 				"load_on_low_memory": true,
 				"name": "sounds/ui/netgun/netoff",
-				"volume": 5.0
+				"volume": 5.0,
+				"stream" : true
+			}
+		]
+	},
+	"record.dinner": {
+		"category" : "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/dinner",
+				"volume": 0.8,
+				"stream" : true
 			}
 		]
 	}

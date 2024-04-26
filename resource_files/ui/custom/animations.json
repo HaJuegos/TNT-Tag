@@ -66,6 +66,15 @@
 			}
 		}
 	},
+	"playing_music8_factory": {
+		"type": "panel",
+		"factory": {
+			"name": "hud_title_text_factory",
+			"control_ids": {
+				"hud_title_text": "play8@custom_animations.playing_music8"
+			}
+		}
+	},
 		
 	"playing_music1": {
 		"type": "panel",
@@ -532,6 +541,73 @@
 			{
 				"binding_type": "view",
 				"source_property_name": "(#hud_subtitle_text_string = 'music7')",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+	"playing_music8": {
+		"type": "panel",
+		"offset": [ 0, 0 ],
+		"anims": [ "@custom_animations.anim1" ],
+		"controls": [
+			{
+				"title": {
+					"type": "label",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
+					"text": "ui.title_music1",
+					"font_size": "normal",
+					"font_scale_factor": 0.8,
+					"localize": true,
+					"layer": 101,
+					"offset": [ -12, 9.8 ],
+					"text_alignment": "left"
+				}
+			},
+			{
+				"subtitle": {
+					"type": "label",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
+					"text": "ui.subtitle_music8",
+					"font_scale_factor": 0.6,
+					"offset": [ -35, 21.5 ],
+					"font_size": "normal",
+					"localize": true,
+					"layer": 101,
+					"text_alignment": "left"
+				}
+			},
+			{
+				"playbox": {
+					"type": "image",
+					"texture": "textures/ui/custom_icon/musicbox",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
+					"size": [ "1%c + 20px", "1%c + 20px" ],
+					"offset": [ -103, 9.5 ],
+					"layer": 101
+				}
+			},
+			{
+				"border": {
+					"type": "image",
+					"texture": "textures/ui/greyBorder",
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
+					"size": [ "1%c + 128px", "1%c + 32px" ],
+					"offset": [ -3, 3 ],
+					"layer": 100
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_name": "#hud_subtitle_text_string"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(#hud_subtitle_text_string = 'music8')",
 				"target_property_name": "#visible"
 			}
 		]

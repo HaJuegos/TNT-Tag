@@ -149,7 +149,8 @@ export function startMusic(singlePlayer) {
 		"record.panic",
 		"record.eleventh_hour",
 		"record.cyber_world",
-		"record.smart_race"
+		"record.smart_race",
+		"record.dinner"
 	];
 	const randomIndex = Math.floor(Math.random() * nameMusics.length);
 	const randomMusic = nameMusics[randomIndex];

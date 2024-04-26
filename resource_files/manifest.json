@@ -1,0 +1,26 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [ "HaJuegos Cat!" ],
+		"product_type": "addon",
+		"url": "https://twitter.com/Ha_Juegos, https://discord.gg/9jZHkhu86P, https://discord.gg/WH9KpNWXUz"
+	},
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"uuid": "cae17ccd-3fbb-4b78-85dd-ef75436ca10e",
+		"version": "0.0.4-beta",
+		"min_engine_version": [ 1, 20, 80 ]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "9a640300-b188-4130-a6eb-e91f9601bca2",
+			"version": [ 0, 0, 1 ]
+		}
+	]
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

@@ -1,0 +1,51 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [ "HaJuegos Cat!" ],
+		"product_type": "addon",
+		"url": "https://twitter.com/Ha_Juegos, https://discord.gg/9jZHkhu86P, https://discord.gg/WH9KpNWXUz"
+	},
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"uuid": "8025e54e-793f-4bac-a4c1-2e5a09a3c8bd",
+		"version": "0.0.4-beta",
+		"min_engine_version": [ 1, 20, 80 ]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "5b230e21-212a-4509-b917-239c188d5ea0",
+			"version": [ 0, 0, 1 ]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "1c2a3542-fda5-4aac-8eac-ffa0ef61ceb9",
+			"version": [ 0, 0, 1 ],
+			"entry": "scripts/main.js"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "cae17ccd-3fbb-4b78-85dd-ef75436ca10e",
+			"version": "0.0.4-beta"
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.11.0-beta"
+		},
+		{
+			"module_name": "@minecraft/debug-utilities",
+			"version": "1.0.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.2.0-beta"
+		}// , { "module_name": "@minecraft/server-gametest", "version": "1.0.0-beta" }
+	]
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
