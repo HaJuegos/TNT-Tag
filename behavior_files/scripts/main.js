@@ -2,7 +2,6 @@
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 
 import * as mc from "@minecraft/server";
-import * as debug from "@minecraft/debug-utilities";
 import * as variables from './variables.js';
 import * as commands from './customCommands.js';
 import * as loops from './loops.js';
@@ -13,7 +12,11 @@ let inGlow = false;
 let elytraTime = {};
 let allCoords = {};
 
-debug.disableWatchdog(true);
+mc.system.beforeEvents.watchdogTerminate.subscribe(noDog => {
+	try {
+		noDog.cancel = true;
+	} catch {};
+});
 
 mc.system.runInterval(loopGlow => {
 	try {
@@ -486,6 +489,7 @@ function checkLastConnection(player) {
     player.runCommand(`hud @s hide hunger`);
     player.runCommand(`hud @s hide armor`);
     player.runCommand(`hud @s hide air_bubbles`);
+    player.runCommand(`hud @s hide progress_bar `);
 	if (loops.gameStart) {
 		let getData = loops.dataPlayers[player.name];
 		if (getData) {

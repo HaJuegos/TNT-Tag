@@ -26,7 +26,7 @@
 
 ## MINI-USER GUIDE
 
-- **This world was created in MC version 1.20.80. Any version lower or higher in the future may not work properly.**
+- **This world was created in MC version 1.21.2. Any version lower or higher in the future may not work properly.**
 - **This map uses scripts, so it is not supported by Aternos.**
 - All map installation and setup is automatic.
 - If you downloaded the PreConfigured World and don't know what to do with it, take a look at this tutorial image: https://github.com/HaJuegos/TNT-Tag/tree/main/.github/exmple.png
