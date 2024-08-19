@@ -3,6 +3,14 @@
 {
 	"format_version": "1.10.0",
 	"animations": {
+		"animation.player.glowing": {
+			"loop": true,
+			"bones": {
+				"glow": {
+					"scale": "math.clamp(1.0 + (query.distance_from_camera / 64), 1.1, 2.0)"
+				}
+			}
+		},
 		"animation.player.innet": {
 			"loop": true,
 			"bones": {

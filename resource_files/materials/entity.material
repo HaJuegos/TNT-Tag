@@ -1,7 +1,7 @@
 {
 	"materials": {
 		"version": "1.0.0",
-		"glowing_base:entity_alphatest": {
+		"player_glowing_base:entity_alphatest": {
 			"+states": [
 				"EnableStencilTest",
 				"StencilWrite"
@@ -20,7 +20,7 @@
 			},
 			"stencilRef": 3
 		},
-		"glowing_line:glowing_base": {
+		"player_glowing:entity_alphatest": {
 			"+states": [
 				"EnableStencilTest",
 				"InvertCulling"

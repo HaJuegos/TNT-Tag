@@ -10,14 +10,14 @@
 	"header": {
 		"name": "pack.name",
 		"description": "pack.description",
-		"uuid": "e73aae3b-7feb-4ff0-b221-d1fa1949fe94",
-		"version": "0.0.5-beta",
-		"min_engine_version": [ 1, 21, 0 ]
+		"uuid": "7e7f873e-28c1-485a-8681-ac72889e395d",
+		"version": "0.0.6-beta",
+		"min_engine_version": [ 1, 21, 20 ]
 	},
 	"modules": [
 		{
 			"type": "resources",
-			"uuid": "e984848b-84bb-4575-ba46-1db6a14d53f7",
+			"uuid": "e9b94014-9b06-4871-88b6-1650b736f5d6",
 			"version": [ 0, 0, 1 ]
 		}
 	]

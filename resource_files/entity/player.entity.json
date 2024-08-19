@@ -10,25 +10,23 @@
 				"cape": "entity_alphatest",
 				"animated": "player_animated",
 				"spectator": "player_spectator",
-				
-				"glowing": "glowing_line"
+				"glow_base": "player_glowing_base",
+				"glow": "player_glowing"
 			},
 			"textures": {
 				"default": "textures/entity/steve",
 				"cape": "textures/entity/cape_invisible",
 				"net": "textures/entity/net_overlay",
-				
-				"glowing": "textures/entity/player_glowing"
+				"glow": "textures/entity/player_glowing"
 			},
 			"geometry": {
 				"default": "geometry.humanoid.custom",
 				"cape": "geometry.cape",
 				"innet": "geometry.net_overlay",
-				
-				"glowing": "geometry.humanoid.glowing"
+				"glow": "geometry.humanoid.custom_glow"
 			},
 			"scripts": {
-				"scale": 0.9375,
+				"scale": "q.is_charged ? 0.0 : 0.9375",
 				"initialize": [
 					"variable.is_holding_right = 0.0;",
 					"variable.is_blinking = 0.0;",
@@ -46,8 +44,7 @@
 					"variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
 					"variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
 					"variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
-					
-					"t.alpha = (q.is_powered == 1) ? 1.0 : 0.0;"
+					"t.alpha = q.is_charged ? 1.0 : 0.0;"
 				],
 				"animate": [
 					{
@@ -64,15 +61,18 @@
 					},
 					{
 						"net_loop": "q.is_chested"
+					},
+					{
+						"glow": "q.is_tamed"
 					}
 				]
 			},
 			"animations": {
+				"glow": "animation.player.glowing",
 				"tnt_3st_person": "animation.player.tnt_item_3st_person",
 				"net_gun_3st_person": "animation.player.net_gun",
 				"net": "animation.player.innet",
 				"net_loop": "animation.player.innet_loop",
-				
 				"root": "controller.animation.player.root",
 				"base_controller": "controller.animation.player.base",
 				"hudplayer": "controller.animation.player.hudplayer",
@@ -148,6 +148,9 @@
 				},
 				{
 					"controller.render.player.in_red": "q.is_chested"
+				},
+				{
+					"controller.render.player.third_person_glow": "!variable.is_first_person && q.is_tamed"
 				}
 			],
 			"enable_attachables": true
