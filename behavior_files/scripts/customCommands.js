@@ -2,9 +2,15 @@
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 
 import * as mc from "@minecraft/server";
-import * as variables from './variables.js';
-import * as ui from "@minecraft/server-ui";
+import * as ui from '@minecraft/server-ui';
 
+import { ticksConvertor } from "./items.js";
+import { overworld } from "./main.js";
+import { spawnZonesMap1, spawnZonesMap2, spawnZonesMap3, spawnZonesMap4, spawnZonesMap5, spawnZonesMap6, spawnZonesMap7 } from "./variables.js";
+
+/**
+ * Formulario de votacion de mapas al momento de ejecutar las votaciones
+ */
 const votationUi = new ui.ActionFormData()
     .title({translate: "ui.votation_time"})
     .body({translate: "ui.votation_choose"})
@@ -32,60 +38,59 @@ let vote7 = 0;
 mc.system.runInterval(checkAllVotations => {
 	try {
 		if (!voteActivated) return;
-		for (const player of mc.world.getAllPlayers()) {
-			let inv = player.getComponent("minecraft:inventory").container;
+		mc.world.getAllPlayers().forEach(player => {
+			const inv = player.getComponent("minecraft:inventory").container;
+			const calculatorItem = new mc.ItemStack("ha:calculator");
 			let hasItem = false;
-			let calculatorItem = new mc.ItemStack("ha:calculator");
+
 			calculatorItem.lockMode = mc.ItemLockMode.inventory;
-			for (let i = 0; i < inv.size; i++) {
-				let item = inv.getItem(i);
-				if (item && item.typeId == 'ha:calculator') {
+
+			for (let i = 0; i < inv?.size; i++) {
+				let item = inv?.getItem(i);
+				if (item?.typeId == 'ha:calculator') {
 					hasItem = true;
 					break;
 				} else {
 					break;
 				};
 			};
+
 			if (!hasItem) {
-				inv.addItem(calculatorItem);
+				inv?.addItem(calculatorItem);
 				player.sendMessage({ translate: "chat.start_voting" });
 			};
-		};
+		});
 	} catch {};
-}, 15);
+}, ticksConvertor(0.75));
 
-mc.world.beforeEvents.chatSend.subscribe(teleportCommand => {
+mc.world.beforeEvents.chatSend.subscribe(async (teleportCommand) => {
 	try {
-		let player = teleportCommand.sender;
-        let message = teleportCommand.message;
+		const player = teleportCommand.sender;
+        const message = teleportCommand.message;
 		if (!player.hasTag("spect")) return;
 		if (message.startsWith("!tphunter")) {
 			teleportCommand.cancel = true;
-			mc.system.run(() => {
-				player.runCommand(`tp @r[tag=tntPlayer]`);
-			});
+			await null;
+			player.runCommand(`tp @r[tag=tntPlayer]`);
 		} else if (message.startsWith("!tpplayer")) {
 			teleportCommand.cancel = true;
-			mc.system.run(() => {
-				player.runCommand(`tp @r[tag=player]`);
-			});
+			await null;
+			player.runCommand(`tp @r[tag=player]`);
 		};
 	} catch {};
 });
 
 mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 	try {
-		let entity = staticEvents.sourceEntity;
-		let event = staticEvents.id;
-		let message = staticEvents.message;
-		let dime = mc.world.getDimension('overworld');
+		const entity = staticEvents.sourceEntity;
+		const event = staticEvents.id;
 		if (event == 'ha:starting_votation') {
 			votationTime = true;
 			voteActivated = true;
-			dime.spawnEntity("ha:votation_timer", {x: 2031, y: 52, z: -1969});
-			dime.runCommand(`scoreboard objectives setdisplay sidebar totalVotes descending`);
+			overworld.spawnEntity("ha:votation_timer", {x: 2031, y: 52, z: -1969});
+			overworld.runCommand(`scoreboard objectives setdisplay sidebar totalVotes descending`);
 		} else if (event == 'ha:ending_votation') {
-			dime.runCommand(`tag @a remove voted`);
+			overworld.runCommand(`tag @a remove voted`);
 			gameStarted();
 		} else if (event == 'ha:voting') {
 			showUiVotations(votationUi, entity);
@@ -93,6 +98,12 @@ mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 	} catch {};
 });
 
+/**
+ * Control de botones al formulario de votacion de los mapas
+ * @param {ui.ActionFormData} votationUi Panel de votaciones
+ * @param {mc.Player} player Jugador al cual le afectara el panel
+ * @return {Void}
+ */
 function showUiVotations(votationUi, player) {
 	votationUi.show(player).then(response => {
 		if (response.canceled || player.hasTag("voted")) return;
@@ -147,6 +158,12 @@ function showUiVotations(votationUi, player) {
 	});
 };
 
+/**
+ * Contador que ira subiendo dependiendo la votacion del mapa que elija el usuario
+ * @param {mc.Player} player Usuario que le afecta la votacion
+ * @param {Number} num Numero de votos
+ * @return {Void}
+ */
 function addScoreVote(player, num) {
 	mc.system.run(() => {
 		if (num == 0) {
@@ -159,7 +176,11 @@ function addScoreVote(player, num) {
     });
 };
 
-function getTntPlayer(over) {
+/**
+ * Se analiza la cantidad de jugadores disponibles para luego asignarlos de forma aleatoria con la TNT
+ * @returns {mc.Player[]} La cantidad de jugadores para la tnt en forma de array
+ */
+function getTntPlayer() {
     let players = mc.world.getAllPlayers();
     let totalPlayersNeeded;
     if (players.length >= 2 && players.length <= 3) {
@@ -176,8 +197,11 @@ function getTntPlayer(over) {
     return selectedPlayers;
 };
 
+/**
+ * Inicia el juego despues de haber terminado la votacion
+ * @returns {Void}
+ */
 function gameStarted() {
-	let over = mc.world.getDimension('overworld');
 	let message;
 	let map = 0;
     let votes = [randomVote, vote1, vote2, vote3, vote4, vote5, vote6, vote7];
@@ -199,26 +223,26 @@ function gameStarted() {
 	voteActivated = false;
     mc.world.sendMessage(message);
     mc.system.runTimeout(timeOut => {
-		over.runCommand(`execute as @a at @s run camera @s fade time 1 5 0.5 color 0 0 0`);
-		over.runCommand(`execute as @a at @s run playsound portal.travel`);
-		over.runCommand(`clear @a`);
-		over.runCommand(`scoreboard objectives setdisplay sidebar winStack descending`);
+		overworld.runCommand(`execute as @a at @s run camera @s fade time 1 5 0.5 color 0 0 0`);
+		overworld.runCommand(`execute as @a at @s run playsound portal.travel`);
+		overworld.runCommand(`clear @a`);
+		overworld.runCommand(`scoreboard objectives setdisplay sidebar winStack descending`);
 		mc.system.runTimeout(() => {
 			for (let players of mc.world.getAllPlayers()) {
 				if (players) {
 					let totalSpawnZones;
 					switch (map) {
-						case 1: { totalSpawnZones = variables.spawnZonesMap1; } break;
-						case 2: { totalSpawnZones = variables.spawnZonesMap2; } break;
-						case 3: { totalSpawnZones = variables.spawnZonesMap3; } break;
-						case 4: { totalSpawnZones = variables.spawnZonesMap4; } break;
-						case 5: { totalSpawnZones = variables.spawnZonesMap5; } break;
-						case 6: { totalSpawnZones = variables.spawnZonesMap6; } break;
-						case 7: { totalSpawnZones = variables.spawnZonesMap7; } break;
+						case 1: { totalSpawnZones = spawnZonesMap1; } break;
+						case 2: { totalSpawnZones = spawnZonesMap2; } break;
+						case 3: { totalSpawnZones = spawnZonesMap3; } break;
+						case 4: { totalSpawnZones = spawnZonesMap4; } break;
+						case 5: { totalSpawnZones = spawnZonesMap5; } break;
+						case 6: { totalSpawnZones = spawnZonesMap6; } break;
+						case 7: { totalSpawnZones = spawnZonesMap7; } break;
 					};
 					let randomIndex = Math.floor(Math.random() * totalSpawnZones.length);
 					let randomSpawnZone = totalSpawnZones[randomIndex];
-					players.tryTeleport(randomSpawnZone, { dimension: over });
+					players.tryTeleport(randomSpawnZone, { dimension: overworld });
 					players.addTag(`map${map}`);
 					if (map == 7) {
 						players.addEffect("night_vision", 199980, { amplifier: 100, showParticles: false });
@@ -226,7 +250,7 @@ function gameStarted() {
 				};
 			};
 			
-			let tntPlayers = getTntPlayer(over);
+			let tntPlayers = getTntPlayer();
 			for (let tntPlayer of tntPlayers) {
 				if (tntPlayer) {
 					tntPlayer.addTag("tntPlayer");
@@ -234,7 +258,7 @@ function gameStarted() {
 				};
 			};
 			
-			let normalPlayers = over.getEntities({ type: 'minecraft:player', excludeTags: [ 'admin', 'spect', 'tntPlayer' ] });
+			let normalPlayers = overworld.getEntities({ type: 'minecraft:player', excludeTags: [ 'admin', 'spect', 'tntPlayer' ] });
 			for (let player of normalPlayers) {
 				if (player) {
 					player.addTag("player");
@@ -242,7 +266,7 @@ function gameStarted() {
 				};
 			};
 			
-			for (const entity of over.getEntities({type: 'ha:sensor'})) {
+			for (const entity of overworld.getEntities({type: 'ha:sensor'})) {
 				entity.addTag("ingame");
 				entity.runCommand(`scoreboard players set @s totalInGame 55`);
 				entity.runCommand(`scoreboard objectives setdisplay sidebar totalAllPlayers descending`);
@@ -258,8 +282,8 @@ function gameStarted() {
 			vote6 = 0;
 			vote7 = 0;
 			votationTime = false;
-		}, 100);
-    }, 100);
+		}, ticksConvertor(5));
+    }, ticksConvertor(5));
 };
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

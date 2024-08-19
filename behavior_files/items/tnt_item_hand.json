@@ -1,33 +1,38 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 {
-	"format_version": "1.16.100",
+	"format_version": "1.21.10",
 	"minecraft:item": {
 		"description": {
 			"identifier": "ha:tnt_item_hand",
-			"category": "equipment"
+			"menu_category": {
+				"category": "equipment"
+			}
 		},
 		"components": {
-			"minecraft:use_duration": 0.1,
 			"minecraft:max_stack_size": 1,
-			"minecraft:stacked_by_data": true,
 			"minecraft:can_destroy_in_creative": false,
-			"minecraft:throwable": {
-				"do_swing_animation": true,
-				"launch_power_scale": 1.0,
-				"scale_power_by_draw_duration": true
-			},
 			"minecraft:projectile": {
+				"minimum_critical_power": 1.25,
 				"projectile_entity": "minecraft:snowball<ha:tnt_variant>"
 			},
+			"minecraft:throwable": {
+				"do_swing_animation": false,
+				"scale_power_by_draw_duration": true
+			},
 			"minecraft:cooldown": {
-				"duration": 11,
-				"category": "tnt"
+				"category": "tnt",
+				"duration": 11
 			},
-			"minecraft:icon": {
-				"texture": "tnt_bomb"
+			"minecraft:icon": "tnt_bomb",
+			"minecraft:tags": {
+				"tags": [
+					"ha:tnt"
+				]
 			},
-			"tag:ha:tnt": {}
+			"minecraft:custom_components": [
+				"ha:use_item_actions"
+			]
 		}
 	}
 }

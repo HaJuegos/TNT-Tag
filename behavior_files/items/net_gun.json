@@ -1,29 +1,31 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 {
-	"format_version": "1.16.100",
+	"format_version": "1.20.50",
 	"minecraft:item": {
 		"description": {
 			"identifier": "ha:net_gun",
-			"category": "equipment"
+			"menu_category": {
+				"category": "equipment"
+			}
 		},
 		"components": {
+			"minecraft:can_destroy_in_creative": false,
 			"minecraft:max_stack_size": 3,
-			"minecraft:use_duration": 99999,
-			"minecraft:stacked_by_data": true,
+			"minecraft:icon": "net_gun",
 			"minecraft:projectile": {
-				"projectile_entity": "minecraft:snowball<ha:net_proyectile>",
-				"minimum_critical_power": 1
+				"minimum_critical_power": 1.25,
+				"projectile_entity": "minecraft:snowball<ha:net_proyectile>"
 			},
 			"minecraft:throwable": {
 				"do_swing_animation": false,
 				"scale_power_by_draw_duration": true
 			},
-			"minecraft:icon": {
-				"texture": "net_gun"
-			},
-			"minecraft:render_offsets": "miscellaneous",
-			"tag:ha:net_gun": {}
+			"minecraft:tags": {
+				"tags": [
+					"ha:net_gun"
+				]
+			}
 		}
 	}
 }
