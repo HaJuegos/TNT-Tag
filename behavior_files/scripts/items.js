@@ -74,7 +74,7 @@ class itemActions {
 			cooldown.startCooldown(players);
 		};
 
-		mc.system.runInterval(() => {
+		const id = mc.system.runTimeout(() => {
 			if (inGlow) {
 				mc.world.sendMessage({translate: "chat.compass_deactivated"});
 				inGlow = false;
@@ -82,8 +82,11 @@ class itemActions {
 				mc.world.setTimeOfDay(1000);
 				overworld.runCommand(`execute as @a at @s run playsound mob.zombie.unfect`);
 				hideNametags();
+				mc.system.clearRun(id);
+			} else {
+				mc.system.clearRun(id);
 			};
-		}, ticksConvertor(25));
+		}, ticksConvertor(27));
 	}
 
 	coinActions() {
@@ -100,12 +103,14 @@ class itemActions {
 		if (this.player.hasTag("tntPlayer")) {
 			this.player.sendMessage({translate: "chat.no_coin_activate"});
 			this.player.playSound("ui.error_blocked");
+			cooldown.startCooldown(this.player);
 		} else {
 			inv.setItem(slot, null);
 			this.player.sendMessage({translate: "chat.activate_coin"});
 			this.player.playSound("ui.used_coin");
-			cooldown.startCooldown(this.player);
+			this.player.addTag("coinPlayer");
 			this.player.triggerEvent("ha:coin_damage");
+			cooldown.startCooldown(this.player);
 			this.player.nameTag = `§e§l[COIN ACTIVATED]§r\n${this.player.name}`;
 
 			if (chestItem?.typeId == 'minecraft:elytra') {
@@ -115,18 +120,21 @@ class itemActions {
 				armorInv.setEquipment(mc.EquipmentSlot.Chest, newItem);
 			};
 
-			mc.system.runTimeout(() => {
+			const id = mc.system.runTimeout(() => {
 				this.player.sendMessage({translate: "chat.removed_coin"});
 				this.player.playSound("mob.zombie.unfect");
 				this.player.runCommand(`clear @s netherite_chestplate`);
-				this.player.triggerEvent("ha:return_normal_damage");
+				this.player.removeTag("coinPlayer");
+				this.player.triggerEvent("ha:player_damage");
 						
 				if (inGlow) {
 					this.player.nameTag = `${this.player.name}`;	
 				} else {
 					this.player.nameTag = "§r";
 				};
-			}, ticksConvertor(8));
+
+				mc.system.clearRun(id);
+			}, ticksConvertor(11));
 		}
 	};
 

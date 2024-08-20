@@ -6,7 +6,7 @@ import * as Gametest from "@minecraft/server-gametest";
 
 Gametest.register("TestFakePlayers", "FakePlayers", arg => {
 	let listFakePlayers = [];
-	for (let i = 1; i <= 3; i++) {
+	for (let i = 1; i <= 1; i++) {
 		const fakePlayer = arg.spawnSimulatedPlayer({ x: 0, y: 2, z: 0}, `TestBot${i}`, mc.GameMode.survival);
 		listFakePlayers.push(fakePlayer);
 	};

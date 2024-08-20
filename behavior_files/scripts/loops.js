@@ -35,14 +35,20 @@ mc.system.runInterval(loopNet => {
 mc.system.runInterval(checkDamage => {
 	try {
 		mc.world.getAllPlayers().forEach(player => {
-			if (player.hasTag("player") && !player.hasTag("coinCooldown")) {
+			if (player.hasTag("player") && !player.hasTag("coinPlayer")) {
 				player.triggerEvent("ha:player_damage");
-			} else if (player.hasTag("player") && player.hasTag("coinCooldown")) {
+			};
+
+			if (player.hasTag("tntPlayer") && !player.hasTag("coinPlayer")) {
+				player.triggerEvent("ha:tntplayer_damage");
+			};
+
+			if (player.hasTag("coinPlayer")) {
 				player.triggerEvent("ha:coin_damage");
-			} else if (player.hasTag("tntPlayer")) {
-				player.triggerEvent("ha:tnt_damage");
-			} else {
-				player.triggerEvent("ha:return_normal_damage");
+			};
+
+			if (!player.hasTag("player") && !player.hasTag("tntPlayer") && !player.hasTag("coinPlayer")) {
+				player.triggerEvent("ha:lobby_damage");
 			};
 		});
 	} catch {};
@@ -55,7 +61,7 @@ mc.system.runInterval(loobyTp => {
 			let coords = { x: Math.round(players.location.x), y: Math.round(players.location.y), z: Math.round(players.location.z) };
 			if (coords.y <= 40) {
 				if (players.hasTag("admin")) return;
-				players.runCommand(`tp 2031.94 54.56 -1968.17`);
+				// players.runCommand(`tp 2031.94 54.56 -1968.17`);
 			};
 		});
 	} catch {};

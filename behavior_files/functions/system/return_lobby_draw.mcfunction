@@ -9,7 +9,7 @@ effect @a clear
 effect @a clear
 effect @a saturation 999999 100 true
 event entity @a ha:remove_glowing
-event entity @a ha:return_normal_damage
+event entity @a ha:lobby_damage
 scriptevent ha:end_game_name
 gamemode a @a[tag=!admin]
 execute as @a at @s run tp 2031.92 53.47 -1967.37

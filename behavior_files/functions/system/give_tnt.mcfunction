@@ -11,4 +11,4 @@ particle astral:confetti ~ ~0.3 ~
 tag @s remove player
 tag @s add tntPlayer
 
-event entity @s ha:tnt_damage
+event entity @s ha:tntplayer_damage

@@ -1,8 +1,6 @@
-
 [
-	
 	{
-		"pack_id" : "38efeca7-b088-4954-9ddd-31e98a99ea6d",
-		"version" : [ 0, 0, 6 ]
+		"pack_id": "38efeca7-b088-4954-9ddd-31e98a99ea6d",
+		"version": "0.0.6-beta"
 	}
 ]

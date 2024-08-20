@@ -10,16 +10,6 @@
 			"is_summonable": false
 		},
 		"component_groups": {
-			"ha:coin_damage": {
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"deals_damage": false
-						}
-					]
-				}
-			},
 			"ha:tnt_damage": {
 				"minecraft:damage_sensor": {
 					"triggers": [
@@ -38,6 +28,12 @@
 											"domain": "any",
 											"operator": "!=",
 											"value": "minecraft:bow"
+										},
+										{
+											"test": "has_damage",
+											"subject": "self",
+											"operator": "!=",
+											"value": "projectile"
 										}
 									]
 								}
@@ -47,13 +43,9 @@
 						{
 							"on_damage": {
 								"filters": {
-									"all_of": [
-										{
-											"test": "has_tag",
-											"subject": "other",
-											"value": "tntPlayer"
-										}
-									]
+									"test": "has_tag",
+									"subject": "other",
+									"value": "tntPlayer"
 								}
 							},
 							"deals_damage": false
@@ -158,12 +150,71 @@
 			"minecraft:block_climber": {},
 			"minecraft:persistent": {},
 			"minecraft:tick_world": {
-				"distance_to_players": 128,
+				"distance_to_players": 400,
 				"never_despawn": true,
 				"radius": 2
 			}
 		},
 		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"ha:normal_sensor"
+					]
+				}
+			},
+			"ha:coin_damage": {
+				"remove": {
+					"component_groups": [
+						"ha:player_damage",
+						"ha:tnt_damage"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:normal_sensor"
+					]
+				}
+			},
+			"ha:tntplayer_damage": {
+				"remove": {
+					"component_groups": [
+						"ha:player_damage",
+						"ha:normal_sensor"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:tnt_damage"
+					]
+				}
+			},
+			"ha:player_damage": {
+				"remove": {
+					"component_groups": [
+						"ha:normal_sensor",
+						"ha:tnt_damage"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:player_damage"
+					]
+				}
+			},
+			"ha:lobby_damage": {
+				"remove": {
+					"component_groups": [
+						"ha:player_damage",
+						"ha:tnt_damage"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:normal_sensor"
+					]
+				}
+			},
 			"ha:remove_in_net": {
 				"remove": {
 					"component_groups": [
@@ -180,69 +231,6 @@
 				"add": {
 					"component_groups": [
 						"ha:net"
-					]
-				}
-			},
-			"ha:coin_damage": {
-				"remove": {
-					"component_groups": [
-						"ha:player_damage",
-						"ha:tnt_damage",
-						"ha:normal_sensor"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"ha:coin_damage"
-					]
-				}
-			},
-			"ha:return_normal_damage": {
-				"remove": {
-					"component_groups": [
-						"ha:player_damage",
-						"ha:tnt_damage",
-						"ha:coin_damage"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"ha:normal_sensor"
-					]
-				}
-			},
-			"ha:tnt_damage": {
-				"remove": {
-					"component_groups": [
-						"ha:normal_sensor",
-						"ha:player_damage",
-						"ha:coin_damage"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"ha:tnt_damage"
-					]
-				}
-			},
-			"ha:player_damage": {
-				"remove": {
-					"component_groups": [
-						"ha:normal_sensor",
-						"ha:tnt_damage",
-						"ha:coin_damage"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"ha:player_damage"
-					]
-				}
-			},
-			"minecraft:entity_spawned": {
-				"add": {
-					"component_groups": [
-						"ha:normal_sensor"
 					]
 				}
 			},

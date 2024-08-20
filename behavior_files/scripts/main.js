@@ -83,6 +83,8 @@ mc.world.afterEvents.projectileHitEntity.subscribe(arrowSensorEntity => {
 				hitEntity?.triggerEvent("ha:in_net");
 				projectile?.remove();
 			};
+		} else if (projectile?.typeId == 'minecraft:arrow') {
+			checkArrowDamage(hitEntity);
 		};
 	} catch {};
 });
@@ -93,11 +95,15 @@ mc.world.afterEvents.entityHurt.subscribe(damageSensor => {
 		const source = damageSensor.damageSource;
 		const damagingEntity = source.damagingEntity;
 		const cause = source.cause;
+
 		if (hurtEntity.typeId == 'minecraft:player' && damagingEntity?.typeId == 'minecraft:player') {
+			if (hurtEntity.hasTag("coinPlayer")) return;
+			
 			if (cause == 'projectile') {
 				damagingEntity?.playSound("player.bow_hit");
 			};
-			if (damagingEntity?.hasTag("tntPlayer")) {
+
+			if (damagingEntity?.hasTag("tntPlayer") && hurtEntity.hasTag("player")) {
 				hurtEntity.triggerEvent("ha:give_tnt");
 				damagingEntity?.triggerEvent("ha:receive_tnt");
 			};
@@ -140,21 +146,22 @@ mc.world.afterEvents.entityHitEntity.subscribe(hitSensor => {
 	try {
 		const meleeEntity = hitSensor.damagingEntity;
 		const damageEntity = hitSensor.hitEntity;
-		if (meleeEntity.typeId == 'minecraft:player') {
-			if (meleeEntity.hasTag("tntPlayer") && damageEntity.typeId == 'minecraft:player' && damageEntity.hasTag("player") && !damageEntity.hasTag("coinCooldown")) {
-				damageEntity.triggerEvent("ha:give_tnt");
-				meleeEntity.triggerEvent("ha:receive_tnt");
-				
-				if (damageEntity.hasTag("glow")) {
-					damageEntity.triggerEvent("ha:remove_glowing");
-					meleeEntity.triggerEvent("ha:set_glowing");
-				} else if (meleeEntity.hasTag("glow")) {
-					meleeEntity.triggerEvent("ha:remove_glowing");
-					damageEntity.triggerEvent("ha:set_glowing");
-				};
-			} else if (damageEntity.typeId == 'ha:generator_entity') {
-				checkVariant(meleeEntity, damageEntity);
+		if ((meleeEntity.typeId == 'minecraft:player' && meleeEntity.hasTag("tntPlayer")) && (damageEntity.typeId == 'minecraft:player' && damageEntity.hasTag("player"))) {
+			if (damageEntity.hasTag("coinPlayer")) return;
+
+			damageEntity.triggerEvent("ha:give_tnt");
+			meleeEntity.triggerEvent("ha:receive_tnt");
+
+			if (damageEntity.hasTag("glow")) {
+				damageEntity.triggerEvent("ha:remove_glowing");
+				meleeEntity.triggerEvent("ha:set_glowing");
+			} else if (meleeEntity.hasTag("glow")) {
+				meleeEntity.triggerEvent("ha:remove_glowing");
+				damageEntity.triggerEvent("ha:set_glowing");
 			};
+		} else if (damageEntity.typeId == 'ha:generator_entity') {
+			if (meleeEntity.typeId != 'minecraft:player') return;
+			checkVariant(meleeEntity, damageEntity);
 		};
 	} catch {};
 });
@@ -292,6 +299,29 @@ mc.system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
 		};
 	} catch {};
 });
+
+/**
+ * Revisa y ejecuta eventos dependiendo el jugador que se golpeo
+ * @param {mc.Player | undefined} hitPlayer Jugador que recibio el daño
+ * @return {Void}
+ */
+function checkArrowDamage(hitPlayer) {
+	const coords2 = hitPlayer?.location;
+	const inv = hitPlayer.getComponent('inventory').container;
+
+	for (let i = 0; i < inv?.size; i++) {
+		const item = inv?.getItem(i);
+		if (item) {
+			if (item?.typeId == 'ha:rolling_players') continue;
+			if (item?.typeId == 'ha:super_compass') continue;
+			if (item?.typeId == 'ha:tnt_item_hand') continue;
+			inv?.setItem(i, null);
+			mc.system.runTimeout(() => {
+				overworld.spawnItem(item, { x: coords2.x, y: coords2.y + 1.5, z: coords2.z });
+			}, ticksConvertor(0.85));
+		};
+	};
+};
 
 /**
  * Revisa si el jugador ya estuvo jugando antes para hacer pre-ajustes y tambien asignar pre-ajustes de spawn
