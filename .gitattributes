@@ -1,4 +1,9 @@
 *.json linguist-detectable=true
-test/**/*/*.json linguist-vendored=true
+*.mcfunction linguist-detectable=true
 *.js linguist-detectable=true
-test/**/*/*.js linguist-vendored=true
+*.ts linguist-detectable=true
+*.mcstructure linguist-detectable=true
+*.lang linguist-detectable=true
+*.material linguist-detectable=true
+*.ogg linguist-detectable=true
+*.ui linguist-detectable=true
