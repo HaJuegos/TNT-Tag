@@ -61,7 +61,7 @@ mc.system.runInterval(loobyTp => {
 			let coords = { x: Math.round(players.location.x), y: Math.round(players.location.y), z: Math.round(players.location.z) };
 			if (coords.y <= 40) {
 				if (players.hasTag("admin")) return;
-				// players.runCommand(`tp 2031.94 54.56 -1968.17`);
+				players.runCommand(`tp 2031.94 54.56 -1968.17`);
 			};
 		});
 	} catch {};
