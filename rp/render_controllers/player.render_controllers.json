@@ -1,0 +1,77 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.player.in_red": {
+			"geometry": "Geometry.innet",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": ["Texture.net"]
+		},
+		"controller.render.player.third_person_glow": {
+			"geometry": "Geometry.glow",
+			"materials": [
+				{
+					"*": "Material.glow"
+				}
+			],
+			"textures": ["Texture.glow"],
+			"ignore_lighting": true,
+			"overlay_color": {
+				"r": 0.937,
+				"g": 0.816,
+				"b": 0.231,
+				"a": 1
+			}
+		},
+		"controller.render.player.third_person": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "(q.is_tamed) ? Material.glow_base : Material.default"
+				}
+			],
+			"textures": ["Texture.default"],
+			"part_visibility": [
+				{
+					"*": "!q.is_tamed"
+				},
+				{
+					"helmet": "variable.helmet_layer_visible"
+				},
+				{
+					"leftLegging": "variable.leg_layer_visible"
+				},
+				{
+					"rightLegging": "variable.leg_layer_visible"
+				},
+				{
+					"leftBoot": "variable.boot_layer_visible"
+				},
+				{
+					"rightBoot": "variable.boot_layer_visible"
+				},
+				{
+					"leftSock": "variable.boot_layer_visible && variable.leg_layer_visible"
+				},
+				{
+					"rightSock": "variable.boot_layer_visible && variable.leg_layer_visible"
+				},
+				{
+					"bodyArmor": "variable.chest_layer_visible && !query.has_cape"
+				},
+				{
+					"leftArmArmor": "variable.chest_layer_visible && !query.has_cape"
+				},
+				{
+					"rightArmArmor": "variable.chest_layer_visible && !query.has_cape"
+				},
+				{
+					"belt": "variable.chest_layer_visible && variable.leg_layer_visible"
+				}
+			]
+		}
+	}
+}

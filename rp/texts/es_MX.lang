@@ -1,0 +1,266 @@
+## Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz
+## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz
+
+## Manifest
+pack.name=§e[RP]§r §4T§7N§4T§r §cTag§r §7|§r De §cHaJuegosCat!§r y §bImLouis§r
+pack.description=Texturas requeridas para el mundo.
+
+
+## UI Messages
+multiplayer.player.joined=§s>> %s entro al TNT Tag.
+multiplayer.player.left=§s>> %s salio del TNT Tag.
+
+ui.votation_timer=§bLa votacion terminara en %1 segundos...
+ui.ingametimer=§l§4La TNT va a explotar en %1 segundos...
+ui.tnt_exploding=§c¡KABOOM!
+ui.tnt_exploding_sub=§0La TNT te ha explotado.
+ui.cube_damage=§d¡Estas muerto!
+ui.cube_damage_sub=§7Fuiste asesinado por un cubo de compañia
+scoreboard.nameAllPlayers=§e§lLista de Jugadores:
+score.namePlayerTnt=§cJugadores con TNT
+score.namePlayerLive=§aJugadores sin TNT
+ui.wininng=§a¡GANADOR!
+ui.wininng_sub=%1 ha sobrevivido.
+scoreboard.nameWinningTotal=§eTop de ganadores
+ui.drawparty=§7¿Empate?
+ui.drawparty_sub=Nadie ha ganado esta partida al parecer...
+
+ui.title_music1=§e§lEstas Escuchando
+ui.subtitle_music1=Majotori OST: Asobu. De: Majorariatto 
+ui.subtitle_music2=Deltarune Chapter 2 OST: Pandora Palace. De: TobyFox 
+ui.subtitle_music3=Undertale OST: Core. De: TobyFox
+ui.subtitle_music4=OneShot OST: Panic. De: Nightmargin
+ui.subtitle_music5=OneShot OST: Eleventh Hour. De: Nightmargin
+ui.subtitle_music6=DELTARUNE CH2 OST: A CYBER'S WORLD. De: TobyFox
+ui.subtitle_music7=DELTARUNE CH2 OST: Smart Race. De: TobyFox
+ui.subtitle_music8=DINNER!. De: femtanyl
+ui.subtitle_music9=Metal Slug 2 - Judgment. De: SNK SOUND TEAM
+ui.subtitle_music10=Abstract Map. De: VLDC9
+ui.subtitle_music11=CITY POP. De: Android Apartment
+ui.subtitle_music12=Hotline (Original Mix). De: S T
+ui.subtitle_music13=Knock Knock. De: S T
+ui.subtitle_music14=Shape Da Future. De: Hideki Naganuma
+ui.subtitle_music15=Datakrash (Savant). De: Principle
+
+scoreboard.voteTotal=§dTotal de Votos:
+score.map1=Mapa #1
+score.map2=Mapa #2
+score.map3=Mapa #3
+score.map4=Mapa #4
+score.map5=Mapa #5
+score.map6=Mapa #6
+score.map7=Mapa #7
+score.map8=Mapa #8
+score.map9=Mapa #9
+score.map10=Mapa #10
+score.random=Mapa Aleatorio
+
+
+sign_message_village=Fin del camino.
+sign_text.click_start=§b§lDame click para comenzar a jugar :3§r
+ui.sign.yei=§e¡Ganaste! Felicidades
+
+ui.votation_time=¡Hora de votar!
+ui.votation_choose=§bElije el mapa que quieras jugar
+ui.button_vote1=§6§lCastillo | De PatoMcFly
+ui.button_vote2=§2§lVilla | De ImLouis
+ui.button_vote3=§3§lGranja
+ui.button_vote4=§e§lZona de Guerra
+ui.button_vote5=§g§lDesierto Plano
+ui.button_vote6=§q§lEscondidas
+ui.button_vote7=§5§lCuevas | De TenierWiz
+ui.button_vote8=§p§lTrial Chamber
+ui.button_vote9=§m§lThe Skeld | De Anderistic
+ui.button_vote10=§c§lNether
+ui.button_random=§i§lMapa Aleatorio
+ui.warning_vote_1=§c§l¡Advertencia!
+ui.warning_vote_text=§eEste mapa no esta optimizado para algunos dispositivos, por lo que puede afectar tu experiencia en este mapa. ¿Estas seguro de votar este mapa?
+ui.warning_voterandom_text=§eAl votar random, el mapa 1° puede salir como ganador y este no esta optimizado para algunos dispositivos, por lo cual puede afectar tu rendimiento. ¿Estas seguro de continuar?
+ui.warning.buttonyes=Si
+ui.warning.buttonno=No
+
+
+ui.credits=§lCreditos :3
+ui.credits.dev=§lDesarrollador del Add-on:
+ui.credits.name_dev=§c Ha Juegos
+ui.credits.art=§lArte, Modelos y Particulas:
+ui.credits.art_name=§e Astral302
+ui.credits.idea=§lIdea original de:
+ui.credits.idea_name=§b ImLouis
+
+ui.shop.title=§e§lLa Memo Tienda
+ui.shop.body=§bElije el item que quieras comprar.
+
+ui.shop.item1=%2%1§o§750 puntos
+ui.shop.item2=%2%1§o§7100 puntos
+ui.shop.item3=%2%1§o§7100 puntos
+ui.shop.item4=%2%1§o§7150 puntos
+ui.shop.item5=x3 %2%1§o§7200 puntos
+ui.shop.item6=%2%1§o§7300 puntos
+ui.shop.item7=%2%1§o§7350 puntos
+ui.shop.item8=%2%1§o§7400 puntos
+ui.shop.item9=%2%1§o§7500 puntos
+ui.shop.item10=%2%1§o§71000 puntos
+
+ui.statsply.title=Estadisticas de %1
+ui.statsply.body=%1§e- Puntos totales:§r %2%1%1- Veces que has muerto: %3%1%1- Veces que has ganado: %4%1%1- Clase: %5%1%1- Hora de Entrada: %6%1%1- Items Comprados: %7%1%1- Veces que has votado: %8%1%1- Veces pasado la TNT a otra persona: %9
+ui.statec1=Puro
+ui.statec2=Padre
+ui.statec3=Hijo
+ui.statec4=Espiritu Santo
+ui.statec5=Salvador
+ui.statsply.end=Cerrar
+
+
+## Chat Messages
+chat.error_noplayers=§c>> No hay suficientes jugadores. Invita a tus amigos.
+chat.gameStarted=§b>> La partida iniciará con %1 de jugadores. La votación empieza.
+chat.voted1=§7>> Has votado por el Mapa #1.
+chat.voted2=§7>> Has votado por el Mapa #2.
+chat.voted3=§7>> Has votado por el Mapa #3.
+chat.voted4=§7>> Has votado por el Mapa #4.
+chat.voted5=§7>> Has votado por el Mapa #5.
+chat.voted6=§7>> Has votado por el Mapa #6.
+chat.voted7=§7>> Has votado por el Mapa #7.
+chat.voted8=§7>> Has votado por el Mapa #8.
+chat.voted9=§7>> Has votado por el Mapa #9.
+chat.voted10=§7>> Has votado por el Mapa #10.
+chat.random=§7>> Has votado por un Mapa Aleatorio.
+chat.error_voted=§c>> Ya has votado anteriormente.
+chat.mapWinnning=§e§l>> El mapa ganador fue el #%1 (%2 votos totales). La partida iniciará pronto...
+chat.map_equals=§e§l>> ¡Hubo un empate! Se elegirá un mapa aleatorio. El mapa elegido es: Mapa #%1.
+chat.gived_tnt=§e>> %1 ahora tiene la TNT.
+chat.error_no_players_ingame=§l§4>> No hay jugadores suficientes para iniciar.
+chat.dead_player=§4§l>> ¡Has muerto! Puedes usar los comandos: "!tphunter" para teletransportarte a la persona que tiene la TNT o usar "!tpplayer" para ir con el jugador vivo.
+chat.alert_dead_player=§c§l>> %1 fue eliminado. La TNT sera entregada a jugadores aleatorios.
+chat.compass_activated=§e§l>> ¡Todos los jugadores ahora brillan a travez de bloques durante 1 minuto!
+chat.compass_deactivated=§e§l>> El efecto de brillo ha terminado.
+chat.no_coin_activate=§7>> No puedes activar esto con una TNT.
+chat.coin_cooldown=§7>> Aun no puedes usar este item.
+chat.activate_coin=§e>> Activaste la moneda, eres inmune a la TNT durante 10 segundos.
+chat.removed_coin=§7>> El efecto de la moneda ha terminado.
+chat.debuff_blidness=§8>> El efecto de ceguera fue activado, los jugadores con la TNT tendran este efecto.
+chat.cooldown_debuff=§7>> Aun no puedes activar este efecto.
+chat.debuff_blindness=§7>> El jugador con TNT ha sido cegado temporalmente.
+chat.debuff_blindness_tnt=§7>> Un jugador con la TNT ha activado la ceguera a los Jugadores.
+chat.return_game=§7>> Tu anterior partida ha terminado, fuiste movido a la actual.
+chat.return_ingame=§7>> Hay una partida en progreso, fuiste teletrasportado a dicha partida actual.
+chat.endgame_return=§7>> Tu anterior partida ha terminado, fuiste llevado al lobby.
+chat.ingame_return=§7>> Hay una partida en progreso, fuiste teletransportado a la partida como modo espectador.
+chat.error_nohittnt=§7>> Has fallado el tiro...
+chat.notnt_item=§7>> Necesitas tener la TNT para activar este item.
+chat.timerreset=§7>> El tiempo de explosion de la TNT fue reiniciado.
+chat.debuff_slowness=§7>> Los jugadores con la TNT fueron detenidos por un breve momento.
+chat.debuff_slowness_tnt=§7>> Los jugadores fueron detenidos por un breve momento.
+chat.rolling_players=§7>> Todos los Jugadores intercambiaron de lugar.
+chat.banned=§4>> Has baneado a %1.
+chat.unbanned=§4>> Has desbaneado a %1.
+chat.muted=§7>> Se ha silenciado a %1.
+chat.unmuted=§7>> Se le ha removido el silencio a %1.
+chat.muted_player=§4>> ¡Estas silenciado! No puedes usar el chat.
+chat.emmm_looped=§h>> Al parecer %1 y %2 no se deciden por quien tener la TNT que entraron en un limbo sin fin, que desafortunado.
+chat.yep_voting=§7>> Ya has votado antes.
+chat.start_voting=§e>> ¡La votación ha iniciado! Usa el ítem de calculadora de tu inventario con tu botón de interacción para abrir el panel de votación.
+chat.random_map_win=§n§l>> ¡Un mapa aleatorio sera elejido! El Mapa #%1. La partida iniciará pronto...
+chat.winning_player=§e§l>> ¡%1 ha ganado esta ronda!
+
+chat.error.sintaxis=§c>> Error, esta mal escrito, prueba esto: "%1" 
+chat.muted=§7>> Se ha muteado el jugador "%1".
+chat.error.nofindplayer=§c>> No se encontro el jugador "%1". ¿Esta conectado o esta bien escrito?
+chat.error.noyou=§c>> Prueba con alguien mas.
+chat.unmuted=§7>> Se ha desmuteado al jugador "%1".
+chat.error.nounmuted=§c>> El Jugador "%1" no esta muteado.
+chat.banned=§7>> El Jugador "%1" ha sido baneado.
+chat.error.noban=§c>> El Jugador "%1" no esta baneado.
+chat.unban=§7>> El Jugador "%1" ha sido desbaneado.
+chat.ismuted=§7>> Estas muteado, no puedes usar el chat.
+
+chat.alert_dead_player_cube=§d>> %1 fue asesinado por un cubo de compañia. Se le ha restado un punto.
+chat.error.item_cooldown=§7>> El item aun tiene cooldown, debes esperar a que termine por completo.
+
+chat.error_shop.hasitem=§7>> Ya compraste este item.
+chat.shop.getitem=§6>> Compraste el item %1.
+chat.error_shop.nocoins=§7>> No tienes suficientes puntos para comprar este item.
+
+
+## Items Names
+item.ha:super_compass_mapone=§aActivar Glowing§r
+item.ha:super_compass_mapone.name=§aActivar Glowing§r
+
+item.ha:tnt_item_hand_mapone=Lanzar la §cTNT§r
+item.ha:tnt_item_hand_mapone.name=Lanzar la §cTNT§r
+
+item.ha:rolling_players_mapone=Intercambiar Lugares
+item.ha:rolling_players_mapone.name=Intercambiar Lugares
+
+item.ha:super_compass=§aActivar Glowing§r
+item.ha:super_compass.name=§aActivar Glowing§r
+
+item.ha:tnt_helmet=§cTNT§r
+item.ha:tnt_helmet.name=§cTNT§r
+
+item.ha:coin_item=§eMoneda§r
+item.ha:coin_item.name=§eMoneda§r
+
+item.ha:wing_item=Ala
+item.ha:wing_item.name=Ala
+
+item.ha:tnt_item_hand=Lanzar la §cTNT§r
+item.ha:tnt_item_hand.name=Lanzar la §cTNT§r
+
+item.ha:rolling_players=Intercambiar Lugares
+item.ha:rolling_players.name=Intercambiar Lugares
+
+item.ha:net_gun=Arma de Red
+item.ha:net_gun.name=Arma de Red
+
+item.ha:calculator=Votar por un Mapa
+item.ha:calculator.name=Votar por un Mapa
+
+item.ha:companion_cube=§dCubo de Compañia§r
+item.ha:companion_cube.name=§dCubo de Compañia§r
+
+item.ha:info_player=Mirar estadisticas
+item.ha:info_player.name=Mirar estadisticas
+
+
+## Entities
+entity.ha:coin.name=Contador de Votaciones
+entity.ha:sensor.name=Setup Entity
+entity.ha:generator_entity.name=Generador de Buffs
+
+
+## Spawn Eggs
+item.spawn_egg.entity.ha:generator_entity.name=Generador de Boosts
+
+
+## NPC Stuff
+npc_name.royer=§e§lRosherRandom§r
+npc_d.royerbot.hello=Hello! Do you like the lobby? I hope you do, because I was too lazy to finish it...
+
+npc_name.tenier=§a§lTenierWiz§r
+npc_d.tenier.hello=*panda noises*
+
+npc_name.ha=§d§lHa Juegos§r
+npc_d.ha.hello=¿Te gusta el mapa? Recuerda darle estrellas en MCPEL, me ayudaria mucho :3 y tambien compartir con tus amigos este mapa...o invitarlos a Jugar. ¡Gracias!
+
+npc_button.ha.music=Sobre la musica
+npc_d.ha.music=¿Te gusta la musica? Recuerda apoyar a los creadores de estas para que exista mas musica! Si no escuchas la musica, recuerda entrar a la configuracion de minecraft y subir el volumen de la musica.
+
+npc.disclaimer=Algunos mapas que aparecen en el menu de votaciones son de otras, asi que creditos a todos los mapas tomados. Puedes revisar el archivo de creditos.txt en el add-on de este mapa.
+npc.discord=Mi server de Discord en español por si quieres estar: https://discord.gg/9jZHkhu86P :3
+
+npc.name.memo=§e§lMemo
+npc_button.ha.buy=Comprar algo
+npc_button.ha.myitem=¿Y mi item?
+npc_button.ha.hi=Hola Memo
+npc_button.ha.howcoins=Ganar Puntos
+
+npc.memo.body=Bienvenido a la Memo Tienda o el oxxo, como lo quieras llamar. ¿Quieres comprar algo?
+npc.memo.myitem_text=Tu item se vera reflejado cuando inicies una partida con tus amigos. ¿No tienes amigos? Que lastima, no hay reembolsos.
+npc.memo.hi_text=Hola. No soy un portapapeles.
+npc.memo.coins_text=¿No sabes como ganar puntos? Para ganar puntos, debes hacer alguna de estas cosas: Pasar la TNT, Conseguir un Boost, Votar, Usar la Arma de Red, Sobrevivir sin que tengas la TNT o Matar a alguien con el Cubo de compañia. ¡Suerte!
+
+ui.npc.lobby=§l§7Creadores del Lobby§r
+ui.npc.creator=§l§7Creador del Add-on§r
+ui.npc.shop=§l§7Tienda de Items§r

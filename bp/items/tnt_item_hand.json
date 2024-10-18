@@ -1,0 +1,33 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "ha:tnt_item_hand",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:projectile": {
+				"minimum_critical_power": 1.25,
+				"projectile_entity": "minecraft:snowball<ha:tnt_variant>"
+			},
+			"minecraft:throwable": {
+				"do_swing_animation": false,
+				"scale_power_by_draw_duration": true
+			},
+			"minecraft:cooldown": {
+				"category": "tnt",
+				"duration": 11
+			},
+			"minecraft:icon": "tnt_bomb",
+			"minecraft:tags": {
+				"tags": ["ha:tnt"]
+			}
+		}
+	}
+}
