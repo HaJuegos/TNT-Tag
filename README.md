@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/HaJuegos/TNT-Tag/main/.github/pack_icon.png" alt="Add-on Icon" width=500>
-  <h3 align="center">TNT Tag v3</h3>
+  <h3 align="center">TNT Tag - A Minigame Map (v0.0.7-beta)</h3>
   
  <p align="center"> A mini-game where you must NOT have the TNT before it explodes, can you win?</p></p>
 
@@ -14,6 +14,7 @@
 ## IMPORTANT ACCREDITATION
 
 - This map is a group creation of a lot of people. So please, look at the ["Additional credits.txt"](https://github.com/HaJuegos/TNT-Tag/blob/main/Additional%20credits.txt) file to give the respective credits to everyone. Thank you very much :3
+- The music used in this add-on and map should be credited as well so they are not just ‘that song from that map’, so go support the creators too <3, [click here to check out the music.](https://github.com/HaJuegos/TNT-Tag?tab=readme-ov-file#music-used)
 
 ## DOWNLOAD LINKS
 ### Note: These links are linked to Ko-Fi, you may require an account on that site. These files are not and will not be paid, everything is optional and free for anyone who wants to enjoy it.
