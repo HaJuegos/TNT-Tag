@@ -1,0 +1,412 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"ui.used_compass": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/compass_used",
+				"volume": 1.5
+			}
+		]
+	},
+	"ui.error_noplayers": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/waaooo"
+			}
+		]
+	},
+	"ui.error_blocked": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/blocked"
+			}
+		]
+	},
+	"ui.kaboom": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/tnt_explote",
+				"volume": 0.9
+			}
+		]
+	},
+	"player.gived_tnt": {
+		"category": "neutral",
+		"__use_legacy_max_distance": "true",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/conffetti"
+			}
+		]
+	},
+	"ui.winning_game": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/ganaste",
+				"volume": 0.9
+			}
+		]
+	},
+	"ui.used_coin": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/get_coin"
+			}
+		]
+	},
+	"record.pandora_palace": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/pandora_palace",
+				"stream": true
+			}
+		]
+	},
+	"record.asobu": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/asobu",
+				"stream": true
+			}
+		]
+	},
+	"player.bow_hit": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/ding",
+				"volume": 2.3
+			}
+		]
+	},
+	"record.core": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/core",
+				"stream": true
+			}
+		]
+	},
+	"record.eleventh_hour": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/eleventh_hour",
+				"stream": true
+			}
+		]
+	},
+	"record.panic": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/panic",
+				"stream": true
+			}
+		]
+	},
+	"record.cyber_world": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/cyber_world",
+				"stream": true
+			}
+		]
+	},
+	"record.smart_race": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/smart_race",
+				"stream": true
+			}
+		]
+	},
+	"ui.used_boost": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/use_boost"
+			}
+		]
+	},
+	"ui.used_clock": {
+		"category": "ui",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/clock_activated"
+			}
+		]
+	},
+	"ui.rolling_players": {
+		"category": "neutral",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/rolling",
+				"stream": true
+			}
+		]
+	},
+	"ui.netgun.shoot": {
+		"category": "ambient",
+		"__use_legacy_max_distance": "true",
+		"max_distance": 50,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/netgun/netshoot",
+				"volume": 1.5,
+				"stream": true
+			}
+		]
+	},
+	"ui.netgun.hit": {
+		"category": "ambient",
+		"__use_legacy_max_distance": "true",
+		"max_distance": 50,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/netgun/nethit",
+				"volume": 4.0,
+				"stream": true
+			}
+		]
+	},
+	"player.hitnet": {
+		"category": "ambient",
+		"__use_legacy_max_distance": "true",
+		"max_distance": 50,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/netgun/netoff",
+				"volume": 5.0,
+				"stream": true
+			}
+		]
+	},
+	"record.dinner": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/dinner",
+				"volume": 0.8,
+				"stream": true
+			}
+		]
+	},
+	"record.judgment": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/judgment",
+				"volume": 0.85,
+				"stream": true
+			}
+		]
+	},
+	"mob.companion.damage": {
+		"__use_legacy_max_distance": "true",
+		"category": "player",
+		"max_distance": 35.0,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/companion/companionDamage",
+				"volume": 1.35
+			}
+		]
+	},
+	"mob.companion.hit": {
+		"__use_legacy_max_distance": "true",
+		"category": "player",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/companion/companionHit",
+				"stream": true,
+				"volume": 1.25
+			}
+		]
+	},
+	"ui.getcoin.max": {
+		"category": "ui",
+		"min_distance": null,
+		"max_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/coins/getMoneyMax",
+				"is3D": false,
+				"stream": true,
+				"volume": 1.13
+			}
+		]
+	},
+	"ui.getcoin.mini": {
+		"category": "ui",
+		"min_distance": null,
+		"max_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/ui/coins/getMoneyMini",
+				"is3D": false,
+				"stream": true,
+				"volume": 1.13
+			}
+		]
+	},
+	"record.abstract_map": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/abstract_map",
+				"stream": true
+			}
+		]
+	},
+	"record.android_apartment": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/android_apartment",
+				"stream": true
+			}
+		]
+	},
+	"record.datakrash": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/datakrash",
+				"stream": true
+			}
+		]
+	},
+	"record.hotline": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/hotline",
+				"stream": true
+			}
+		]
+	},
+	"record.knock_knock": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/knock_knock",
+				"stream": true
+			}
+		]
+	},
+	"record.shape_da_future": {
+		"category": "music",
+		"max_distance": null,
+		"min_distance": null,
+		"sounds": [
+			{
+				"load_on_low_memory": true,
+				"name": "sounds/music/shape_da_future",
+				"stream": true
+			}
+		]
+	}
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

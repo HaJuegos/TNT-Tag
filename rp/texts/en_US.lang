@@ -1,0 +1,266 @@
+## Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz
+## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz
+
+## Manifest
+pack.name=§e[RP]§r §4T§7N§4T§r §cTag§r §7|§r By §cHaJuegos Cat!§r & §bImLouis§r
+pack.description=Textures required for the world.
+
+
+## UI Messages
+multiplayer.player.joined=§s>> %s joined the TNT Tag.
+multiplayer.player.left=§s>> %s left the TNT Tag.
+
+ui.votation_timer=§bThe voting will end in %1 seconds...
+ui.ingametimer=§l§4The TNT will explode in %1 seconds...
+ui.tnt_exploding=§cKABOOM!
+ui.tnt_exploding_sub=§0The TNT has exploded on you.
+ui.cube_damage=§dYou are dead!
+ui.cube_damage_sub=§7You were killed by a Companion Cube.
+scoreboard.nameAllPlayers=§e§lPlayer List:
+score.namePlayerTnt=§cPlayers with TNT
+score.namePlayerLive=§aPlayers without TNT
+ui.wininng=§aWINNER!
+ui.wininng_sub=%1 has survived.
+scoreboard.nameWinningTotal=§eTop winners
+ui.drawparty=§7Draw?
+ui.drawparty_sub=Nobody has won this match, it seems...
+
+ui.title_music1=§e§lYou're listening!
+ui.subtitle_music1=Majotori OST: Asobu. By: Majorariatto
+ui.subtitle_music2=Deltarune Chapter 2 OST: Pandora Palace. By: TobyFox
+ui.subtitle_music3=Undertale OST: Core. By: TobyFox
+ui.subtitle_music4=OneShot OST: Panic. By: Nightmargin
+ui.subtitle_music5=OneShot OST: Eleventh Hour. By: Nightmargin
+ui.subtitle_music6=DELTARUNE CH2 OST: A CYBER'S WORLD. By: TobyFox
+ui.subtitle_music7=DELTARUNE CH2 OST: Smart Race. By: TobyFox
+ui.subtitle_music8=DINNER!. By: femtanyl
+ui.subtitle_music9=Metal Slug 2 - Judgment. By: SNK SOUND TEAM
+ui.subtitle_music10=Abstract Map. By: VLDC9
+ui.subtitle_music11=CITY POP. By: Android Apartment
+ui.subtitle_music12=Hotline (Original Mix). By: S T
+ui.subtitle_music13=Knock Knock. By: S T
+ui.subtitle_music14=Shape Da Future. By: Hideki Naganuma
+ui.subtitle_music15=Datakrash (Savant). By: Principle
+
+scoreboard.voteTotal=§dTotal Votes:
+score.map1=Map #1
+score.map2=Map #2
+score.map3=Map #3
+score.map4=Map #4
+score.map5=Map #5
+score.map6=Map #6
+score.map7=Map #7
+score.map8=Map #8
+score.map9=Map #9
+score.map10=Map #10
+score.random=Random Map
+
+
+sign_message_village=End of the road.
+sign_text.click_start=§b§lClick me to start playing :3§r
+ui.sign.yei=§eYou won! Congratulations.
+
+ui.votation_time=It's time to vote!
+ui.votation_choose=§bChoose the map you want to play
+ui.button_vote1=§6§lCastle | By PatoMcFly
+ui.button_vote2=§2§lVillage | By ImLouis
+ui.button_vote3=§3§lFarm
+ui.button_vote4=§e§lWar Zone
+ui.button_vote5=§g§lDesert Flat
+ui.button_vote6=§q§lHide n' Seek
+ui.button_vote7=§5§lCaves | By TenierWiz
+ui.button_vote8=§p§lTrial Chamber
+ui.button_vote9=§m§lThe Skeld | By Anderistic
+ui.button_vote10=§c§lNether
+ui.button_random=§i§lRandom Map
+ui.warning_vote_1=§c§lWarning!
+ui.warning_vote_text=§eThis map is not optimized for some devices, which may affect your experience on this map. Are you sure you want to vote for this map?
+ui.warning_voterandom_text=§eBy voting random, map 1° may come out as the winner, and it is not optimized for some devices, which may affect your performance. Are you sure you want to continue?
+ui.warning.buttonyes=Yes
+ui.warning.buttonno=No
+
+
+ui.credits=§lCredits :3
+ui.credits.dev=§lAdd-on Developer:
+ui.credits.name_dev=§c Ha Juegos
+ui.credits.art=§lArt, Models & Particles:
+ui.credits.art_name=§e Astral302
+ui.credits.idea=§lOriginal idea by:
+ui.credits.idea_name=§b ImLouis
+
+ui.shop.title=§e§lMemo's Shop
+ui.shop.body=§bChoose the item you want to buy.
+
+ui.shop.item1=%2%1§o§750 points
+ui.shop.item2=%2%1§o§7100 points
+ui.shop.item3=%2%1§o§7100 points
+ui.shop.item4=%2%1§o§7150 points
+ui.shop.item5=x3 %2%1§o§7200 points
+ui.shop.item6=%2%1§o§7300 points
+ui.shop.item7=%2%1§o§7350 points
+ui.shop.item8=%2%1§o§7400 points
+ui.shop.item9=%2%1§o§7500 points
+ui.shop.item10=%2%1§o§71000 points
+
+ui.statsply.title=Statistics of %1
+ui.statsply.body=%1§e- Total Points:§r %2%1%1- Times You've Died: %3%1%1- Times You've Won: %4%1%1- Class: %5%1%1- Time of Entry: %6%1%1- Items Purchased: %7%1%1- Times You've Voted: %8%1%1- Number of times you have passed TNT: %9
+ui.statec1=Pure
+ui.statec2=Father
+ui.statec3=Son
+ui.statec4=Holy Spirit
+ui.statec5=Savior
+ui.statsply.end=Close
+
+
+## Chat Messages
+chat.error_noplayers=§c>> There are not enough players. Invite your friends.
+chat.gameStarted=§b>> The game will start with a total of %1 players. Voting begins.
+chat.voted1=§7>> You have voted for Map #1.
+chat.voted2=§7>> You have voted for Map #2.
+chat.voted3=§7>> You have voted for Map #3.
+chat.voted4=§7>> You have voted for Map #4.
+chat.voted5=§7>> You have voted for Map #5.
+chat.voted6=§7>> You have voted for Map #6.
+chat.voted7=§7>> You have voted for Map #7.
+chat.voted8=§7>> You have voted for Map #8.
+chat.voted9=§7>> You have voted for Map #9.
+chat.voted10=§7>> You have voted for Map #10.
+chat.random=§7>> You have voted for a Random Map.
+chat.error_voted=§c>> You have already voted before.
+chat.mapWinnning=§e§l>> The winning map was Map #%1 (%2 total votes). The game will start soon...
+chat.map_equals=§e§l>> There was a tie! A random map will be chosen. The chosen map is: Map #%1.
+chat.gived_tnt=§e>> %1 now has the TNT.
+chat.error_no_players_ingame=§l§4>> There are not enough players to start.
+chat.dead_player=§4§l>> You have died! You can use the commands: "!tphunter" to teleport to the person with the TNT or use "!tpplayer" to go to the living player.
+chat.alert_dead_player=§c§l>> %1 has been eliminated. The TNT will be given to random players.
+chat.compass_activated=§e§l>> All players now glows through blocks for 1 minute!
+chat.compass_deactivated=§e§l>> The glowing effect is finished.
+chat.no_coin_activate=§7>> You cannot activate this with a TNT.
+chat.coin_cooldown=§7>> You still cannot use this item.
+chat.activate_coin=§e>> You have activated the coin, you are immune to TNT for 10 seconds.
+chat.removed_coin=§7>> The effect of the coin has ended.
+chat.debuff_blidness=§8>> The blindness effect has been activated; players with the TNT will have this effect.
+chat.cooldown_debuff=§7>> You still cannot activate this effect.
+chat.debuff_blindness=§7>> The TNT player has been temporarily blinded.
+chat.debuff_blindness_tnt=§7>> A player with TNT has activated blindness for the Players.
+chat.return_game=§7>> Your previous game has ended, you were moved to the current game.
+chat.return_ingame=§7>> There is a game in progress, you were teleported to the current game.
+chat.endgame_return=§7>> Your previous game has ended, you were taken to the lobby.
+chat.ingame_return=§7>> There is a game in progress, you were teleported to the game as a spectator.
+chat.error_nohittnt=§7>> You missed the shot...
+chat.notnt_item=§7>> You need to have the TNT to activate this item.
+chat.timerreset=§7>> The TNT explosion time was reset.
+chat.debuff_slowness=§7>> The players with the TNT were stopped for a brief moment.
+chat.debuff_slowness_tnt=§7>> The players were briefly detained.
+chat.rolling_players=§7>> All players switched places.
+chat.banned=§4>> You have banned %1.
+chat.unbanned=§4>> You have unbanned %1.
+chat.muted=§7>> %1 has been muted.
+chat.unmuted=§7>> %1's mute has been removed.
+chat.muted_player=§4>> You are muted! You cannot use the chat.
+chat.emmm_looped=§h>> It seems %1 and %2 can't decide who should have the TNT. They've entered an endless loop. How unfortunate.
+chat.yep_voting=§7>> You have already voted before.
+chat.start_voting=§e>> The voting has started! Use the calculator item from your inventory with your interaction button to open the voting panel.
+chat.random_map_win=§n§l>> A random map will be chosen! Map #%1. The game will start soon...
+chat.winning_player=§e§l>> %1 has won this round!
+
+chat.error.sintaxis=§c>> Error, incorrect syntax, try this: "%1"
+chat.muted=§7>> Player "%1" has been muted.
+chat.error.nofindplayer=§c>> Could not find player "%1". Are they connected or is the name spelled correctly?
+chat.error.noyou=§c>> Try someone else.
+chat.unmuted=§7>> The player "%1" has been unmuted.
+chat.error.nounmuted=§c>> The player "%1" is not muted.
+chat.banned=§7>> The player "%1" has been banned.
+chat.error.noban=§c>> The player "%1" is not banned.
+chat.unban=§7>> The player "%1" has been unbanned.
+chat.ismuted=§7>> You are muted, you can't use the chat.
+
+chat.alert_dead_player_cube=§d>> %1 was killed by a Companion Cube. One point has been deducted.
+chat.error.item_cooldown=§7>> The item is still on cooldown, you need to wait until it fully resets.
+
+chat.error_shop.hasitem=§7>> You've already bought this item.
+chat.shop.getitem=§6>> You purchased the item %1.
+chat.error_shop.nocoins=§7>> You don't have enough points to buy this item.
+
+
+## Items Names
+item.ha:rolling_players_mapone=Exchanging places
+item.ha:rolling_players_mapone.name=Exchanging places
+
+item.ha:tnt_item_hand_mapone=Launch the §cTNT§r
+item.ha:tnt_item_hand_mapone.name=Launch the §cTNT§r
+
+item.ha:rolling_players_mapone=Exchanging places
+item.ha:rolling_players_mapone.name=Exchanging places
+
+item.ha:super_compass_mapone=§aActivate Glowing§r
+item.ha:super_compass_mapone.name=§aActivate Glowing§r
+
+item.ha:super_compass=§aActivate Glowing§r
+item.ha:super_compass.name=§aActivate Glowing§r
+
+item.ha:tnt_helmet=§cTNT§r
+item.ha:tnt_helmet.name=§cTNT§r
+
+item.ha:coin_item=§eCoin§r
+item.ha:coin_item.name=§eCoin§r
+
+item.ha:wing_item=Wing
+item.ha:wing_item.name=Wing
+
+item.ha:tnt_item_hand=Launch the §cTNT§r
+item.ha:tnt_item_hand.name=Launch the §cTNT§r
+
+item.ha:net_gun=Net Gun
+item.ha:net_gun.name=Net Gun
+
+item.ha:calculator=Vote for a Map
+item.ha:calculator.name=Vote for a Map
+
+item.ha:companion_cube=§dCompanion Cube§r
+item.ha:companion_cube.name=§dCompanion Cube§r
+
+item.ha:info_player=View statistics
+item.ha:info_player.name=View statistics
+
+
+## Entities
+entity.ha:coin.name=Voting Counter
+entity.ha:sensor.name=Setup Entity
+entity.ha:generator_entity.name=Buffs Generator
+
+
+## Spawn Eggs
+item.spawn_egg.entity.ha:generator_entity.name=Boost Spawn Egg
+
+
+## NPC Stuff
+npc_name.royer=§e§lRosherRandom§r
+npc_d.royerbot.hello=Hello! Do you like the lobby? I hope you do, because I was too lazy to finish it...
+
+npc_name.tenier=§a§lTenierWiz§r
+npc_d.tenier.hello=*panda noises*
+
+npc_name.ha=§d§lHa Juegos§r
+npc_d.ha.hello=Do you like the map? Remember to give it stars on MCPEL, it would really help me a lot :3 and also share this map with your friends... or invite them to play. Thank you!
+
+npc_button.ha.music=About the music
+npc_d.ha.music=Do you like the music? Remember to support the creators so there will be more music! If you can't hear the music, go to Minecraft settings and turn up the music volume.
+
+npc.disclaimer=Some maps that appear in the voting menu are from others, so credits go to all the creators. You can check the credits.txt file in the add-on of this map.
+npc.discord=My Spanish Discord server if you'd like to join: https://discord.gg/9jZHkhu86P :3
+
+npc.name.memo=§e§lMemo
+npc_button.memo.buy=Buy something
+npc_button.memo.myitem=Where's my item?
+npc_button.memo.hi=Hello Memo
+npc_button.memo.howcoins=Earn Points
+
+npc.memo.body=Welcome to Memo's Shop or call it the Oxxo, whatever you want. Want to buy something?
+npc.memo.myitem_text=Your item will appear when you start a match with your friends. No friends? Too bad, no refunds.
+npc.memo.hi_text=Hi. I'm not a clipboard.
+npc.memo.coins_text=Don't know how to earn points? To earn points, you need to do one of these: Pass the TNT, Get a Boost, Vote, Use the Red Weapon, Survive without getting the TNT, or Kill someone with the Companion Cube. Good luck!
+
+ui.npc.lobby=§l§7Lobby Creators§r
+ui.npc.creator=§l§7Add-on Creator§r
+ui.npc.shop=§l§7Item Shop§r

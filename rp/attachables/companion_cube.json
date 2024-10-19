@@ -1,0 +1,44 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "ha:companion_cube",
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "armor_enchanted"
+			},
+			"textures": {
+				"default": "textures/entity/boost/companion_cube",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.companion_cube"
+			},
+			"scripts": {
+				"animate": [
+					"bob",
+					{
+						"1st_person": "c.is_first_person"
+					},
+					{
+						"3st_person": "!c.is_first_person && !query.is_sneaking"
+					},
+					{
+						"3st_person_shift": "!c.is_first_person && query.is_sneaking"
+					}
+				]
+			},
+			"animations": {
+				"1st_person": "animation.tnt_item_hand.1st_person",
+				"3st_person": "animation.tnt_item_hand.3st_person",
+				"3st_person_shift": "animation.tnt_item_hand.3st_person_shift",
+				"bob": "animation.tnt_item_hand.bob"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

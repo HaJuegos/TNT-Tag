@@ -1,0 +1,51 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ha:custom_npc",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/void_skin",
+				"royer": "textures/entity/npcs/royer_alex",
+				"tenier": "textures/entity/npcs/tenier_steve",
+				"ha": "textures/entity/npcs/ha_alex",
+				"memo": "textures/entity/npcs/memo_oxxo"
+			},
+			"geometry": {
+				"default": "geometry.humanoid.custom",
+				"alex": "geometry.humanoid.custom"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+					"variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+				],
+				"animate": ["root"]
+			},
+			"animations": {
+				"root": "controller.animation.npc_players.root",
+
+				"look_at_target": "animation.humanoid.look_at_target.default",
+				"move.arms": "animation.player.move.arms",
+				"move.legs": "animation.player.move.legs",
+				"swimming": "animation.player.swim",
+				"swimming.legs": "animation.player.swim.legs",
+				"riding.arms": "animation.player.riding.arms",
+				"riding.legs": "animation.player.riding.legs",
+				"holding": "animation.player.holding",
+				"attack.positions": "animation.player.attack.positions",
+				"attack.rotations": "animation.player.attack.rotations",
+				"sneaking": "animation.player.sneaking",
+				"bob": "animation.player.bob",
+				"use_item_progress": "animation.humanoid.use_item_progress",
+				"skeleton_attack": "animation.skeleton.attack",
+				"sleeping": "animation.player.sleeping"
+			},
+			"render_controllers": ["controller.render.custom_npcs"]
+		}
+	}
+}

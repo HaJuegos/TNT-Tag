@@ -1,0 +1,29 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.17.0",
+	"minecraft:npc_dialogue": {
+		"scenes": [
+			{
+				"scene_tag": "ha_d_music",
+				"npc_name": { "rawtext": [{ "translate": "npc_name.ha" }] },
+				"text": { "rawtext": [{ "translate": "npc_d.ha.music" }] }
+			},
+			{
+				"scene_tag": "memo.myitem",
+				"npc_name": { "rawtext": [{ "translate": "npc.name.memo" }] },
+				"text": { "rawtext": [{ "translate": "npc.memo.myitem_text" }] }
+			},
+			{
+				"scene_tag": "memo.hello",
+				"npc_name": { "rawtext": [{ "translate": "npc.name.memo" }] },
+				"text": { "rawtext": [{ "translate": "npc.memo.hi_text" }] }
+			},
+			{
+				"scene_tag": "memo.coins",
+				"npc_name": { "rawtext": [{ "translate": "npc.name.memo" }] },
+				"text": { "rawtext": [{ "translate": "npc.memo.coins_text" }] }
+			}
+		]
+	}
+}

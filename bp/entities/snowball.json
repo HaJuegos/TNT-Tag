@@ -1,0 +1,217 @@
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:snowball",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"ha:cube": {
+				"minecraft:physics": {
+					"has_collision": true,
+					"has_gravity": true
+				},
+				"minecraft:pushable": {
+					"is_pushable": true,
+					"is_pushable_by_piston": true
+				},
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 1
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 1,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false,
+							"should_bounce": false,
+							"power_multiplier": 0.97
+						},
+						"stick_in_ground": {}
+					},
+					"power": 3.5,
+					"gravity": 0.1,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"offset": [0, -0.1, 0],
+					"should_bounce": true,
+					"reflect_on_hurt": true,
+					"destroy_on_hurt": false,
+					"multiple_targets": true,
+					"stop_on_hurt": false,
+					"is_dangerous": true
+				},
+				"minecraft:variant": {
+					"value": 3
+				},
+				"minecraft:tick_world": {
+					"radius": 4,
+					"never_despawn": true
+				},
+				"minecraft:friction_modifier": {
+					"value": 1.5
+				}
+			},
+			"ha:net_proyectile": {
+				"minecraft:collision_box": {
+					"width": 1.15,
+					"height": 1.15
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 1,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false,
+							"should_bounce": true,
+							"power_multiplier": 0.97
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {
+							"apply_effect_to_blocking_targets": true
+						}
+					},
+					"power": 2.1,
+					"gravity": 0.03,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"offset": [0, -0.1, 0],
+					"should_bounce": false
+				},
+				"minecraft:variant": {
+					"value": 2
+				},
+				"minecraft:timer": {
+					"time": [5, 5],
+					"looping": true,
+					"time_down_event": {
+						"event": "despawn",
+						"target": "self"
+					}
+				}
+			},
+			"ha:tnt": {
+				"minecraft:collision_box": {
+					"width": 1,
+					"height": 1
+				},
+				"minecraft:projectile": {
+					"on_hit": {
+						"impact_damage": {
+							"damage": 1,
+							"knockback": true,
+							"semi_random_diff_damage": false,
+							"destroy_on_hit": false,
+							"should_bounce": true,
+							"power_multiplier": 0.97
+						},
+						"stick_in_ground": {
+							"shake_time": 0.35
+						},
+						"arrow_effect": {
+							"apply_effect_to_blocking_targets": true
+						}
+					},
+					"hit_sound": "bow.hit",
+					"power": 3.5,
+					"gravity": 0.05,
+					"uncertainty_base": 1,
+					"uncertainty_multiplier": 0,
+					"anchor": 1,
+					"offset": [0, -0.1, 0],
+					"should_bounce": false,
+					"reflect_on_hurt": true
+				},
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:tick_world": {
+					"radius": 4,
+					"never_despawn": true
+				}
+			},
+			"ha:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"filter": "blaze",
+						"damage": 3,
+						"knockback": true
+					},
+					"remove_on_hit": {},
+					"particle_on_hit": {
+						"particle_type": "snowballpoof",
+						"num_particles": 6,
+						"on_entity_hit": true,
+						"on_other_hit": true
+					}
+				},
+				"anchor": 1,
+				"power": 1.5,
+				"gravity": 0.03,
+				"angle_offset": 0,
+				"offset": [0, -0.1, 0]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 100,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:variant": {
+				"value": 0
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {},
+			"ha:tnt_variant": {
+				"add": {
+					"component_groups": ["ha:tnt"]
+				}
+			},
+			"ha:cube_variant": {
+				"add": {
+					"component_groups": ["ha:cube"]
+				}
+			},
+			"ha:net_proyectile": {
+				"queue_command": {
+					"command": ["playsound ui.netgun.shoot @a ~~~"]
+				},
+				"add": {
+					"component_groups": ["ha:net_proyectile"]
+				}
+			},
+			"despawn": {
+				"add": {
+					"component_groups": ["ha:despawn"]
+				}
+			}
+		}
+	}
+}

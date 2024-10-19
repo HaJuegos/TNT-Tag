@@ -1,0 +1,70 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.boosts_custom": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default",
+						"Texture.blind",
+						"Texture.bow",
+						"Texture.coin",
+						"Texture.invi",
+						"Texture.jump",
+						"Texture.speed",
+						"Texture.wing",
+						"Texture.clock",
+						"Texture.elytra",
+						"Texture.slowness",
+						"Texture.gun",
+						"Texture.cube"
+					]
+				},
+				"geometries": {
+					"Array.geos": [
+						"Geometry.default",
+						"Geometry.blind",
+						"Geometry.default",
+						"Geometry.coin",
+						"Geometry.invi",
+						"Geometry.jump",
+						"Geometry.jump",
+						"Geometry.wing",
+						"Geometry.clock",
+						"Geometry.elytra",
+						"Geometry.clock",
+						"Geometry.gun",
+						"Geometry.cube"
+					]
+				},
+				"materials": {
+					"Array.materials": [
+						"Material.default",
+						"Material.blend",
+						"Material.default",
+						"Material.default",
+						"Material.blend",
+						"Material.default",
+						"Material.default",
+						"Material.default",
+						"Material.default",
+						"Material.default",
+						"Material.default",
+						"Material.default",
+						"Material.default"
+					]
+				}
+			},
+			"materials": [
+				{
+					"*": "Array.materials[q.variant]"
+				}
+			],
+			"geometry": "Array.geos[q.variant]",
+			"textures": [
+				"Array.skins[q.variant]"
+			],
+			"ignore_lighting": true
+		}
+	}
+}
