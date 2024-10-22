@@ -1,11 +1,12 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/HaJuegos/TNT-Tag/main/.github/pack_icon.png" alt="Add-on Icon" width=500>
-  <h3 align="center">TNT Tag - A Minigame Map (v0.0.7-beta)</h3>
+  <h3 align="center">TNT Tag - A Minigame Map (v0.0.8-beta)</h3>
   
  <p align="center"> A mini-game where you must NOT have the TNT before it explodes, can you win?</p></p>
 
 <p align="center">
-  <a href="https://mcpedl.com/tnt-tag-minigame/"><img src="https://img.shields.io/badge/MCPEDL%20Map-0cb500?url=https://mcpedl.com/tnt-tag-minigame/?style=plastic" alt="Mcpedl Map Link"/></a>
+  <a href="https://www.curseforge.com/minecraft/worlds/tnt-tag-minigame"><img src="https://img.shields.io/badge/CurseForge%20Map-5b54ff?style=plastic&logo=curseforge&logoColor=orange" alt="CurseForge Page"/></a>
+  <a href="https://mcpedl.com/tnt-tag-minigame/"><img src="https://img.shields.io/badge/MCPEDL%20Map-0cb500?style=plastic&logo=minecraft&logoColor=white" alt="MCPEDL Page"/></a>
   <a href="https://discord.gg/WH9KpNWXUz"><img src="https://img.shields.io/discord/782053401281429504?style=plastic&color=red&logo=discord&label=The%20Games%20Store%20Server" alt="Discord"/></a>
   <a href="https://ko-fi.com/hajuegos0710"><img src="https://img.shields.io/npm/v/express?url=https://ko-fi.com/hajuegos0710&style=plastic&logo=kofi&label=Donations%20or%20Commissions%20in%20Ko-fi&color=inactive" alt="Ko-Fi"/></a>
   <a href="https://github.com/HaJuegos/TNT-Tag"><img src="https://img.shields.io/github/stars/HaJuegos/TNT-Tag?label=GitHub%20Stars&style=plastic&logo=github&color=blueviolet" alt="GitHub Stars"/></a>
@@ -27,7 +28,7 @@
 
 ## MINI-USER GUIDE
 
-- **This world was created in MC version 1.21.31. Any version lower or higher in the future may not work properly.**
+- **This world was created in MC version 1.21.41. Any version lower or higher in the future may not work properly.**
 - **This map uses scripts, so it is not supported by Aternos.**
 - All map installation and setup is automatic.
 - If you downloaded the PreConfigured World and don't know what to do with it, take a look at this tutorial image: https://github.com/HaJuegos/TNT-Tag/tree/main/.github/exmple.png
