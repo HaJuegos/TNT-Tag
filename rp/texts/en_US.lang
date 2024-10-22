@@ -190,8 +190,8 @@ item.ha:rolling_players_mapone.name=Exchanging places
 item.ha:tnt_item_hand_mapone=Launch the §cTNT§r
 item.ha:tnt_item_hand_mapone.name=Launch the §cTNT§r
 
-item.ha:rolling_players_mapone=Exchanging places
-item.ha:rolling_players_mapone.name=Exchanging places
+item.ha:rolling_players=Exchanging places
+item.ha:rolling_players.name=Exchanging places
 
 item.ha:super_compass_mapone=§aActivate Glowing§r
 item.ha:super_compass_mapone.name=§aActivate Glowing§r
