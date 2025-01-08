@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/HaJuegos/TNT-Tag/main/.github/pack_icon.png" alt="Add-on Icon" width=500>
-  <h3 align="center">TNT Tag - A Minigame Map (v0.0.8-beta)</h3>
+  <h3 align="center">TNT Tag - A Minigame Map (v0.0.9-beta)</h3>
   
  <p align="center"> A mini-game where you must NOT have the TNT before it explodes, can you win?</p></p>
 
@@ -28,7 +28,7 @@
 
 ## MINI-USER GUIDE
 
-- **This world was created in MC version 1.21.41. Any version lower or higher in the future may not work properly.**
+- **This world was created in MC version 1.21.51. Any version lower or higher in the future may not work properly.**
 - **This map uses scripts, so it is not supported by Aternos.**
 - All map installation and setup is automatic.
 - If you downloaded the PreConfigured World and don't know what to do with it, take a look at this tutorial image: https://github.com/HaJuegos/TNT-Tag/tree/main/.github/exmple.png
