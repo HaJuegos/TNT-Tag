@@ -20,8 +20,9 @@
 ## DOWNLOAD ALTERNATIVES
 ### Note: The following links are alternative download pages for the same map:
 
-- [**CLICK AQUI PARA IR A MCPEDL**](https://mcpedl.com/tnt-tag-minigame/)
-- [**CLICK AQUI PARA IR A CURSE FORGE**](https://www.curseforge.com/minecraft-bedrock/maps/tnt-tag-minigame)
+- [**CLICK HERE TO GO TO MCPEDL PAGE**](https://mcpedl.com/tnt-tag-minigame/)
+
+- [**CLICK HERE TO GO TO CURSE FORGE**](https://www.curseforge.com/minecraft-bedrock/maps/tnt-tag-minigame)
 
 ## DOWNLOAD LINKS
 ### Note: These links are linked to Ko-Fi, you may require an account on that site. These files are not and will not be paid, everything is optional and free for anyone who wants to enjoy it.
