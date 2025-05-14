@@ -1,0 +1,147 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ha:net_projectile",
+            "runtime_identifier": "minecraft:ender_pearl",
+            "spawn_category": "misc",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "ha:solid_mode": {
+                "minecraft:transformation": {
+                    "into": "ha:collider_net_projectile<minecraft:entity_spawned>",
+                    "delay": {
+                        "value": 0.1
+                    }
+                }
+            },
+            "ha:projectile_mode": {
+                "minecraft:projectile": {
+                    "on_hit": {
+                        "impact_damage": {
+                            "damage": 0,
+                            "knockback": false,
+                            "destroy_on_hit": false,
+                            "should_bounce": false
+                        },
+                        "arrow_effect": { },
+                        "stick_in_ground": {
+                            "shake_time": 0
+                        }
+                    },
+                    "anchor": 1,
+                    "gravity": 0.1,
+                    "power": 3,
+                    "angle_offset": 0,
+                    "offset": [ 0, 0.05, 0 ],
+                    "reflect_on_hurt": true,
+                    "should_bounce": false,
+                    "multiple_targets": true,
+                    "is_dangerous": true,
+                    "stop_on_hurt": false,
+                    "uncertainty_base": 0,
+                    "uncertainty_multiplier": 0,
+                    "ignored_entities": [
+                        "boat",
+                        "chest_boat",
+                        "minecart",
+						"ha:power_ups",
+						"ha:custom_npc"
+                    ]
+                }
+            },
+            "ha:despawn": {
+                "minecraft:instant_despawn": { }
+            }
+        },
+        "components": {
+            "minecraft:transient": { },
+            "minecraft:despawn": {
+                "despawn_from_distance": { }
+            },
+            "minecraft:knockback_resistance": {
+                "value": 99999
+            },
+            "minecraft:health": {
+                "value": 2,
+                "max": 2,
+                "min": 2
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 1.25,
+                "width": 1.25
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:cannot_be_attacked": { },
+            "minecraft:floats_in_liquid": { },
+            "minecraft:friction_modifier": {
+                "value": 0.5
+            },
+            "minecraft:type_family": {
+                "family": [ "net_projectile", "inanimate", "mob" ]
+            },
+            "minecraft:physics": { },
+            "minecraft:dimension_bound": { },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_optimized_distance": 80.0,
+                    "max_dropped_ticks": 7,
+                    "use_motion_prediction_hints": true
+                }
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "queue_command": {
+                    "command": [
+                        "playsound item.net_gun.spawned @a ~~~",
+                        "particle minecraft:knockback_roar_particle ~~0.5~"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:projectile_mode"
+                    ]
+                }
+            },
+            "ha:start_solid": {
+                "remove": {
+                    "component_groups": [
+                        "ha:projectile_mode"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:solid_mode"
+                    ]
+                }
+            },
+            "ha:despawn": {
+                "add": {
+                    "component_groups": [
+                        "ha:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

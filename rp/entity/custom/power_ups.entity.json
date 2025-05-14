@@ -1,0 +1,75 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ha:power_ups",
+            "materials": {
+                "default": "entity_alphatest",
+                "blend": "entity_alphablend"
+            },
+            "geometry": {
+                "coin": "geometry.powerup.coin",
+                "blindness": "geometry.powerup.blindness",
+                "invi": "geometry.powerup.invi",
+                "bow": "geometry.powerup.bow_and_quiver",
+                "boots": "geometry.powerup.boots",
+                "wings": "geometry.powerup.wings",
+                "two_dimension": "geometry.powerup.two_dimension",
+                "elytra": "geometry.powerup.elytra",
+                "gun": "geometry.powerup.gun",
+                "companion_cube": "geometry.powerup.companion_cube"
+            },
+            "textures": {
+                "nothing": "textures/entity/power_ups/none",
+                "coin": "textures/entity/power_ups/coin",
+                "blindness": "textures/entity/power_ups/blindness",
+                "invi": "textures/entity/power_ups/invi",
+                "bow": "textures/entity/power_ups/bow_and_quiver",
+                "jump": "textures/entity/power_ups/jump",
+                "speed": "textures/entity/power_ups/speed",
+
+                // 2d
+                "wing": "textures/items/wing_item",
+                "clock": "textures/items/add_clock",
+                "slow": "textures/items/slowness",
+
+                "elytra": "textures/models/armor/elytra",
+                "gun": "textures/models/weapon/net_gun",
+                "companion_cube": "textures/entity/power_ups/companion_cube"
+            },
+            "animations": {
+                "idle": "animation.boost.idle",
+                "idle_position": "animation.boost.idle_position",
+                "scale": "animation.boost.scale",
+                "wings": "animation.boost.wings",
+                "scale_gun": "animation.boost.scale_gun"
+            },
+            "scripts": {
+                "animate": [
+                    "idle",
+                    "idle_position",
+                    {
+                        "scale": "q.variant == 1 || q.variant == 5 || q.variant == 6"
+                    },
+                    {
+                        "wings": "q.variant == 7"
+                    },
+                    {
+                        "scale_gun": "q.variant == 11"
+                    }
+                ]
+            },
+            "render_controllers": [
+                "controller.render.power_ups"
+            ],
+            "spawn_egg": {
+                "texture": "spawn_generator"
+            },
+            "particle_effects": {
+                "wing": "astral:wing_particle"
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

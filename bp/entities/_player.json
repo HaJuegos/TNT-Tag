@@ -1,236 +1,497 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "minecraft:player",
+            "spawn_category": "creature",
+            "is_spawnable": false,
+            "is_summonable": false,
+            "animations": {
+                "detection": "controller.animation.player.detection"
+            },
+            "scripts": {
+                "animate": [
+                    "detection"
+                ]
+            }
+        },
+        "component_groups": {
+            "ha:has_ply": {
+                "minecraft:is_pregnant": { }
+            },
+            "ha:normal_family": {
+                "minecraft:type_family": {
+                    "family": [ "player" ]
+                }
+            },
+            "ha:is_solid": {
+                "minecraft:is_stackable": { },
+                "minecraft:is_collidable": { }
+            },
+            "ha:glowing": {
+                "minecraft:is_tamed": { }
+            },
+            "ha:normal_box": {
+                "minecraft:collision_box": {
+                    "width": 0.6,
+                    "height": 1.8
+                }
+            },
+            "ha:net": {
+                "minecraft:type_family": {
+                    "family": [ "player", "innet" ]
+                },
+                "minecraft:is_chested": { },
+                "minecraft:collision_box": {
+                    "height": 1,
+                    "width": 1
+                }
+            },
+            "ha:no_in_game": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "deals_damage": false
+                        }
+                    ]
+                }
+            },
+            "ha:in_game": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "has_damage",
+                                            "subject": "self",
+                                            "value": "projectile"
+                                        },
+                                        {
+                                            "any_of": [
+                                                {
+                                                    "test": "has_tag",
+                                                    "subject": "other",
+                                                    "value": "tntPly"
+                                                },
+                                                {
+                                                    "test": "has_tag",
+                                                    "subject": "damager",
+                                                    "value": "tntPly"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "deals_damage": true
+                        },
+                        {
+                            "on_damage": {
+                                "filters": {
+                                    "any_of": [
+                                        {
+                                            "test": "has_tag",
+                                            "subject": "other",
+                                            "operator": "!=",
+                                            "value": "tntPly"
+                                        },
+                                        {
+                                            "test": "has_tag",
+                                            "subject": "damager",
+                                            "operator": "!=",
+                                            "value": "tntPly"
+                                        }
+                                    ]
+                                }
+                            },
+                            "deals_damage": false
+                        }
+                    ]
+                }
+            },
+            "ha:tnt_player": {
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "all",
+                            "on_damage": {
+                                "filters": {
+                                    "any_of": [
+                                        {
+                                            "test": "has_tag",
+                                            "subject": "other",
+                                            "value": "tntPly"
+                                        },
+                                        {
+                                            "test": "has_tag",
+                                            "subject": "damager",
+                                            "value": "tntPly"
+                                        }
+                                    ]
+                                }
+                            },
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "all",
+                            "on_damage": {
+                                "filters": {
+                                    "all_of": [
+                                        {
+                                            "any_of": [
+                                                {
+                                                    "test": "has_tag",
+                                                    "subject": "other",
+                                                    "operator": "!=",
+                                                    "value": "tntPly"
+                                                },
+                                                {
+                                                    "test": "has_tag",
+                                                    "subject": "damager",
+                                                    "operator": "!=",
+                                                    "value": "tntPly"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "test": "has_damage",
+                                            "subject": "self",
+                                            "operator": "!=",
+                                            "value": "projectile"
+                                        }
+                                    ]
+                                }
+                            },
+                            "deals_damage": false
+                        }
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "self",
+                                        "value": "inNet"
+                                    },
+                                    {
+                                        "test": "has_component",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "minecraft:is_pregnant"
+                                    }
+                                ]
+                            }
+                        },
+                        "interact_text": "ui.hint.grab_player",
+                        "use_item": false,
+                        "take_item": false,
+                        "swing": true
+                    }
+                ]
+            },
+            "minecraft:environment_sensor": {
+                "triggers": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "rider_count",
+                                    "subject": "self",
+                                    "operator": ">=",
+                                    "value": 1
+                                },
+                                {
+                                    "test": "has_component",
+                                    "subject": "self",
+                                    "operator": "!=",
+                                    "value": "minecraft:is_pregnant"
+                                }
+                            ]
+                        },
+                        "event": "ha:has_ply",
+                        "target": "self"
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "rider_count",
+                                    "subject": "self",
+                                    "operator": "<=",
+                                    "value": 0
+                                },
+                                {
+                                    "test": "has_component",
+                                    "subject": "self",
+                                    "value": "minecraft:is_pregnant"
+                                }
+                            ]
+                        },
+                        "event": "ha:remove_ply",
+                        "target": "self"
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_riding",
+                                    "subject": "self",
+                                    "value": true
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "value": "inNet"
+                                }
+                            ]
+                        },
+                        "event": "ha:remove_solid_mode",
+                        "target": "self"
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "is_riding",
+                                    "subject": "self",
+                                    "value": false
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "value": "inNet"
+                                }
+                            ]
+                        },
+                        "event": "ha:set_solid_mode",
+                        "target": "self"
+                    }
+                ]
+            },
+            "minecraft:rideable": {
+                "family_types": [ "innet" ],
+                "passenger_max_width": 1,
+                "pull_in_entities": true,
+                "rider_can_interact": false,
+                "seat_count": 1,
+                "seats": [
+                    {
+                        "position": [ 0, 0.9, -0.15 ],
+                        "lock_rider_rotation": 0
+                    }
+                ]
+            },
+            "minecraft:type_family": {
+                "family": [ "player" ]
+            },
+            "minecraft:fire_immune": { },
+            "minecraft:is_hidden_when_invisible": { },
+            "minecraft:can_climb": { },
+            "minecraft:movement": {
+                "value": 0.1
+            },
+            "minecraft:attack": {
+                "damage": 1
+            },
+            "minecraft:health": {
+                "value": 999,
+                "max": 999,
+                "min": 999
+            },
+            "minecraft:exhaustion_values": {
+                "heal": 0,
+                "jump": 0,
+                "sprint_jump": 0,
+                "mine": 0,
+                "attack": 0,
+                "damage": 0,
+                "walk": 0,
+                "sprint": 0,
+                "swim": 0
+            },
+            "minecraft:player.saturation": {
+                "value": 20,
+                "max": 20
+            },
+            "minecraft:player.exhaustion": {
+                "value": 0,
+                "max": 20
+            },
+            "minecraft:player.level": {
+                "value": 0,
+                "max": 24791
+            },
+            "minecraft:player.experience": {
+                "value": 0,
+                "max": 1
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": -1,
+                "inhale_time": 3.75,
+                "generates_bubbles": false
+            },
+            "minecraft:nameable": {
+                "always_show": true,
+                "allow_name_tag_renaming": false
+            },
+            "minecraft:physics": {
+                "push_towards_closest_space": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": { },
+            "minecraft:block_climber": { }
+        },
+        "events": {
+            "ha:has_ply": {
+                "queue_command": {
+                    "command": [
+                        "tag @s add hasPly"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:has_ply"
+                    ]
+                }
+            },
+            "ha:remove_ply": {
+                "queue_command": {
+                    "command": [
+                        "tag @s remove hasPly"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "ha:has_ply"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "ha:normal_box",
+                        "ha:no_in_game"
+                    ]
+                }
+            },
+            "ha:set_solid_mode": {
+                "add": {
+                    "component_groups": [
+                        "ha:is_solid"
+                    ]
+                }
+            },
+            "ha:remove_solid_mode": {
+                "remove": {
+                    "component_groups": [
+                        "ha:is_solid"
+                    ]
+                }
+            },
+            "ha:in_lobby": {
+                "remove": {
+                    "component_groups": [
+                        "ha:in_game",
+                        "ha:tnt_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:no_in_game"
+                    ]
+                }
+            },
+            "ha:player_damage": {
+                "remove": {
+                    "component_groups": [
+                        "ha:tnt_player",
+                        "ha:no_in_game"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:in_game"
+                    ]
+                }
+            },
+            "ha:tnt_player_damage": {
+                "remove": {
+                    "component_groups": [
+                        "ha:in_game",
+                        "ha:no_in_game"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:tnt_player"
+                    ]
+                }
+            },
+            "ha:set_normal_box": {
+                "add": {
+                    "component_groups": [
+                        "ha:normal_box"
+                    ]
+                }
+            },
+            "ha:set_glow": {
+                "add": {
+                    "component_groups": [
+                        "ha:glowing"
+                    ]
+                }
+            },
+            "ha:remove_glow": {
+                "remove": {
+                    "component_groups": [
+                        "ha:glowing"
+                    ]
+                }
+            },
+            "ha:set_net": {
+                "remove": {
+                    "component_groups": [
+                        "ha:normal_box",
+                        "ha:normal_family"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:net",
+                        "ha:is_solid"
+                    ]
+                }
+            },
+            "ha:remove_net": {
+                "remove": {
+                    "component_groups": [
+                        "ha:net",
+                        "ha:is_solid"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:normal_box",
+                        "ha:normal_family"
+                    ]
+                }
+            }
+        }
+    }
+}
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
-{
-	"format_version": "1.21.0",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "minecraft:player",
-			"spawn_category": "creature",
-			"is_spawnable": false,
-			"is_summonable": false
-		},
-		"component_groups": {
-			"ha:tnt_damage": {
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"on_damage": {
-								"filters": {
-									"all_of": [
-										{
-											"test": "has_tag",
-											"subject": "other",
-											"value": "player"
-										},
-										{
-											"test": "has_equipment",
-											"subject": "other",
-											"domain": "any",
-											"operator": "!=",
-											"value": "minecraft:bow"
-										},
-										{
-											"test": "has_damage",
-											"subject": "self",
-											"operator": "!=",
-											"value": "projectile"
-										}
-									]
-								}
-							},
-							"deals_damage": false
-						},
-						{
-							"on_damage": {
-								"filters": {
-									"test": "has_tag",
-									"subject": "other",
-									"value": "tntPlayer"
-								}
-							},
-							"deals_damage": false
-						}
-					]
-				}
-			},
-			"ha:player_damage": {
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"on_damage": {
-								"filters": {
-									"test": "has_tag",
-									"subject": "other",
-									"value": "player"
-								}
-							},
-							"deals_damage": false
-						}
-					]
-				}
-			},
-			"ha:normal_sensor": {
-				"minecraft:damage_sensor": {
-					"triggers": [
-						{
-							"cause": "all",
-							"deals_damage": false
-						}
-					]
-				}
-			},
-			"ha:glowing": {
-				"minecraft:is_tamed": {}
-			},
-			"ha:net": {
-				"minecraft:is_chested": {}
-			}
-		},
-		"components": {
-			"minecraft:type_family": {
-				"family": ["player"]
-			},
-			"minecraft:is_hidden_when_invisible": {},
-			"minecraft:collision_box": {
-				"width": 0.6,
-				"height": 1.8
-			},
-			"minecraft:can_climb": {},
-			"minecraft:movement": {
-				"value": 0.1
-			},
-			"minecraft:attack": {
-				"damage": 1
-			},
-			"minecraft:health": {
-				"value": 100,
-				"min": 100,
-				"max": 100
-			},
-			"minecraft:exhaustion_values": {
-				"heal": 6,
-				"jump": 0.05,
-				"sprint_jump": 0.2,
-				"mine": 0.005,
-				"attack": 0.1,
-				"damage": 0.1,
-				"walk": 0.0,
-				"sprint": 0.1,
-				"swim": 0.01
-			},
-			"minecraft:player.saturation": {
-				"value": 5,
-				"max": 20
-			},
-			"minecraft:player.exhaustion": {
-				"value": 0,
-				"max": 20
-			},
-			"minecraft:player.level": {
-				"value": 0,
-				"max": 24791
-			},
-			"minecraft:player.experience": {
-				"value": 0,
-				"max": 1
-			},
-			"minecraft:nameable": {
-				"always_show": true,
-				"allow_name_tag_renaming": false
-			},
-			"minecraft:physics": {
-				"push_towards_closest_space": true
-			},
-			"minecraft:pushable": {
-				"is_pushable": true,
-				"is_pushable_by_piston": true
-			},
-			"minecraft:conditional_bandwidth_optimization": {},
-			"minecraft:block_climber": {},
-			"minecraft:persistent": {},
-			"minecraft:tick_world": {
-				"distance_to_players": 99999,
-				"never_despawn": true,
-				"radius": 2
-			}
-		},
-		"events": {
-			"minecraft:entity_spawned": {
-				"add": {
-					"component_groups": ["ha:normal_sensor"]
-				}
-			},
-			"ha:coin_damage": {
-				"remove": {
-					"component_groups": ["ha:player_damage", "ha:tnt_damage"]
-				},
-				"add": {
-					"component_groups": ["ha:normal_sensor"]
-				}
-			},
-			"ha:tntplayer_damage": {
-				"remove": {
-					"component_groups": ["ha:player_damage", "ha:normal_sensor"]
-				},
-				"add": {
-					"component_groups": ["ha:tnt_damage"]
-				}
-			},
-			"ha:player_damage": {
-				"remove": {
-					"component_groups": ["ha:normal_sensor", "ha:tnt_damage"]
-				},
-				"add": {
-					"component_groups": ["ha:player_damage"]
-				}
-			},
-			"ha:lobby_damage": {
-				"remove": {
-					"component_groups": ["ha:player_damage", "ha:tnt_damage"]
-				},
-				"add": {
-					"component_groups": ["ha:normal_sensor"]
-				}
-			},
-			"ha:remove_in_net": {
-				"remove": {
-					"component_groups": ["ha:net"]
-				}
-			},
-			"ha:in_net": {
-				"queue_command": {
-					"command": ["scriptevent ha:in_net"]
-				},
-				"add": {
-					"component_groups": ["ha:net"]
-				}
-			},
-			"ha:give_tnt": {
-				"queue_command": {
-					"command": ["function system/give_tnt"]
-				}
-			},
-			"ha:receive_tnt": {
-				"queue_command": {
-					"command": ["function system/receive_tnt"]
-				}
-			},
-			"ha:set_glowing": {
-				"queue_command": {
-					"command": ["tag @s add glow"]
-				},
-				"add": {
-					"component_groups": ["ha:glowing"]
-				}
-			},
-			"ha:remove_glowing": {
-				"queue_command": {
-					"command": ["tag @s remove glow"]
-				},
-				"remove": {
-					"component_groups": ["ha:glowing"]
-				}
-			}
-		}
-	}
-}

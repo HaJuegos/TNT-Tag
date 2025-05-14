@@ -1,0 +1,35 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:item": {
+        "description": {
+            "identifier": "ha:companion_cube",
+            "menu_category": {
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:custom_components": [ "ha:companion_cube_events" ],
+            "minecraft:icon": "companion_cube",
+            "minecraft:rarity": "epic",
+            "minecraft:projectile": {
+                "minimum_critical_power": 1,
+                "projectile_entity": "ha:companion_cube_entity"
+            },
+            "minecraft:stacked_by_data": true,
+            "minecraft:throwable": {
+                "do_swing_animation": true
+            },
+            "minecraft:cooldown": {
+                "category": "companioncube",
+                "duration": 80
+            },
+            "minecraft:tags": {
+                "tags": [ "ha:cube" ]
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

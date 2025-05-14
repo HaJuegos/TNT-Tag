@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ha:collider_net_projectile",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "geometry": {
+                "default": "geometry.net_projectile"
+            },
+            "textures": {
+                "default": "textures/entity/net_entity"
+            },
+            "animations": {
+                "flying": "animation.actor.billboard",
+                "net_entity": "animation.net_entity.proyectile"
+            },
+            "scripts": {
+                "animate": [
+                    "flying",
+                    "net_entity"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

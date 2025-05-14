@@ -2,7 +2,10 @@
 	"materials": {
 		"version": "1.0.0",
 		"player_glowing_base:entity_alphatest": {
-			"+states": ["EnableStencilTest", "StencilWrite"],
+			"+states": [
+				"EnableStencilTest",
+				"StencilWrite"
+			],
 			"frontFace": {
 				"stencilFunc": "Always",
 				"stencilFailOp": "Replace",
@@ -18,9 +21,16 @@
 			"stencilRef": 3
 		},
 		"player_glowing:entity_alphatest": {
-			"+states": ["EnableStencilTest", "InvertCulling"],
-			"-states": ["DisableCulling"],
-			"-defines": ["FANCY"],
+			"+states": [
+				"EnableStencilTest",
+				"InvertCulling"
+			],
+			"-states": [
+				"DisableCulling"
+			],
+			"-defines": [
+				"FANCY"
+			],
 			"depthFunc": "Always",
 			"frontFace": {
 				"stencilFunc": "NotEqual"

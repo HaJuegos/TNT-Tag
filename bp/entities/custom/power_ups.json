@@ -1,0 +1,559 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ha:power_ups",
+			"runtime_identifier": "minecraft:npc",
+			"spawn_category": "misc",
+			"is_experimental": false,
+			"is_spawnable": true,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"ha:interactions": {
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"on_interact": {
+								"filters": {
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								}
+							},
+							"vibration": "entity_act",
+							"swing": true,
+							"use_item": false,
+							"take_item": false,
+							"interact_text": "ui.hint.interact_powerup"
+						}
+					]
+				}
+			},
+			"ha:timer": {
+				"minecraft:timer": {
+					"randomInterval": true,
+					"random_time_choices": [
+						{
+							"value": 3,
+							"weight": 1
+						},
+						{
+							"value": 5,
+							"weight": 1
+						},
+						{
+							"value": 7,
+							"weight": 1
+						},
+						{
+							"value": 10,
+							"weight": 1
+						},
+						{
+							"value": 15,
+							"weight": 1
+						}
+					],
+					"looping": true,
+					"time_down_event": {
+						"event": "ha:select_random_skin",
+						"target": "self"
+					}
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": { }
+			},
+			"ha:nothing_skin": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"ha:coin_skin": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"ha:blidness_skin": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"ha:invi_skin": {
+				"minecraft:variant": {
+					"value": 3
+				}
+			},
+			"ha:bow_skin": {
+				"minecraft:variant": {
+					"value": 4
+				}
+			},
+			"ha:jump_skin": {
+				"minecraft:variant": {
+					"value": 5
+				}
+			},
+			"ha:speed_skin": {
+				"minecraft:variant": {
+					"value": 6
+				}
+			},
+
+			"ha:wing_skin": {
+				"minecraft:variant": {
+					"value": 7
+				}
+			},
+			"ha:clock_skin": {
+				"minecraft:variant": {
+					"value": 8
+				}
+			},
+			"ha:slow_skin": {
+				"minecraft:variant": {
+					"value": 9
+				}
+			},
+
+			"ha:elytra_skin": {
+				"minecraft:variant": {
+					"value": 10
+				}
+			},
+			"ha:gun_skin": {
+				"minecraft:variant": {
+					"value": 11
+				}
+			},
+			"ha:cube_skin": {
+				"minecraft:variant": {
+					"value": 12
+				}
+			}
+		},
+		"components": {
+			"minecraft:knockback_resistance": {
+				"value": 99999
+			},
+			"minecraft:cannot_be_attacked": { },
+			"minecraft:home": { },
+			"minecraft:is_hidden_when_invisible": { },
+			"minecraft:can_climb": { },
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"any_of": [
+									{
+										"test": "has_tag",
+										"subject": "damager",
+										"value": "admin"
+									},
+									{
+										"test": "has_tag",
+										"subject": "other",
+										"value": "admin"
+									}
+								]
+							},
+							"target": "self",
+							"event": "ha:despawn"
+						}
+					},
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:type_family": {
+				"family": [
+					"power_up",
+					"npc",
+					"mob"
+				]
+			},
+			"minecraft:persistent": { },
+			"minecraft:fire_immune": { },
+			"minecraft:collision_box": {
+				"height": 1.8,
+				"width": 0.6
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:health": {
+				"value": 2,
+				"max": 2,
+				"min": 2
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": false,
+				"always_show": false
+			},
+			"minecraft:physics": {
+				"push_towards_closest_space": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:conditional_bandwidth_optimization": { }
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"ha:timer",
+						"ha:nothing_skin"
+					]
+				}
+			},
+			"ha:select_random_skin": {
+				"sequence": [
+					{
+						"queue_command": {
+							"command": [
+								"playsound random.pop @a ~ ~ ~ 10.0 1.6 0.0"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"ha:interactions"
+							]
+						}
+					},
+					{
+						"randomize": [
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:coin_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:blidness_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:invi_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:bow_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:jump_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:speed_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:wing_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:clock_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:slow_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:gun_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:elytra_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:gun_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:cube_skin"
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"ha:interact_entity": {
+				"remove": {
+					"component_groups": [
+						"ha:timer",
+						"ha:coin_skin",
+						"ha:blidness_skin",
+						"ha:invi_skin",
+						"ha:bow_skin",
+						"ha:jump_skin",
+						"ha:speed_skin",
+						"ha:wing_skin",
+						"ha:clock_skin",
+						"ha:slow_skin",
+						"ha:elytra_skin",
+						"ha:gun_skin",
+						"ha:cube_skin",
+						"ha:interactions"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"ha:nothing_skin"
+					]
+				}
+			},
+			"ha:despawn": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

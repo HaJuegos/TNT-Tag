@@ -1,7 +1,11 @@
 {
 	"ui_defs": [
-		"uibt/chat_tweaks.ui",
+		"uibt/brewing_guide.ui",
+		"uibt/brewing_icons.ui",
+		"uibt/numbered_hotbar.ui",
 		"uibt/quick_crafting.ui",
+		"uibt/chat_tweaks.ui",
+		
 		"ui/custom/animations.json"
 	]
 }

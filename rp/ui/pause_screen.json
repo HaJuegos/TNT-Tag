@@ -1,6 +1,38 @@
-/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
-/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 {	
+	"the_icon_panel/stacked_column": {
+		"modifications": [
+			{
+				"control_name": "take_screenshot_btn",
+				"operation": "remove"
+			},
+			{
+				"control_name": "feedback_btn",
+				"operation": "remove"
+			},
+			{
+				"control_name": "feedback_padding",
+				"operation": "remove"
+			},
+			{
+				"control_name": "screenshot_padding",
+				"operation": "remove"
+			},
+			{
+				"control_name": "pause_text_panel",
+				"operation": "remove"
+			}
+		]
+	},
+	
+	"player_list": {
+		"modifications": [
+			{
+				"control_name": "players_label",
+				"operation": "remove"
+			}
+		]
+	},
+
 	"menu_background/button_panel": {
 		"modifications": [
 			{

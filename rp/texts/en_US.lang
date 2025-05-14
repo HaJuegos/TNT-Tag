@@ -1,5 +1,3 @@
-## Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz
-## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz
 
 ## Manifest
 pack.name=§e[RP]§r §4T§7N§4T§r §cTag§r §7|§r By §cHaJuegos Cat!§r & §bImLouis§r
@@ -57,7 +55,7 @@ score.random=Random Map
 
 
 sign_message_village=End of the road.
-sign_text.click_start=§b§lClick me to start playing :3§r
+sign_text.click_start=§b§lTo start playing, click this button :3§r
 ui.sign.yei=§eYou won! Congratulations.
 
 ui.votation_time=It's time to vote!
@@ -111,6 +109,11 @@ ui.statec4=Holy Spirit
 ui.statec5=Savior
 ui.statsply.end=Close
 
+ui.hint.interact_powerup=Get Power
+ui.hint.grab_player=Grab Player
+
+action.hint.exit.player=You're trapped.
+
 
 ## Chat Messages
 chat.error_noplayers=§c>> There are not enough players. Invite your friends.
@@ -126,7 +129,6 @@ chat.voted8=§7>> You have voted for Map #8.
 chat.voted9=§7>> You have voted for Map #9.
 chat.voted10=§7>> You have voted for Map #10.
 chat.random=§7>> You have voted for a Random Map.
-chat.error_voted=§c>> You have already voted before.
 chat.mapWinnning=§e§l>> The winning map was Map #%1 (%2 total votes). The game will start soon...
 chat.map_equals=§e§l>> There was a tie! A random map will be chosen. The chosen map is: Map #%1.
 chat.gived_tnt=§e>> %1 now has the TNT.
@@ -139,9 +141,9 @@ chat.no_coin_activate=§7>> You cannot activate this with a TNT.
 chat.coin_cooldown=§7>> You still cannot use this item.
 chat.activate_coin=§e>> You have activated the coin, you are immune to TNT for 10 seconds.
 chat.removed_coin=§7>> The effect of the coin has ended.
+chat.player_has_coin=§c>> The player is temporarily protected by the coin.
 chat.debuff_blidness=§8>> The blindness effect has been activated; players with the TNT will have this effect.
 chat.cooldown_debuff=§7>> You still cannot activate this effect.
-chat.debuff_blindness=§7>> The TNT player has been temporarily blinded.
 chat.debuff_blindness_tnt=§7>> A player with TNT has activated blindness for the Players.
 chat.return_game=§7>> Your previous game has ended, you were moved to the current game.
 chat.return_ingame=§7>> There is a game in progress, you were teleported to the current game.
@@ -182,13 +184,17 @@ chat.error_shop.hasitem=§7>> You've already bought this item.
 chat.shop.getitem=§6>> You purchased the item %1.
 chat.error_shop.nocoins=§7>> You don't have enough points to buy this item.
 
+chat.error.game_started=§c>> You cannot start a new game when one is already in progress. Wait for it to end.
+chat.error.novotes=§c>> No votes were cast for any map. Game cancelled.
+
+chat.error.nogetwithelytras=§c>> You cannot get this powerup with Elytras in your inventory.
+chat.error.nogetwithcoins=§c>> You cannot get this powerup with Coins in your Inventory.
+chat.error.nousewithelytras=§c>> You cannot use this item with Elytras in your inventory.
+
 
 ## Items Names
-item.ha:rolling_players_mapone=Exchanging places
-item.ha:rolling_players_mapone.name=Exchanging places
-
-item.ha:tnt_item_hand_mapone=Launch the §cTNT§r
-item.ha:tnt_item_hand_mapone.name=Launch the §cTNT§r
+item.ha:tnt_projectile=Launch the §cTNT§r
+item.ha:tnt_projectile.name=Launch the §cTNT§r
 
 item.ha:rolling_players=Exchanging places
 item.ha:rolling_players.name=Exchanging places
@@ -202,14 +208,11 @@ item.ha:super_compass.name=§aActivate Glowing§r
 item.ha:tnt_helmet=§cTNT§r
 item.ha:tnt_helmet.name=§cTNT§r
 
-item.ha:coin_item=§eCoin§r
-item.ha:coin_item.name=§eCoin§r
+item.ha:coin=§eCoin§r
+item.ha:coin.name=§eCoin§r
 
-item.ha:wing_item=Wing
-item.ha:wing_item.name=Wing
-
-item.ha:tnt_item_hand=Launch the §cTNT§r
-item.ha:tnt_item_hand.name=Launch the §cTNT§r
+item.ha:wing=Wing
+item.ha:wing.name=Wing
 
 item.ha:net_gun=Net Gun
 item.ha:net_gun.name=Net Gun
@@ -227,11 +230,16 @@ item.ha:info_player.name=View statistics
 ## Entities
 entity.ha:coin.name=Voting Counter
 entity.ha:sensor.name=Setup Entity
-entity.ha:generator_entity.name=Buffs Generator
+entity.ha:power_ups.name=PowerUp Entity
+entity.ha:custom_npc.name=Custom NPC
+entity.ha:floating_text.name=Floating Text
+entity.tnt_projectile_entity.name=TNT
+entity.ha:net_projectile.name=Net Entity
 
 
 ## Spawn Eggs
-item.spawn_egg.entity.ha:generator_entity.name=Boost Spawn Egg
+item.spawn_egg.entity.ha:power_ups.name=PowerUp Spawn Egg
+item.spawn_egg.entity.ha:custom_npc.name=Custom NPC Spawn Egg
 
 
 ## NPC Stuff
@@ -247,8 +255,11 @@ npc_d.ha.hello=Do you like the map? Remember to give it stars on MCPEL, it would
 npc_button.ha.music=About the music
 npc_d.ha.music=Do you like the music? Remember to support the creators so there will be more music! If you can't hear the music, go to Minecraft settings and turn up the music volume.
 
-npc.disclaimer=Some maps that appear in the voting menu are from others, so credits go to all the creators. You can check the credits.txt file in the add-on of this map.
-npc.discord=My Spanish Discord server if you'd like to join: https://discord.gg/9jZHkhu86P :3
+npc_button.ha.important=Something important
+npc.disclaimer=Some maps that appear in the voting menu are from others, so credits to all maps taken. You can check the credits.txt file in the add-on of this map.
+
+npc_button.ha.discord=Discord
+npc.discord=My Discord server in Spanish if you want to join: https://discord.gg/9jZHkhu86P :3
 
 npc.name.memo=§e§lMemo
 npc_button.memo.buy=Buy something
@@ -264,3 +275,15 @@ npc.memo.coins_text=Don't know how to earn points? To earn points, you need to d
 ui.npc.lobby=§l§7Lobby Creators§r
 ui.npc.creator=§l§7Add-on Creator§r
 ui.npc.shop=§l§7Item Shop§r
+
+
+## Other Texts
+bt.bg.splash.potion=Splash Potion
+bt.bg.lingering.potion=Lingering Potion
+bt.bg.extended.potion=Extended Potion
+bt.bg.level_2.potion=Level II Potion
+bt.bg.effect.potion=Potion Effect
+
+
+## Creado o Editado por: HaJuegosCat!. Si editas o copias este archivo, recuerda dejar créditos. Para cualquier otra información o reporte, visita el servidor de Discord: https://discord.gg/WH9KpNWXUz
+## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz

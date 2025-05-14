@@ -1,0 +1,78 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.power_ups": {
+            "arrays": {
+                "geometries": {
+                    "Array.geos": [
+                        "Geometry.two_dimension",
+                        "Geometry.coin",
+                        "Geometry.blindness",
+                        "Geometry.invi",
+                        "Geometry.bow",
+                        "Geometry.boots",
+                        "Geometry.boots",
+						
+                        "Geometry.wings",
+                        "Geometry.two_dimension",
+                        "Geometry.two_dimension",
+						
+                        "Geometry.elytra",
+                        "Geometry.gun",
+                        "Geometry.companion_cube"
+                    ]
+                },
+                "materials": {
+                    "Array.material": [
+                        "Material.default",
+                        "Material.blend"
+                    ]
+                },
+                "textures": {
+                    "Array.skins": [
+                        "Texture.nothing",
+                        "Texture.coin",
+                        "Texture.blindness",
+                        "Texture.invi",
+                        "Texture.bow",
+                        "Texture.jump",
+                        "Texture.speed",
+
+                        // 2d
+                        "Texture.wing",
+                        "Texture.clock",
+                        "Texture.slow",
+
+                        "Texture.elytra",
+                        "Texture.gun",
+                        "Texture.companion_cube"
+                    ]
+                }
+            },
+            "geometry": "Array.geos[q.variant]",
+            "materials": [
+                {
+                    "*": "q.variant == 3 ? Array.material[1] : Array.material[0]"
+                }
+            ],
+            "textures": [
+                "Array.skins[q.variant]"
+            ],
+            "ignore_lighting": true,
+            "is_hurt_color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            },
+            "on_fire_color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

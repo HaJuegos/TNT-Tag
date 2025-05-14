@@ -1,0 +1,73 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ha:game_entity",
+            "spawn_category": "misc",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "despawn": {
+                "minecraft:instant_despawn": { }
+            }
+        },
+        "components": {
+            "minecraft:cannot_be_attacked": { },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "dummys",
+                    "mob"
+                ]
+            },
+            "minecraft:persistent": { },
+            "minecraft:tick_world": {
+                "never_despawn": true,
+                "radius": 4
+            },
+            "minecraft:fire_immune": { },
+            "minecraft:collision_box": {
+                "height": 1,
+                "width": 1
+            },
+            "minecraft:health": {
+                "value": 2,
+                "max": 2,
+                "min": 2
+            },
+            "minecraft:knockback_resistance": {
+                "value": 99999
+            },
+            "minecraft:physics": {
+                "has_collision": false,
+                "has_gravity": false
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": { }
+        },
+        "events": {
+            "minecraft:entity_spawned": { },
+            "ha:despawn": {
+                "add": {
+                    "component_groups": [
+                        "despawn"
+                    ]
+                }
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

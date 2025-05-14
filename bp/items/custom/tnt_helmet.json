@@ -1,0 +1,32 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:item": {
+        "description": {
+            "identifier": "ha:tnt_helmet",
+            "menu_category": {
+                "category": "equipment",
+                "group": "minecraft:itemGroup.name.helmet"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:icon": "tnt_helmet",
+            "minecraft:rarity": "common",
+            "minecraft:stacked_by_data": true,
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:diamond_tier",
+                    "minecraft:is_armor",
+                    "minecraft:trimmable_armors"
+                ]
+            },
+            "minecraft:wearable": {
+                "slot": "slot.armor.head",
+                "protection": 0
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

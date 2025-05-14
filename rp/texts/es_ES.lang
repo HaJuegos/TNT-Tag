@@ -1,5 +1,3 @@
-## Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz
-## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz
 
 ## Manifest
 pack.name=§e[RP]§r §4T§7N§4T§r §cTag§r §7|§r De §cHaJuegosCat!§r y §bImLouis§r
@@ -57,7 +55,7 @@ score.random=Mapa Aleatorio
 
 
 sign_message_village=Fin del camino.
-sign_text.click_start=§b§lDame click para comenzar a jugar :3§r
+sign_text.click_start=§b§lPara empezar a jugar, activa este boton :3§r
 ui.sign.yei=§e¡Ganaste! Felicidades
 
 ui.votation_time=¡Hora de votar!
@@ -111,6 +109,11 @@ ui.statec4=Espiritu Santo
 ui.statec5=Salvador
 ui.statsply.end=Cerrar
 
+ui.hint.interact_powerup=Obtener Poder
+ui.hint.grab_player=Agarrar Jugador
+
+action.hint.exit.player=Estas atrapado.
+
 
 ## Chat Messages
 chat.error_noplayers=§c>> No hay suficientes jugadores. Invita a tus amigos.
@@ -139,9 +142,9 @@ chat.no_coin_activate=§7>> No puedes activar esto con una TNT.
 chat.coin_cooldown=§7>> Aun no puedes usar este item.
 chat.activate_coin=§e>> Activaste la moneda, eres inmune a la TNT durante 10 segundos.
 chat.removed_coin=§7>> El efecto de la moneda ha terminado.
+chat.player_has_coin=§c>> El jugador esta protegido temporalmente por la Moneda.
 chat.debuff_blidness=§8>> El efecto de ceguera fue activado, los jugadores con la TNT tendran este efecto.
 chat.cooldown_debuff=§7>> Aun no puedes activar este efecto.
-chat.debuff_blindness=§7>> El jugador con TNT ha sido cegado temporalmente.
 chat.debuff_blindness_tnt=§7>> Un jugador con la TNT ha activado la ceguera a los Jugadores.
 chat.return_game=§7>> Tu anterior partida ha terminado, fuiste movido a la actual.
 chat.return_ingame=§7>> Hay una partida en progreso, fuiste teletrasportado a dicha partida actual.
@@ -182,16 +185,20 @@ chat.error_shop.hasitem=§7>> Ya compraste este item.
 chat.shop.getitem=§6>> Compraste el item %1.
 chat.error_shop.nocoins=§7>> No tienes suficientes puntos para comprar este item.
 
+chat.error.game_started=§c>> No puedes comenzar una nueva partida cuando ya hay una en curso. Espera a que termine.
+chat.error.novotes=§c>> No se voto por ningun mapa. Juego cancelado.
+
+chat.error.nousewithcoin=§c>> No puedes obtener este powerup con Elytras en tu inventario.
+chat.error.nogetwithcoin=§c>> No puedes obtener este powerup con Monedas en tu Inventario.
+chat.error.nousewithelytra=§c>> No puedes usar este item con Elytras en tu inventario.
+
 
 ## Items Names
-item.ha:super_compass_mapone=§aActivar Glowing§r
-item.ha:super_compass_mapone.name=§aActivar Glowing§r
+item.ha:tnt_projectile=Lanzar la §cTNT§r
+item.ha:tnt_projectile.name=Lanzar la §cTNT§r
 
-item.ha:tnt_item_hand_mapone=Lanzar la §cTNT§r
-item.ha:tnt_item_hand_mapone.name=Lanzar la §cTNT§r
-
-item.ha:rolling_players_mapone=Intercambiar Lugares
-item.ha:rolling_players_mapone.name=Intercambiar Lugares
+item.ha:rolling_players=Intercambiar Lugares
+item.ha:rolling_players.name=Intercambiar Lugares
 
 item.ha:super_compass=§aActivar Glowing§r
 item.ha:super_compass.name=§aActivar Glowing§r
@@ -199,17 +206,11 @@ item.ha:super_compass.name=§aActivar Glowing§r
 item.ha:tnt_helmet=§cTNT§r
 item.ha:tnt_helmet.name=§cTNT§r
 
-item.ha:coin_item=§eMoneda§r
-item.ha:coin_item.name=§eMoneda§r
+item.ha:coin=§eMoneda§r
+item.ha:coin.name=§eMoneda§r
 
-item.ha:wing_item=Ala
-item.ha:wing_item.name=Ala
-
-item.ha:tnt_item_hand=Lanzar la §cTNT§r
-item.ha:tnt_item_hand.name=Lanzar la §cTNT§r
-
-item.ha:rolling_players=Intercambiar Lugares
-item.ha:rolling_players.name=Intercambiar Lugares
+item.ha:wing=Ala
+item.ha:wing.name=Ala
 
 item.ha:net_gun=Arma de Red
 item.ha:net_gun.name=Arma de Red
@@ -227,11 +228,16 @@ item.ha:info_player.name=Mirar estadisticas
 ## Entities
 entity.ha:coin.name=Contador de Votaciones
 entity.ha:sensor.name=Setup Entity
-entity.ha:generator_entity.name=Generador de Buffs
+entity.ha:power_ups.name=Generador de PowerUps
+entity.ha:custom_npc.name=NPC Custom
+entity.ha:floating_text.name=Texto Flotante
+entity.tnt_projectile_entity.name=Dinamita
+entity.ha:net_projectile.name=Entidad de la Enredadera
 
 
 ## Spawn Eggs
-item.spawn_egg.entity.ha:generator_entity.name=Generador de Boosts
+item.spawn_egg.entity.ha:power_ups.name=Generar un Generador de PowerUps
+item.spawn_egg.entity.ha:custom_npc.name=Generador de NPC Custom
 
 
 ## NPC Stuff
@@ -247,7 +253,10 @@ npc_d.ha.hello=¿Te gusta el mapa? Recuerda darle estrellas en MCPEL, me ayudari
 npc_button.ha.music=Sobre la musica
 npc_d.ha.music=¿Te gusta la musica? Recuerda apoyar a los creadores de estas para que exista mas musica! Si no escuchas la musica, recuerda entrar a la configuracion de minecraft y subir el volumen de la musica.
 
+npc_button.ha.important=Algo importante
 npc.disclaimer=Algunos mapas que aparecen en el menu de votaciones son de otras, asi que creditos a todos los mapas tomados. Puedes revisar el archivo de creditos.txt en el add-on de este mapa.
+
+npc_button.ha.discord=Discord
 npc.discord=Mi server de Discord en español por si quieres estar: https://discord.gg/9jZHkhu86P :3
 
 npc.name.memo=§e§lMemo
@@ -264,3 +273,15 @@ npc.memo.coins_text=¿No sabes como ganar puntos? Para ganar puntos, debes hacer
 ui.npc.lobby=§l§7Creadores del Lobby§r
 ui.npc.creator=§l§7Creador del Add-on§r
 ui.npc.shop=§l§7Tienda de Items§r
+
+
+## Other Texts
+bt.bg.splash.potion=Poción de salpicadura
+bt.bg.lingering.potion=Poción persistente
+bt.bg.extended.potion=Poción extendida
+bt.bg.level_2.potion=Poción nivel II
+bt.bg.effect.potion=Efecto poción
+
+
+## Creado o Editado por: HaJuegosCat!. Si editas o copias este archivo, recuerda dejar créditos. Para cualquier otra información o reporte, visita el servidor de Discord: https://discord.gg/WH9KpNWXUz
+## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz

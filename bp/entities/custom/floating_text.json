@@ -1,0 +1,109 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ha:floating_text",
+            "runtime_identifier": "minecraft:npc",
+            "spawn_category": "misc",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "ha:non_skin": {
+                "minecraft:variant": {
+                    "value": 4
+                }
+            },
+            "despawn": {
+                "minecraft:instant_despawn": { }
+            }
+        },
+        "components": {
+            "minecraft:npc": { },
+            "minecraft:knockback_resistance": {
+                "value": 99999
+            },
+            "minecraft:cannot_be_attacked": { },
+            "minecraft:is_hidden_when_invisible": { },
+            "minecraft:can_climb": { },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "any_of": [
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "damager",
+                                        "value": "admin"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "other",
+                                        "value": "admin"
+                                    }
+                                ]
+                            },
+                            "target": "self",
+                            "event": "ha:despawn"
+                        }
+                    },
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "floating_text",
+                    "npc",
+                    "mob"
+                ]
+            },
+            "minecraft:persistent": { },
+            "minecraft:fire_immune": { },
+            "minecraft:collision_box": {
+                "height": 0.5,
+                "width": 0.5
+            },
+            "minecraft:health": {
+                "value": 2,
+                "max": 2,
+                "min": 2
+            },
+            "minecraft:nameable": {
+                "allow_name_tag_renaming": true,
+                "always_show": true
+            },
+            "minecraft:physics": {
+                "has_gravity": false,
+                "has_collision": false
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:conditional_bandwidth_optimization": { }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "ha:non_skin"
+                    ]
+                }
+            },
+            "ha:despawn": {
+                "add": {
+                    "component_groups": [
+                        "despawn"
+                    ]
+                }
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

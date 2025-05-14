@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.player.detection": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "isAttack": "variable.attack_time > 0.0f && q.is_pregnant"
+                        }
+                    ]
+                },
+                "isAttack": {
+                    "on_entry": [
+                        "/scriptevent ha:is_attack"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "variable.attack_time <= 0.0f"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

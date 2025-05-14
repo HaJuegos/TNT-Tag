@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.boost_coin",
+				"identifier": "geometry.powerup.coin",
 				"texture_width": 48,
 				"texture_height": 48,
 				"visible_bounds_width": 4,
@@ -39,7 +39,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.blindness_boost",
+				"identifier": "geometry.powerup.blindness",
 				"texture_width": 16,
 				"texture_height": 32,
 				"visible_bounds_width": 4,
@@ -1137,7 +1137,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.invisibility",
+				"identifier": "geometry.powerup.invi",
 				"texture_width": 80,
 				"texture_height": 64,
 				"visible_bounds_width": 4,
@@ -1207,7 +1207,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.bow_and_quiver",
+				"identifier": "geometry.powerup.bow_and_quiver",
 				"texture_width": 48,
 				"texture_height": 32,
 				"visible_bounds_width": 4,
@@ -1413,7 +1413,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.boots",
+				"identifier": "geometry.powerup.boots",
 				"texture_width": 48,
 				"texture_height": 48,
 				"visible_bounds_width": 4,
@@ -1446,7 +1446,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.plane_boost",
+				"identifier": "geometry.powerup.wings",
 				"texture_width": 32,
 				"texture_height": 32,
 				"visible_bounds_width": 4,
@@ -1542,7 +1542,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.plane_boost_item",
+				"identifier": "geometry.powerup.two_dimension",
 				"texture_width": 16,
 				"texture_height": 16,
 				"visible_bounds_width": 3,
@@ -1586,7 +1586,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.elytra_boost",
+				"identifier": "geometry.powerup.elytra",
 				"texture_width": 64,
 				"texture_height": 32,
 				"visible_bounds_width": 3,
@@ -1618,7 +1618,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.gun_boost",
+				"identifier": "geometry.powerup.gun",
 				"texture_width": 32,
 				"texture_height": 32,
 				"visible_bounds_width": 3,
@@ -1764,7 +1764,7 @@
 		},
 		{
 			"description": {
-				"identifier": "geometry.companion_cube_boost",
+				"identifier": "geometry.powerup.companion_cube",
 				"texture_width": 32,
 				"texture_height": 32,
 				"visible_bounds_width": 2,

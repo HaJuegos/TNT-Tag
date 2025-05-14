@@ -1,5 +1,3 @@
-/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
-/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 {
 	"namespace": "custom_animations",
 
@@ -139,6 +137,16 @@
 		}
 	},
 
+	"playbox_anim": {
+		"anim_type": "flip_book",
+		"initial_uv": [ 0, 0 ],
+		"frame_count": 72,
+		"frame_step": 151,
+		"fps": 20,
+		"reversible": false,
+		"easing": "linear"
+	},
+
 	"playing_music1": {
 		"type": "panel",
 		"offset": [0, 0],
@@ -147,25 +155,25 @@
 			{
 				"title": {
 					"type": "label",
-					"anchor_from": "top_right",
-					"anchor_to": "top_right",
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
 					"text": "ui.title_music1",
 					"font_size": "normal",
 					"font_scale_factor": 0.8,
 					"localize": true,
 					"layer": 101,
-					"offset": [-49, 9.8],
+					"offset": [33, 9.8],
 					"text_alignment": "left"
 				}
 			},
 			{
 				"subtitle": {
 					"type": "label",
-					"anchor_from": "top_right",
-					"anchor_to": "top_right",
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
 					"text": "ui.subtitle_music1",
 					"font_scale_factor": 0.6,
-					"offset": [-19, 21.5],
+					"offset": [34, 21.5],
 					"font_size": "normal",
 					"localize": true,
 					"text_alignment": "left",
@@ -175,22 +183,25 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
-					"anchor_from": "top_right",
-					"anchor_to": "top_right",
-					"size": ["1%c + 20px", "1%c + 20px"],
-					"offset": [-135.5, 9.5],
-					"layer": 101
+					"texture": "textures/ui/custom/map_icons/musicbox",
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"size": ["1%c + 26px", "1%c + 26px"],
+					"offset": [7.5, 5],
+					"layer": 101,
+					"uv_size": [ 151, 151 ],
+					"uv": "@custom_animations.playbox_anim",
+					"disable_anim_fast_forward": true
 				}
 			},
 			{
 				"border": {
 					"type": "image",
 					"texture": "textures/ui/greyBorder",
-					"anchor_from": "top_right",
-					"anchor_to": "top_right",
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
 					"size": ["1%c + 160px", "1%c + 32px"],
-					"offset": [-3, 3],
+					"offset": [3, 3],
 					"layer": 100
 				}
 			}
@@ -242,7 +253,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -309,7 +320,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -376,7 +387,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -443,7 +454,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -510,7 +521,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -577,7 +588,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -644,7 +655,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -711,7 +722,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -778,7 +789,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -845,7 +856,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -912,7 +923,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -979,7 +990,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -1046,7 +1057,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -1113,7 +1124,7 @@
 			{
 				"playbox": {
 					"type": "image",
-					"texture": "textures/ui/custom_icon/musicbox",
+					"texture": "textures/ui/custom/map_icons/musicbox",
 					"anchor_from": "top_right",
 					"anchor_to": "top_right",
 					"size": ["1%c + 20px", "1%c + 20px"],
@@ -1152,7 +1163,7 @@
 			{
 				"back": {
 					"type": "image",
-					"texture": "textures/ui/blackground_credits",
+					"texture": "textures/ui/custom/blackground_credits",
 					"anchor_from": "center",
 					"anchor_to": "center",
 					"size": ["1%c + 505px", "1%c + 600px"],
@@ -1375,7 +1386,7 @@
 		"easing": "linear",
 		"duration": 0,
 		"from": [0, 0],
-		"to": [500, 0],
+		"to": [-500, 0],
 		"next": "@custom_animations.anim2"
 	},
 	"anim2": {
@@ -1385,23 +1396,23 @@
 	},
 	"anim3": {
 		"anim_type": "offset",
-		"easing": "in_expo",
+		"easing": "in_out_expo",
 		"duration": 1.5,
 		"to": [0, 0],
-		"from": [500, 0],
+		"from": [-500, 0],
 		"next": "@custom_animations.anim4"
 	},
 	"anim4": {
 		"anim_type": "wait",
-		"duration": 5.0,
+		"duration": 6.5,
 		"next": "@custom_animations.anim5"
 	},
 	"anim5": {
 		"anim_type": "offset",
-		"easing": "out_expo",
+		"easing": "in_out_expo",
 		"duration": 3.0,
 		"from": [0, 0],
-		"to": [500, 0]
+		"to": [-500, 0]
 	}
 }
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
