@@ -27,6 +27,33 @@
             }
         },
         "components": {
+            "minecraft:reflect_projectiles": {
+                "reflected_projectiles": [
+                    "xp_bottle",
+                    "thrown_trident",
+                    "shulker_bullet",
+                    "dragon_fireball",
+                    "arrow",
+                    "snowball",
+                    "egg",
+                    "fireball",
+                    "splash_potion",
+                    "ender_pearl",
+                    "wither_skull",
+                    "wither_skull_dangerous",
+                    "small_fireball",
+                    "lingering_potion",
+                    "llama_spit",
+                    "fireworks_rocket",
+                    "fishing_hook",
+					"wind_charge_projectile",
+					"ha:net_projectile",
+					"ha:tnt_projectile_entity",
+					"ha:companion_cube_entity"
+                ],
+                "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+                "reflection_scale": "0.15"
+            },
 			"minecraft:is_collidable": { },
 			"minecraft:is_stackable": { },
             "minecraft:transient": { },

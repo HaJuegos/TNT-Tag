@@ -5,7 +5,7 @@ import * as gametest from '@minecraft/server-gametest';
 const listOfBots = [];
 gametest.register('ha', 'summon_fake_plys', (test) => {
     try {
-        generateFakePly(test, 30);
+        generateFakePly(test, 35);
         mc.system.runTimeout(() => {
             startBots(listOfBots);
         }, mc.TicksPerSecond * 5);

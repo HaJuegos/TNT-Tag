@@ -1,0 +1,152 @@
+{
+    "namespace": "tnt_icons_screen",
+
+    // Factorys
+    "tnt_on_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "tnt_on@tnt_icons_screen.tnt_on_icon_panel"
+            }
+        }
+    },
+    "tnt_off_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "tnt_off@tnt_icons_screen.tnt_off_icon_panel"
+            }
+        }
+    },
+    "tnt_explode_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "tnt_explode@tnt_icons_screen.explosion_icon_panel"
+            }
+        }
+    },
+
+    // TNT ON Anim
+    "tnt_on_anim": {
+        "anim_type": "flip_book",
+        "initial_uv": [ 0, 0 ],
+        "frame_count": 2,
+        "frame_step": 32,
+        "fps": 5,
+        "reversible": true,
+        "easing": "linear"
+    },
+
+    // Panels
+    "tnt_on_icon_panel": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/tnt_icons/tnt_on",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+					"size": ["60px", "60px"],
+                    "offset": [ -1.35, -12 ],
+                    "layer": 99,
+                    "uv_size": [ 32, 32 ],
+                    "uv": "@tnt_icons_screen.tnt_on_anim",
+                    "disable_anim_fast_forward": true
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - '.showtnton') + '.showtnton')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+
+    "tnt_off_icon_panel": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/tnt_icons/tnt_off",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+					"size": ["60px", "60px"],
+                    "offset": [ -1.35, -12 ],
+                    "layer": 99
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - '.showtntoff') + '.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+
+    "explosion_icon_panel": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/tnt_icons/tnt_explode",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+					"size": ["60px", "60px"],
+                    "offset": [ -1.5, -16 ],
+                    "layer": 99,
+                    "alpha": 1.0,
+                    "anims": [ "@tnt_icons_screen.explode_anim0" ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+				"source_property_name": "(#text = (#text - '.showexplode') + '.showexplode')",
+				"target_property_name": "#visible"
+            }
+        ]
+    },
+
+    // Anims
+    "explode_anim0": {
+        "anim_type": "wait",
+        "duration": 3.0,
+        "next": "@tnt_icons_screen.explode_anim1"
+    },
+    "explode_anim1": {
+        "anim_type": "alpha",
+        "easing": "in_out_expo",
+        "from": 1.0,
+        "to": 0.0,
+        "duration": 3.5
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

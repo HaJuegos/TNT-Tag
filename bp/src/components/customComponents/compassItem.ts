@@ -62,10 +62,10 @@ function glowEvent(sourcePly: mc.Player): void {
         ply.triggerEvent('ha:set_glow');
 
         if (ply.hasTag('activatedCoin')) {
-            ply.nameTag = `§e§l[COIN ACTIVATED]§r\n${ply.name}`;
-			ply.triggerEvent('ha:remove_glow');
+            ply.nameTag = `§e§l[COIN ACTIVATED]§r\n ${ply.name} `;
+            ply.triggerEvent('ha:remove_glow');
         } else {
-            ply.nameTag = `${ply.name}`;
+            ply.nameTag = ` ${ply.name} `;
         }
     }
 

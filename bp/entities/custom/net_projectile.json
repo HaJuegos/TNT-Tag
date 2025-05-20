@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.0",
+    "format_version": "1.21.40",
     "minecraft:entity": {
         "description": {
             "identifier": "ha:net_projectile",
@@ -74,13 +74,13 @@
                 "triggers": [
                     {
                         "cause": "all",
-                        "deals_damage": false
+                        "deals_damage": "no"
                     }
                 ]
             },
             "minecraft:collision_box": {
-                "height": 1.25,
-                "width": 1.25
+                "height": 1,
+                "width": 0.45
             },
             "minecraft:behavior.float": {
                 "priority": 0

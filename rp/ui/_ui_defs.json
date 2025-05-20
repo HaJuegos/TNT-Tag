@@ -1,11 +1,13 @@
 {
 	"ui_defs": [
+		"ui/custom/credits.json",
+		"ui/custom/music_toast.json",
+		"ui/custom/tnt_icons.json",
+
 		"uibt/brewing_guide.ui",
 		"uibt/brewing_icons.ui",
 		"uibt/numbered_hotbar.ui",
 		"uibt/quick_crafting.ui",
-		"uibt/chat_tweaks.ui",
-		
-		"ui/custom/animations.json"
+		"uibt/chat_tweaks.ui"
 	]
 }

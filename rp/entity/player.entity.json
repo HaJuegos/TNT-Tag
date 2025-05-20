@@ -34,10 +34,15 @@
                     "variable.is_holding_right = 0.0;",
                     "variable.is_blinking = 0.0;",
                     "variable.last_blink_time = 0.0;",
-                    "variable.hand_bob = 0.0;"
+                    "variable.hand_bob = 0.0;",
+					"variable.last_pregnant_state = 0.0;",
+					"variable.last_pregnant_change_time = 0.0;"
                 ],
                 "pre_animation": [
 					"t.alpha = q.is_charged ? 1.0 : 0.0;",
+					"variable.current_pregnant_state = q.is_pregnant ? 1.0 : 0.0;",
+					"variable.last_pregnant_change_time = (variable.current_pregnant_state != variable.last_pregnant_state) ? q.life_time : variable.last_pregnant_change_time;",
+					"variable.last_pregnant_state = variable.current_pregnant_state;",
 				
                     "variable.helmet_layer_visible = !query.has_head_gear;",
                     "variable.leg_layer_visible = 1.0;",
@@ -55,10 +60,10 @@
 						"root": "!q.is_chested"
 					},
 					{
-						"tnt_3st_person": "!variable.is_first_person && query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:tnt') || query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:cube')"
+						"tnt_3st_person": "!variable.is_first_person && !q.is_pregnant && query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:tnt') || query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:cube')"
 					},
 					{
-						"net_gun_3st_person": "!variable.is_first_person && query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:net_gun')"
+						"net_gun_3st_person": "!variable.is_first_person && !q.is_pregnant && query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:net_gun')"
 					},
 					{
 						"net": "q.is_chested"

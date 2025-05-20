@@ -19,6 +19,21 @@
             "ha:has_ply": {
                 "minecraft:is_pregnant": { }
             },
+			"ha:set_rideable": {
+				"minecraft:rideable": {
+					"family_types": [ "innet" ],
+					"passenger_max_width": 1,
+					"pull_in_entities": true,
+					"rider_can_interact": false,
+					"seat_count": 1,
+					"seats": [
+						{
+							"position": [ 0, 0.75, -0.15 ],
+							"lock_rider_rotation": 0
+						}
+					]
+				}
+			},
             "ha:normal_family": {
                 "minecraft:type_family": {
                     "family": [ "player" ]
@@ -43,7 +58,7 @@
                 },
                 "minecraft:is_chested": { },
                 "minecraft:collision_box": {
-                    "height": 1,
+                    "height": 1.15,
                     "width": 1
                 }
             },
@@ -172,6 +187,19 @@
             }
         },
         "components": {
+            "minecraft:rideable": {
+                "family_types": [ "innet" ],
+                "passenger_max_width": 1,
+                "pull_in_entities": true,
+                "rider_can_interact": false,
+                "seat_count": 1,
+                "seats": [
+                    {
+                        "position": [ 0, 0.75, -0.15 ],
+                        "lock_rider_rotation": 0
+                    }
+                ]
+            },
             "minecraft:interact": {
                 "interactions": [
                     {
@@ -278,19 +306,6 @@
                     }
                 ]
             },
-            "minecraft:rideable": {
-                "family_types": [ "innet" ],
-                "passenger_max_width": 1,
-                "pull_in_entities": true,
-                "rider_can_interact": false,
-                "seat_count": 1,
-                "seats": [
-                    {
-                        "position": [ 0, 0.9, -0.15 ],
-                        "lock_rider_rotation": 0
-                    }
-                ]
-            },
             "minecraft:type_family": {
                 "family": [ "player" ]
             },
@@ -377,6 +392,11 @@
                 "remove": {
                     "component_groups": [
                         "ha:has_ply"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ha:set_rideable"
                     ]
                 }
             },

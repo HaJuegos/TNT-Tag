@@ -26,7 +26,16 @@ export function endGame(timerEntity: mc.Entity): void {
     musicManager(false, true);
 
     for (const ply of mc.world.getAllPlayers()) {
-        ply.nameTag = `${ply.name}`;
+        const plyInfo = ply.clientSystemInfo.platformType;
+        const platformIcons: Record<mc.PlatformType, string> = {
+            [mc.PlatformType.Mobile]: "",
+            [mc.PlatformType.Desktop]: "",
+            [mc.PlatformType.Console]: ""
+        };
+
+        if (platformIcons[plyInfo]) {
+            ply.nameTag = `${ply.name} ${platformIcons[plyInfo]}`;
+        }
     }
 }
 
@@ -68,9 +77,9 @@ export function startGame(map: number): void {
 
             if (teleported == totalPlys) {
                 entity.addTag('inGame');
-                musicManager();
                 objMapSelected?.addScore(entity, map);
                 setAndCheckPlys(plys, entity);
+                musicManager();
             }
         }, ticksConvertor(3));
     }, ticksConvertor(1.5));

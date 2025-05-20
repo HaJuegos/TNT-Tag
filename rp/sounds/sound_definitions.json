@@ -409,6 +409,78 @@
 					"stream": true
 				}
 			]
+		},
+		"record.backroom_labyrinth": {
+			"category": "music",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/music/backroom_labyrinth",
+					"stream": true
+				}
+			]
+		},
+		"record.trainwreck": {
+			"category": "music",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/music/trainwreck",
+					"stream": true
+				}
+			]
+		},
+		"record.life_is": {
+			"category": "music",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/music/life_is",
+					"stream": true
+				}
+			]
+		},
+		"record.g_bonson": {
+			"category": "music",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/music/g_bonson",
+					"stream": true
+				}
+			]
+		},
+		"record.otherside": {
+			"category": "music",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/music/otherside",
+					"stream": true
+				}
+			]
+		},
+		"record.sunset_city": {
+			"category": "music",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/music/sunset_city",
+					"stream": true
+				}
+			]
 		}
 	}
 }

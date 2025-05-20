@@ -8,7 +8,7 @@
 					"*": "Material.default"
 				}
 			],
-			"textures": ["Texture.net"]
+			"textures": [ "Texture.net" ]
 		},
 		"controller.render.player.third_person_glow": {
 			"geometry": "Geometry.glow",
@@ -17,7 +17,7 @@
 					"*": "Material.glow"
 				}
 			],
-			"textures": ["Texture.glow"],
+			"textures": [ "Texture.glow" ],
 			"ignore_lighting": true,
 			"overlay_color": {
 				"r": 0.937,
@@ -33,7 +33,13 @@
 					"*": "(q.is_tamed) ? Material.glow_base : Material.default"
 				}
 			],
-			"textures": ["Texture.default"],
+			"textures": [ "Texture.default" ],
+			"overlay_color": {
+				"r": "q.is_pregnant ? (math.floor(math.mod(math.max(0, q.life_time - variable.last_pregnant_change_time), 0.25) * 7) * 0.9 + 0.35) * math.clamp(math.max(0, q.life_time - variable.last_pregnant_change_time) / 1.65, 0.2, 1.0) : 0.0",
+				"g": "q.is_pregnant ? 0.0 : 0.0",
+				"b": "q.is_pregnant ? 0.0 : 0.0",
+				"a": "q.is_pregnant ? (math.floor(math.mod(math.max(0, q.life_time - variable.last_pregnant_change_time), 0.25) * 7) * 0.5 + 0.35) * math.clamp(math.max(0, q.life_time - variable.last_pregnant_change_time) / 1.65, 0.1, 1.0) : 0.0"
+			},
 			"part_visibility": [
 				{
 					"*": "!q.is_tamed"

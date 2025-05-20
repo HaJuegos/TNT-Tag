@@ -3,9 +3,10 @@
 import { system, world } from "@minecraft/server";
 import { getAllEntitiesInAllDime, ticksConvertor } from "../globalVariables";
 import { listOfTimers } from "./types";
-// Loop para el tp cuando el juego aun no inicia
+// Diversos Loops para el juego, como el tp al lobby, invi a los npcs y los nombres en repeat
 system.runInterval(() => {
     try {
+        world.getDimension('overworld').runCommand(`effect @e[type=ha:power_ups] invisibility 20 0 true`);
         const inGame = getAllEntitiesInAllDime({ type: 'ha:game_entity' });
         if (inGame.length <= 0) {
             for (const ply of world.getAllPlayers().filter(ply => !ply.hasTag('admin'))) {
@@ -22,7 +23,7 @@ system.runInterval(() => {
                 const hasCoin = ply.hasTag('activatedCoin');
                 const hasTNT = ply.hasTag('tntPly');
                 if (glowActive) {
-                    ply.nameTag = hasCoin ? `§e§l[COIN ACTIVATED]§r\n${ply.name}` : hasTNT ? `§c§l[TNT]§r\n${ply.name}` : `${ply.name}`;
+                    ply.nameTag = hasCoin ? `§e§l[COIN ACTIVATED]§r\n ${ply.name} ` : hasTNT ? ` §c§l[TNT]§r \n${ply.name}` : ` ${ply.name} `;
                 }
                 else {
                     ply.nameTag = hasCoin ? `§e§l[COIN ACTIVATED]§r` : `§r`;

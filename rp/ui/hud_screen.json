@@ -1,6 +1,6 @@
 {
 	"namespace": "hud",
-	
+
 	"hud_title_text/subtitle_frame/subtitle": {
 		"modifications": [
 			{
@@ -8,137 +8,178 @@
 				"operation": "insert_back",
 				"value": {
 					"binding_type": "view",
-					"source_property_name": "(not (#text = 'm.pandoraPalace' or #text = 'm.core' or #text = 'm.panic' or #text = 'm.eleventhHour' or #text = 'm.cyberWorld' or #text = 'm.smartRace' or #text = 'm.dinner' or #text = 'm.abstractMap' or #text = 'm.androidApartment' or #text = 'm.hotline' or #text = 'm.knockKnock' or #text = 'm.shapeDaFuture' or #text = 'l.asobu' or #text = 'l.datakrash' or #text = 'm.judgment'))",
+					"source_property_name": "(#text - '.showtnton')",
+					"target_property_name": "#text"
+				}
+			},
+			{
+				"array_name": "bindings",
+				"operation": "insert_back",
+				"value": {
+					"binding_type": "view",
+					"source_property_name": "(#text - '.showtntoff')",
+					"target_property_name": "#text"
+				}
+			},
+			{
+				"array_name": "bindings",
+				"operation": "insert_back",
+				"value": {
+					"binding_type": "view",
+					"source_property_name": "(#text - '.showexplode')",
+					"target_property_name": "#text"
+				}
+			},
+			{
+				"array_name": "bindings",
+				"operation": "insert_back",
+				"value": {
+					"binding_type": "view",
+					"source_property_name": "(not( #text = 'm.' + (#text - 'm.') or #text = 'l.' + (#text - 'l.') ))",
 					"target_property_name": "#visible"
 				}
 			}
 		]
 	},
-	
+
 	"root_panel": {
 		"modifications": [
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play1@custom_animations.playing_music1_factory": {}
+					"tnt_on@tnt_icons_screen.tnt_on_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play2@custom_animations.playing_music2_factory": {}
+					"tnt_off@tnt_icons_screen.tnt_off_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play3@custom_animations.playing_music3_factory": {}
+					"tnt_explode@tnt_icons_screen.tnt_explode_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play4@custom_animations.playing_music4_factory": {}
+					"play1@toast_music_screen.playing_music1_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play5@custom_animations.playing_music5_factory": {}
+					"play2@toast_music_screen.playing_music2_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play6@custom_animations.playing_music6_factory": {}
+					"play3@toast_music_screen.playing_music3_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play7@custom_animations.playing_music7_factory": {}
+					"play5@toast_music_screen.playing_music5_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play8@custom_animations.playing_music8_factory": {}
+					"play6@toast_music_screen.playing_music6_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play9@custom_animations.playing_music9_factory": {}
+					"play7@toast_music_screen.playing_music7_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play10@custom_animations.playing_music10_factory": {}
+					"play8@toast_music_screen.playing_music8_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play11@custom_animations.playing_music11_factory": {}
+					"play9@toast_music_screen.playing_music9_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play12@custom_animations.playing_music12_factory": {}
+					"play10@toast_music_screen.playing_music10_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play13@custom_animations.playing_music13_factory": {}
+					"play11@toast_music_screen.playing_music11_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play14@custom_animations.playing_music14_factory": {}
+					"play12@toast_music_screen.playing_music12_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"play15@custom_animations.playing_music15_factory": {}
+					"play13@toast_music_screen.playing_music13_factory": { }
 				}
 			},
 			{
 				"array_name": "controls",
-				"operation": "insert_front",
+				"operation": "insert_back",
 				"value": {
-					"credits@custom_animations.credits": {}
+					"play14@toast_music_screen.playing_music14_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"play15@toast_music_screen.playing_music15_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"credits@credits_screen.credits": { }
 				}
 			}
 		]
 	},
-	
+
 	"hotbar_panel": {
 		"modifications": [
 			{
 				"array_name": "controls",
 				"operation": "insert_front",
 				"value": {
-					"numbered_hotbar@bt_numbered_hotbar.numbered_hotbar_panel": {}
+					"numbered_hotbar@bt_numbered_hotbar.numbered_hotbar_panel": { }
 				}
 			}
 		]

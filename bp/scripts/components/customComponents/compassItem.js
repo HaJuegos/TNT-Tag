@@ -51,11 +51,11 @@ function glowEvent(sourcePly) {
     for (const ply of plys) {
         ply.triggerEvent('ha:set_glow');
         if (ply.hasTag('activatedCoin')) {
-            ply.nameTag = `§e§l[COIN ACTIVATED]§r\n${ply.name}`;
+            ply.nameTag = `§e§l[COIN ACTIVATED]§r\n ${ply.name} `;
             ply.triggerEvent('ha:remove_glow');
         }
         else {
-            ply.nameTag = `${ply.name}`;
+            ply.nameTag = ` ${ply.name} `;
         }
     }
     mc.world.sendMessage({ translate: "chat.compass_activated" });

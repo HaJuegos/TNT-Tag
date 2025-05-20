@@ -1,0 +1,1184 @@
+{
+    "namespace": "toast_music_screen",
+
+    // Playbox atlas
+    "playbox_anim": {
+        "anim_type": "flip_book",
+        "initial_uv": [ 0, 0 ],
+        "frame_count": 72,
+        "frame_step": 151,
+        "fps": 20,
+        "reversible": false,
+        "easing": "linear"
+    },
+
+    // Panels
+    "playing_music1": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music1",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 160px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'l.asobu') + 'l.asobu' or #text = (#text - 'm.asobu.showtnton') + 'm.asobu.showtnton' or #text = (#text - 'm.asobu.showtntoff') + 'm.asobu.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music2": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music2",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 202px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.pandoraPalace') + 'm.pandoraPalace' or #text = (#text - 'm.pandoraPalace.showtnton') + 'm.pandoraPalace.showtnton' or #text = (#text - 'm.pandoraPalace.showtntoff') + 'm.pandoraPalace.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music3": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music3",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 137px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.core') + 'm.core' or #text = (#text - 'm.core.showtnton') + 'm.core.showtnton' or #text = (#text - 'm.core.showtntoff') + 'm.core.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music5": {
+        "type": "panel",
+        "offset": [ 0, 0],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music5",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 167px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.eleventhHour') + 'm.eleventhHour' or #text = (#text - 'm.eleventhHour.showtnton') + 'm.eleventhHour.showtnton' or #text = (#text - 'm.eleventhHour.showtntoff') + 'm.eleventhHour.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music6": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music6",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 188px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.cyberWorld') + 'm.cyberWorld' or #text = (#text - 'm.cyberWorld.showtnton') + 'm.cyberWorld.showtnton' or #text = (#text - 'm.cyberWorld.showtntoff') + 'm.cyberWorld.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music7": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music7",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 172px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.smartRace') + 'm.smartRace' or #text = (#text - 'm.smartRace.showtnton') + 'm.smartRace.showtnton' or #text = (#text - 'm.smartRace.showtntoff') + 'm.smartRace.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music8": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music8",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 130px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.dinner') + 'm.dinner' or #text = (#text - 'm.dinner.showtnton') + 'm.dinner.showtnton' or #text = (#text - 'm.dinner.showtntoff') + 'm.dinner.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music9": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music9",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 171px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.judgment') + 'm.judgment' or #text = (#text - 'm.judgment.showtnton') + 'm.judgment.showtnton' or #text = (#text - 'm.judgment.showtntoff') + 'm.judgment.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music10": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music10",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 127px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.abstractMap') + 'm.abstractMap' or #text = (#text - 'm.abstractMap.showtnton') + 'm.abstractMap.showtnton' or #text = (#text - 'm.abstractMap.showtntoff') + 'm.abstractMap.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music11": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music11",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 140px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.androidApartment') + 'm.androidApartment' or #text = (#text - 'm.androidApartment.showtnton') + 'm.androidApartment.showtnton' or #text = (#text - 'm.androidApartment.showtntoff') + 'm.androidApartment.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music12": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music12",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 132px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.hotline') + 'm.hotline' or #text = (#text - 'm.hotline.showtnton') + 'm.hotline.showtnton' or #text = (#text - 'm.hotline.showtntoff') + 'm.hotline.showtntoff' )",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music13": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music13",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 126px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.knockKnock') + 'm.knockKnock' or #text = (#text - 'm.knockKnock.showtnton') + 'm.knockKnock.showtnton' or #text = (#text - 'm.knockKnock.showtntoff') + 'm.knockKnock.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music14": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music14",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 153px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'm.shapeDaFuture') + 'm.shapeDaFuture' or #text = (#text - 'm.shapeDaFuture.showtnton') + 'm.shapeDaFuture.showtnton' or #text = (#text - 'm.shapeDaFuture.showtntoff') + 'm.shapeDaFuture.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "playing_music15": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "anims": [ "@toast_music_screen.anim1" ],
+        "controls": [
+            {
+                "title": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.title_music1",
+                    "font_size": "normal",
+                    "font_scale_factor": 0.8,
+                    "localize": true,
+                    "layer": 101,
+                    "offset": [ 33, 9.8 ],
+                    "text_alignment": "left"
+                }
+            },
+            {
+                "subtitle": {
+                    "type": "label",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "ui.subtitle_music15",
+                    "font_scale_factor": 0.6,
+                    "offset": [ 34, 21.5 ],
+                    "font_size": "normal",
+                    "localize": true,
+                    "text_alignment": "left",
+                    "layer": 101
+                }
+            },
+            {
+                "playbox": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/map_icons/musicbox",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 26px", "1%c + 26px" ],
+                    "offset": [ 7.5, 5 ],
+                    "layer": 101,
+                    "uv_size": [ 151, 151 ],
+                    "uv": "@toast_music_screen.playbox_anim",
+                    "disable_anim_fast_forward": true
+                }
+            },
+            {
+                "border": {
+                    "type": "image",
+                    "texture": "textures/ui/greyBorder",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "size": [ "1%c + 143px", "1%c + 32px" ],
+                    "offset": [ 3, 3 ],
+                    "layer": 100
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - 'l.datakrash') + 'l.datakrash' or #text = (#text - 'm.datakrash.showtnton') + 'm.datakrash.showtnton' or #text = (#text - 'm.datakrash.showtntoff') + 'm.datakrash.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+
+    // Factorys
+    "playing_music1_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play1@toast_music_screen.playing_music1"
+            }
+        }
+    },
+    "playing_music2_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play2@toast_music_screen.playing_music2"
+            }
+        }
+    },
+    "playing_music3_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play3@toast_music_screen.playing_music3"
+            }
+        }
+    },
+    "playing_music4_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play4@toast_music_screen.playing_music4"
+            }
+        }
+    },
+    "playing_music5_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play5@toast_music_screen.playing_music5"
+            }
+        }
+    },
+    "playing_music6_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play6@toast_music_screen.playing_music6"
+            }
+        }
+    },
+    "playing_music7_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play7@toast_music_screen.playing_music7"
+            }
+        }
+    },
+    "playing_music8_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play8@toast_music_screen.playing_music8"
+            }
+        }
+    },
+    "playing_music9_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play9@toast_music_screen.playing_music9"
+            }
+        }
+    },
+    "playing_music10_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play10@toast_music_screen.playing_music10"
+            }
+        }
+    },
+    "playing_music11_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play11@toast_music_screen.playing_music11"
+            }
+        }
+    },
+    "playing_music12_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play12@toast_music_screen.playing_music12"
+            }
+        }
+    },
+    "playing_music13_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play13@toast_music_screen.playing_music13"
+            }
+        }
+    },
+    "playing_music14_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play14@toast_music_screen.playing_music14"
+            }
+        }
+    },
+    "playing_music15_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "play15@toast_music_screen.playing_music15"
+            }
+        }
+    },
+
+    // Anims
+    "anim1": {
+        "anim_type": "offset",
+        "easing": "linear",
+        "duration": 0,
+        "from": [ 0, 0 ],
+        "to": [ -500, 0 ],
+        "next": "@toast_music_screen.anim2"
+    },
+    "anim2": {
+        "anim_type": "wait",
+        "duration": 0,
+        "next": "@toast_music_screen.anim3"
+    },
+    "anim3": {
+        "anim_type": "offset",
+        "easing": "in_out_expo",
+        "duration": 1.5,
+        "to": [ 0, 0 ],
+        "from": [ -500, 0 ],
+        "next": "@toast_music_screen.anim4"
+    },
+    "anim4": {
+        "anim_type": "wait",
+        "duration": 6.5,
+        "next": "@toast_music_screen.anim5"
+    },
+    "anim5": {
+        "anim_type": "offset",
+        "easing": "in_out_expo",
+        "duration": 3.0,
+        "from": [ 0, 0 ],
+        "to": [ -500, 0 ]
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

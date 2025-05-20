@@ -10,6 +10,8 @@ world.afterEvents.entityHurt.subscribe(damageSensor => {
         const { damagingEntity: sourceEntity, cause } = source;
         if ((hurtEntity instanceof Player && sourceEntity instanceof Player) && cause == EntityDamageCause.projectile) {
             sourceEntity.playSound(`player.bow_hit`);
+            sourceEntity.onScreenDisplay.updateSubtitle('.showtntoff');
+            hurtEntity.onScreenDisplay.updateSubtitle('.showtnton');
         }
     }
     catch { }
@@ -22,6 +24,13 @@ world.afterEvents.playerInteractWithEntity.subscribe(interactSensor => {
                 hitEntity.runCommand(`ride @s start_riding "${sourceEntity.name}" teleport_rider`);
                 sourceEntity.setDynamicProperty('ha:rider', hitEntity.id);
                 sourceEntity.setDynamicProperty('ha:evit_firt', true);
+                system.runTimeout(() => {
+                    if (sourceEntity.hasTag('hasPly')) {
+                        hitEntity.runCommand(`ride @s stop_riding`);
+                        sourceEntity.setDynamicProperty('ha:rider', "");
+                        sourceEntity.setDynamicProperty('ha:evit_firt', true);
+                    }
+                }, ticksConvertor(2));
             }
         }
     }
@@ -32,9 +41,18 @@ world.afterEvents.entityHitEntity.subscribe(hitSensor => {
         const { hitEntity, damagingEntity: sourceEntity } = hitSensor;
         if ((sourceEntity instanceof Player && hitEntity instanceof Player)) {
             if ((!sourceEntity.hasTag('hasPly') && !sourceEntity.hasTag('inNet')) && hitEntity.hasTag('inNet')) {
+                sourceEntity.triggerEvent('ha:has_ply');
                 hitEntity.runCommand(`ride @s start_riding "${sourceEntity.name}" teleport_rider`);
                 sourceEntity.setDynamicProperty('ha:rider', hitEntity.id);
                 sourceEntity.setDynamicProperty('ha:evit_firt', true);
+                const timerID = system.runTimeout(() => {
+                    if (sourceEntity.hasTag('hasPly')) {
+                        hitEntity.runCommand(`ride @s stop_riding`);
+                        sourceEntity.setDynamicProperty('ha:rider', "");
+                        sourceEntity.setDynamicProperty('ha:evit_firt', true);
+                    }
+                    system.clearRun(timerID);
+                }, ticksConvertor(1.85));
             }
             if (sourceEntity.hasTag('tntPly') && hitEntity.hasTag('normalPly')) {
                 if (hitEntity.hasTag('activatedCoin')) {
@@ -44,6 +62,8 @@ world.afterEvents.entityHitEntity.subscribe(hitSensor => {
                 }
                 sourceEntity.runCommand(`function system/remove_tnt`);
                 hitEntity.runCommand(`function system/give_tnt`);
+                sourceEntity.onScreenDisplay.updateSubtitle('.showtntoff');
+                hitEntity.onScreenDisplay.updateSubtitle('.showtnton');
                 if (inGlow) {
                     sourceEntity.triggerEvent('ha:remove_glow');
                     hitEntity.triggerEvent('ha:set_glow');
@@ -52,6 +72,7 @@ world.afterEvents.entityHitEntity.subscribe(hitSensor => {
         }
     }
     catch { }
+    ;
 });
 world.afterEvents.playerSpawn.subscribe(spawnSensor => {
     try {

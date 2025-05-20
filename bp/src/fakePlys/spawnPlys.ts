@@ -8,7 +8,7 @@ const listOfBots: gametest.SimulatedPlayer[] = [];
 
 gametest.register('ha', 'summon_fake_plys', (test) => {
     try {
-        generateFakePly(test, 30);
+        generateFakePly(test, 35);
 		
 		mc.system.runTimeout(() => {
             startBots(listOfBots);

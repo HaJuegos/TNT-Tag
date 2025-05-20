@@ -1,6 +1,6 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
-import { EntityComponentTypes, EquipmentSlot, system, world } from "@minecraft/server";
+import { EntityComponentTypes, EquipmentSlot, PlatformType, system, world } from "@minecraft/server";
 import { getAllEntitiesInAllDime, ticksConvertor } from "../globalVariables";
 import { getRandomSpawnMap } from "../mapLocations";
 [];
@@ -66,6 +66,12 @@ export function elytraSystem(ply) {
 export function checkSpawnEvents(ply) {
     const tags = ply.getTags();
     const isInGame = inGameStarted();
+    const plyInfo = ply.clientSystemInfo.platformType;
+    const platformIcons = {
+        [PlatformType.Mobile]: "",
+        [PlatformType.Desktop]: "",
+        [PlatformType.Console]: ""
+    };
     const resetAndLobbyMusic = () => {
         ply.runCommand(`function system/reset_data`);
         musicManager(false, true, ply);
@@ -90,6 +96,9 @@ export function checkSpawnEvents(ply) {
         }
         return;
     }
+    if (platformIcons[plyInfo]) {
+        ply.nameTag = `${ply.name} ${platformIcons[plyInfo]}`;
+    }
     ply.triggerEvent('ha:in_lobby');
     ply.triggerEvent('ha:remove_solid_mode');
     ply.triggerEvent('ha:set_normal_box');
@@ -113,9 +122,16 @@ export function musicManager(stop = false, isLobby = false, target) {
     const songs = isLobby ? musicList.filter(music => music.titleID.startsWith('l.')) : musicList.filter(music => !music.titleID.startsWith('l.'));
     const selectedSong = songs[Math.floor(Math.random() * songs.length)];
     for (const ply of plys) {
+        let idTitle = selectedSong.titleID;
         ply.stopMusic();
         ply.playMusic(selectedSong.song, { loop: true });
-        ply.onScreenDisplay.updateSubtitle(selectedSong.titleID);
+        if (ply.hasTag('tntPly')) {
+            idTitle += '.showtnton';
+        }
+        else if (ply.hasTag('normalPly')) {
+            idTitle += '.showtntoff';
+        }
+        ply.onScreenDisplay.updateSubtitle(idTitle);
         ply.onScreenDisplay.setTitle("§r");
     }
 }

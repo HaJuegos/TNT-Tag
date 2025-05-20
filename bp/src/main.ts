@@ -11,7 +11,10 @@ import './powerUps/interactions';
 
 import './components/registry';
 
-import './fakePlys/spawnPlys'
+import './fakePlys/spawnPlys';
+
+import './chat/events';
+
 
 import './debug'
 

@@ -1,7 +1,7 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 
-import { EntityComponentTypes, EquipmentSlot, Player, system, world } from "@minecraft/server";
+import { EntityComponentTypes, EquipmentSlot, PlatformType, Player, system, world } from "@minecraft/server";
 
 import { getAllEntitiesInAllDime, ticksConvertor } from "../globalVariables";
 import { getRandomSpawnMap } from "../mapLocations";
@@ -30,7 +30,13 @@ const musicList: MusicList[] = [
     { song: "record.shape_da_future", titleID: "m.shapeDaFuture" },
     { song: "record.asobu", titleID: "l.asobu" },
     { song: "record.datakrash", titleID: "l.datakrash" },
-    { song: "record.judgment", titleID: "m.judgment" }
+    { song: "record.judgment", titleID: "m.judgment" },
+    { song: "record.backroom_labyrinth", titleID: "l.backroom_labyrinth" },
+    { song: "record.trainwreck", titleID: "l.trainwreck" },
+    { song: "record.life_is", titleID: "l.life_is" },
+    { song: "record.g_bonson", titleID: "l.g_bonson" },
+    { song: "record.otherside", titleID: "l.otherside" },
+    { song: "record.sunset_city", titleID: "l.sunset_city" }
 ];
 
 /**
@@ -79,6 +85,13 @@ export function elytraSystem(ply: Player): void {
 export function checkSpawnEvents(ply: Player): void {
     const tags = ply.getTags();
     const isInGame = inGameStarted();
+    const plyInfo = ply.clientSystemInfo.platformType;
+    const platformIcons: Record<PlatformType, string> = {
+        [PlatformType.Mobile]: "",
+        [PlatformType.Desktop]: "",
+        [PlatformType.Console]: ""
+    };
+
     const resetAndLobbyMusic = () => {
         ply.runCommand(`function system/reset_data`);
         musicManager(false, true, ply);
@@ -104,6 +117,10 @@ export function checkSpawnEvents(ply: Player): void {
         }
 
         return;
+    }
+
+    if (platformIcons[plyInfo]) {
+        ply.nameTag = `${ply.name} ${platformIcons[plyInfo]}`;
     }
 
     ply.triggerEvent('ha:in_lobby');
@@ -134,9 +151,18 @@ export function musicManager(stop: boolean = false, isLobby: boolean = false, ta
     const selectedSong = songs[Math.floor(Math.random() * songs.length)];
 
     for (const ply of plys) {
+        let idTitle = selectedSong.titleID;
+
         ply.stopMusic();
         ply.playMusic(selectedSong.song, { loop: true });
-        ply.onScreenDisplay.updateSubtitle(selectedSong.titleID);
+
+        if (ply.hasTag('tntPly')) {
+            idTitle += '.showtnton';
+        } else if (ply.hasTag('normalPly')) {
+            idTitle += '.showtntoff';
+        }
+
+        ply.onScreenDisplay.updateSubtitle(idTitle);
         ply.onScreenDisplay.setTitle("§r");
     }
 }

@@ -1,6 +1,36 @@
 {
 	"format_version": "1.10.0",
 	"animations": {
+		"animation.powerup_particle.blindess": {
+			"animation_length": 1.6,
+			"loop": true,
+			"particle_effects": {
+				"1.5": {
+					"effect": "blind",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.powerup_particle.speed": {
+			"animation_length": 1.6,
+			"loop": true,
+			"particle_effects": {
+				"1.5": {
+					"effect": "speed",
+					"locator": "particle"
+				}
+			}
+		},
+		"animation.powerup_particle.jump": {
+			"animation_length": 1.6,
+			"loop": true,
+			"particle_effects": {
+				"1.5": {
+					"effect": "jump",
+					"locator": "particle"
+				}
+			}
+		},
 		"animation.boost.wings": {
 			"animation_length": 2,
 			"loop": true,
@@ -15,7 +45,11 @@
 			"particle_effects": {
 				"1.1": {
 					"effect": "wing",
-					"locator": "particle_r"
+					"locator": "locatorl"
+				},
+				"1.1": {
+					"effect": "wing",
+					"locator": "locatorr"
 				}
 			}
 		},

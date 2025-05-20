@@ -1,6 +1,6 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
-import { world } from "@minecraft/server";
+import { system, world } from "@minecraft/server";
 import { getAllEntitiesInAllDime } from "../../globalVariables";
 let inGlow = false;
 /**
@@ -21,6 +21,20 @@ const glowLoop = {
         removeGlowAllPlys();
     }
 };
+system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
+    try {
+        const { id } = staticEvents;
+        if (id == 'ha:forced_reset_glow') {
+            inGlow = false;
+            for (const entity of getAllEntitiesInAllDime({ type: 'ha:glowing_entity', tags: ["glowActivated"] })) {
+                entity.removeTag('glowActivated');
+                entity.triggerEvent('ha:despawn');
+            }
+            removeGlowAllPlys();
+        }
+    }
+    catch { }
+});
 /**
  * Funcion encargada de poner glowing a los jugadores.
  * @returns {void}
@@ -29,7 +43,7 @@ function addGlowInAllPlys() {
     for (const ply of world.getAllPlayers().filter(ply => !ply.hasTag('spectMode'))) {
         const hasCoin = ply.hasTag('activatedCoin');
         const hasTNT = ply.hasTag('tntPly');
-        ply.nameTag = hasTNT ? `§c§l[TNT]§r\n${ply.name}` : hasCoin ? `§e§l[COIN ACTIVATED]§r\n${ply.name}` : `${ply.name}`;
+        ply.nameTag = hasTNT ? ` §c§l[TNT]§r \n${ply.name}` : hasCoin ? `§e§l[COIN ACTIVATED]§r\n ${ply.name} ` : ` ${ply.name} `;
         ply.triggerEvent((hasTNT || hasCoin) ? 'ha:remove_glow' : 'ha:set_glow');
     }
 }

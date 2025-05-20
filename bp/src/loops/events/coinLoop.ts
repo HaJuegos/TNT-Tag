@@ -19,7 +19,7 @@ const coinLoop: TimerLoopBase = {
         ply.triggerEvent('ha:in_lobby');
 
         if (inGlow) {
-            ply.nameTag = `§e§l[COIN ACTIVATED]§r\n${ply.name}`;
+            ply.nameTag = `§e§l[COIN ACTIVATED]§r\n ${ply.name} `;
         } else {
             ply.nameTag = `§e§l[COIN ACTIVATED]§r`;
         }
@@ -35,7 +35,7 @@ const coinLoop: TimerLoopBase = {
         ply.runCommand(`replaceitem entity @s slot.armor.chest 0 air`);
 
         if (inGlow) {
-            ply.nameTag = `${ply.name}`;
+            ply.nameTag = ` ${ply.name} `;
         } else {
             ply.nameTag = `§r`;
         }

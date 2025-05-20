@@ -1,0 +1,232 @@
+{
+    "namespace": "credits_screen",
+
+    // Panel
+    "credits": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "controls": [
+            {
+                "back": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/blackground_credits",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "size": [ "1%c + 505px", "1%c + 600px" ],
+                    "offset": [ 0, 0 ],
+                    "layer": 100,
+                    "anims": [ "@credits_screen.back1" ]
+                }
+            },
+            {
+                "stack_texts": {
+                    "type": "collection_panel",
+                    "collection_name": "nombres_creditos",
+                    "offset": [ 0, 0 ],
+                    "anims": [ "@credits_screen.text1" ],
+                    "controls": [
+                        {
+                            "title": {
+                                "type": "label",
+                                "text": "ui.credits",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "offset": [ 0, -95 ],
+                                "font_size": "large",
+                                "localize": true,
+                                "layer": 101,
+                                "shadow": true,
+                                "locked_alpha": true
+                            }
+                        },
+                        {
+                            "text1": {
+                                "type": "panel",
+                                "offset": [ 0, 70 ],
+                                "controls": [
+                                    {
+                                        "title": {
+                                            "type": "label",
+                                            "text": "ui.credits.dev",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "offset": [ 0, -125 ],
+                                            "font_size": "large",
+                                            "font_scale_factor": 0.7,
+                                            "localize": true,
+                                            "layer": 102,
+                                            "shadow": true,
+                                            "locked_alpha": true
+                                        }
+                                    },
+                                    {
+                                        "subtitle": {
+                                            "type": "label",
+                                            "text": "ui.credits.name_dev",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "offset": [ 0, -105 ],
+                                            "font_size": "large",
+                                            "font_scale_factor": 0.65,
+                                            "localize": true,
+                                            "layer": 102,
+                                            "shadow": true,
+                                            "locked_alpha": true
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text2": {
+                                "type": "panel",
+                                "offset": [ 0, 75 ],
+                                "controls": [
+                                    {
+                                        "title": {
+                                            "type": "label",
+                                            "text": "ui.credits.art",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "offset": [ 0, -75 ],
+                                            "font_size": "large",
+                                            "font_scale_factor": 0.7,
+                                            "localize": true,
+                                            "shadow": true,
+                                            "locked_alpha": true,
+                                            "layer": 103
+                                        }
+                                    },
+                                    {
+                                        "subtitle": {
+                                            "type": "label",
+                                            "text": "ui.credits.art_name",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "offset": [ 0, -53 ],
+                                            "font_size": "large",
+                                            "font_scale_factor": 0.65,
+                                            "localize": true,
+                                            "shadow": true,
+                                            "locked_alpha": true,
+                                            "layer": 103
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text3": {
+                                "type": "panel",
+                                "offset": [ 0, 80 ],
+                                "controls": [
+                                    {
+                                        "title": {
+                                            "type": "label",
+                                            "text": "ui.credits.idea",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "offset": [ 0, -23 ],
+                                            "font_size": "large",
+                                            "font_scale_factor": 0.7,
+                                            "localize": true,
+                                            "shadow": true,
+                                            "locked_alpha": true,
+                                            "layer": 104
+                                        }
+                                    },
+                                    {
+                                        "subtitle": {
+                                            "type": "label",
+                                            "text": "ui.credits.idea_name",
+                                            "anchor_from": "center",
+                                            "anchor_to": "center",
+                                            "offset": [ 0, -3 ],
+                                            "font_size": "large",
+                                            "font_scale_factor": 0.65,
+                                            "localize": true,
+                                            "shadow": true,
+                                            "locked_alpha": true,
+                                            "layer": 104
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    // Anims
+    "back1": {
+        "anim_type": "offset",
+        "easing": "linear",
+        "duration": 0,
+        "from": [ 0, 0 ],
+        "to": [ 0, -1000 ],
+        "next": "@credits_screen.back2"
+    },
+    "back2": {
+        "anim_type": "wait",
+        "duration": 1.5,
+        "next": "@credits_screen.back3"
+    },
+    "back3": {
+        "anim_type": "offset",
+        "easing": "in_out_expo",
+        "duration": 3.0,
+        "to": [ 0, 0 ],
+        "from": [ 0, -1000 ],
+        "next": "@credits_screen.back4"
+    },
+    "back4": {
+        "anim_type": "wait",
+        "duration": 2.5,
+        "next": "@credits_screen.back5"
+    },
+    "back5": {
+        "anim_type": "offset",
+        "easing": "in_out_expo",
+        "duration": 3.0,
+        "from": [ 0, 0 ],
+        "to": [ 0, -1000 ]
+    },
+
+    "text1": {
+        "anim_type": "offset",
+        "easing": "linear",
+        "duration": 0,
+        "from": [ 0, 0 ],
+        "to": [ 0, -500 ],
+        "next": "@credits_screen.text2"
+    },
+    "text2": {
+        "anim_type": "wait",
+        "duration": 1.7,
+        "next": "@credits_screen.text3"
+    },
+    "text3": {
+        "anim_type": "offset",
+        "easing": "in_expo",
+        "duration": 3.0,
+        "to": [ 0, 0 ],
+        "from": [ 0, -500 ],
+        "next": "@credits_screen.text4"
+    },
+    "text4": {
+        "anim_type": "wait",
+        "duration": 2.4,
+        "next": "@credits_screen.text5"
+    },
+    "text5": {
+        "anim_type": "offset",
+        "easing": "out_expo",
+        "duration": 3.0,
+        "from": [ 0, 0 ],
+        "to": [ 0, -500 ]
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

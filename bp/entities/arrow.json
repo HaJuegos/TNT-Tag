@@ -31,7 +31,11 @@
                     "uncertainty_multiplier": 4,
                     "anchor": 1,
                     "should_bounce": true,
-                    "offset": [ 0, -0.1, 0 ]
+                    "offset": [ 0, -0.1, 0 ],
+                    "ignored_entities": [
+                        "ha:power_ups",
+                        "ha:custom_npc"
+                    ]
                 }
             },
             "minecraft:player_arrow": {
@@ -61,7 +65,11 @@
                     "uncertainty_multiplier": 0,
                     "anchor": 1,
                     "should_bounce": true,
-                    "offset": [ 0, -0.1, 0 ]
+                    "offset": [ 0, -0.1, 0 ],
+                    "ignored_entities": [
+                        "ha:power_ups",
+                        "ha:custom_npc"
+                    ]
                 }
             },
             "minecraft:pillager_arrow": {
@@ -87,7 +95,11 @@
                     "uncertainty_multiplier": 4,
                     "anchor": 1,
                     "should_bounce": true,
-                    "offset": [ 0, -0.1, 0 ]
+                    "offset": [ 0, -0.1, 0 ],
+                    "ignored_entities": [
+                        "ha:power_ups",
+                        "ha:custom_npc"
+                    ]
                 }
             }
         },
@@ -130,7 +142,11 @@
                 "uncertainty_multiplier": 4,
                 "anchor": 1,
                 "should_bounce": true,
-                "offset": [ 0, -0.1, 0 ]
+                "offset": [ 0, -0.1, 0 ],
+				"ignored_entities": [
+					"ha:power_ups",
+					"ha:custom_npc"
+				]
             },
             "minecraft:physics": {
             },
