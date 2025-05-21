@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/HaJuegos/TNT-Tag/main/.github/pack_icon.png" alt="Add-on Icon" width=500>
-  <h3 align="center">TNT Tag - A Minigame Map (v0.0.10-beta)</h3>
+  <h3 align="center">TNT Tag - A Minigame Map (v1.0.0-beta)</h3>
   
  <p align="center"> A mini-game where you must NOT have the TNT before it explodes, can you win?</p></p>
 
@@ -27,15 +27,15 @@
 ## DOWNLOAD LINKS
 ### Note: These links are linked to Ko-Fi, you may require an account on that site. These files are not and will not be paid, everything is optional and free for anyone who wants to enjoy it.
 
-- [**CLICK HERE TO DOWNLOAD ALL**](https://www.mediafire.com/file/k5keh2nl3tkn5s5/allfiles.mcaddon/file)
+- [**CLICK HERE TO DOWNLOAD ALL** (OLD-Version)](https://www.mediafire.com/file/k5keh2nl3tkn5s5/allfiles.mcaddon/file)
 
-- [**CLICK HERE TO DOWNLOAD THE TEMPLATE**](https://www.mediafire.com/file/ig5y8aw5xcpn2zp/template.mctemplate/file)
+- [**CLICK HERE TO DOWNLOAD THE TEMPLATE** (OLD-Version)](https://www.mediafire.com/file/ig5y8aw5xcpn2zp/template.mctemplate/file)
 
-- [**CLICK HERE TO DOWNLOAD THE MAP**](https://www.mediafire.com/file/agnm6q90tfy9n7y/world.mcworld/file)
+- [**CLICK HERE TO DOWNLOAD THE MAP** (OLD-Version)](https://www.mediafire.com/file/agnm6q90tfy9n7y/world.mcworld/file)
 
 ## MINI-USER GUIDE
 
-- **This world was created in MC version 1.21.60. Any version lower or higher in the future may not work properly.**
+- **This world was created in MC version 1.21.82/3. Any version lower or higher in the future may not work properly.**
 - **This map uses scripts, so it is not supported by Aternos.**
 - All map installation and setup is automatic.
 - If you downloaded the PreConfigured World and don't know what to do with it, take a look at this tutorial image: https://github.com/HaJuegos/TNT-Tag/tree/main/.github/exmple.png
@@ -50,79 +50,104 @@
     <th>Creator's name:</th>
   </tr>
   <tr>
-    <td align="center"><img src="https://i.ytimg.com/vi/C7XnpYQaLUY/hq720.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=C7XnpYQaLUY">Majotori OST - Asobu</a></td>
+    <td align="center"><img src="https://img.youtube.com/vi/C7XnpYQaLUY/maxresdefault.jpg" alt="img1" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=C7XnpYQaLUY">Asobu - Majotori OST</a></td>
     <td align="center">Majorariatto</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/q-5cXVcCOUs/sddefault.jpg" alt="img1" width=300></td>
+    <td align="center"><img src="https://img.youtube.com/vi/q-5cXVcCOUs/maxresdefault.jpg" alt="img2" width=300></td>
     <td align="center"><a href="https://www.youtube.com/watch?v=q-5cXVcCOUs">Pandora Palace - DELTARUNE CH2</a></td>
-    <td align="center">Toby Fox</td>
+    <td align="center">TobyFox</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/tDuEWw648jo/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://m.youtube.com/watch?v=tDuEWw648jo">Undertale OST: 065 - CORE</a></td>
-    <td align="center">Toby Fox</td>
+    <td align="center"><img src="https://img.youtube.com/vi/WeELPnZqhow/maxresdefault.jpg" alt="img3" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=WeELPnZqhow">Core - UNDERTALE</a></td>
+    <td align="center">TobyFox</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/F4Kkf5uv8nc/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=WbXULsB2UuY">Panic - OneShot OST</a></td>
+    <td align="center"><img src="https://i.scdn.co/image/ab67616d0000b273187d93dd5466b56a794053e4" alt="img4" width=300></td>
+    <td align="center"><a href="https://open.spotify.com/intl-es/track/4B2OEbV54TJnCEKzP21Fwk">Eleventh Hour - Solstice Soundtrack</a></td>
     <td align="center">Nightmargin</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/F4Kkf5uv8nc/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=pVX8bdYCAUo">Eleventh Hour - OneShot OST</a></td>
-    <td align="center">Nightmargin</td>
+    <td align="center"><img src="https://img.youtube.com/vi/In3y0C7mQvA/maxresdefault.jpg" alt="img5" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=In3y0C7mQvA">A CYBER'S WORLD - DELTARUNE CH2</a></td>
+    <td align="center">TobyFox</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/In3y0C7mQvA/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=In3y0C7mQvA">A CYBER'S WORLD? - Deltarune CH2</a></td>
-    <td align="center">Toby Fox</td>
+    <td align="center"><img src="https://img.youtube.com/vi/In3y0C7mQvA/maxresdefault.jpg" alt="img6" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=HZO3xw91eHw">Smart Race - DELTARUNE CH2</a></td>
+    <td align="center">TobyFox</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/HZO3xw91eHw/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=HZO3xw91eHw">Smart Race - Deltarune: CH2</a></td>
-    <td align="center">Toby Fox</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/VA69HxJW23E/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=VA69HxJW23E">DINNER!</a></td>
+    <td align="center"><img src="https://img.youtube.com/vi/tzCv5y_GBHY/maxresdefault.jpg" alt="img7" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=tzCv5y_GBHY">DINNER!</a></td>
     <td align="center">femtanyl</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/_vjgqtXhqGU/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=_vjgqtXhqGU">Judgment - Metal Slug 2</a></td>
-    <td align="center">Takushi</td>
+    <td align="center"><img src="https://img.youtube.com/vi/99MvfysJNWk/maxresdefault.jpg" alt="img8" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=99MvfysJNWk">JUDGMENT (Stage 1-1) - Metal Slug 2 OST</a></td>
+    <td align="center">SNK SOUND TEAM</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/dPGB3TqIHVI/sddefault.jpg" alt="img1" width=300></td>
+    <td align="center"><img src="https://img.youtube.com/vi/dPGB3TqIHVI/maxresdefault.jpg" alt="img9" width=300></td>
     <td align="center"><a href="https://www.youtube.com/watch?v=dPGB3TqIHVI">Abstract Map</a></td>
-    <td align="center">VLDC9 Music Extended</td>
+    <td align="center">VLDC9</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/FH-IFozChQA/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=FH-IFozChQA">サウンドと恋に C I T Y P O P</a></td>
-    <td align="center">ANDROID APARTMENT</td>
+    <td align="center"><img src="https://img.youtube.com/vi/GIIClB5VcO8/maxresdefault.jpg" alt="img10" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=GIIClB5VcO8">サウンドと恋に C I T Y P O P</a></td>
+    <td align="center">ANDROID - APARTMENT</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/eFHtlECedPA/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=eFHtlECedPA">Hotline (Original Mix)</a></td>
+    <td align="center"><img src="https://img.youtube.com/vi/eFHtlECedPA/maxresdefault.jpg" alt="img11" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=eFHtlECedPA">Hotline - Hotline Miami</a></td>
     <td align="center">Jasper Byrne</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/9o4LKzaMaOo/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=9o4LKzaMaOo">Knock - Knock</a></td>
-    <td align="center">S T</td>
+    <td align="center"><img src="https://img.youtube.com/vi/VZqsyCChYUY/maxresdefault.jpg" alt="img12" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=VZqsyCChYUY">Knock Knock - Hotline Miami</a></td>
+    <td align="center">Scattle</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/3OX0Q1WscKo/sddefault.jpg" alt="img1" width=300></td>
+    <td align="center"><img src="https://img.youtube.com/vi/3OX0Q1WscKo/maxresdefault.jpg" alt="img13" width=300></td>
     <td align="center"><a href="https://www.youtube.com/watch?v=3OX0Q1WscKo">Shape Da Future</a></td>
     <td align="center">Hideki Naganuma</td>
   </tr>
   <tr>
-    <td align="center"><img src="https://img.youtube.com/vi/tC22PTv0V_c/sddefault.jpg" alt="img1" width=300></td>
-    <td align="center"><a href="https://www.youtube.com/watch?v=tC22PTv0V_c">Datakrash (Savant)</a></td>
-    <td align="center">Principle</td>
+    <td align="center"><img src="https://img.youtube.com/vi/tC22PTv0V_c/maxresdefault.jpg" alt="img14" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=tC22PTv0V_c">Principle</a></td>
+    <td align="center">Savant</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://img.youtube.com/vi/iC452qNLXFg/maxresdefault.jpg" alt="img15" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=iC452qNLXFg">Backroom Labyrinth</a></td>
+    <td align="center">Oliver Backland</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://img.youtube.com/vi/XSaETniv_UY/maxresdefault.jpg" alt="img16" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=XSaETniv_UY">Trainwreck (Game Over) - Scratchin' Melodii</a></td>
+    <td align="center">LJ LephemStar</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://img.youtube.com/vi/RaPCf9msKIQ/maxresdefault.jpg" alt="img17" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=RaPCf9msKIQ">Life Is</a></td>
+    <td align="center">Cosimo Fogg 201</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://f4.bcbits.com/img/a2852053232_10.jpg" alt="img17" width=300></td>
+    <td align="center"><a href="https://gbonson.bandcamp.com/album/do-my-thing-2">Stop - Do My Thing</a></td>
+    <td align="center">G Bonson</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://img.youtube.com/vi/I_wblVo-y9A/sddefault.jpg" alt="img17" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=I_wblVo-y9A">Silent Hill (Other Side)</a></td>
+    <td align="center">Akira Yamaoka</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://img.youtube.com/vi/I8R14vfEKPo/maxresdefault.jpg" alt="img17" width=300></td>
+    <td align="center"><a href="https://www.youtube.com/watch?v=I8R14vfEKPo">CVLTVRΣ - サンセットシティー (Sunset City)</a></td>
+    <td align="center">LuigiDonatello</td>
   </tr>
 </table>
 
