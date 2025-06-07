@@ -4,11 +4,11 @@
         "description": {
             "identifier": "ha:companion_cube",
             "materials": {
-                "default": "entity_alphatest",
+                "default": "entity_emissive_alpha_one_sided",
                 "enchanted": "armor_enchanted"
             },
             "geometry": {
-                "default": "geometry.companion_cube"
+                "default": "geometry.companion_cube_hand"
             },
             "textures": {
                 "default": "textures/entity/power_ups/companion_cube",

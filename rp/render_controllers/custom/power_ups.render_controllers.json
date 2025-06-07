@@ -14,18 +14,12 @@
                         "Geometry.boots",
 						
                         "Geometry.wings",
-                        "Geometry.two_dimension",
-                        "Geometry.two_dimension",
+                        "Geometry.clock",
+                        "Geometry.slowness",
 						
                         "Geometry.elytra",
                         "Geometry.gun",
                         "Geometry.companion_cube"
-                    ]
-                },
-                "materials": {
-                    "Array.material": [
-                        "Material.default",
-                        "Material.blend"
                     ]
                 },
                 "textures": {
@@ -37,8 +31,6 @@
                         "Texture.bow",
                         "Texture.jump",
                         "Texture.speed",
-
-                        // 2d
                         "Texture.wing",
                         "Texture.clock",
                         "Texture.slow",
@@ -52,13 +44,13 @@
             "geometry": "Array.geos[q.variant]",
             "materials": [
                 {
-                    "*": "q.variant == 3 ? Array.material[1] : Array.material[0]"
+                    "*": "Material.default"
                 }
             ],
             "textures": [
                 "Array.skins[q.variant]"
             ],
-            "ignore_lighting": true,
+            "ignore_lighting": false,
             "is_hurt_color": {
                 "r": 0,
                 "g": 0,

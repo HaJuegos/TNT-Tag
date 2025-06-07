@@ -4,10 +4,10 @@
         "description": {
             "identifier": "ha:net_gun",
             "materials": {
-                "default": "entity_alphatest"
+                "default": "entity_emissive_alpha_one_sided"
             },
             "geometry": {
-                "default": "geometry.net_gun"
+                "default": "geometry.net_gun_hand"
             },
             "textures": {
                 "default": "textures/models/weapon/net_gun"

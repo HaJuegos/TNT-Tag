@@ -4,10 +4,10 @@
         "description": {
             "identifier": "ha:collider_companion_cube_entity",
             "materials": {
-                "default": "entity_alphatest"
+                "default": "entity_emissive_alpha_one_sided"
             },
             "geometry": {
-                "default": "geometry.companion_cube"
+                "default": "geometry.companion_cube_hand"
             },
             "textures": {
                 "default": "textures/entity/power_ups/companion_cube"

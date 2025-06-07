@@ -4,8 +4,9 @@
         "description": {
             "identifier": "ha:power_ups",
             "materials": {
-                "default": "entity_alphatest",
-                "blend": "entity_alphablend"
+                "default": "entity_emissive_alpha_one_sided",
+                "blend": "entity_alphablend",
+				"alpha": "entity_alphatest"
             },
             "geometry": {
                 "coin": "geometry.powerup.coin",
@@ -17,7 +18,9 @@
                 "two_dimension": "geometry.powerup.two_dimension",
                 "elytra": "geometry.powerup.elytra",
                 "gun": "geometry.powerup.gun",
-                "companion_cube": "geometry.powerup.companion_cube"
+                "companion_cube": "geometry.powerup.companion_cube",
+				"clock": "geometry.clock_add",
+				"slowness": "geometry.slowness_debuff"
             },
             "textures": {
                 "nothing": "textures/entity/power_ups/none",
@@ -27,11 +30,9 @@
                 "bow": "textures/entity/power_ups/bow_and_quiver",
                 "jump": "textures/entity/power_ups/jump",
                 "speed": "textures/entity/power_ups/speed",
-
-                // 2d
-                "wing": "textures/items/wing_item",
-                "clock": "textures/items/add_clock",
-                "slow": "textures/items/slowness",
+				"clock": "textures/entity/power_ups/clock_add",
+                "wing": "textures/entity/power_ups/wings_boost",
+                "slow": "textures/entity/power_ups/slowness_debuff",
 
                 "elytra": "textures/models/armor/elytra",
                 "gun": "textures/models/weapon/net_gun",
