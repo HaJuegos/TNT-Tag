@@ -6,6 +6,7 @@ import { Player, system, world } from "@minecraft/server";
 import { ticksConvertor } from "../globalVariables";
 import { companionHit, netEvents, returnTnTItem } from "../functions/projectileFn";
 import { inGlow } from "../loops/events/glowingLoop";
+import { addOrRemoveObj } from "../functions/stadisticFn";
 
 world.afterEvents.projectileHitBlock.subscribe(hitBlock => {
     try {
@@ -13,20 +14,31 @@ world.afterEvents.projectileHitBlock.subscribe(hitBlock => {
 
         if (source instanceof Player) {
             if (projectile.typeId == 'ha:tnt_projectile_entity') {
-                projectile.triggerEvent('ha:start_solid');
+                system.runTimeout(() => {
+                    try {
+						if (projectile) {
+							if (source?.hasTag('tntPly')) {
+								returnTnTItem(source);
+							}
+
+							projectile.remove();
+						}
+					} catch {}
+                }, ticksConvertor(1.35));
+            } else if (projectile.typeId == 'ha:net_projectile') {
+                system.runTimeout(() => {
+                    try {
+						projectile.triggerEvent('ha:start_solid');
+					} catch {}
+                }, ticksConvertor(0.5));
+            } else if (projectile.typeId == 'ha:companion_cube_entity') {
+                projectile.runCommand(`playsound item.companion_cube.hit_block @a ~~~`);
 
                 system.runTimeout(() => {
-                    if (source?.hasTag('tntPly')) {
-                        returnTnTItem(source);
-                    }
-
-                    projectile.remove();
-                }, ticksConvertor(2));
-            } else if (projectile.typeId == 'ha:net_projectile') {
-                projectile.triggerEvent('ha:start_solid');
-            } else if (projectile.typeId == 'ha:companion_cube_entity') {
-                projectile.triggerEvent('ha:start_solid');
-                projectile.runCommand(`playsound item.companion_cube.hit_block @a ~~~`);
+                    try {
+						projectile.triggerEvent('ha:start_solid');
+					} catch {}
+                }, ticksConvertor(0.5));
             }
         }
     } catch { }
@@ -36,6 +48,20 @@ world.afterEvents.projectileHitEntity.subscribe(hitSensor => {
     try {
         const { source, projectile } = hitSensor;
         const hitEntity = hitSensor.getEntityHit().entity;
+
+        if (source instanceof Player && !(hitEntity instanceof Player) && projectile.typeId == 'ha:tnt_projectile_entity') {
+            system.runTimeout(() => {
+                try {
+					if (projectile) {
+						if (source?.hasTag('tntPly')) {
+							returnTnTItem(source);
+						}
+
+						projectile.remove();
+					}
+				} catch {}
+            }, ticksConvertor(1.35));
+        }
 
         if (source instanceof Player && hitEntity instanceof Player) {
             if (source.hasTag('tntPly') && !hitEntity.hasTag('tntPly')) {
@@ -47,6 +73,12 @@ world.afterEvents.projectileHitEntity.subscribe(hitSensor => {
 
                 source.runCommand(`function system/remove_tnt`);
                 hitEntity.runCommand(`function system/give_tnt`);
+
+                source.onScreenDisplay.updateSubtitle('.showtntoff');
+                hitEntity.onScreenDisplay.updateSubtitle('.showtnton');
+
+                addOrRemoveObj(source, 'totalPoints', Math.floor(Math.random() * 10) + 1);
+                addOrRemoveObj(source, 'totalTNT', 1);
 
                 if (inGlow) {
                     source.triggerEvent('ha:remove_glow');
@@ -73,6 +105,7 @@ world.afterEvents.projectileHitEntity.subscribe(hitSensor => {
                 }
 
                 companionHit(hitEntity);
+                addOrRemoveObj(source, 'totalPoints', Math.floor(Math.random() * 51) + 50);
             }
         }
     } catch { }

@@ -4,23 +4,33 @@
         "description": {
             "identifier": "ha:power_ups",
             "materials": {
-                "default": "entity_emissive_alpha_one_sided",
+                "default": "entity_alphatest",
                 "blend": "entity_alphablend",
-				"alpha": "entity_alphatest"
+                "overlay": "entity_emissive_alpha_one_sided"
             },
             "geometry": {
                 "coin": "geometry.powerup.coin",
                 "blindness": "geometry.powerup.blindness",
-                "invi": "geometry.powerup.invi",
-                "bow": "geometry.powerup.bow_and_quiver",
                 "boots": "geometry.powerup.boots",
                 "wings": "geometry.powerup.wings",
                 "two_dimension": "geometry.powerup.two_dimension",
                 "elytra": "geometry.powerup.elytra",
                 "gun": "geometry.powerup.gun",
                 "companion_cube": "geometry.powerup.companion_cube",
-				"clock": "geometry.clock_add",
-				"slowness": "geometry.slowness_debuff"
+
+                "slowness": "geometry.powerup.slowness",
+                "clock_add": "geometry.powerup.clock_add",
+                "broken_clock": "geometry.powerup.clock_broken",
+                "magnet": "geometry.powerup.magnet",
+
+                // Bow geos
+                "bow.quiver_overlay": "geometry.powerup.bow_arrow.quiver_overlay",
+                "bow.bow_mesh": "geometry.powerup.bow_arrow.bow_mesh",
+                "bow.arrow_mesh": "geometry.powerup.bow_arrow.arrows_mesh",
+
+                // Invisility geos
+                "invi.full_body": "geometry.powerup.invisibility.person",
+                "invi.mirror": "geometry.powerup.invisibility.mirror"
             },
             "textures": {
                 "nothing": "textures/entity/power_ups/none",
@@ -30,13 +40,21 @@
                 "bow": "textures/entity/power_ups/bow_and_quiver",
                 "jump": "textures/entity/power_ups/jump",
                 "speed": "textures/entity/power_ups/speed",
-				"clock": "textures/entity/power_ups/clock_add",
+
                 "wing": "textures/entity/power_ups/wings_boost",
+                "clock": "textures/entity/power_ups/clock_add",
                 "slow": "textures/entity/power_ups/slowness_debuff",
 
                 "elytra": "textures/models/armor/elytra",
                 "gun": "textures/models/weapon/net_gun",
-                "companion_cube": "textures/entity/power_ups/companion_cube"
+                "companion_cube": "textures/entity/power_ups/companion_cube",
+
+                "broken_clock": "textures/entity/power_ups/clock_remove",
+                "magnet": "textures/entity/power_ups/magnet_buff",
+
+                // Bow extras
+                "bow_mesh": "textures/items/bow_standby",
+                "arrow_mesh": "textures/items/arrow"
             },
             "scripts": {
                 "animate": [
@@ -44,7 +62,7 @@
                     "idle_position",
                     "controller_particles",
                     {
-                        "scale": "q.variant == 1 || q.variant == 5 || q.variant == 6"
+                        "scale": "q.variant == 1 || q.variant == 5 || q.variant == 6 || q.variant == 8 || q.variant == 9 || q.variant == 13 || q.variant == 14"
                     },
                     {
                         "scale_gun": "q.variant == 11"
@@ -64,7 +82,14 @@
                 "scale_gun": "animation.boost.scale_gun"
             },
             "render_controllers": [
-                "controller.render.power_ups"
+                "controller.render.power_ups",
+
+                // Bow extras
+                { "controller.render.power_up.bow_extras.bow_mesh": "q.variant == 4" },
+                { "controller.render.power_up.bow_extras.arrow_mesh": "q.variant == 4" },
+
+                // Invi extras
+                { "controller.render.power_up.invi_extras.mirror": "q.variant == 3" }
             ],
             "spawn_egg": {
                 "texture": "spawn_generator"

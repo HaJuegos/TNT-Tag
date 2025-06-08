@@ -8,18 +8,43 @@
                         "Geometry.two_dimension",
                         "Geometry.coin",
                         "Geometry.blindness",
-                        "Geometry.invi",
-                        "Geometry.bow",
+                        "Geometry.invi.full_body",
+                        "Geometry.bow.quiver_overlay",
                         "Geometry.boots",
                         "Geometry.boots",
-						
+
                         "Geometry.wings",
-                        "Geometry.clock",
+                        "Geometry.clock_add",
                         "Geometry.slowness",
-						
+
                         "Geometry.elytra",
                         "Geometry.gun",
-                        "Geometry.companion_cube"
+                        "Geometry.companion_cube",
+
+                        "Geometry.broken_clock",
+                        "Geometry.magnet"
+                    ]
+                },
+                "materials": {
+                    "Array.material": [
+                        "Material.default",
+                        "Material.overlay",
+                        "Material.overlay",
+                        "Material.blend",
+                        "Material.overlay",
+                        "Material.overlay",
+                        "Material.overlay",
+
+                        "Material.default",
+                        "Material.overlay",
+                        "Material.overlay",
+
+                        "Material.default",
+                        "Material.overlay",
+                        "Material.overlay",
+
+                        "Material.overlay",
+                        "Material.overlay"
                     ]
                 },
                 "textures": {
@@ -31,26 +56,47 @@
                         "Texture.bow",
                         "Texture.jump",
                         "Texture.speed",
+
+                        // 2d
                         "Texture.wing",
                         "Texture.clock",
                         "Texture.slow",
 
                         "Texture.elytra",
                         "Texture.gun",
-                        "Texture.companion_cube"
+                        "Texture.companion_cube",
+
+                        "Texture.broken_clock",
+                        "Texture.magnet"
                     ]
                 }
             },
             "geometry": "Array.geos[q.variant]",
             "materials": [
-                {
-                    "*": "Material.default"
-                }
+                { "*": "Array.material[q.variant]" }
             ],
-            "textures": [
-                "Array.skins[q.variant]"
+            "textures": [ "Array.skins[q.variant]" ],
+            "ignore_lighting": true,
+            "is_hurt_color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            },
+            "on_fire_color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            }
+        },
+        "controller.render.power_up.invi_extras.mirror": {
+            "materials": [
+                { "*": "Material.overlay" }
             ],
-            "ignore_lighting": false,
+            "geometry": "Geometry.invi.mirror",
+            "textures": [ "Texture.invi" ],
+            "ignore_lighting": true,
             "is_hurt_color": {
                 "r": 0,
                 "g": 0,

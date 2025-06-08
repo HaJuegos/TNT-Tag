@@ -36,7 +36,7 @@
                 "bob": "animation.tnt_item_hand.bob"
             },
             "render_controllers": [
-                "controller.render.tnt_helmet"
+                "controller.render.tnt_projectile"
             ]
         }
     }

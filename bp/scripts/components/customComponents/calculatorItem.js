@@ -2,6 +2,7 @@
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 import * as mc from "@minecraft/server";
 import * as ui from "@minecraft/server-ui";
+import { addOrRemoveObj } from "../../functions/stadisticFn";
 /**
  * Variable con los valores de los mapas
  * @type {MapsList[]}
@@ -31,13 +32,13 @@ const calculatorEvent = {
             const item = new mc.ItemStack('ha:calculator');
             if (!(ply instanceof mc.Player))
                 return;
+            startCooldown(item, ply);
             if (ply.hasTag('alrVoted')) {
                 ply.sendMessage({ translate: "chat.yep_voting" });
                 ply.playSound('ui.powerup.in_cooldown');
                 return;
             }
             else {
-                startCooldown(item, ply);
                 calculatorVotes(ply);
             }
         }
@@ -111,6 +112,8 @@ function registerVote(ply, mapSelected) {
     ply.sendMessage({ translate: `${mapSelected.translate}` });
     ply.playSound('random.levelup');
     ply.addTag('alrVoted');
+    addOrRemoveObj(ply, 'totalVoted', 1);
+    addOrRemoveObj(ply, 'totalPoints', Math.floor(Math.random() * 5) + 1);
 }
 /**
  * Funcion encargada de iniciar el cooldown del item al jugador que lo uso.

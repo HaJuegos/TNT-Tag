@@ -12,7 +12,7 @@ import { ticksConvertor } from "../../globalVariables";
  */
 const blindEvent: PowerUpBase = {
     variantID: 2,
-    cooldownPly: 5,
+    cooldownPly: 10,
     events: {
         onlyTntEvents() {
             addBlindness(world.getAllPlayers().filter(ply => ply.hasTag('normalPly')), true);

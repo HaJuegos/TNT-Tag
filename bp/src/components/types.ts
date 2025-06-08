@@ -10,6 +10,10 @@ import { compassEvent } from "./customComponents/compassItem";
 import { wingEvent } from "./customComponents/wingItem";
 import { cubeEvent } from "./customComponents/cubeItem";
 import { calculatorEvent } from "./customComponents/calculatorItem";
+import { plyEvent } from "./customComponents/plyProjectileItem";
+import { infoItem } from "./customComponents/infoItem";
+import { gunEvent } from "./customComponents/netGunItem";
+import magnetItemEvent from "./customComponents/magnetItem";
 
 /**
  * Lista de componentes custom.
@@ -23,6 +27,10 @@ export const listOfComponents: CustomComponentBase[] = [
     wingEvent,
     cubeEvent,
     calculatorEvent,
+    plyEvent,
+    infoItem,
+    gunEvent,
+    magnetItemEvent,
 ];
 
 export interface CustomComponentBase {

@@ -4,10 +4,10 @@
         "description": {
             "identifier": "ha:net_gun",
             "materials": {
-                "default": "entity_emissive_alpha_one_sided"
+                "default": "entity_alphatest"
             },
             "geometry": {
-                "default": "geometry.net_gun_hand"
+                "default": "geometry.powerup.gun_in_hand"
             },
             "textures": {
                 "default": "textures/models/weapon/net_gun"
@@ -33,7 +33,7 @@
                 "bob": "animation.tnt_item_hand.bob"
             },
             "render_controllers": [
-                "controller.render.default"
+                "controller.render.net_gun"
             ]
         }
     }

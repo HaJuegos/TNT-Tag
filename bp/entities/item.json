@@ -1,0 +1,63 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:item",
+			"is_spawnable": false,
+			"is_summonable": true
+		},
+		"component_groups": {
+			"ha:despawn": {
+				"minecraft:instant_despawn": { }
+			}
+		},
+		"components": {
+			"minecraft:transient": { },
+			"minecraft:dimension_bound": { },
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:floats_in_liquid": { },
+			"minecraft:friction_modifier": {
+				"value": 0.5
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:cannot_be_attacked": { },
+			"minecraft:fire_immune": { },
+			"minecraft:timer": {
+				"time": [ 5, 5 ],
+				"looping": true,
+				"time_down_event": {
+					"event": "ha:despawn",
+					"target": "self"
+				}
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80.0,
+					"max_dropped_ticks": 7,
+					"use_motion_prediction_hints": true
+				}
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": { },
+			"ha:despawn": {
+				"add": {
+					"component_groups": [
+						"ha:despawn"
+					]
+				}
+			}
+		}
+	}
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

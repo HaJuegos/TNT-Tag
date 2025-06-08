@@ -8,9 +8,9 @@ import { TicksPerSecond, EntityQueryOptions, Entity, RGB, world } from "@minecra
  * @type {string[]}
  */
 export const setupCommands: string[] = [
-    `gamerule commandblocksenabled true`,
-    `gamerule sendcommandfeedback true`,
-    `gamerule domobspawning false`,
+    `gamerule commandblocksenabled false`,
+    `gamerule sendcommandfeedback false`,
+    `gamerule domobspawning true`,
 
     `gamerule commandblockoutput false`,
     `gamerule dodaylightcycle false`,
@@ -45,6 +45,14 @@ export const setupCommands: string[] = [
 	
     `scoreboard objectives add mapSelected dummy`,
     `scoreboard objectives add totalFireworkds dummy`,
+	
+	// Data-scores
+    `scoreboard objectives add totalPoints dummy`,
+    `scoreboard objectives add totalWin dummy`,
+    `scoreboard objectives add totalDed dummy`,
+    `scoreboard objectives add totalShop dummy`,
+    `scoreboard objectives add totalVoted dummy`,
+    `scoreboard objectives add totalTNT dummy`,
 
     // Timers de Power ups
     `scoreboard objectives add timerCoin dummy`,

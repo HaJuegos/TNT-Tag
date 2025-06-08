@@ -19,21 +19,21 @@
             "ha:has_ply": {
                 "minecraft:is_pregnant": { }
             },
-			"ha:set_rideable": {
-				"minecraft:rideable": {
-					"family_types": [ "innet" ],
-					"passenger_max_width": 1,
-					"pull_in_entities": true,
-					"rider_can_interact": false,
-					"seat_count": 1,
-					"seats": [
-						{
-							"position": [ 0, 0.75, -0.15 ],
-							"lock_rider_rotation": 0
-						}
-					]
-				}
-			},
+            "ha:set_rideable": {
+                "minecraft:rideable": {
+                    "family_types": [ "innet" ],
+                    "passenger_max_width": 1,
+                    "pull_in_entities": true,
+                    "rider_can_interact": false,
+                    "seat_count": 1,
+                    "seats": [
+                        {
+                            "position": [ 0, 0.75, -0.15 ],
+                            "lock_rider_rotation": 0
+                        }
+                    ]
+                }
+            },
             "ha:normal_family": {
                 "minecraft:type_family": {
                     "family": [ "player" ]
@@ -75,7 +75,8 @@
             "ha:in_game": {
                 "minecraft:damage_sensor": {
                     "triggers": [
-                        {
+						{
+                            "cause": "all",
                             "on_damage": {
                                 "filters": {
                                     "all_of": [
@@ -104,9 +105,15 @@
                             "deals_damage": true
                         },
                         {
+                            "cause": "all",
                             "on_damage": {
                                 "filters": {
                                     "any_of": [
+                                        {
+                                            "test": "has_tag",
+                                            "subject": "self",
+                                            "value": "tntPly"
+                                        },
                                         {
                                             "test": "has_tag",
                                             "subject": "other",
@@ -134,7 +141,41 @@
                             "cause": "all",
                             "on_damage": {
                                 "filters": {
+                                    "all_of": [
+                                        {
+                                            "test": "has_damage",
+                                            "subject": "self",
+                                            "value": "projectile"
+                                        },
+                                        {
+                                            "any_of": [
+                                                {
+                                                    "test": "has_tag",
+                                                    "subject": "other",
+                                                    "value": "normalPly"
+                                                },
+                                                {
+                                                    "test": "has_tag",
+                                                    "subject": "damager",
+                                                    "value": "normalPly"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "deals_damage": true
+                        },
+                        {
+                            "cause": "all",
+                            "on_damage": {
+                                "filters": {
                                     "any_of": [
+                                        {
+                                            "test": "has_tag",
+                                            "subject": "self",
+                                            "value": "tntPly"
+                                        },
                                         {
                                             "test": "has_tag",
                                             "subject": "other",
@@ -144,38 +185,18 @@
                                             "test": "has_tag",
                                             "subject": "damager",
                                             "value": "tntPly"
-                                        }
-                                    ]
-                                }
-                            },
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "all",
-                            "on_damage": {
-                                "filters": {
-                                    "all_of": [
-                                        {
-                                            "any_of": [
-                                                {
-                                                    "test": "has_tag",
-                                                    "subject": "other",
-                                                    "operator": "!=",
-                                                    "value": "tntPly"
-                                                },
-                                                {
-                                                    "test": "has_tag",
-                                                    "subject": "damager",
-                                                    "operator": "!=",
-                                                    "value": "tntPly"
-                                                }
-                                            ]
                                         },
                                         {
-                                            "test": "has_damage",
-                                            "subject": "self",
+                                            "test": "has_tag",
+                                            "subject": "other",
                                             "operator": "!=",
-                                            "value": "projectile"
+                                            "value": "tntPly"
+                                        },
+                                        {
+                                            "test": "has_tag",
+                                            "subject": "damager",
+                                            "operator": "!=",
+                                            "value": "tntPly"
                                         }
                                     ]
                                 }
@@ -462,6 +483,11 @@
                 }
             },
             "ha:set_normal_box": {
+                "remove": {
+                    "component_groups": [
+                        "ha:net"
+                    ]
+                },
                 "add": {
                     "component_groups": [
                         "ha:normal_box"

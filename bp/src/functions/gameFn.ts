@@ -5,14 +5,15 @@ import * as mc from '@minecraft/server';
 
 import { getAllEntitiesInAllDime, RGBFloatConvertor, ticksConvertor } from "../globalVariables";
 import { getRandomSpawnMap } from '../mapLocations';
-import { musicManager } from './plyFn';
+import { musicManager, updateDataSpawn } from './plyFn';
+import { getItemsFromShop } from './storeMemoFn';
 
 /**
  * Funcion de eventos que se ejecutan cuando termina el juego.
  * @param {mc.Entity} timerEntity Timer del juego.
  * @returns {void}
  */
-export function endGame(timerEntity: mc.Entity): void {
+function endGame(timerEntity: mc.Entity): void {
     const winObj = mc.world.scoreboard.getObjective('winStack');
 
     if (winObj) {
@@ -21,11 +22,15 @@ export function endGame(timerEntity: mc.Entity): void {
     }
 
     mc.world.getDimension('overworld').runCommand(`spreadplayers 2031 -1967 0.5 4 @a`);
+    mc.world.getDimension('overworld').runCommand(`clear @a`);
+    mc.world.getDimension('overworld').runCommand(`effect @a clear`);
     timerEntity.triggerEvent('ha:despawn');
 
     musicManager(false, true);
 
     for (const ply of mc.world.getAllPlayers()) {
+		if (!ply.isValid) continue;
+		
         const plyInfo = ply.clientSystemInfo.platformType;
         const platformIcons: Record<mc.PlatformType, string> = {
             [mc.PlatformType.Mobile]: "",
@@ -36,6 +41,8 @@ export function endGame(timerEntity: mc.Entity): void {
         if (platformIcons[plyInfo]) {
             ply.nameTag = `${ply.name} ${platformIcons[plyInfo]}`;
         }
+
+        updateDataSpawn(ply);
     }
 }
 
@@ -44,44 +51,68 @@ export function endGame(timerEntity: mc.Entity): void {
  * @param {number} map El Mapa elejido en cuestion.
  * @returns {void}
  */
-export function startGame(map: number): void {
+function startGame(map: number): void {
     const objMapSelected = mc.world.scoreboard.getObjective('mapSelected');
     const entity = mc.world.getDimension('overworld').spawnEntity<'ha:game_entity'>('ha:game_entity', { x: 2035, y: 53, z: -1977 });
 
     mc.system.runTimeout(() => {
-        const plys = mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode'));
-        const totalPlys = plys.length;
-        let teleported = 0;
+        try {
+            const plys = mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode'));
+            const totalPlys = plys.length;
 
-        if (totalPlys <= 1) {
-            mc.world.sendMessage({ translate: "chat.error_noplayers" });
-            mc.world.getDimension('overworld').runCommand(`execute as @a at @s run playsound ui.error.noplayers`);
-            entity.triggerEvent('ha:despawn');
-            return;
-        }
+            if (totalPlys <= 1) {
+                mc.world.sendMessage({ translate: "chat.error_noplayers" });
+                mc.world.getDimension('overworld').runCommand(`execute as @a at @s run playsound ui.error.noplayers`);
+                entity.triggerEvent('ha:despawn');
 
-        for (const ply of plys) {
-            ply.camera.fade({ fadeTime: { fadeInTime: 1, holdTime: 3.5, fadeOutTime: 0.5 }, fadeColor: RGBFloatConvertor("#000000") });
-            ply.playSound('portal.travel');
-        }
+                for (const ply of mc.world.getAllPlayers()) {
+                    if (!ply.isValid) continue;
 
-        mc.system.runTimeout(() => {
-            for (const ply of plys) {
-                const randomCoords = getRandomSpawnMap(map);
+                    const plyInfo = ply.clientSystemInfo.platformType;
+                    const platformIcons: Record<mc.PlatformType, string> = {
+                        [mc.PlatformType.Mobile]: "",
+                        [mc.PlatformType.Desktop]: "",
+                        [mc.PlatformType.Console]: ""
+                    };
 
-                if (randomCoords) {
-                    ply.teleport(randomCoords);
-                    teleported++;
+                    if (platformIcons[plyInfo]) {
+                        ply.nameTag = `${ply.name} ${platformIcons[plyInfo]}`;
+                    }
+
+                    updateDataSpawn(ply);
                 }
+
+                return;
             }
 
-            if (teleported == totalPlys) {
-                entity.addTag('inGame');
-                objMapSelected?.addScore(entity, map);
-                setAndCheckPlys(plys, entity);
-                musicManager();
+            for (const ply of plys) {
+                if (!ply.isValid) continue;
+
+                ply.camera.fade({ fadeTime: { fadeInTime: 1, holdTime: 3.5, fadeOutTime: 0.5 }, fadeColor: RGBFloatConvertor("#000000") });
+                ply.playSound('portal.travel');
             }
-        }, ticksConvertor(3));
+
+            mc.system.runTimeout(() => {
+                try {
+                    for (const ply of plys) {
+                        const randomCoords = getRandomSpawnMap(map);
+
+                        if (!ply.isValid) continue;
+
+                        if (randomCoords) {
+                            ply.teleport(randomCoords);
+                        }
+
+                        getItemsFromShop(ply);
+                    }
+					
+					entity.addTag('inGame');
+					objMapSelected?.addScore(entity, map);
+					setAndCheckPlys(plys, entity);
+					musicManager();
+                } catch { }
+            }, ticksConvertor(3));
+        } catch { }
     }, ticksConvertor(1.5));
 }
 
@@ -90,13 +121,13 @@ export function startGame(map: number): void {
  * @param {Player} sourcePly Jugador que activo el boton.
  * @returns {void}
  */
-export function gameStarted(sourcePly: mc.Player): void {
+function gameStarted(sourcePly: mc.Player): void {
     const plys = mc.world.getAllPlayers();
 
     if (plys.length <= 1) {
         mc.world.sendMessage({ translate: "chat.error_noplayers" });
         sourcePly.playSound('ui.error.noplayers');
-        // return;
+        return;
     }
 
     if (checkGame()) {
@@ -150,7 +181,7 @@ export function gameStarted(sourcePly: mc.Player): void {
  * @param {number} totalPlys Numero total de jugadores activos.
  * @returns {number} Numero de jugadores que deben tener la tnt.
  */
-export function calculateTNTPlys(totalPlys: number): number {
+function calculateTNTPlys(totalPlys: number): number {
     const min = 1;
     const max = Math.min(5, totalPlys - 1);
 
@@ -203,7 +234,7 @@ function viewAndSetScoreboard(totalNormalPlys: number, totalTntPlys: number, tim
  * @returns {void}
  */
 function setAndCheckPlys(plys: mc.Player[], timerEntity: mc.Entity): void {
-    const activePlayers = plys.filter(ply => !ply.hasTag('spectMode'));
+    const activePlayers = plys.filter(ply => ply.isValid && !ply.hasTag('spectMode'));
     const totalPlayers = activePlayers.length;
     const tntPlysCount = calculateTNTPlys(totalPlayers);
     const shuffledPlys = [...activePlayers].sort(() => Math.random() * 0.5);
@@ -215,19 +246,20 @@ function setAndCheckPlys(plys: mc.Player[], timerEntity: mc.Entity): void {
         mc.world.sendMessage({ translate: "chat.error_noplayers" });
         mc.world.getDimension('overworld').runCommand(`execute as @a at @s run playsound ui.error.noplayers`);
         timerEntity.triggerEvent('ha:despawn');
+		
         return;
     }
 
     shuffledPlys.forEach((ply, index) => {
         if (index < tntPlysCount) {
             ply.runCommand(`function system/give_tnt`);
-            totalTntPlys++;
+			totalTntPlys++;	
         } else {
-            ply.runCommand(`function system/remove_tnt`);
-            totalNormalPlys++;
+			ply.runCommand(`function system/remove_tnt`);
+			totalNormalPlys++;	
         }
     });
-
+	
     viewAndSetScoreboard(totalNormalPlys, totalTntPlys, timerEntity);
 }
 
@@ -247,6 +279,8 @@ function checkGame(): boolean {
 
     return false;
 }
+
+export { endGame,startGame,gameStarted,calculateTNTPlys}
 
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

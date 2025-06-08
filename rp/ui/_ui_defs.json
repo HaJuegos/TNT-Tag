@@ -3,6 +3,7 @@
 		"ui/custom/credits.json",
 		"ui/custom/music_toast.json",
 		"ui/custom/tnt_icons.json",
+		"ui/custom/screens.json",
 
 		"uibt/brewing_guide.ui",
 		"uibt/brewing_icons.ui",

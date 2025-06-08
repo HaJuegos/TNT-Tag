@@ -8,7 +8,7 @@
                 "enchanted": "armor_enchanted"
             },
             "geometry": {
-                "default": "geometry.companion_cube_hand"
+                "default": "geometry.powerup.companion_cube_in_hand"
             },
             "textures": {
                 "default": "textures/entity/power_ups/companion_cube",
@@ -35,7 +35,7 @@
                 "bob": "animation.tnt_item_hand.bob"
             },
             "render_controllers": [
-                "controller.render.default"
+                "controller.render.companion_cube"
             ]
         }
     }

@@ -22,6 +22,13 @@
                         "arrow_effect": { },
                         "stick_in_ground": {
                             "shake_time": 0
+                        },
+                        "definition_event": {
+                            "affect_projectile": true,
+                            "event_trigger": {
+                                "event": "ha:start_timer_despawn",
+                                "target": "self"
+                            }
                         }
                     },
                     "anchor": 1,
@@ -45,19 +52,21 @@
                     ]
                 }
             },
+            "ha:timer_despawn": {
+                "minecraft:timer": {
+                    "time": [ 5, 5 ],
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "ha:despawn",
+                        "target": "self"
+                    }
+                }
+            },
             "ha:despawn": {
                 "minecraft:instant_despawn": { }
             }
         },
         "components": {
-            "minecraft:timer": {
-                "time": [ 20, 20 ],
-                "looping": true,
-                "time_down_event": {
-                    "event": "ha:despawn",
-                    "target": "self"
-                }
-            },
             "minecraft:transient": { },
             "minecraft:knockback_resistance": {
                 "value": 99999
@@ -117,7 +126,19 @@
                     ]
                 }
             },
+            "ha:start_timer_despawn": {
+                "add": {
+                    "component_groups": [
+                        "ha:timer_despawn"
+                    ]
+                }
+            },
             "ha:despawn": {
+                "remove": {
+                    "component_groups": [
+                        "ha:timer_despawn"
+                    ]
+                },
                 "add": {
                     "component_groups": [
                         "ha:despawn"

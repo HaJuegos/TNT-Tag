@@ -1,10 +1,12 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 
-import { EntityComponentTypes, EquipmentSlot, PlatformType, Player, system, world } from "@minecraft/server";
+import { EntityComponentTypes, EquipmentSlot, GameMode, ItemLockMode, ItemStack, PlatformType, Player, system, world } from "@minecraft/server";
 
 import { getAllEntitiesInAllDime, ticksConvertor } from "../globalVariables";
 import { getRandomSpawnMap } from "../mapLocations";
+import { updateTempData } from "./stadisticFn";
+import { hasItemInInv } from "../loops/extraFn";
 
 interface MusicList {
     song: string;
@@ -43,7 +45,7 @@ const musicList: MusicList[] = [
  * Funcion encargada de los eventos al usar la elytra.
  * @param {Player} ply Jugador en cuestion.
  */
-export function elytraSystem(ply: Player): void {
+function elytraSystem(ply: Player): void {
     const obj = world.scoreboard.getObjective('totalFireworkds');
     const armorInv = ply.getComponent(EntityComponentTypes.Equippable);
     const inv = ply.getComponent(EntityComponentTypes.Inventory)?.container;
@@ -52,27 +54,29 @@ export function elytraSystem(ply: Player): void {
 
     if ((obj?.getScore(ply) ?? 0) >= 3) {
         system.runTimeout(() => {
-            if (ply) {
-                const item = armorInv?.getEquipment(EquipmentSlot.Chest);
+            try {
+                if (ply) {
+                    const item = armorInv?.getEquipment(EquipmentSlot.Chest);
 
-                if (item && item.typeId == 'minecraft:elytra') {
-                    armorInv?.setEquipment(EquipmentSlot.Chest, undefined);
-                } else {
-                    if (inv) {
-                        for (let i = 0; i < inv.size; i++) {
-                            const item = inv.getItem(i);
+                    if (item && item.typeId == 'minecraft:elytra') {
+                        armorInv?.setEquipment(EquipmentSlot.Chest, undefined);
+                    } else {
+                        if (inv) {
+                            for (let i = 0; i < inv.size; i++) {
+                                const item = inv.getItem(i);
 
-                            if (item && item.typeId == 'minecraft:elytra') {
-                                inv.setItem(i, undefined);
-                                break;
+                                if (item && item.typeId == 'minecraft:elytra') {
+                                    inv.setItem(i, undefined);
+                                    break;
+                                }
                             }
                         }
                     }
-                }
 
-                ply.playSound('random.break');
-                obj?.setScore(ply, 0);
-            }
+                    ply.playSound('random.break');
+                    obj?.setScore(ply, 0);
+                }
+            } catch { }
         }, ticksConvertor(1));
     }
 }
@@ -82,7 +86,7 @@ export function elytraSystem(ply: Player): void {
  * @param {Player} ply Jugador en cuestion
  * @returns {void}
  */
-export function checkSpawnEvents(ply: Player): void {
+function checkSpawnEvents(ply: Player): void {
     const tags = ply.getTags();
     const isInGame = inGameStarted();
     const plyInfo = ply.clientSystemInfo.platformType;
@@ -95,12 +99,14 @@ export function checkSpawnEvents(ply: Player): void {
     const resetAndLobbyMusic = () => {
         ply.runCommand(`function system/reset_data`);
         musicManager(false, true, ply);
+        updateDataSpawn(ply);
     };
 
     if (tags.includes('tntPly') || tags.includes('normalPly')) {
         if (isInGame) {
             teleportMap(ply);
             musicManager(false, false, ply);
+            updateTempData(ply);
         } else {
             resetAndLobbyMusic();
         }
@@ -108,10 +114,11 @@ export function checkSpawnEvents(ply: Player): void {
         return;
     }
 
-    if (tags.includes('spectMode')) {
+    if (tags.includes('spectMode') || inGameStarted()) {
         if (isInGame) {
             teleportSpect(ply);
             musicManager(false, false, ply);
+            updateTempData(ply);
         } else {
             resetAndLobbyMusic();
         }
@@ -126,6 +133,7 @@ export function checkSpawnEvents(ply: Player): void {
     ply.triggerEvent('ha:in_lobby');
     ply.triggerEvent('ha:remove_solid_mode');
     ply.triggerEvent('ha:set_normal_box');
+    updateDataSpawn(ply);
     musicManager(false, true, ply);
 }
 
@@ -136,7 +144,7 @@ export function checkSpawnEvents(ply: Player): void {
  * @param {Player | undefined} target (Opcional) Si tiene un player en especifico, solo se pondra la musica a el, sino, entonces a todos.
  * @returns {void}
  */
-export function musicManager(stop: boolean = false, isLobby: boolean = false, target?: Player): void {
+function musicManager(stop: boolean = false, isLobby: boolean = false, target?: Player): void {
     const plys = target ? [target] : world.getAllPlayers();
 
     if (stop) {
@@ -154,7 +162,7 @@ export function musicManager(stop: boolean = false, isLobby: boolean = false, ta
         let idTitle = selectedSong.titleID;
 
         ply.stopMusic();
-        ply.playMusic(selectedSong.song, { loop: true });
+        ply.playMusic(selectedSong.song, { loop: true, volume: 1.15 });
 
         if (ply.hasTag('tntPly')) {
             idTitle += '.showtnton';
@@ -165,6 +173,25 @@ export function musicManager(stop: boolean = false, isLobby: boolean = false, ta
         ply.onScreenDisplay.updateSubtitle(idTitle);
         ply.onScreenDisplay.setTitle("§r");
     }
+}
+
+/**
+ * Funcion encargada de darle informacion al jugador apenas spawnea y tambien asigna informacion temporal.
+ * @param {Player} ply Jugador en cuestion
+ * @returns {void}
+ */
+function updateDataSpawn(ply: Player): void {
+    const inv = ply.getComponent(EntityComponentTypes.Inventory)?.container;
+
+    if (inv && !hasItemInInv(inv, 'ha:info_item')) {
+        const infoitem = new ItemStack('ha:info_item');
+
+        infoitem.lockMode = ItemLockMode.inventory;
+        infoitem.setLore(["When using this item, an interface with various \nstatistics of your current game will be displayed.", "", "Al usar este ítem, saldrá una interfaz con \nvarias estadísticas de tu partida actual."]);
+        inv.addItem(infoitem);
+    }
+
+    updateTempData(ply);
 }
 
 /**
@@ -199,6 +226,7 @@ function teleportMap(ply: Player): void {
 
     ply.sendMessage({ translate: "chat.return_ingame" });
     ply.playSound('mob.guardian.death');
+    ply.triggerEvent('ha:remove_glow');
 }
 
 /**
@@ -210,10 +238,24 @@ function teleportSpect(ply: Player): void {
     const players = world.getAllPlayers().filter(p => p.hasTag('normalPly') || p.hasTag('tntPly'));
     const randomPlayer = players[Math.floor(Math.random() * players.length)];
 
+    ply.addTag('spectMode');
+    ply.triggerEvent('ha:remove_glow');
+    ply.setGameMode(GameMode.spectator);
     ply.teleport(randomPlayer.location);
     ply.sendMessage({ translate: "chat.ingame_return" });
     ply.playSound('mob.guardian.death');
+    ply.nameTag = `§r`;
+
+    system.runTimeout(() => {
+        try {
+            if (ply) {
+                ply.setGameMode(GameMode.spectator);
+            }
+        } catch { }
+    }, ticksConvertor(0.25));
 }
+
+export { elytraSystem, checkSpawnEvents, musicManager, updateDataSpawn }
 
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

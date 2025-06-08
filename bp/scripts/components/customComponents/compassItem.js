@@ -1,6 +1,7 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 import * as mc from "@minecraft/server";
+import { getAllEntitiesInAllDime } from "../../globalVariables";
 /**
  * Eventos que pasan para el componente del Super Compass.
  * @type {CustomComponentBase}
@@ -13,12 +14,12 @@ const compassEvent = {
             const item = new mc.ItemStack('ha:super_compass');
             if (!(ply instanceof mc.Player))
                 return;
+            addAllCooldown(item);
             if (checkGlowActivated()) {
                 ply.playSound('ui.powerup.in_cooldown');
                 ply.sendMessage({ translate: "chat.coin_cooldown" });
             }
             else {
-                addAllCooldown(item);
                 glowEvent(ply);
             }
         }
@@ -46,8 +47,11 @@ function glowEvent(sourcePly) {
     const plys = mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode') && !ply.hasTag('tntPly'));
     const obj = mc.world.scoreboard.getObjective('timerGlow');
     const entity = dime.spawnEntity('ha:glowing_entity', coords);
+    const entityMap = getAllEntitiesInAllDime({ type: 'ha:game_entity', tags: ['inGame'] });
+    const mapObj = mc.world.scoreboard.getObjective('mapSelected');
+    const mapSelected = mapObj?.getScore(entityMap[0]) ?? 0;
     entity.addTag('glowActivated');
-    obj?.addScore(entity, 20);
+    obj?.addScore(entity, (mapSelected == 1) ? 40 : 20);
     for (const ply of plys) {
         ply.triggerEvent('ha:set_glow');
         if (ply.hasTag('activatedCoin')) {

@@ -4,6 +4,7 @@ import * as mc from '@minecraft/server';
 import { getAllEntitiesInAllDime, ticksConvertor } from "../../globalVariables";
 import { calculateTNTPlys, endGame } from '../../functions/gameFn';
 import { musicManager } from '../../functions/plyFn';
+import { addOrRemoveObj } from '../../functions/stadisticFn';
 /**
  * Eventos del timer del juego.
  * @type {TimerLoopBase}
@@ -17,6 +18,8 @@ const inGameLoop = {
             return;
         }
         for (const ply of mc.world.getAllPlayers()) {
+            if (!ply.isValid)
+                continue;
             ply.onScreenDisplay.setActionBar({ translate: "ui.ingametimer", with: { rawtext: [{ text: `${score}` }] } });
             ply.playSound('random.click');
         }
@@ -32,9 +35,9 @@ const inGameLoop = {
  * @returns {boolean} True si el juego debe terminar
  */
 function isGameOver(plys) {
-    const realPlys = plys.filter(ply => !ply.hasTag('spectMode'));
-    const tntPlys = realPlys.filter(ply => ply.hasTag('tntPly'));
-    const normalPlys = realPlys.filter(ply => ply.hasTag('normalPly'));
+    const realPlys = plys.filter(ply => ply.isValid && !ply.hasTag('spectMode'));
+    const tntPlys = realPlys.filter(ply => ply.isValid && ply.hasTag('tntPly'));
+    const normalPlys = realPlys.filter(ply => ply.isValid && ply.hasTag('normalPly'));
     if (realPlys.length == 0) {
         return true;
     }
@@ -78,58 +81,75 @@ function reasingroles(tntPlys) {
  * @returns {void}
  */
 function checkEndGame(plys, timerEntity) {
-    const realPlys = plys.filter(ply => !ply.hasTag('spectMode'));
-    const tntPlys = realPlys.filter(ply => ply.hasTag('tntPly'));
-    const normalPlys = realPlys.filter(ply => ply.hasTag('normalPly'));
+    const realPlys = plys.filter(ply => ply.isValid && !ply.hasTag('spectMode'));
+    const tntPlys = realPlys.filter(ply => ply.isValid && ply.hasTag('tntPly'));
+    const normalPlys = realPlys.filter(ply => ply.isValid && ply.hasTag('normalPly'));
     if (realPlys.length == 0) {
         timerEntity.runCommand(`function system/draw_game`);
         timerEntity.removeTag('inGame');
         musicManager(true);
         mc.system.runTimeout(() => {
-            for (const ply of plys) {
-                ply.setGameMode(mc.GameMode.adventure);
-                ply.removeTag('tntPly');
-                ply.removeTag('normalPly');
-                ply.removeTag('spectMode');
+            try {
+                for (const ply of plys) {
+                    if (!ply.isValid)
+                        continue;
+                    ply.setGameMode(mc.GameMode.adventure);
+                    ply.removeTag('tntPly');
+                    ply.removeTag('normalPly');
+                    ply.removeTag('spectMode');
+                }
+                endGame(timerEntity);
             }
-            endGame(timerEntity);
-        }, ticksConvertor(5));
+            catch { }
+        }, ticksConvertor(4));
         return;
     }
     if (tntPlys.length == 1 && normalPlys.length == 0) {
         tntPlys[0].runCommand(`function system/winning_game`);
+        addOrRemoveObj(tntPlys[0], 'totalPoints', Math.floor(Math.random() * 301) + 50);
         timerEntity.removeTag('inGame');
         musicManager(true);
         for (const ply of plys) {
             ply.teleport(tntPlys[0].location);
         }
         mc.system.runTimeout(() => {
-            for (const ply of plys) {
-                ply.setGameMode(mc.GameMode.adventure);
-                ply.removeTag('tntPly');
-                ply.removeTag('normalPly');
-                ply.removeTag('spectMode');
+            try {
+                for (const ply of plys) {
+                    if (!ply.isValid)
+                        continue;
+                    ply.setGameMode(mc.GameMode.adventure);
+                    ply.removeTag('tntPly');
+                    ply.removeTag('normalPly');
+                    ply.removeTag('spectMode');
+                }
+                endGame(timerEntity);
             }
-            endGame(timerEntity);
-        }, ticksConvertor(5));
+            catch { }
+        }, ticksConvertor(4));
         return;
     }
     if (normalPlys.length == 1 && tntPlys.length == 0) {
         normalPlys[0].runCommand(`function system/winning_game`);
+        addOrRemoveObj(normalPlys[0], 'totalPoints', Math.floor(Math.random() * 301) + 50);
         timerEntity.removeTag('inGame');
         musicManager(true);
         for (const ply of plys) {
             ply.teleport(normalPlys[0].location);
         }
         mc.system.runTimeout(() => {
-            for (const ply of plys) {
-                ply.setGameMode(mc.GameMode.adventure);
-                ply.removeTag('tntPly');
-                ply.removeTag('normalPly');
-                ply.removeTag('spectMode');
+            try {
+                for (const ply of plys) {
+                    if (!ply.isValid)
+                        continue;
+                    ply.setGameMode(mc.GameMode.adventure);
+                    ply.removeTag('tntPly');
+                    ply.removeTag('normalPly');
+                    ply.removeTag('spectMode');
+                }
+                endGame(timerEntity);
             }
-            endGame(timerEntity);
-        }, ticksConvertor(5));
+            catch { }
+        }, ticksConvertor(4));
         return;
     }
     for (const tnt of tntPlys) {
@@ -137,8 +157,11 @@ function checkEndGame(plys, timerEntity) {
     }
     timerEntity.addTag('wait');
     mc.system.runTimeout(() => {
-        findNewTNTPlys(realPlys, timerEntity);
-        timerEntity.removeTag('wait');
+        try {
+            findNewTNTPlys(realPlys, timerEntity);
+            timerEntity.removeTag('wait');
+        }
+        catch { }
     }, ticksConvertor(1));
 }
 /**
@@ -148,8 +171,8 @@ function checkEndGame(plys, timerEntity) {
  * @returns {void}
  */
 function findNewTNTPlys(plys, timerEntity) {
-    const normalPlayers = plys.filter(ply => !ply.hasTag('spectMode') && ply.hasTag('normalPly'));
-    const playersWithoutCoin = normalPlayers.filter(ply => !ply.hasTag('activatedCoin'));
+    const normalPlayers = plys.filter(ply => ply.isValid && !ply.hasTag('spectMode') && ply.hasTag('normalPly'));
+    const playersWithoutCoin = normalPlayers.filter(ply => ply.isValid && !ply.hasTag('activatedCoin'));
     let eligiblePlayers;
     if (normalPlayers.length == 2 && playersWithoutCoin.length == 0) {
         eligiblePlayers = normalPlayers;
@@ -177,6 +200,7 @@ function findNewTNTPlys(plys, timerEntity) {
                 const player = normalPlayers[i];
                 if (i < finalTntCount && eligiblePlayers.includes(player)) {
                     player.runCommand(`function system/give_tnt`);
+                    player.onScreenDisplay.updateSubtitle('.showtnton');
                     totalTntPlys++;
                 }
                 else {
@@ -200,6 +224,7 @@ function findNewTNTPlys(plys, timerEntity) {
         shuffledPlayers.forEach((ply, index) => {
             if (index < finalTntCount) {
                 ply.runCommand(`function system/give_tnt`);
+                ply.onScreenDisplay.updateSubtitle('.showtnton');
                 totalTntPlys++;
             }
             else {
@@ -233,7 +258,7 @@ function changeScoreboard(totalNormalPlys, totalTntPlys) {
  * @returns {void}
  */
 function checkPlys(plys) {
-    const activePlayers = plys.filter(ply => !ply.hasTag('spectMode'));
+    const activePlayers = plys.filter(ply => ply.isValid && !ply.hasTag('spectMode'));
     let totalNormalPlys = 0;
     let totalTntPlys = 0;
     activePlayers.forEach(ply => {
@@ -284,6 +309,7 @@ function newTNTPlayer(activePlayers) {
         const randomIndex = Math.floor(Math.random() * eligiblePlayers.length);
         const selectedPlayer = eligiblePlayers[randomIndex];
         selectedPlayer.runCommand(`function system/give_tnt`);
+        selectedPlayer.onScreenDisplay.updateSubtitle('.showtnton');
         checkPlys(activePlayers);
     }
 }

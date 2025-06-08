@@ -13,8 +13,8 @@ const rollingEvent = {
             const item = new mc.ItemStack('ha:rolling_players');
             if (!(ply instanceof mc.Player))
                 return;
+            addAllCooldown(item);
             if (rollingPlys()) {
-                addAllCooldown(item);
                 ply.runCommand(`execute as @a at @s run playsound player.random_teleport.start`);
                 mc.world.sendMessage({ translate: "chat.rolling_players" });
             }
@@ -30,7 +30,7 @@ const rollingEvent = {
  * @returns {boolean} Devuelve true en caso de que todo hay salido bien, y false en caso contrario.
  */
 function rollingPlys() {
-    const plys = mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode'));
+    const plys = mc.world.getAllPlayers().filter(ply => ply.hasTag('tntPly') || ply.hasTag('normalPly'));
     if (plys.length < 2) {
         return false;
     }

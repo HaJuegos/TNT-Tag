@@ -1,7 +1,7 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 import { Player, world } from "@minecraft/server";
-import { handlePowerUpEvents } from "./types";
+import handlePowerUpEvents from "./manager";
 world.afterEvents.entityHitEntity.subscribe(hitEvents => {
     try {
         const { hitEntity, damagingEntity: sourceEntity } = hitEvents;
@@ -14,12 +14,13 @@ world.afterEvents.entityHitEntity.subscribe(hitEvents => {
     }
     catch { }
 });
-world.afterEvents.playerInteractWithEntity.subscribe(interactEvents => {
+world.beforeEvents.playerInteractWithEntity.subscribe(async (interactEvents) => {
     try {
         const { player: ply, target: entity } = interactEvents;
         if (entity.typeId == 'ha:power_ups') {
             const variant = entity.getComponent('variant')?.value;
             if (variant != 0 && variant) {
+                await null;
                 handlePowerUpEvents(variant, ply, entity);
             }
         }

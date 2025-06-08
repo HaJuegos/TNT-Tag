@@ -11,9 +11,22 @@
             "textures": [ "(query.anim_time > 0.35) ? ((math.mod(query.anim_time, 0.7) < 0.35) ? Texture.white : Texture.default) : Texture.default", "Texture.enchanted" ],
             "part_visibility": [
                 {
-                    "tnt": "!query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:tnt')"
+                    "tnt": "q.is_pregnant || !query.equipped_item_any_tag('slot.weapon.mainhand', 'ha:tnt')"
                 }
-            ]
+            ],
+            "filter_lighting": true,
+            "is_hurt_color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            },
+            "on_fire_color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0
+            }
         }
     }
 }

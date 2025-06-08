@@ -12,7 +12,6 @@ tellraw @a {"rawtext": [{ "translate": "chat.alert_dead_player", "with": {"rawte
 tellraw @s {"rawtext": [{ "translate": "chat.dead_player" }]}
 
 camera @s fade time 0 0.8 1.5 color 255 255 255
-clear @s
 
 tag @s remove tntPly
 tag @s add spectMode
@@ -29,14 +28,16 @@ scoreboard players reset @s cooldownPower
 scoreboard players reset @s timerGlow
 scoreboard players reset @s timerNet
 
-clear @s
 effect @s clear
 camera @s clear
 inputpermission set @s movement enabled
 inputpermission set @s jump enabled
 inputpermission set @s sneak enabled
 
+scoreboard players add @s totalDed 1
+
 scriptevent ha:remove_name
+scriptevent ha:drop_all_items
 
 ## Creado o Editado por: HaJuegosCat!. Si editas o copias este archivo, recuerda dejar créditos. Para cualquier otra información o reporte, visita el servidor de Discord: https://discord.gg/WH9KpNWXUz
 ## Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz

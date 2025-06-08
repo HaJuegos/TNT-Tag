@@ -7,7 +7,7 @@
                 "default": "entity_emissive_alpha_one_sided"
             },
             "geometry": {
-                "default": "geometry.companion_cube_hand"
+                "default": "geometry.powerup.companion_cube_in_hand"
             },
             "textures": {
                 "default": "textures/entity/power_ups/companion_cube"

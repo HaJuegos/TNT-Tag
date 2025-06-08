@@ -83,6 +83,7 @@ function checkVotations() {
         }
         startGame(finalMapWin);
         world.getDimension('overworld').runCommand(`execute as @a at @s run playsound random.levelup`);
+        world.getDimension('overworld').runCommand(`clear @a`);
     }
 }
 /**

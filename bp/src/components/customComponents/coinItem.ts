@@ -17,6 +17,10 @@ const coinEvent: CustomComponentBase = {
 
             if (!(ply instanceof mc.Player)) return;
 
+            const item = new mc.ItemStack('ha:coin');
+
+            startCooldown(item, ply);
+
             if (ply.hasTag('activatedCoin') || ply.hasTag('tntPly') || checkGlowActivated()) {
                 ply.sendMessage({ translate: (ply.hasTag('tntPly')) ? "chat.no_coin_activate" : "chat.coin_cooldown" });
                 ply.playSound('ui.powerup.in_cooldown');
@@ -32,7 +36,6 @@ const coinEvent: CustomComponentBase = {
             const inv = ply.getComponent('inventory')?.container;
             const armorInv = ply.getComponent('equippable');
             const armorItem = new mc.ItemStack('minecraft:netherite_chestplate');
-            const item = new mc.ItemStack('ha:coin');
             const timerCoin = mc.world.scoreboard.getObjective('timerCoin');
             const cooldownPower = mc.world.scoreboard.getObjective('cooldownPower');
 
@@ -40,7 +43,6 @@ const coinEvent: CustomComponentBase = {
 
             inv?.setItem(ply.selectedSlotIndex, undefined);
             armorInv?.setEquipment(mc.EquipmentSlot.Chest, armorItem);
-            startCooldown(item, ply);
             ply.runCommand(`playsound ui.item.coin_used @a ~~~`);
             ply.addTag('activatedCoin');
             ply.addTag('cooldownPower');

@@ -1,0 +1,116 @@
+{
+    "namespace": "color_screens",
+
+    // Factorys
+    "green_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "green@color_screens.green_panel"
+            }
+        }
+    },
+    "red_factory": {
+        "type": "panel",
+        "factory": {
+            "name": "hud_title_text_factory",
+            "control_ids": {
+                "hud_title_text": "red@color_screens.red_panel"
+            }
+        }
+    },
+
+    // Panels
+    "green_panel": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/green_screen",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "size": [ "200%", "200%" ],
+                    "offset": [ 0, 0 ],
+                    "layer": 99,
+                    "alpha": 0,
+                    "anims": [ "@color_screens.anim_0" ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - '.showtntoff') + '.showtntoff')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "red_panel": {
+        "type": "panel",
+        "offset": [ 0, 0 ],
+        "controls": [
+            {
+                "image": {
+                    "type": "image",
+                    "texture": "textures/ui/custom/red_screen",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "size": [ "200%", "200%"],
+                    "offset": [ 0, 0 ],
+                    "layer": 99,
+                    "alpha": 0,
+                    "anims": [ "@color_screens.anim_0" ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = (#text - '.showtnton') + '.showtnton')",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+
+    // Animations
+    "anim_0": {
+        "anim_type": "wait",
+        "easing": "linear",
+        "duration": 0.1,
+        "next": "@color_screens.anim_1"
+    },
+    "anim_1": {
+        "anim_type": "alpha",
+        "easing": "in_out_expo",
+        "from": 0,
+        "to": 1,
+        "duration": 0.25,
+        "next": "@color_screens.anim_2"
+    },
+    "anim_2": {
+        "anim_type": "wait",
+        "easing": "linear",
+        "duration": 0.9,
+        "next": "@color_screens.anim_3"
+    },
+    "anim_3": {
+        "anim_type": "alpha",
+        "easing": "in_out_expo",
+        "from": 1,
+        "to": 0,
+        "duration": 0.35
+    }
+}
+/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
+/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

@@ -2,19 +2,12 @@ Here are some references and links to credit all the people who helped in this a
 
 Programmer and Creator of the add-on and Map:
 - Ha Juegos
-   - GitHub: https://github.com/HaJuegos
+   - Github: https://github.com/HaJuegos
    - Twitter: https://twitter.com/Ha_Juegos
-   - Twitter: https://twitter.com/the_stupid_cat_
-   - Discord: https://discord.gg/9jZHkhu86P
    - Discord: https://discord.gg/WH9KpNWXUz
-   - YouTube: https://www.youtube.com/@HaJuegos/videos
-   - YouTube: https://www.youtube.com/@the_stupid_cat_/videos
-   - Twitch: https://www.twitch.tv/hajuegoscatto
-   - TikTok: https://www.tiktok.com/@hajuegos
 
 Creator of Textures, Models, and Particles:
 - Astral302
-   - Discord: https://discord.gg/9jZHkhu86P
    - Twitter: https://twitter.com/astral302
 
 Creator of the Icon, some add-on Textures, and Original Idea:
@@ -47,10 +40,46 @@ Creators of some Maps:
    - Twitter: https://twitter.com/HorizonForgeGG
 
 Music used:
-- Majotori OST: Asobu. By: Majorariatto
-- Deltarune Chapter 2 OST: Pandora Palace. By: TobyFox
-- Undertale OST: Core. By: TobyFox
-- OneShot OST: Panic. By: Nightmargin
-- OneShot OST: Eleventh Hour. By: Nightmargin
-- DELTARUNE CH2 OST: A CYBER'S WORLD. By: TobyFox
-- DELTARUNE CH2 OST: Smart Race. By: TobyFox
+- Majotori - Asobu. By: Majorariatto
+- DELTARUNE - Pandora Palace. By: TobyFox
+- UNDERTALE - Core. By: TobyFox
+- OneShot - Eleventh Hour. By: Nightmargin
+- DELTARUNE - A CYBER'S WORLD. By: TobyFox
+- DELTARUNE - Smart Race. By: TobyFox
+- DINNER!. By: femtanyl
+- Metal Slug 2 - Judgment. By: SNK SOUND TEAM
+- Abstract Map. By: VLDC9
+- CITY POP. By: Android Apartment
+- Hotline Miami - Hotline. By: Jasper Byrne
+- Hotline Miami - Knock Knock. By: Scattle
+- Shape Da Future. By: Hideki Naganuma
+- Principle. By: Savant
+- Backroom Labyrinth. By: Oliver Backland
+- Trainwreck. By: LJ LephemStar
+- Life Is. By: Cosimo Fogg 201
+- Stop - Do My Thing. By: G Bonson
+- Silent Hill (Other Side). By: Akira Yamaoka
+- CVLTVRΣ - サンセットシティー (Sunset City). By: LuigiDonatello
+
+Sounds used:
+(Some are taken from games and others from freesound.org)
+
+- blocked.ogg (FNF Trepidator: Update 1.5)
+- clock_activated.ogg (UNDERTALE)
+- compass_used.ogg (FNF Trepidator: Update 1.5)
+- conffetti.ogg ("25 confetti Sound effect" Youtube Video)
+- ding.ogg ("Ding" Minecraft Java)
+- ganaste.ogg (Challenge Complete Minecraft Java)
+- get_coin.ogg ("Mario Coin Sound" Sound Effect (HD) Youtube Video)
+- rolling.ogg (UNDERTALE)
+- tnt_explote.ogg (DELTARUNE)
+- use_boost.ogg (UNDERTALE)
+- waaooo.ogg (UNDERTALE)
+- magnet_start.ogg (Attraction.ogg by MortisBlack -- https://freesound.org/s/385048/ -- License: Attribution 4.0)
+- getMoneyMax.ogg (Duck Game)
+- getMoneyMini.ogg (Duck Game)
+- companionDamage.ogg (Duck Game)
+- companionHit.ogg (Duck Game)
+- nethit.ogg (Duck Game)
+- netoff.ogg ("Old Ooh" Sound Effect Minecraft Java)
+- netshoot.ogg (Duck Game)

@@ -28,6 +28,15 @@
 		},
 		"calculator": {
 			"textures": "textures/items/calculator"
+		},
+		"player_projectile": {
+			"textures": "textures/items/player_projectile"
+		},
+		"info_item": {
+			"textures": "textures/items/info_item"
+		},
+		"magnet": {
+			"textures": "textures/items/magnet"
 		}
 	}
 }

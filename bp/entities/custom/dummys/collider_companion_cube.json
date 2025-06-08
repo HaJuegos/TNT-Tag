@@ -14,7 +14,7 @@
                     "despawn_from_distance": { }
                 },
                 "minecraft:timer": {
-                    "time": [ 7, 7 ],
+                    "time": [ 5, 5 ],
                     "looping": true,
                     "time_down_event": {
                         "event": "ha:despawn",
@@ -27,6 +27,18 @@
             }
         },
         "components": {
+            "minecraft:spell_effects": {
+                "add_effects": [
+                    {
+                        "effect": "invisibility",
+                        "duration": 99999,
+                        "amplifier": 0,
+                        "ambient": false,
+                        "visible": false
+                    }
+                ]
+            },
+            "minecraft:renders_when_invisible": { },
             "minecraft:reflect_projectiles": {
                 "reflected_projectiles": [
                     "xp_bottle",
@@ -46,16 +58,16 @@
                     "llama_spit",
                     "fireworks_rocket",
                     "fishing_hook",
-					"wind_charge_projectile",
-					"ha:net_projectile",
-					"ha:tnt_projectile_entity",
-					"ha:companion_cube_entity"
+                    "wind_charge_projectile",
+                    "ha:net_projectile",
+                    "ha:tnt_projectile_entity",
+                    "ha:companion_cube_entity"
                 ],
                 "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
                 "reflection_scale": "0.15"
             },
-			"minecraft:is_collidable": { },
-			"minecraft:is_stackable": { },
+            "minecraft:is_collidable": { },
+            "minecraft:is_stackable": { },
             "minecraft:transient": { },
             "minecraft:knockback_resistance": {
                 "value": 99999

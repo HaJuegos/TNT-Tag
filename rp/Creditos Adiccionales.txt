@@ -2,56 +2,85 @@ Aqui estan algunas referencias y enlaces para acreditar a todas las personas que
 
 Programador y Creador del add-on y Mapa:
 - Ha Juegos
-https://github.com/HaJuegos
-https://twitter.com/Ha_Juegos
-https://twitter.com/the_stupid_cat_
-https://discord.gg/9jZHkhu86P
-https://discord.gg/WH9KpNWXUz
-https://www.youtube.com/@HaJuegos/videos
-https://www.youtube.com/@the_stupid_cat_/videos
-https://www.twitch.tv/hajuegoscatto
-https://www.tiktok.com/@hajuegos
+   - Github: https://github.com/HaJuegos
+   - Twitter: https://twitter.com/Ha_Juegos
+   - Discord: https://discord.gg/WH9KpNWXUz
 
 Creador de Texturas, Modelos y Particulas:
 - Astral302
-https://discord.gg/9jZHkhu86P
-https://twitter.com/astral302
+   - Twitter: https://twitter.com/astral302
 
 Creador del Icono, algunas Texturas del add-on y Idea original:
 - ImLouis
-https://twitter.com/Lowiwiss
+   - Twitter: https://twitter.com/Lowiwiss
 
 1° Banner del add-on creado por:
 - RosherRandom
-https://www.youtube.com/@rosherrandom5827/videos
-https://twitter.com/RosherRandom
+   - Youtube: https://www.youtube.com/@rosherrandom5827/videos
+   - Twitter: https://twitter.com/RosherRandom
 
 Modo Oscuro, Adicciones de UI, Atajos de chat y recetas de:
 https://bedrocktweaks.net/resource-packs/
 
 Basado en el Codigo del "Glowing" de Ciosciaa en Discord:
-(https://discord.gg/bedrock-add-ons-523663022053392405)
+https://discord.gg/bedrock-add-ons-523663022053392405
 
 Creadores de algunos Mapas:
 - RosherRandom
-https://www.youtube.com/@rosherrandom5827/videos
-https://twitter.com/RosherRandom
+   - Youtube: https://www.youtube.com/@rosherrandom5827/videos
+   - Twitter: https://twitter.com/RosherRandom
 
 - TenierWiz
-https://twitter.com/TenierWiz
-https://www.twitch.tv/tenierwiz
-https://www.youtube.com/@tenierwiz
+   - Twitter: https://twitter.com/TenierWiz
+   - Twitch: https://www.twitch.tv/tenierwiz
+   - Youtube: https://www.youtube.com/@tenierwiz
 
 - PatoMcFly
-https://twitter.com/HypnoDancerZR
-https://twitter.com/HorizonForgeGG
-
+   - Twitter: https://twitter.com/HypnoDancerZR
+   - Twitter: https://twitter.com/HorizonForgeGG
 
 Musica utilizada:
-Majotori OST: Asobu. De: Majorariatto 
-Deltarune Chapter 2 OST: Pandora Palace. De: TobyFox 
-Undertale OST: Core. De: TobyFox
-OneShot OST: Panic. De: Nightmargin
-OneShot OST: Eleventh Hour. De: Nightmargin
-DELTARUNE CH2 OST: A CYBER'S WORLD. De: TobyFox
-DELTARUNE CH2 OST: Smart Race. De: TobyFox
+- Majotori - Asobu. De: Majorariatto
+- DELTARUNE - Pandora Palace. De: TobyFox
+- UNDERTALE - Core. De: TobyFox
+- OneShot - Eleventh Hour. De: Nightmargin
+- DELTARUNE - A CYBER'S WORLD. De: TobyFox
+- DELTARUNE - Smart Race. De: TobyFox
+- DINNER!. De: femtanyl
+- Metal Slug 2 - Judgment. De: SNK SOUND TEAM
+- Abstract Map. De: VLDC9
+- CITY POP. De: Android Apartment
+- Hotline Miami - Hotline. De: Jasper Byrne
+- Hotline Miami - Knock Knock. De: Scattle
+- Shape Da Future. De: Hideki Naganuma
+- Principle. De: Savant
+- Backroom Labyrinth. De: Oliver Backland
+- Trainwreck. De: LJ LephemStar
+- Life Is. De: Cosimo Fogg 201
+- Stop - Do My Thing. De: G Bonson
+- Silent Hill (Other Side). De: Akira Yamaoka
+- CVLTVRΣ - サンセットシティー (Sunset City). De: LuigiDonatello
+
+
+Sonidos usados:
+(Algunos son sacados de juegos y otros de freesound.org)
+
+- blocked.ogg (FNF Trepidator: Update 1.5)
+- clock_activated.ogg (UNDERTALE)
+- compass_used.ogg (FNF Trepidator: Update 1.5)
+- conffetti.ogg ("25 confetti Sound effect" Youtube Video)
+- ding.ogg ("Ding" Minecraft Java)
+- ganaste.ogg (Challenge Complete Minecraft Java)
+- get_coin.ogg ("Mario Coin Sound" Sound Effect (HD) Youtube Video)
+- rolling.ogg (UNDERTALE)
+- tnt_explote.ogg (DELTARUNE)
+- use_boost.ogg (UNDERTALE)
+- waaooo.ogg (UNDERTALE)
+- magnet_start.ogg (Attraction.ogg by MortisBlack -- https://freesound.org/s/385048/ -- License: Attribution 4.0)
+- getMoneyMax.ogg (Duck Game)
+- getMoneyMini.ogg (Duck Game)
+- companionDamage.ogg (Duck Game)
+- companionHit.ogg (Duck Game)
+- nethit.ogg (Duck Game)
+- netoff.ogg ("Old Ooh" Sound Effect Minecraft Java)
+- netshoot.ogg (Duck Game)

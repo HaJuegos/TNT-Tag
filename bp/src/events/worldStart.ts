@@ -1,10 +1,12 @@
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */
 
-import { DisplaySlotId, EntityComponentTypes, ObjectiveSortOrder, Player, world } from "@minecraft/server";
+import { DisplaySlotId, ObjectiveSortOrder, Player, system, world } from "@minecraft/server";
 
-import { hideElements, setupCommands } from "../globalVariables";
+import { hideElements, setupCommands, ticksConvertor } from "../globalVariables";
 import { gameStarted } from "../functions/gameFn";
+import { musicManager } from "../functions/plyFn";
+import { showStore } from "../functions/storeMemoFn";
 
 world.afterEvents.worldLoad.subscribe(setup => {
     try {
@@ -43,6 +45,31 @@ world.afterEvents.buttonPush.subscribe(buttonEvents => {
         }
     } catch { }
 });
+
+system.afterEvents.scriptEventReceive.subscribe(staticEvents => {
+    try {
+        const { id, sourceEntity: entity } = staticEvents;
+
+        if (!(entity instanceof Player)) return;
+
+        if (id == 'ha:start_individual_music_lobby') {
+            musicManager(true, true, entity);
+            musicManager(false, true, entity);
+        } else if (id == 'ha:start_individual_music') {
+            musicManager(true, false, entity);
+            musicManager(false, false, entity);
+        } else if (id == 'ha:start_music') {
+            musicManager(true);
+            musicManager();
+        } else if (id == 'ha:view_shop_memo') {
+            system.runTimeout(() => {
+                try {
+					showStore(entity);
+				} catch {}
+            }, ticksConvertor(0.35));
+        }
+    } catch { }
+})
 
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

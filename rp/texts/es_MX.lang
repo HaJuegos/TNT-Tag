@@ -24,20 +24,26 @@ ui.drawparty=§7¿Empate?
 ui.drawparty_sub=Nadie ha ganado esta partida al parecer...
 
 ui.title_music1=§e§lEstas Escuchando
-ui.subtitle_music1=Majotori OST: Asobu. De: Majorariatto 
-ui.subtitle_music2=Deltarune Chapter 2 OST: Pandora Palace. De: TobyFox 
-ui.subtitle_music3=Undertale OST: Core. De: TobyFox
-ui.subtitle_music5=OneShot OST: Eleventh Hour. De: Nightmargin
-ui.subtitle_music6=DELTARUNE CH2 OST: A CYBER'S WORLD. De: TobyFox
-ui.subtitle_music7=DELTARUNE CH2 OST: Smart Race. De: TobyFox
+ui.subtitle_music1=Majotori - Asobu. De: Majorariatto
+ui.subtitle_music2=DELTARUNE - Pandora Palace. De: TobyFox
+ui.subtitle_music3=UNDERTALE - Core. De: TobyFox
+ui.subtitle_music5=OneShot - Eleventh Hour. De: Nightmargin
+ui.subtitle_music6=DELTARUNE - A CYBER'S WORLD. De: TobyFox
+ui.subtitle_music7=DELTARUNE - Smart Race. De: TobyFox
 ui.subtitle_music8=DINNER!. De: femtanyl
 ui.subtitle_music9=Metal Slug 2 - Judgment. De: SNK SOUND TEAM
 ui.subtitle_music10=Abstract Map. De: VLDC9
 ui.subtitle_music11=CITY POP. De: Android Apartment
-ui.subtitle_music12=Hotline (Original Mix). De: S T
-ui.subtitle_music13=Knock Knock. De: S T
+ui.subtitle_music12=Hotline Miami - Hotline. De: Jasper Byrne
+ui.subtitle_music13=Hotline Miami - Knock Knock. De: Scattle
 ui.subtitle_music14=Shape Da Future. De: Hideki Naganuma
-ui.subtitle_music15=Datakrash (Savant). De: Principle
+ui.subtitle_music15=Principle. De: Savant
+ui.subtitle_music16=Backroom Labyrinth. De: Oliver Backland
+ui.subtitle_music17=Trainwreck. De: LJ LephemStar
+ui.subtitle_music18=Life Is. De: Cosimo Fogg 201
+ui.subtitle_music19=Stop - Do My Thing. De: G Bonson
+ui.subtitle_music20=Silent Hill (Other Side). De: Akira Yamaoka
+ui.subtitle_music21=CVLTVRΣ - サンセットシティー (Sunset City). De: LuigiDonatello
 
 scoreboard.voteTotal=§dTotal de Votos:
 score.map1=Mapa #1
@@ -88,19 +94,12 @@ ui.credits.idea_name=§b ImLouis
 ui.shop.title=§e§lLa Memo Tienda
 ui.shop.body=§bElije el item que quieras comprar.
 
-ui.shop.item1=%2%1§o§750 puntos
-ui.shop.item2=%2%1§o§7100 puntos
-ui.shop.item3=%2%1§o§7100 puntos
-ui.shop.item4=%2%1§o§7150 puntos
-ui.shop.item5=x3 %2%1§o§7200 puntos
-ui.shop.item6=%2%1§o§7300 puntos
-ui.shop.item7=%2%1§o§7350 puntos
-ui.shop.item8=%2%1§o§7400 puntos
-ui.shop.item9=%2%1§o§7500 puntos
-ui.shop.item10=%2%1§o§71000 puntos
+ui.shop.item_template_name=%1%2
+ui.shop.item_name=%4%2%1§o§7%3 puntos
+ui.shop.hasItem=§e§lCOMPRADO§r
 
-ui.statsply.title=Estadisticas de %1
-ui.statsply.body=%1§e- Puntos totales:§r %2%1%1- Veces que has muerto: %3%1%1- Veces que has ganado: %4%1%1- Clase: %5%1%1- Hora de Entrada: %6%1%1- Items Comprados: %7%1%1- Veces que has votado: %8%1%1- Veces pasado la TNT a otra persona: %9
+ui.statsply.title=§v§oTus estadísticas actuales
+ui.statsply.body=%1§e- Puntos obtenidos: §o%2§r %1%1§a- Partidas ganadas: §o%3§r %1%1§c- Partidas perdidas: §o%4§r %1%1§b- Tiempo de juego: §i§o%5§r %1%1- Ítems comprados: §o§i%6§r %1%1- Veces votado: §i§o%7§r %1%1- Veces que pasaste la TNT: §i§o%8§r %1%1§d- Tu clase: §i§o%9§r
 ui.statec1=Puro
 ui.statec2=Padre
 ui.statec3=Hijo
@@ -133,7 +132,7 @@ chat.mapWinnning=§e§l>> El mapa ganador fue el #%1 (%2 votos totales). La part
 chat.map_equals=§e§l>> ¡Hubo un empate! Se elegirá un mapa aleatorio. El mapa elegido es: Mapa #%1.
 chat.gived_tnt=§e>> %1 ahora tiene la TNT.
 chat.error_no_players_ingame=§l§4>> No hay jugadores suficientes para iniciar.
-chat.dead_player=§4§l>> ¡Has muerto! Puedes usar los comandos: "!tphunter" para teletransportarte a la persona que tiene la TNT o usar "!tpplayer" para ir con el jugador vivo.
+chat.dead_player=§4§l>> ¡Has muerto! La TNT te ha explotado. Espera hasta que termine la partida. Puedes usar el comando: "!help" para saber los comandos disponibles como espectador.
 chat.alert_dead_player=§c§l>> %1 fue eliminado. La TNT sera entregada a jugadores aleatorios.
 chat.compass_activated=§e§l>> ¡Todos los jugadores ahora brillan a travez de bloques durante 1 minuto!
 chat.compass_deactivated=§e§l>> El efecto de brillo ha terminado.
@@ -151,7 +150,7 @@ chat.endgame_return=§7>> Tu anterior partida ha terminado, fuiste llevado al lo
 chat.ingame_return=§7>> Hay una partida en progreso, fuiste teletransportado a la partida como modo espectador.
 chat.error_nohittnt=§7>> Has fallado el tiro...
 chat.notnt_item=§7>> Necesitas tener la TNT para activar este item.
-chat.timerreset=§7>> El tiempo de explosion de la TNT fue reiniciado.
+chat.timerreset=§7>> Se ha añadido más tiempo al contador de la TNT.
 chat.debuff_slowness=§7>> Los jugadores con la TNT fueron detenidos por un breve momento.
 chat.debuff_slowness_tnt=§7>> Los jugadores fueron detenidos por un breve momento.
 chat.rolling_players=§7>> Todos los Jugadores intercambiaron de lugar.
@@ -166,17 +165,6 @@ chat.start_voting=§e>> ¡La votación ha iniciado! Usa el ítem de calculadora 
 chat.random_map_win=§n§l>> ¡Un mapa aleatorio sera elejido! El Mapa #%1. La partida iniciará pronto...
 chat.winning_player=§e§l>> ¡%1 ha ganado esta ronda!
 
-chat.error.sintaxis=§c>> Error, esta mal escrito, prueba esto: "%1" 
-chat.muted=§7>> Se ha muteado el jugador "%1".
-chat.error.nofindplayer=§c>> No se encontro el jugador "%1". ¿Esta conectado o esta bien escrito?
-chat.error.noyou=§c>> Prueba con alguien mas.
-chat.unmuted=§7>> Se ha desmuteado al jugador "%1".
-chat.error.nounmuted=§c>> El Jugador "%1" no esta muteado.
-chat.banned=§7>> El Jugador "%1" ha sido baneado.
-chat.error.noban=§c>> El Jugador "%1" no esta baneado.
-chat.unban=§7>> El Jugador "%1" ha sido desbaneado.
-chat.ismuted=§7>> Estas muteado, no puedes usar el chat.
-
 chat.alert_dead_player_cube=§d>> %1 fue asesinado por un cubo de compañia. Se le ha restado un punto.
 chat.error.item_cooldown=§7>> El item aun tiene cooldown, debes esperar a que termine por completo.
 
@@ -190,6 +178,46 @@ chat.error.novotes=§c>> No se voto por ningun mapa. Juego cancelado.
 chat.error.nousewithcoin=§c>> No puedes obtener este powerup con Elytras en tu inventario.
 chat.error.nogetwithcoin=§c>> No puedes obtener este powerup con Monedas en tu Inventario.
 chat.error.nousewithelytra=§c>> No puedes usar este item con Elytras en tu inventario.
+
+chat.timerbroken=§i>> El tiempo de la TNT fue reducido. ¡Peligro!
+chat.item_used.magnet=§v§l>> Los ítems tirados en el suelo ahora fueron teletransportados a ti.
+
+
+## Cmds Txts
+chat.error.nocmd=§c>> Error: Comando no encontrado.
+chat.error.noadmin=§c>> Error: No tienes permisos para usar este comando.
+chat.error.missingargs=§c>> Error: Faltan argumentos para usar este comando.
+chat.error.alreadymuted=§c>> Error: El Jugador "%1" ya esta muteado.
+chat.error.nofindply=§c>> Error: El Jugador "%1" no fue encontrado o no esta en linea.
+chat.error.nohastnt=§c>> Error: El Jugador "%1" no tiene la TNT.
+chat.error.nofindtntplys=§c>> Error: No se encontraron jugadores con la TNT.
+chat.error.hastnt=§c>> Error: El Jugador "%1" tiene la TNT.
+chat.error.noplysnormal=§c>> Error: No se encontraron jugadores sin la TNT.
+chat.error.nomuted=§c>> Error: El Jugador "%1" no esta muteado.
+chat.error.tpself=§c>> Error: Supongo que no hay razon de explicar esto, verdad?
+chat.error.nofindcmdhelp=§c>> Error: El comando "%1" no fue encontrado o no tienes permisos para usarlo.
+chat.error.muted=§c>> Error: Estas muteado, no tienes permitido usar el chat.
+
+chat.descripcion_cmd.tphunter=§7§o>> Este comando te teltransporta a un jugador con la TNT, aleatoriamente o no.
+chat.descripcion_cmd.tpplayer=§7§o>> Este comando te teltransporta a un jugador sin la TNT, aleatoriamente o no
+chat.descripcion_cmd.help=§7§o>> Este comando que permite ver informacion de otros comandos.
+chat.descripcion_cmd.muted=§7§o>> Este comando te permite mutear a un jugador en especifico.
+chat.descripcion_cmd.unmuted=§7§o>> Este comando te permite des-mutear a un jugador en especifico.
+
+chat.help.usage=§e- %1 - [%2%3]
+chat.help.optional=(Opcional) 
+chat.help.ply_name_ej=@"Nombre del Jugador" or @nombrejugador or @Jugador_Nombre
+
+chat.help.command_ej.tph=!tphunter o !tph
+chat.help.command_ej.tpp=!tpplayer o !tpp
+chat.help.command_ej.unmute=!unmute o !rmute
+
+chat.success.telehunter=§7>> Te teletransportaste a "%1".
+chat.success.mutedply=§>> "%1" fue muteado.
+chat.success.unmutedPly=§>> "%1" fue desmuteado.
+
+chat.help.allcmds=§2§o--- Lista de comandos permitidos para ti ---§r\n
+chat.help.cmd_descripcion=- !%1 o %2 [%4%3]
 
 
 ## Items Names
@@ -220,8 +248,14 @@ item.ha:calculator.name=Votar por un Mapa
 item.ha:companion_cube=§dCubo de Compañia§r
 item.ha:companion_cube.name=§dCubo de Compañia§r
 
-item.ha:info_player=Mirar estadisticas
-item.ha:info_player.name=Mirar estadisticas
+item.ha:info_item=Mirar estadisticas
+item.ha:info_item.name=Mirar estadisticas
+
+item.ha:player_projectile=Lanzar jugador
+item.ha:player_projectile.name=Lanzar jugador
+
+item.ha:magnet=Atraer items
+item.ha:magnet.name=Atraer items
 
 
 ## Entities

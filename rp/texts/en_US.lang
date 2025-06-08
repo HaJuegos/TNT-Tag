@@ -34,15 +34,15 @@ ui.subtitle_music8=DINNER!. By: femtanyl
 ui.subtitle_music9=Metal Slug 2 - Judgment. By: SNK SOUND TEAM
 ui.subtitle_music10=Abstract Map. By: VLDC9
 ui.subtitle_music11=CITY POP. By: Android Apartment
-ui.subtitle_music12=Hotline Miami - Hotline (Original Mix). By: S T
-ui.subtitle_music13=Hotline Miami - Knock Knock. By: S T
+ui.subtitle_music12=Hotline Miami - Hotline. By: Jasper Byrne
+ui.subtitle_music13=Hotline Miami - Knock Knock. By: Scattle
 ui.subtitle_music14=Shape Da Future. By: Hideki Naganuma
-ui.subtitle_music15=Datakrash (Savant). By: Principle
+ui.subtitle_music15=Principle. By: Savant
 ui.subtitle_music16=Backroom Labyrinth. By: Oliver Backland
-ui.subtitle_music17=Trainwreck. By: Principle
-ui.subtitle_music18=Life Is - Cosimo Fogg 201. By: OBLECKT
-ui.subtitle_music19=G Bonson - Stop. By: HHVIBE
-ui.subtitle_music20=Silent Hill 1 - Otherside. By: Akira Yamaoka
+ui.subtitle_music17=Trainwreck. By: LJ LephemStar
+ui.subtitle_music18=Life Is. By: Cosimo Fogg 201
+ui.subtitle_music19=Stop - Do My Thing. By: G Bonson
+ui.subtitle_music20=Silent Hill (Other Side). By: Akira Yamaoka
 ui.subtitle_music21=CVLTVRΣ - サンセットシティー (Sunset City). By: LuigiDonatello
 
 scoreboard.voteTotal=§dTotal Votes:
@@ -94,19 +94,12 @@ ui.credits.idea_name=§b ImLouis
 ui.shop.title=§e§lMemo's Shop
 ui.shop.body=§bChoose the item you want to buy.
 
-ui.shop.item1=%2%1§o§750 points
-ui.shop.item2=%2%1§o§7100 points
-ui.shop.item3=%2%1§o§7100 points
-ui.shop.item4=%2%1§o§7150 points
-ui.shop.item5=x3 %2%1§o§7200 points
-ui.shop.item6=%2%1§o§7300 points
-ui.shop.item7=%2%1§o§7350 points
-ui.shop.item8=%2%1§o§7400 points
-ui.shop.item9=%2%1§o§7500 points
-ui.shop.item10=%2%1§o§71000 points
+ui.shop.item_template_name=%1%2
+ui.shop.item_name=%4%2%1§o§7%3 points
+ui.shop.hasItem=§e§lBUYED§r
 
-ui.statsply.title=Statistics of %1
-ui.statsply.body=%1§e- Total Points:§r %2%1%1- Times You've Died: %3%1%1- Times You've Won: %4%1%1- Class: %5%1%1- Time of Entry: %6%1%1- Items Purchased: %7%1%1- Times You've Voted: %8%1%1- Number of times you have passed TNT: %9
+ui.statsply.title=§v§oYour statistics
+ui.statsply.body=%1§e- Points earned: §o%2§r %1%1§a- Games won: §o%3§r %1%1§c- Games lost: §o§i%4§r %1%1§b- Playing time: §i§o%5§r %1%1- Items purchased: §o§i%6§r %1%1- Times voted: §i§o%7§r %1%1- Times you passed the TNT: §i§o%8§r %1%1§d- Your class: §i§o%9§r
 ui.statec1=Pure
 ui.statec2=Father
 ui.statec3=Son
@@ -138,7 +131,7 @@ chat.mapWinnning=§e§l>> The winning map was Map #%1 (%2 total votes). The game
 chat.map_equals=§e§l>> There was a tie! A random map will be chosen. The chosen map is: Map #%1.
 chat.gived_tnt=§e>> %1 now has the TNT.
 chat.error_no_players_ingame=§l§4>> There are not enough players to start.
-chat.dead_player=§4§l>> You have died! You can use the commands: "!tphunter" to teleport to the person with the TNT or use "!tpplayer" to go to the living player.
+chat.dead_player=§4§l>> You're dead! The TNT has exploded. Wait until the game is over. You can use the command: "!help" to find out which commands are available as a spectator.
 chat.alert_dead_player=§c§l>> %1 has been eliminated. The TNT will be given to random players.
 chat.compass_activated=§e§l>> All players now glows through blocks for 1 minute!
 chat.compass_deactivated=§e§l>> The glowing effect is finished.
@@ -156,7 +149,7 @@ chat.endgame_return=§7>> Your previous game has ended, you were taken to the lo
 chat.ingame_return=§7>> There is a game in progress, you were teleported to the game as a spectator.
 chat.error_nohittnt=§7>> You missed the shot...
 chat.notnt_item=§7>> You need to have the TNT to activate this item.
-chat.timerreset=§7>> The TNT explosion time was reset.
+chat.timerreset=§7>> More time has been added to the TNT timer.
 chat.debuff_slowness=§7>> The players with the TNT were stopped for a brief moment.
 chat.debuff_slowness_tnt=§7>> The players were briefly detained.
 chat.rolling_players=§7>> All players switched places.
@@ -171,17 +164,6 @@ chat.start_voting=§e>> The voting has started! Use the calculator item from you
 chat.random_map_win=§n§l>> A random map will be chosen! Map #%1. The game will start soon...
 chat.winning_player=§e§l>> %1 has won this round!
 
-chat.error.sintaxis=§c>> Error, incorrect syntax, try this: "%1"
-chat.muted=§7>> Player "%1" has been muted.
-chat.error.nofindplayer=§c>> Could not find player "%1". Are they connected or is the name spelled correctly?
-chat.error.noyou=§c>> Try someone else.
-chat.unmuted=§7>> The player "%1" has been unmuted.
-chat.error.nounmuted=§c>> The player "%1" is not muted.
-chat.banned=§7>> The player "%1" has been banned.
-chat.error.noban=§c>> The player "%1" is not banned.
-chat.unban=§7>> The player "%1" has been unbanned.
-chat.ismuted=§7>> You are muted, you can't use the chat.
-
 chat.alert_dead_player_cube=§d>> %1 was killed by a Companion Cube. One point has been deducted.
 chat.error.item_cooldown=§7>> The item is still on cooldown, you need to wait until it fully resets.
 
@@ -195,6 +177,46 @@ chat.error.novotes=§c>> No votes were cast for any map. Game cancelled.
 chat.error.nogetwithelytras=§c>> You cannot get this powerup with Elytras in your inventory.
 chat.error.nogetwithcoins=§c>> You cannot get this powerup with Coins in your Inventory.
 chat.error.nousewithelytras=§c>> You cannot use this item with Elytras in your inventory.
+
+chat.timerbroken=§i>> The TNT's time was reduced. Danger!
+chat.item_used.magnet=§v§l>> Items dropped on the ground are now teleported to you.
+
+
+## Cmds Txts
+chat.error.nocmd=§c>> Error: Command not found.
+chat.error.noadmin=§c>> Error: You do not have permissions to use this command.
+chat.error.missingargs=§c>> Error: There are missing arguments in this command.
+chat.error.alreadymuted=§c>> Error: Player "%1" is already muted.
+chat.error.nofindply=§c>> Error: Player "%1" was not found or is not online.
+chat.error.nohastnt=§c>> Error: Player "%1" does not have TNT
+chat.error.nofindtntplys=§c>> Error: No players were found with TNT.
+chat.error.hastnt=§c>> Error: Player "%1" has the tnt
+chat.error.noplysnormal=§c>> Error: No players were found without TNT.
+chat.error.nomuted=§c>> Error: The player "%1" is not muted.
+chat.error.tpself=§c>> Error: I guess there is no reason to explain this error, right?
+chat.error.nofindcmdhelp=§c>> Error: The command "%1" was not found or you do not have permissions to view it.
+chat.error.muted=§c>> Error: You are muted, you cannot chat.
+
+chat.descripcion_cmd.tphunter=§7§o>> This command teleports you to players with the TNT, specific or not.
+chat.descripcion_cmd.tpplayer=§7§o>> This command teleports you to players without TNT, specific or not.
+chat.descripcion_cmd.help=§7§o>> Command that displays the use of other commands.
+chat.descripcion_cmd.muted=§7§o>> Command that allows to mute a specific player.
+chat.descripcion_cmd.unmuted=§7§o>> Command that allows to unmute a specific player.
+
+chat.help.usage=§e- %1 - [%2%3]
+chat.help.optional=(Optional) 
+chat.help.ply_name_ej=@"Player Name" or @playername or @Player_Name
+
+chat.help.command_ej.tph=!tphunter or !tph
+chat.help.command_ej.tpp=!tpplayer or !tpp
+chat.help.command_ej.unmute=!unmute or !rmute
+
+chat.success.telehunter=§7>> You teleported to "%1".
+chat.success.mutedply=§>> Player "%1" was muted.
+chat.success.unmutedPly=§>> Player "%1" was unmuted.
+
+chat.help.allcmds=§2§o--- List of commands available to you ---§r\n
+chat.help.cmd_descripcion=- !%1 or %2 [%4%3]
 
 
 ## Items Names
@@ -228,8 +250,14 @@ item.ha:calculator.name=Vote for a Map
 item.ha:companion_cube=§dCompanion Cube§r
 item.ha:companion_cube.name=§dCompanion Cube§r
 
-item.ha:info_player=View statistics
-item.ha:info_player.name=View statistics
+item.ha:info_item=View statistics
+item.ha:info_item.name=View statistics
+
+item.ha:player_projectile=Launch player
+item.ha:player_projectile.name=Launch player
+
+item.ha:magnet=Attract items
+item.ha:magnet.name=Attract items
 
 
 ## Entities

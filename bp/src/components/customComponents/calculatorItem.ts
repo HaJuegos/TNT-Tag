@@ -5,6 +5,7 @@ import * as mc from "@minecraft/server";
 import * as ui from "@minecraft/server-ui";
 
 import { CustomComponentBase } from "../types";
+import { addOrRemoveObj } from "../../functions/stadisticFn";
 
 interface MapsList {
     id: string;
@@ -43,12 +44,13 @@ const calculatorEvent: CustomComponentBase = {
 
             if (!(ply instanceof mc.Player)) return;
 
+            startCooldown(item, ply);
+
             if (ply.hasTag('alrVoted')) {
                 ply.sendMessage({ translate: "chat.yep_voting" });
                 ply.playSound('ui.powerup.in_cooldown');
                 return;
             } else {
-                startCooldown(item, ply);
                 calculatorVotes(ply);
             }
         }
@@ -134,6 +136,8 @@ function registerVote(ply: mc.Player, mapSelected: any): void {
     ply.sendMessage({ translate: `${mapSelected.translate}` });
     ply.playSound('random.levelup');
     ply.addTag('alrVoted');
+    addOrRemoveObj(ply, 'totalVoted', 1);
+    addOrRemoveObj(ply, 'totalPoints', Math.floor(Math.random() * 5) + 1);
 }
 
 /**

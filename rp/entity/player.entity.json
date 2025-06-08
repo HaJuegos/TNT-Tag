@@ -24,7 +24,7 @@
                 "default": "geometry.humanoid.custom",
                 "cape": "geometry.cape",
 				
-				"innet": "geometry.net_overlay",
+				"innet": "geometry.player.in_net_overlay",
 				"glow": "geometry.humanoid.custom_glow",
 				"remove": "geometry.nothing_player"
             },

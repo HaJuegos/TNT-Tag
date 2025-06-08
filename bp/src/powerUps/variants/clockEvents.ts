@@ -12,7 +12,7 @@ import { getAllEntitiesInAllDime } from "../../globalVariables";
  */
 const clockEvent: PowerUpBase = {
     variantID: 8,
-    cooldownPly: 5,
+    cooldownPly: 23,
     events: {
         onlyTntEvents() {
             addTimerClock();
@@ -35,13 +35,17 @@ const clockEvent: PowerUpBase = {
 /**
  * Funcion encargada de los eventos del Clock.
  * @returns {void}
-*/
+ */
 function addTimerClock(): void {
-    const entities = getAllEntitiesInAllDime({ type: 'ha:sensor', tags: ['gameStarted'] });
-    const obj = world.scoreboard.getObjective('timerGame');
+    const entities = getAllEntitiesInAllDime({ type: 'ha:game_entity', tags: ['inGame'] });
+    const obj = world.scoreboard.getObjective('timerInGame');
+    const newTime = 10;
 
     for (const entity of entities) {
-        obj?.setScore(entity, 25);
+        const current = obj?.getScore(entity) ?? 0;
+        const newScore = Math.min(current + newTime, 47);
+
+        obj?.setScore(entity, newScore);
     }
 
     world.sendMessage({ translate: "chat.timerreset" });

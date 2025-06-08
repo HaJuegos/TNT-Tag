@@ -4,6 +4,7 @@
 import * as mc from "@minecraft/server";
 
 import { CustomComponentBase } from "../types";
+import { getAllEntitiesInAllDime } from "../../globalVariables";
 
 /**
  * Eventos que pasan para el componente del Super Compass.
@@ -18,11 +19,12 @@ const compassEvent: CustomComponentBase = {
 
             if (!(ply instanceof mc.Player)) return;
 
+            addAllCooldown(item);
+
             if (checkGlowActivated()) {
                 ply.playSound('ui.powerup.in_cooldown');
                 ply.sendMessage({ translate: "chat.coin_cooldown" });
             } else {
-                addAllCooldown(item);
                 glowEvent(ply);
             }
         }
@@ -54,9 +56,12 @@ function glowEvent(sourcePly: mc.Player): void {
     const plys = mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode') && !ply.hasTag('tntPly'));
     const obj = mc.world.scoreboard.getObjective('timerGlow');
     const entity = dime.spawnEntity<'ha:glowing_entity'>('ha:glowing_entity', coords);
+    const entityMap = getAllEntitiesInAllDime({ type: 'ha:game_entity', tags: ['inGame'] });
+    const mapObj = mc.world.scoreboard.getObjective('mapSelected');
+    const mapSelected = mapObj?.getScore(entityMap[0]) ?? 0;
 
     entity.addTag('glowActivated');
-    obj?.addScore(entity, 20);
+    obj?.addScore(entity, (mapSelected == 1) ? 40 : 20);
 
     for (const ply of plys) {
         ply.triggerEvent('ha:set_glow');

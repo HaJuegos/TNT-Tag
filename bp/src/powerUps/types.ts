@@ -15,27 +15,8 @@ import { slowEvent } from "./variants/slowEvents";
 import { elytraEvent } from "./variants/elytraEvents";
 import { gunEvent } from "./variants/gunEvents";
 import { cubePowerUp } from "./variants/cubeEvents";
-
-export interface PowerUpBase {
-    variantID: number;
-    cooldownPowerUp?: number;
-    cooldownPly?: number;
-    events: {
-        onlyTntEvents?: (source: mc.Entity | mc.Player) => void | boolean;
-        onlyPlyEvents?: (source: mc.Entity | mc.Player) => void | boolean;
-        allEvents?: (source: mc.Entity | mc.Player) => void | boolean;
-        noCooldown?: {
-            tnt?: boolean;
-            plys?: boolean;
-            all?: boolean;
-        };
-    };
-    specificCooldown?: {
-        allTntPlys?: boolean;
-        allNormalPlys?: boolean;
-        all?: boolean;
-    };
-}
+import magnetEvent from "./variants/magnetEvents";
+import brokenClockEvents from "./variants/brokenClockEvents";
 
 /**
  * Lista de eventos de los powerUps.
@@ -54,110 +35,69 @@ export const listOfPowerUps: Record<number, PowerUpBase> = {
     [elytraEvent.variantID]: elytraEvent,
     [gunEvent.variantID]: gunEvent,
     [cubePowerUp.variantID]: cubePowerUp,
+    [magnetEvent.variantID]: magnetEvent,
+    [brokenClockEvents.variantID]: brokenClockEvents,
 };
 
-/**
- * Funcion central encargada de los eventos variados al interactuar con la entidad.
- * @param {number} variant Variante en cuestion.
- * @param {mc.Entity} player Entidad fuente. (Jugador)
- * @param {mc.Entity} entity Entidad con la que interactuo. (Generador)
- * @returns {Void}
- */
-export function handlePowerUpEvents(variant: number, player: mc.Player, entity: mc.Entity): void {
-    const handle = listOfPowerUps[variant];
-    let addCooldown = true;
+export interface PowerUpBase {
+    /**
+     * ID del powerup.
+     * @type {number}
+     */
+    variantID: number;
 
-    if (entity.hasTag('cooldownPower') || player.hasTag('cooldownPower')) {
-        inCooldownYet(player);
-        return;
-    }
+    /**
+     * (Opcional, default = 5) Un cooldown especifico por powerup.
+     * @type {?number}
+     */
+    cooldownPowerUp?: number;
 
-    if (player.hasTag('tntPly') && handle.events.onlyTntEvents) {
-        const result = handle.events.onlyTntEvents(player);
-        
-        if (result == false) {
-            return;
-        }
+    /**
+     * (Opcional, default = 10) Un cooldown especifico para el jugador con quien interactuo.
+     * @type {?number}
+     */
+    cooldownPly?: number;
 
-        if (handle.events.noCooldown?.tnt) {
-            addCooldown = false;
-        }
-    } else if (!player.hasTag('tntPly') && handle.events.onlyPlyEvents) {
-		const result = handle.events.onlyPlyEvents(player);
-     
-		if (result == false) {
-            return;
-        }
+    /**
+     * Lista de eventos al interactuar con este mob.
+     * */
+    events: {
+        /**
+         * (Opcional) Eventos que solo pasan con jugadores con la TNT.
+         * @type {?(source: mc.Entity | mc.Player) => void | boolean}
+         */
+        onlyTntEvents?: (source: mc.Entity | mc.Player) => void | boolean;
 
-        if (handle.events.noCooldown?.plys) {
-            addCooldown = false;
-        }
-    } else if (handle.events.allEvents) {
-        const result = handle.events.allEvents(player);
-		
-		if (result == false) {
-            return;
-        }
+        /**
+         * (Opcional) Eventos que solo pasan con jugadores sin la TNT.
+         * @type {?(source: mc.Entity | mc.Player) => void | boolean}
+         */
+        onlyPlyEvents?: (source: mc.Entity | mc.Player) => void | boolean;
 
-        if (handle.events.noCooldown?.all) {
-            addCooldown = false;
-        }
-    }
+        /**
+         * (Opcional) Eventos que pasan con todos los jugadores.
+         * @type {?(source: mc.Entity | mc.Player) => void | boolean}
+         */
+        allEvents?: (source: mc.Entity | mc.Player) => void | boolean;
 
-    if (addCooldown) {
-        const players = (() => {
-            const entities = [entity];
+        /**
+         * (Opcional) Especificar que no se aplica cooldown al powerup y el jugador.
+         */
+        noCooldown?: {
+            tnt?: boolean;
+            plys?: boolean;
+            all?: boolean;
+        };
+    };
 
-            if (handle.specificCooldown?.all) {
-                return [...mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode')), ...entities];
-            }
-
-            if (handle.specificCooldown?.allTntPlys) {
-                return [...mc.world.getAllPlayers().filter(ply => ply.hasTag('tntPly')), ...entities];
-            }
-
-            if (handle.specificCooldown?.allNormalPlys) {
-                return [...mc.world.getAllPlayers().filter(ply => ply.hasTag('normalPly')), ...entities];
-            }
-
-            return [player, ...entities];
-        })();
-
-        startCooldown(players, handle.cooldownPowerUp, handle.cooldownPly);
-    }
-}
-
-/**
- * Añade cooldown tanto al generador como al jugador que interactuo con el.
- * @param {mc.Entity[] | mc.Player[]} entities Entidades en cuestion.
- * @returns {void}
- */
-function startCooldown(entities: mc.Entity[] | mc.Player[], cooldownPowerUp: number = 5, cooldownPly: number = 10): void {
-    const cooldownPower = mc.world.scoreboard.getObjective('cooldownPower');
-
-    for (const entity of entities) {
-        entity.addTag('cooldownPower');
-
-        if (entity.typeId == 'ha:power_ups') {
-            cooldownPower?.setScore(entity, cooldownPowerUp);
-            entity.triggerEvent('ha:interact_entity');
-        }
-
-        if (entity instanceof mc.Player) {
-            cooldownPower?.setScore(entity, cooldownPly);
-            entity.playSound('entity.powerups.interact');
-        }
-    }
-}
-
-/**
- * Mensajes que salen cuando aun tienes cooldown con los powerups
- * @param {mc.Player} ply Jugador en cuestion.
- * @returns {Void}
- */
-function inCooldownYet(ply: mc.Player): void {
-    ply.sendMessage({ translate: "chat.cooldown_debuff" });
-    ply.playSound('ui.powerup.in_cooldown');
+    /**
+     * (Opcional) Especificar un cooldown para varios jugadores.
+     */
+    specificCooldown?: {
+        allTntPlys?: boolean;
+        allNormalPlys?: boolean;
+        all?: boolean;
+    };
 }
 
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */

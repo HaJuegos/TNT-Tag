@@ -3,22 +3,27 @@
 import * as mc from '@minecraft/server';
 import { getAllEntitiesInAllDime, RGBFloatConvertor, ticksConvertor } from "../globalVariables";
 import { getRandomSpawnMap } from '../mapLocations';
-import { musicManager } from './plyFn';
+import { musicManager, updateDataSpawn } from './plyFn';
+import { getItemsFromShop } from './storeMemoFn';
 /**
  * Funcion de eventos que se ejecutan cuando termina el juego.
  * @param {mc.Entity} timerEntity Timer del juego.
  * @returns {void}
  */
-export function endGame(timerEntity) {
+function endGame(timerEntity) {
     const winObj = mc.world.scoreboard.getObjective('winStack');
     if (winObj) {
         mc.world.scoreboard.setObjectiveAtDisplaySlot(mc.DisplaySlotId.Sidebar, { objective: winObj, sortOrder: mc.ObjectiveSortOrder.Descending });
         mc.world.getDimension('overworld').runCommand(`scoreboard players reset * totalInGame`);
     }
     mc.world.getDimension('overworld').runCommand(`spreadplayers 2031 -1967 0.5 4 @a`);
+    mc.world.getDimension('overworld').runCommand(`clear @a`);
+    mc.world.getDimension('overworld').runCommand(`effect @a clear`);
     timerEntity.triggerEvent('ha:despawn');
     musicManager(false, true);
     for (const ply of mc.world.getAllPlayers()) {
+        if (!ply.isValid)
+            continue;
         const plyInfo = ply.clientSystemInfo.platformType;
         const platformIcons = {
             [mc.PlatformType.Mobile]: "",
@@ -28,6 +33,7 @@ export function endGame(timerEntity) {
         if (platformIcons[plyInfo]) {
             ply.nameTag = `${ply.name} ${platformIcons[plyInfo]}`;
         }
+        updateDataSpawn(ply);
     }
 }
 /**
@@ -35,38 +41,59 @@ export function endGame(timerEntity) {
  * @param {number} map El Mapa elejido en cuestion.
  * @returns {void}
  */
-export function startGame(map) {
+function startGame(map) {
     const objMapSelected = mc.world.scoreboard.getObjective('mapSelected');
     const entity = mc.world.getDimension('overworld').spawnEntity('ha:game_entity', { x: 2035, y: 53, z: -1977 });
     mc.system.runTimeout(() => {
-        const plys = mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode'));
-        const totalPlys = plys.length;
-        let teleported = 0;
-        if (totalPlys <= 1) {
-            mc.world.sendMessage({ translate: "chat.error_noplayers" });
-            mc.world.getDimension('overworld').runCommand(`execute as @a at @s run playsound ui.error.noplayers`);
-            entity.triggerEvent('ha:despawn');
-            return;
-        }
-        for (const ply of plys) {
-            ply.camera.fade({ fadeTime: { fadeInTime: 1, holdTime: 3.5, fadeOutTime: 0.5 }, fadeColor: RGBFloatConvertor("#000000") });
-            ply.playSound('portal.travel');
-        }
-        mc.system.runTimeout(() => {
-            for (const ply of plys) {
-                const randomCoords = getRandomSpawnMap(map);
-                if (randomCoords) {
-                    ply.teleport(randomCoords);
-                    teleported++;
+        try {
+            const plys = mc.world.getAllPlayers().filter(ply => !ply.hasTag('spectMode'));
+            const totalPlys = plys.length;
+            if (totalPlys <= 1) {
+                mc.world.sendMessage({ translate: "chat.error_noplayers" });
+                mc.world.getDimension('overworld').runCommand(`execute as @a at @s run playsound ui.error.noplayers`);
+                entity.triggerEvent('ha:despawn');
+                for (const ply of mc.world.getAllPlayers()) {
+                    if (!ply.isValid)
+                        continue;
+                    const plyInfo = ply.clientSystemInfo.platformType;
+                    const platformIcons = {
+                        [mc.PlatformType.Mobile]: "",
+                        [mc.PlatformType.Desktop]: "",
+                        [mc.PlatformType.Console]: ""
+                    };
+                    if (platformIcons[plyInfo]) {
+                        ply.nameTag = `${ply.name} ${platformIcons[plyInfo]}`;
+                    }
+                    updateDataSpawn(ply);
                 }
+                return;
             }
-            if (teleported == totalPlys) {
-                entity.addTag('inGame');
-                objMapSelected?.addScore(entity, map);
-                setAndCheckPlys(plys, entity);
-                musicManager();
+            for (const ply of plys) {
+                if (!ply.isValid)
+                    continue;
+                ply.camera.fade({ fadeTime: { fadeInTime: 1, holdTime: 3.5, fadeOutTime: 0.5 }, fadeColor: RGBFloatConvertor("#000000") });
+                ply.playSound('portal.travel');
             }
-        }, ticksConvertor(3));
+            mc.system.runTimeout(() => {
+                try {
+                    for (const ply of plys) {
+                        const randomCoords = getRandomSpawnMap(map);
+                        if (!ply.isValid)
+                            continue;
+                        if (randomCoords) {
+                            ply.teleport(randomCoords);
+                        }
+                        getItemsFromShop(ply);
+                    }
+                    entity.addTag('inGame');
+                    objMapSelected?.addScore(entity, map);
+                    setAndCheckPlys(plys, entity);
+                    musicManager();
+                }
+                catch { }
+            }, ticksConvertor(3));
+        }
+        catch { }
     }, ticksConvertor(1.5));
 }
 /**
@@ -74,12 +101,12 @@ export function startGame(map) {
  * @param {Player} sourcePly Jugador que activo el boton.
  * @returns {void}
  */
-export function gameStarted(sourcePly) {
+function gameStarted(sourcePly) {
     const plys = mc.world.getAllPlayers();
     if (plys.length <= 1) {
         mc.world.sendMessage({ translate: "chat.error_noplayers" });
         sourcePly.playSound('ui.error.noplayers');
-        // return;
+        return;
     }
     if (checkGame()) {
         sourcePly.sendMessage({ translate: "chat.error.game_started" });
@@ -123,7 +150,7 @@ export function gameStarted(sourcePly) {
  * @param {number} totalPlys Numero total de jugadores activos.
  * @returns {number} Numero de jugadores que deben tener la tnt.
  */
-export function calculateTNTPlys(totalPlys) {
+function calculateTNTPlys(totalPlys) {
     const min = 1;
     const max = Math.min(5, totalPlys - 1);
     if (max <= min)
@@ -174,7 +201,7 @@ function viewAndSetScoreboard(totalNormalPlys, totalTntPlys, timerEntity) {
  * @returns {void}
  */
 function setAndCheckPlys(plys, timerEntity) {
-    const activePlayers = plys.filter(ply => !ply.hasTag('spectMode'));
+    const activePlayers = plys.filter(ply => ply.isValid && !ply.hasTag('spectMode'));
     const totalPlayers = activePlayers.length;
     const tntPlysCount = calculateTNTPlys(totalPlayers);
     const shuffledPlys = [...activePlayers].sort(() => Math.random() * 0.5);
@@ -212,5 +239,6 @@ function checkGame() {
     }
     return false;
 }
+export { endGame, startGame, gameStarted, calculateTNTPlys };
 /* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
 /* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */ 

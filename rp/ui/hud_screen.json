@@ -48,6 +48,20 @@
 				"array_name": "controls",
 				"operation": "insert_back",
 				"value": {
+					"red@color_screens.red_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"green@color_screens.green_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
 					"tnt_on@tnt_icons_screen.tnt_on_factory": { }
 				}
 			},
@@ -161,6 +175,48 @@
 				"operation": "insert_back",
 				"value": {
 					"play15@toast_music_screen.playing_music15_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"play16@toast_music_screen.playing_music16_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"play17@toast_music_screen.playing_music17_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"play18@toast_music_screen.playing_music18_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"play19@toast_music_screen.playing_music19_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"play20@toast_music_screen.playing_music20_factory": { }
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_back",
+				"value": {
+					"play21@toast_music_screen.playing_music21_factory": { }
 				}
 			},
 			{

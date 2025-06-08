@@ -8,7 +8,19 @@
 					"*": "Material.default"
 				}
 			],
-			"textures": [ "Texture.net" ]
+			"textures": [ "Texture.net" ],
+			"is_hurt_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": 0
+			},
+			"on_fire_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": 0
+			}
 		},
 		"controller.render.player.third_person_glow": {
 			"geometry": "Geometry.glow",
@@ -24,6 +36,18 @@
 				"g": 0.816,
 				"b": 0.231,
 				"a": 1
+			},
+			"is_hurt_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": 0
+			},
+			"on_fire_color": {
+				"r": 0,
+				"g": 0,
+				"b": 0,
+				"a": 0
 			}
 		},
 		"controller.render.player.third_person": {

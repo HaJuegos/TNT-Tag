@@ -130,36 +130,46 @@
 				"minecraft:variant": {
 					"value": 12
 				}
+			},
+			"ha:broken_clock_skin": {
+				"minecraft:variant": {
+					"value": 13
+				}
+			},
+			"ha:magnet_skin": {
+				"minecraft:variant": {
+					"value": 14
+				}
 			}
 		},
 		"components": {
-            "minecraft:reflect_projectiles": {
-                "reflected_projectiles": [
-                    "xp_bottle",
-                    "thrown_trident",
-                    "shulker_bullet",
-                    "dragon_fireball",
-                    "arrow",
-                    "snowball",
-                    "egg",
-                    "fireball",
-                    "splash_potion",
-                    "ender_pearl",
-                    "wither_skull",
-                    "wither_skull_dangerous",
-                    "small_fireball",
-                    "lingering_potion",
-                    "llama_spit",
-                    "fireworks_rocket",
-                    "fishing_hook",
-                    "wind_charge_projectile",
+			"minecraft:reflect_projectiles": {
+				"reflected_projectiles": [
+					"xp_bottle",
+					"thrown_trident",
+					"shulker_bullet",
+					"dragon_fireball",
+					"arrow",
+					"snowball",
+					"egg",
+					"fireball",
+					"splash_potion",
+					"ender_pearl",
+					"wither_skull",
+					"wither_skull_dangerous",
+					"small_fireball",
+					"lingering_potion",
+					"llama_spit",
+					"fireworks_rocket",
+					"fishing_hook",
+					"wind_charge_projectile",
 					"ha:net_projectile",
 					"ha:tnt_projectile_entity",
 					"ha:companion_cube_entity"
-                ],
-                "azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
-                "reflection_scale": "0.15"
-            },
+				],
+				"azimuth_angle": "180.0 + Math.random(-20.0, 20.0)",
+				"reflection_scale": "0.15"
+			},
 			"minecraft:renders_when_invisible": { },
 			"minecraft:knockback_resistance": {
 				"value": 99999
@@ -270,7 +280,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -294,7 +306,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -318,7 +332,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -342,7 +358,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -366,7 +384,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -390,7 +410,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -414,7 +436,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -438,7 +462,9 @@
 										"ha:slow_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -462,7 +488,9 @@
 										"ha:clock_skin",
 										"ha:elytra_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -486,7 +514,9 @@
 										"ha:clock_skin",
 										"ha:slow_skin",
 										"ha:gun_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -510,7 +540,9 @@
 										"ha:clock_skin",
 										"ha:slow_skin",
 										"ha:elytra_skin",
-										"ha:cube_skin"
+										"ha:cube_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
@@ -534,12 +566,66 @@
 										"ha:clock_skin",
 										"ha:slow_skin",
 										"ha:elytra_skin",
-										"ha:gun_skin"
+										"ha:gun_skin",
+										"ha:broken_clock_skin",
+										"ha:magnet_skin"
 									]
 								},
 								"add": {
 									"component_groups": [
 										"ha:cube_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:cube_skin",
+										"ha:magnet_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:broken_clock_skin"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"remove": {
+									"component_groups": [
+										"ha:nothing_skin",
+										"ha:coin_skin",
+										"ha:blidness_skin",
+										"ha:invi_skin",
+										"ha:bow_skin",
+										"ha:jump_skin",
+										"ha:speed_skin",
+										"ha:wing_skin",
+										"ha:clock_skin",
+										"ha:slow_skin",
+										"ha:elytra_skin",
+										"ha:gun_skin",
+										"ha:broken_clock_skin",
+										"ha:cube_skin"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"ha:magnet_skin"
 									]
 								}
 							}
@@ -563,6 +649,8 @@
 						"ha:elytra_skin",
 						"ha:gun_skin",
 						"ha:cube_skin",
+						"ha:broken_clock_skin",
+						"ha:magnet_skin",
 						"ha:interactions"
 					]
 				},

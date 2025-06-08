@@ -8,8 +8,11 @@
                     "*": "Material.default"
                 }
             ],
-            "textures": [
-                "(query.anim_time > 0.35) ? ((math.mod(query.anim_time, 0.7) < 0.35) ? Texture.white : Texture.default) : Texture.default"
+            "textures": [ "(query.anim_time > 0.35) ? ((math.mod(query.anim_time, 0.7) < 0.35) ? Texture.white : Texture.default) : Texture.default" ],
+			"part_visibility": [
+                {
+                    "*": "!q.is_pregnant"
+                }
             ],
             "filter_lighting": true,
             "is_hurt_color": {

@@ -16,8 +16,8 @@
             "minecraft:rarity": "common",
             "minecraft:stacked_by_data": true,
 			"minecraft:cooldown": {
-				"category": "wing",
-				"duration": 1
+				"category": "calculator",
+				"duration": 0.15
 			}
         }
     }

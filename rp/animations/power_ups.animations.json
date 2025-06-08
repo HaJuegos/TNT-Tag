@@ -65,7 +65,7 @@
 			"loop": true,
 			"bones": {
 				"base": {
-					"position": [0, "0 + (math.sin(q.life_time * 90.0 * 3.5) * 0.1 - math.sin(q.life_time * 90.0) * -2.0)", 0]
+					"position": [0, "5 + (math.sin(q.life_time * 90.0 * 3.5) * 0.1 - math.sin(q.life_time * 90.0) * -2.0)", 0]
 				}
 			}
 		},
@@ -74,7 +74,7 @@
 			"bones": {
 				"base": {
 					"position": [0, 7.5, 0],
-					"scale": 1.5
+					"scale": 1.75
 				}
 			}
 		},
@@ -83,7 +83,7 @@
 			"bones": {
 				"base": {
 					"position": [0, 14, 0],
-					"scale": 1.75
+					"scale": 2
 				}
 			}
 		}

@@ -3,7 +3,7 @@
 
 import { Player, world } from "@minecraft/server";
 
-import { handlePowerUpEvents } from "./types";
+import handlePowerUpEvents from "./manager";
 
 world.afterEvents.entityHitEntity.subscribe(hitEvents => {
     try {
@@ -19,7 +19,7 @@ world.afterEvents.entityHitEntity.subscribe(hitEvents => {
     } catch {}
 });
 
-world.afterEvents.playerInteractWithEntity.subscribe(interactEvents => {
+world.beforeEvents.playerInteractWithEntity.subscribe(async (interactEvents) => {
     try {
         const { player: ply, target: entity } = interactEvents;
 
@@ -27,6 +27,8 @@ world.afterEvents.playerInteractWithEntity.subscribe(interactEvents => {
             const variant = entity.getComponent('variant')?.value;
 
             if (variant != 0 && variant) {
+                await null;
+
                 handlePowerUpEvents(variant, ply, entity);
             }
         }

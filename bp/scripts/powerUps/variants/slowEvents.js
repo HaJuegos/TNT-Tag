@@ -8,7 +8,7 @@ import { ticksConvertor } from "../../globalVariables";
  */
 const slowEvent = {
     variantID: 9,
-    cooldownPly: 5,
+    cooldownPly: 10,
     events: {
         onlyTntEvents() {
             addSlowness(world.getAllPlayers().filter(ply => ply.hasTag('normalPly')), true);

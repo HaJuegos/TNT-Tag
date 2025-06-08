@@ -11,6 +11,7 @@ particle astral:confetti ~ ~0.3 ~
 particle astral:confetti ~ ~0.3 ~
 
 scoreboard players add @s winStack 1
+scoreboard players add @s totalWin 1
 
 tag @s remove tntPly
 tag @s remove normalPly

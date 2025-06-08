@@ -3,7 +3,6 @@
 	"sound_definitions": {
 		"ui.item.coin_used": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -29,7 +28,6 @@
 		},
 		"player.conffetti": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -82,7 +80,6 @@
 		},
 		"item.net_gun.spawned": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -96,7 +93,6 @@
 		},
 		"item.net_gun.hit": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -110,7 +106,6 @@
 		},
 		"item.net_gun.hit_player": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -163,7 +158,6 @@
 		},
 		"item.companion_cube.hit_player": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -177,7 +171,6 @@
 		},
 		"item.companion_cube.hit_block": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -203,7 +196,6 @@
 		},
 		"player.tnt_explode": {
 			"category": "player",
-			"__use_legacy_max_distance": true,
 			"min_distance": null,
 			"max_distance": null,
 			"sounds": [
@@ -479,6 +471,41 @@
 					"load_on_low_memory": true,
 					"name": "sounds/music/sunset_city",
 					"stream": true
+				}
+			]
+		},
+		"ui.shop.buy_min": {
+			"category": "ui",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/ui/coins/getMoneyMini"
+				}
+			]
+		},
+		"ui.shop.buy_max": {
+			"category": "ui",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/ui/coins/getMoneyMax"
+				}
+			]
+		},
+		"ui.item_used.magnet": {
+			"category": "player",
+			"min_distance": null,
+			"max_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"is3D": true,
+					"name": "sounds/ui/magnet_start",
+					"volume": 2
 				}
 			]
 		}

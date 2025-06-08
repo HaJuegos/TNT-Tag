@@ -1,0 +1,176 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.powerup.bow_arrow.quiver_overlay",
+				"texture_width": 48,
+				"texture_height": 32,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "base",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-5, 2, -1],
+							"size": [6, 16, 6],
+							"uv": {
+								"north": {"uv": [33, 0], "uv_size": [6, 16]},
+								"east": {"uv": [39, 0], "uv_size": [-6, 16]},
+								"south": {"uv": [33, 0], "uv_size": [6, 16]},
+								"west": {"uv": [39, 0], "uv_size": [-6, 16]},
+								"up": {"uv": [45, 6], "uv_size": [-6, -6]},
+								"down": {"uv": [45, 6], "uv_size": [-6, -6]}
+							}
+						},
+						{
+							"origin": [-5.5, 17.8, -1.5],
+							"size": [7, 3, 7],
+							"inflate": -0.2,
+							"uv": {
+								"north": {"uv": [7, 18], "uv_size": [7, 3]},
+								"east": {"uv": [14, 18], "uv_size": [-7, 3]},
+								"south": {"uv": [7, 18], "uv_size": [7, 3]},
+								"west": {"uv": [14, 18], "uv_size": [-7, 3]},
+								"up": {"uv": [7, 32], "uv_size": [-7, -7]},
+								"down": {"uv": [7, 25], "uv_size": [-7, -7]}
+							}
+						}
+					]
+				},
+				{
+					"name": "outline",
+					"parent": "base",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [1.25, 18.25, 5.25],
+							"size": [-6.5, -16.5, -6.5],
+							"inflate": -0.2,
+							"uv": {
+								"north": {"uv": [7, 21], "uv_size": [1, 1], "uv_rotation": 180},
+								"east": {"uv": [7, 21], "uv_size": [1, 1], "uv_rotation": 180},
+								"south": {"uv": [7, 21], "uv_size": [1, 1], "uv_rotation": 180},
+								"west": {"uv": [7, 21], "uv_size": [1, 1], "uv_rotation": 180},
+								"up": {"uv": [8, 22], "uv_size": [-1, -1], "uv_rotation": 180},
+								"down": {"uv": [8, 22], "uv_size": [-1, -1], "uv_rotation": 180}
+							}
+						},
+						{
+							"origin": [1.75, 21.5, 5.75],
+							"size": [-7.5, -3.5, -7.5],
+							"inflate": -0.2,
+							"uv": {
+								"north": {"uv": [8, 21], "uv_size": [-1, 1], "uv_rotation": 180},
+								"east": {"uv": [8, 21], "uv_size": [-1, 1], "uv_rotation": 180},
+								"south": {"uv": [8, 21], "uv_size": [-1, 1], "uv_rotation": 180},
+								"west": {"uv": [8, 21], "uv_size": [-1, 1], "uv_rotation": 180},
+								"down": {"uv": [7, 22], "uv_size": [1, -1], "uv_rotation": 180}
+							}
+						}
+					]
+				},
+				{
+					"name": "arrows",
+					"parent": "base",
+					"pivot": [-3, 10, 9]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.powerup.bow_arrow.bow_mesh",
+				"texture_width": 23,
+				"texture_height": 23,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "base",
+					"pivot": [0, 0, 0],
+					"texture_meshes": [
+						{
+							"texture": "bow_mesh",
+							"position": [-5.8, -23.2, -2.4],
+							"rotation": [-90, 0, 22.5]
+						}
+					]
+				},
+				{
+					"name": "outline",
+					"parent": "base",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "arrows",
+					"parent": "base",
+					"pivot": [-3, 10, 9]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.powerup.bow_arrow.arrows_mesh",
+				"texture_width": 13,
+				"texture_height": 13,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "base",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "outline",
+					"parent": "base",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "arrows",
+					"parent": "base",
+					"pivot": [-3, 7, 9],
+					"texture_meshes": [
+						{
+							"texture": "arrow_mesh",
+							"position": [-4.2, 9, 2.2],
+							"rotation": [-90, 0, -65]
+						},
+						{
+							"texture": "arrow_mesh",
+							"position": [-13, -8, 0.8],
+							"rotation": [-90, 0, -45]
+						},
+						{
+							"texture": "arrow_mesh",
+							"position": [-13, -8, 2.6],
+							"rotation": [-90, 0, -45]
+						},
+						{
+							"texture": "arrow_mesh",
+							"position": [-13, -8, 4.2],
+							"rotation": [-90, 0, -45]
+						},
+						{
+							"texture": "arrow_mesh",
+							"position": [-10, -8, 1.8],
+							"rotation": [-90, 0, -45]
+						},
+						{
+							"texture": "arrow_mesh",
+							"position": [-10, -8, 3.6],
+							"rotation": [-90, 0, -45]
+						}
+					]
+				}
+			]
+		}
+	]
+}
