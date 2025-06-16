@@ -2,11 +2,29 @@
 	"format_version": "1.10.0",
 	"animations": {
 		"animation.powerup_particle.blindess": {
-			"animation_length": 1.6,
 			"loop": true,
+			"animation_length": 1.6,
+			"bones": {
+				"pupil": {
+					"position": [
+						"math.clamp((math.random_integer(-0.4, 0.2) + 1.5 * math.cos(query.life_time * 550)), -5, 2.6)",
+						"math.random(-0.3, 0.2) + 3.19 * math.cos(query.life_time * 230) - 0.7",
+						0
+					],
+					"scale": [
+						"math.clamp((math.random_integer(1, 2) * 1.3 * math.cos(query.life_time * 390)), 0.7, 0.95)",
+						"math.clamp((math.random_integer(1, 2) * 1.3 * math.cos(query.life_time * 390)), 0.7, 0.95)",
+						1
+					]
+				}
+			},
 			"particle_effects": {
-				"1.5": {
+				"1.52": {
 					"effect": "blind",
+					"locator": "particle"
+				},
+				"1.53": {
+					"effect": "blind_eye",
 					"locator": "particle"
 				}
 			}
@@ -32,24 +50,40 @@
 			}
 		},
 		"animation.boost.wings": {
-			"animation_length": 2,
 			"loop": true,
+			"animation_length": 2,
 			"bones": {
 				"l": {
-					"rotation": [0, 0, "0 + (math.cos(q.life_time * 135) * -30)"]
+					"rotation": [0, 0, "0 + (math.cos(q.life_time * 135) * -30)"],
+					"scale": [0.8, 0.9, 1]
 				},
 				"r": {
-					"rotation": [0, 0, "0 + (math.cos(q.life_time * 135) * 30)"]
+					"rotation": [0, 0, "0 + (math.cos(q.life_time * 135) * 30)"],
+					"scale": [0.8, 0.9, 1]
+				},
+				"l2": {
+					"rotation": [
+						"(88.5 + math.cos(query.life_time * 135) * -88.5)",
+						"(12.5 + math.cos(query.life_time * 135) * -12.5)",
+						"(75.5 + math.cos(query.life_time * 135) * -75.5)"
+					]
+				},
+				"r2": {
+					"rotation": [
+						"(87.5 + math.cos(query.life_time * 135) * -87.5)",
+						"(-12.5 + math.cos(query.life_time * 135) * 12.5)",
+						"(-75 + math.cos(query.life_time * 135) * 75)"
+					]
 				}
 			},
 			"particle_effects": {
 				"1.1": {
 					"effect": "wing",
-					"locator": "locatorl"
-				},
-				"1.1": {
-					"effect": "wing",
 					"locator": "locatorr"
+				},
+				"1.11": {
+					"effect": "wing",
+					"locator": "locatorl"
 				}
 			}
 		},
@@ -86,8 +120,122 @@
 					"scale": 2
 				}
 			}
+		},
+		"animation.boost.clock_broken": {
+			"loop": true,
+			"animation_length": 1.6,
+			"bones": {
+				"hour_hand": {
+					"rotation": [0, 0, "q.life_time * -172"]
+				},
+				"minute_hand": {
+					"rotation": [0, 0, "45 + q.life_time * 92"]
+				},
+				"bell": {
+					"position": [0, "math.clamp((-0.1 + math.cos(query.life_time * 160) * (-0.5 + math.cos(query.life_time * 80) * -0.5)), -1.1, 0)", 0]
+				},
+				"big": {
+					"position": [0, 0, "-1.1 * math.cos(query.life_time * 110) -0.8"]
+				},
+				"medium": {
+					"position": [0, 0, "-0.6 * math.cos(query.life_time * 100) + 1"]
+				},
+				"tiny": {
+					"position": [0, 0, "-0.6 * math.cos(query.life_time * 90) + 1"]
+				},
+				"shine": {
+					"scale": [1, 1, "0.5+(0.1 + math.cos(query.life_time * 80) * 0.1)"]
+				}
+			},
+			"particle_effects": {
+				"1.52": {
+					"effect": "time_broken_particle",
+					"locator": "timebroken"
+				}
+			}
+		},
+		"animation.boost.clock_add": {
+			"loop": true,
+			"animation_length": 1.6,
+			"bones": {
+				"hour_hand": {
+					"rotation": [0, 0, "q.life_time * 15"]
+				},
+				"minute_hand": {
+					"rotation": [0, 0, "q.life_time * 185.6"]
+				},
+				"bell": {
+					"position": [0, "math.clamp((-0.1 + math.cos(query.life_time * 160) * (-0.5 + math.cos(query.life_time * 80) * -0.5)), -1.1, 0)", 0]
+				}
+			},
+			"particle_effects": {
+				"1.52": {
+					"effect": "time_particle",
+					"locator": "clock_particle"
+				}
+			}
+		},
+		"animation.boost.magnet": {
+			"animation_length": 1.6,
+			"bones": {
+				"red_magnet": {
+					"position": ["0.8+(-0.4 + math.cos(query.life_time * 300) * -0.4)", 0, 0],
+					"scale": ["0.8+(0.1 + math.cos(query.life_time * 300) * 0.1)", "0.5+(0.25 + math.cos(query.life_time * 350) * 0.25)", 1]
+				},
+				"blue_magnet": {
+					"position": ["-0.8+(0.4 + math.cos(query.life_time * 300) * 0.4)", 0, 0],
+					"scale": ["0.8+(0.1 + math.cos(query.life_time * 300) * 0.1)", "0.5+(0.25 + math.cos(query.life_time * 350) * 0.25)", 1]
+				},
+				"lower_body": {
+					"scale": ["0.8+(0.1 + math.cos(query.life_time * 300) * 0.1)", 1, 1]
+				}
+			},
+			"particle_effects": {
+				"1.48": {
+					"effect": "blue_magnet_particle",
+					"locator": "blue_mag"
+				},
+				"1.52": {
+					"effect": "red_magnet_particle",
+					"locator": "red_mag"
+				}
+			}
+		},
+		"animation.boost.invisibility": {
+			"loop": true,
+			"animation_length": 1.6,
+			"bones": {
+				"mirrror_outline_shine": {
+					"scale": 1
+				},
+				"front": {
+					"scale": [1, 1, "1+(0.5 + math.cos(query.life_time * 80) * 0.5)"]
+				},
+				"Head": {
+					"rotation": ["1.19 * math.cos(query.life_time * 129.2)", 0, 0]
+				},
+				"RightArm": {
+					"rotation": [0, 0, "1.19 * math.cos(query.life_time * 129.2)"]
+				},
+				"LeftArm": {
+					"rotation": [0, 0, "-1.19 * math.cos(query.life_time * 129.2)"]
+				}
+			},
+			"particle_effects": {
+				"1.52": {
+					"effect": "glow_lblue_boost_particle",
+					"locator": "mirrorparticle"
+				}
+			}
+		},
+		"animation.boost.slowness": {
+			"animation_length": 1.6,
+			"particle_effects": {
+				"1.52": {
+					"effect": "weight_particle",
+					"locator": "particleSlow"
+				}
+			}
 		}
 	}
 }
-/* Creado o Editado por: HaJuegosCat!. Si editaras o copiaras este archivo, recuerda dejar creditos. Cualquier otra informacion o reporte, en el server de Discord: https://discord.gg/WH9KpNWXUz */
-/* Created or Edited by: HaJuegosCat!. If you edit or copy this file, remember to give credit. For any other information or report, visit the Discord server: https://discord.gg/WH9KpNWXUz */

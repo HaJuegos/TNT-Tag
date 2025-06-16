@@ -98,7 +98,18 @@
                 "wing": "astral:wing_particle",
                 "speed": "astral:speed_particle",
                 "jump": "astral:jump_boost_particle",
-                "blind": "astral:blindness_smoke"
+                "blind": "astral:blindness_smoke",
+				"blind_eye": "astral:blindness_particle",
+				"weight_particle": "astral:weight_particle",
+				"blue_magnet_particle": "astral:blue_magnet_particle",
+				"red_magnet_particle": "astral:red_magnet_particle",
+				"diana_particle": "astral:diana_particle",
+				"lblue_boost_particle": "astral:lblue_boost_particle",
+				"pink_boost_particle": "astral:pink_boost_particle",
+				"cyan_boost_particle": "astral:cyan_boost_particle",
+				"yellow_boost_particle": "astral:yellow_boost_particle",
+				"time_particle": "astral:time_particle",
+				"broken_time_particle": "astral:broken_time_particle"
             }
         }
     }

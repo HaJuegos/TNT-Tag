@@ -1,0 +1,64 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "astral:pink_boost_particle",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/glow_particle"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 60,
+				"max_particles": 100
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 0.5
+			},
+			"minecraft:emitter_shape_sphere": {
+				"radius": 0.6,
+				"direction": ["math.random(-1.5,1.1)*math.cos(variable.emitter_age*360)", "math.random(-2, 2)", "math.random(-1.5,1.1)*math.cos(variable.emitter_age*360)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "math.random(1.5, 2.1)"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(-100, 100)",
+				"rotation_rate": "math.random(215, 420)"
+			},
+			"minecraft:particle_initial_speed": 1.1,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": ["math.random(-8.5,4.1)*math.cos(variable.emitter_age*260)", "math.random(-0.1, 4.4)", "math.random(-8.5,4.1)*math.cos(variable.emitter_age*260)"],
+				"linear_drag_coefficient": 2.5,
+				"rotation_acceleration": "math.random(-0.5, 2)",
+				"rotation_drag_coefficient": "math.random(-0.5, 2)"
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["0.07 + variable.particle_random_1 * 0.1", "0.07 + variable.particle_random_1 * 0.1"],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 15,
+					"texture_height": 45,
+					"flipbook": {
+						"base_UV": [0, "0 + math.round(v.particle_random_1) * 15 + math.round(v.particle_random_2) * 15"],
+						"size_UV": [15, 15],
+						"step_UV": [0, 0],
+						"max_frame": 3
+					}
+				}
+			},
+			"minecraft:particle_appearance_lighting": {},
+			"minecraft:particle_appearance_tinting": {
+				"color": {
+					"interpolant": "v.particle_age / v.particle_lifetime",
+					"gradient": {
+						"0.0": "#E3FFE9FA",
+						"0.59": "#C2FF9BFD",
+						"1.0": "#0FFF5CDD"
+					}
+				}
+			}
+		}
+	}
+}
