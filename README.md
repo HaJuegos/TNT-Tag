@@ -25,8 +25,6 @@
 - [**CLICK HERE TO GO TO CURSE FORGE**](https://www.curseforge.com/minecraft-bedrock/maps/tnt-tag-minigame)
 
 ## DOWNLOAD LINKS
-### Note: These links are linked to Ko-Fi, you may require an account on that site. These files are not and will not be paid, everything is optional and free for anyone who wants to enjoy it.
-
 - [**CLICK HERE TO DOWNLOAD ALL**](https://www.mediafire.com/file/k5keh2nl3tkn5s5/allfiles.mcaddon/file)
 
 - [**CLICK HERE TO DOWNLOAD THE TEMPLATE**](https://www.mediafire.com/file/ig5y8aw5xcpn2zp/template.mctemplate/file)
